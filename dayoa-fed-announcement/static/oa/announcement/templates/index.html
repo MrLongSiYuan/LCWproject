@@ -1,0 +1,67 @@
+<div id="announcement_index">
+    <!--菜单栏-->
+    <div class="announcement_menu">
+        <ul class="menu_libox">
+            <li @click="switchAnnTap($event,'received')" class="active">
+                <a href="javascript:void(0)">我收到的</a>
+            </li>
+            <li @click="switchAnnTap($event,'collect')" v-if="notshow">
+                <a href="javascript:void(0)" >我的收藏</a>
+            </li>
+            <li v-if="adminJuri" @click="switchAnnTap($event,'publish')">
+                <a href="javascript:void(0)">我发布的</a>
+            </li>
+            <li v-if="adminJuri" @click="switchAnnTap($event,'notPublish')">
+                <a href="javascript:void(0)">未发布的</a>
+            </li>
+            <span class="menu_bottom_bar"></span>
+        </ul>
+        <span class="add_annoucement_btn" v-if="adminJuri" @click="addAnnoucement">发公告</span>
+        <div class="annoucementSearch">
+            <!--搜索框-->
+            <div class="simple_search_wrap">
+                <span class="simple_search_leftIcon" @click="seniorSearchResult($event,'simple')"></span>
+                <input class="simple_search_searchIn" type="text" v-model="searchInfor.annoucementTitle" placeholder="请输入公告标题" v-on:keyup="seniorSearchResult($event,'simpleKeyup')"/>
+                <span class="simple_search_rightIcon"  @click="seniorSearchSwitch($event,'simple')"></span>
+            </div>
+            <!--高级搜索框-->
+            <div v-if="seniorSearchShow" transition="senior_search_ani" class="senior_search_wrap">
+                <ul class="senior_search_libox">
+                    <li>
+                        <span class="senior_searchTit">关键词</span>
+                        <i-input :value.sync="searchInfor.annoucementTitle" placeholder="请输入关键词" size="small" class="senior_search_input"></i-input>
+                    </li>
+                    <li>
+                        <span class="senior_searchTit">开始时间</span>
+                        <Date-picker type="date" placement="bottom-end" placeholder="选择日期和时间" size="small" class="senior_search_input" :value.sync="searchInfor.startTime" :options="startTimeOption"></Date-picker>
+                    </li>
+                    <li>
+                        <span class="senior_searchTit">结束时间</span>
+                        <Date-picker type="date" placement="bottom-end" placeholder="选择日期和时间" size="small" class="senior_search_input" :value.sync="searchInfor.endTime"  :options="endTimeOption"></Date-picker>
+                    </li>
+                    <li>
+                        <span  class="senior_search_btn" @click="seniorSearchResult($event,'seniorSearch')">搜索</span>
+                    </li>
+                </ul>
+            </div>
+            <!--筛选框-->
+            <div class="annoucement_filtrate_wrap"  v-if="!seniorSearchShow">
+                <p class="annoucement_filtrate_title"><span>筛选</span></p>
+                <ul class="annoucement_filtrate_libox">
+                    <li class="annoucement_filtrate_all active" @click="changeAnnClissify($event,item)">全部</li>
+                    <template v-for="(index,item) in annClassigyList">
+                        <li @click="changeAnnClissify($event,item)">{{item.type_name}}</li>
+                    </template>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="myReceive_place">
+        <annoucement-classify
+                :annoucement-list="annoucementList"
+                :annoucement-type="annoucementType"
+                :switch-tap-over="switchTapOver">
+        </annoucement-classify>
+    </div>
+    <div class="no_more_data" v-if="noMoreData">没有更多了</div>
+</div>

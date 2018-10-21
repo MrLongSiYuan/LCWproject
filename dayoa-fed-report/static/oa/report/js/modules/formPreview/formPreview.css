@@ -1,0 +1,277 @@
+@charset "utf-8";
+/*
+表单预览*/
+.workflow_formPreview .form_item{
+    margin-bottom: 10px;
+}
+.workflow_formPreview .form_item .beautifulRadio,.workflow_formPreview .form_item .beautifulCheckbox{
+    display: block;
+    float: left;
+}
+.f_group_wrap .workflow_formPreview{
+    margin-right: 15px;
+    margin-left: 15px;
+}
+/*表单标签*/
+.workflow_formPreview .form_item_label{
+    float: left;
+    width: 115px;
+    text-align: right;
+    box-sizing: border-box;
+    padding-right: 10px;
+    height: 38px;
+    line-height: 38px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 12px;
+}
+.workflow_formPreview .required{
+    color: red;
+    margin-right: 3px;
+    font-size: 17px;
+    vertical-align: middle;
+}
+/*表单标签 -- 两列版，三列版，明细版*/
+.workflow_formPreview .label_twoColumns,.workflow_formPreview .label_threeColumns,.workflow_formPreview .label_group{
+    display: none!important;
+}
+/*表单右侧内容*/
+.workflow_formPreview .form_content{
+    float: left;
+    width: calc(100% - 115px);
+    line-height: 38px;
+}
+/*表单右侧内容 -- 两列版，三列版，明细版*/
+.workflow_formPreview .form_content_twoColumns,.workflow_formPreview .form_content_threeColumns,.workflow_formPreview .form_content_group{
+    width: 100%!important;
+}
+.workflow_formPreview .f_input{
+    position: relative;
+}
+
+.workflow_formPreview input.text{
+    width: 100%;
+    height: 32px;
+    border: 1px solid #bcbcbc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    font-size: 12px;
+}
+.workflow_formPreview .f_number input.text{
+    padding-right:0;
+}
+.workflow_formPreview input.text.Wdate{
+    cursor:pointer;
+}
+.workflow_formPreview textarea{
+    width: 100%;
+    height: 32px;
+    border: 1px solid #bcbcbc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding: 10px;
+    min-height: 80px;
+    max-width: 100%;
+    font-size: 12px;
+}
+
+.workflow_formPreview .beautifulRadio{
+    margin-right: 10px;
+}
+.workflow_formPreview .beautifulCheckbox{
+    margin-right: 10px;
+}
+
+.workflow_formPreview .f_datearea .endTime{position: absolute;left: -154px;width: 145px;display: block;text-align: right;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;font-size: 12px;}
+
+/*图片上传预览*/
+.workflow_formPreview .addPicPreview{
+    display:inline-block;
+    vertical-align: top;
+}
+.workflow_formPreview .addPicPreview .imgPreview{
+    float: left;
+    width: 45px;
+    height: 45px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+.workflow_formPreview .imgPreview .loading{
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height:100%;
+    background: rgba(0, 0, 0, 0.37);
+    text-align: center;
+    line-height: 45px;
+}
+.workflow_formPreview .imgPreview .loading img{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 45px;
+    left: 50%;
+}
+.workflow_formPreview .imgPreview img.preview{
+
+position: absolute;
+
+top: 50%;
+
+transform: translate(-50%, -50%);
+
+max-width: 45px;
+
+left: 50%;
+}
+/*删除图片列表中的图片*/
+.workflow_formPreview .imgPreview .del{
+    display: none;
+    position: absolute;
+    top: -10px;
+    right: 0;
+    color: red;
+    cursor: pointer;
+    font-size: 15px;
+}
+.workflow_formPreview .imgPreview:hover .del{
+    display: block;
+}
+
+/*文件上传预览*/
+.workflow_formPreview .addFilePreview{
+
+max-height: 300px;
+
+overflow: auto;
+
+width: 450px;
+}
+.workflow_formPreview .addFilePreview li{
+    position: relative;
+    height: 37px;
+    background: #f0f0f0;
+    width: 280px;
+    padding-left: 10px;
+    padding-top: 7px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+.workflow_formPreview .addFilePreview .icon{
+    background: url(../../../images/bgs.png) -1px -161px;
+    width: 23px;
+    height: 23px;
+    text-indent: -999em;
+    overflow: hidden;
+    float: left;
+}
+.workflow_formPreview .addFilePreview .filename{
+    float: left;
+    line-height: 23px;
+    margin-left: 7px;
+    white-space: nowrap;
+    width: 217px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.workflow_formPreview .addFilePreview .size{
+    line-height: 23px;
+    margin-left: 10px;
+    position: absolute;
+    right: -64px;
+}
+.workflow_formPreview .addFilePreview .status{
+    line-height: 23px;
+    margin-left: 10px;
+    position: absolute;
+    right: -132px;
+}
+
+/*文件列表删除按钮*/
+.workflow_formPreview .addFilePreview li .del{
+    display: none;
+    position: absolute;
+    right: 5px;
+    top:0;
+    color: red;
+    font-size: 16px;
+    cursor: pointer;
+}
+.workflow_formPreview .addFilePreview li:hover .del{
+    display: block;
+}
+
+.workflow_formPreview .f_input .addPic{
+    width: 45px;
+    height: 45px;
+    border: 1px solid #bcbcbc;
+    text-align: center;
+    line-height: 36px;
+    font-size: 46px;
+    color: #bcbcbc;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+}
+.workflow_formPreview .f_pic .addPic{
+    display: block;
+    float: left;
+}
+.workflow_formPreview .f_input input[type='file']{
+    opacity: 0;
+    width:45px;
+    height:45px;
+    position: absolute;
+    left:0;
+    top:0;
+    cursor: pointer;
+}
+
+.workflow_formPreview .f_group_wrap{
+    /* border: 1px solid #bcbcbc; */
+    background: #f5f5f5;
+}
+.workflow_formPreview .f_group_wrap .groupheader{
+    font-weight: bold;
+    margin-left: 0px;
+    width: 117px;
+    text-align: right;
+    line-height: 36px;
+}
+
+.workflow_formPreview .f_remark_wrap{color: #888;line-height: 28px;position: relative;overflow: hidden;margin-top: 6px;}
+.workflow_formPreview .f_remark_wrap .slideUp{}
+
+/*
+两列控件*/
+.workflow_formPreview .f_twoColumns_wrap{}
+.workflow_formPreview .f_twoColumns_wrap .firstCol{
+    float: left;
+    width: 50%;
+}
+.workflow_formPreview .f_twoColumns_wrap .secondCol{
+    float: right;
+    width: 50%;
+}
+
+/*
+三列控件*/
+.workflow_formPreview .f_threeColumns_wrap{}
+.workflow_formPreview .f_threeColumns_wrap .firstCol{
+    float: left;
+    width: 33.33%;
+}
+.workflow_formPreview .f_threeColumns_wrap .secondCol{
+    float: left;
+    width: 33.33%;
+}
+.workflow_formPreview .f_threeColumns_wrap .thirdCol{
+    float: left;
+    width: 33.33%;
+}

@@ -1,0 +1,357 @@
+@charset "utf-8";
+a{
+    color: #8b8b8b;
+}
+[v-cloak] {
+    display: none;
+}
+/*重置样式汇报界面开始*/
+#main_wrap{
+    padding-right: 0px;
+}
+/*重置样式汇报界面结束*/
+#reportSummary_wrap{
+    margin-left: 0;
+    padding-right: 30px;
+    box-sizing: content-box;
+    font-size: 14px;
+}
+#report_headerWrap{
+    width: 100%;
+    height:40px;
+    box-sizing: border-box;
+}
+#reportSummary_wrap .title_alreadySend_notSend{
+    position: relative;
+    float: left;
+    border-bottom: 1px solid #ededed;
+    width: 80.3833%;
+}
+#reportSummary_wrap .title_alreadySend_notSend span{
+    display: inline-block;
+    width: 140px;
+    height: 100%;
+}
+#reportSummary_wrap .title_alreadySend_notSend span.moveBar{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: #ed6c2b;
+}
+#reportSummary_wrap .title_alreadySend_notSend span a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    font-size: 16px;
+}
+#reportSummary_wrap .title_alreadySend_notSend span a.active{
+    color: #ed6c2b;
+}
+/*搜索开始*/
+#reportSummary_wrap .report_search_logo{
+    width: 40px;
+    height: 40px;
+    float: right;
+    border-radius: 100%;
+    border: 1px solid #BEBEBE;
+    position: relative;
+    cursor: pointer;
+}
+#reportSummary_wrap .report_search_logo i{
+    position: absolute;
+    left: 11px;
+    top:8px;
+    font-size: 24px;
+    color: #979797;
+}
+#reportSummary_wrap .report_search_wrap{
+    width: 298px;
+    margin-top: 12px;
+    float: right;
+    height: 30px;
+    position: relative;
+}
+#reportSummary_wrap .report_search_wrap .normal_search{
+    width: 100%;
+    height: 100%;
+    padding-left: 37px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top:0;
+    z-index: 99;
+    border: 1px solid #ededed;
+    border-radius: 4px;
+}
+#reportSummary_wrap .report_search_wrap .normal_search .search_btn{
+    display: block;
+    height: 100%;
+    width: 32px;
+    position: absolute;
+    background: url(../images/bgs.png);
+    background-position: 3px -96px;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+}
+#reportSummary_wrap .report_search_wrap .normal_search input{
+    display: block;
+    border: none;
+    outline: none;
+    width: 72.0740%;
+    height: 100%;
+    float: left;
+    font-size: 12px;
+}
+#reportSummary_wrap .report_search_wrap .normal_search i{
+    display: block;
+    float: right;
+    height: 100%;
+    font-size: 12px;
+    color: #c0c0c0;
+    width: 22px;
+    text-align: center;
+    line-height: 32px;
+    cursor: pointer;
+}
+#reportSummary_wrap .report_search_wrap .senior_search{
+    width: 100%;
+    padding: 25px 0px 5px;
+    border: 1px solid #ededed;
+    border-radius: 4px;
+    border-top: none;
+    position: absolute;
+    top:26px;
+    z-index: 999;
+    background: #fff;
+    box-sizing: border-box;
+}
+#reportSummary_wrap .report_search_wrap .senior_search_item{
+    width: 100%;
+    height: 30px;
+    box-sizing: border-box;
+    padding: 0 39px;
+    margin-bottom: 15px;
+}
+#reportSummary_wrap .report_search_wrap .senior_search_item span.senior_search_title{
+    display: block;
+    font-size: 12px;
+    float: left;
+    height: 30px;
+    width: 53px;
+    line-height: 28px;
+    text-align: justify;
+}
+#reportSummary_wrap .report_search_wrap .senior_search_item span.senior_search_title::after {
+    width: 100%;
+    height: 0;
+    margin: 0;
+    display: inline-block;
+    overflow: hidden;
+    content: '';
+}
+#reportSummary_wrap .report_search_wrap .senior_search_item .senior_search_content{
+    height: 100%;
+    width: 148px;
+    float: left;
+    box-sizing: border-box;
+    margin-left: 15px;
+}
+#reportSummary_wrap .report_search_wrap .senior_search_item .ivu-date-picker{
+    height: 30px;
+    float: left;
+    width: 100%;
+}
+#reportSummary_wrap .report_search_wrap .senior_search_item .ivu-date-picker .ivu-input-icon{
+    line-height: 30px;
+}
+#reportSummary_wrap .report_search_wrap .senior_search_item input.ivu-input-small{
+    padding-right: 0;
+}
+#reportSummary_wrap .report_search_wrap .senior_search_item .senior_search_btn{
+    width: 66px;
+    height: 100%;
+    text-align: center;
+    line-height:30px;
+    font-size: 14px;
+    border-radius: 3px;
+    background: #ed6c2b;
+    color: #fff;
+    float: right;
+    cursor: pointer;
+}
+/*搜索结束*/
+/*汇报类型开始*/
+#report_sponsorWrap{
+    position: relative;
+}
+#report_sponsorWrap .typeReport_wrap{
+    width: 100%;
+    height: 28px;
+    margin-top: 25px;
+    padding-left: 0;
+}
+#report_sponsorWrap .typeReport_wrap .typeReport{
+    height: 100%;
+    float: left;
+    max-width: 590px;
+}
+#report_sponsorWrap .typeReport_wrap .writeReport{
+    float: right;
+}
+#report_sponsorWrap .typeReport_wrap .typeReport_show{
+   max-width: 480px;
+    height: 100%;
+    float: left;
+}
+#report_sponsorWrap .typeReport_wrap  ul.tabClick{
+    display: block;
+    max-width: 480px;
+    overflow: hidden;
+    height: 100%;
+}
+#report_sponsorWrap .typeReport_wrap  ul li{
+    display: block;
+    width: 84px;
+    height: 100%;
+    /*background: #e6e6e6;*/
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding: 0 12px;
+    float: left;
+    margin-right: 12px;
+    cursor: pointer;
+}
+#report_sponsorWrap .typeReport_wrap  ul li a:nth-child(1){
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 28px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    outline: none;
+    float: left;
+}
+#report_sponsorWrap .typeReport_wrap  ul li .report_type_number{
+    display: block;
+    float: left;
+    font-style: normal;
+    line-height: 1.5;
+    text-align: center;
+    background: #FF6548;
+    color: #fff;
+    font-size: 12px;
+    padding: 0 3px;
+    margin-left: 6px;
+    margin-top: 5px;
+    border-radius: 3px;
+}
+#report_sponsorWrap .typeReport_wrap  ul li.active{
+    /*background: #ed6c2b;*/
+}
+#report_sponsorWrap .typeReport_wrap  ul li.active a{
+    color: #ED6C2B;
+}
+#report_sponsorWrap .typeReport_wrap  ul li.active .report_type_number{
+    color: #fff;
+}
+#report_sponsorWrap .typeReport_wrap  ul li:hover{
+    /*background: #dfdbdb;*/
+}
+#report_sponsorWrap .typeReport_wrap  ul li:hover a{
+    /*color: #8b8b8b;*/
+}
+#report_sponsorWrap .typeReport_wrap  ul li.active:hover{
+    /*background: #ed6c2b;*/
+}
+#report_sponsorWrap .typeReport_wrap  ul li.active:hover a{
+    /*color: #fff;*/
+}
+#report_sponsorWrap .typeReport_wrap .writeReport .addReport{
+    background: #ed6c2b;
+    margin-right: 0;
+}
+#report_sponsorWrap .typeReport_wrap .writeReport .addReport a{
+    color: #fff;
+}
+
+/*另外汇报列表*/
+#report_sponsorWrap .typeReport_wrap  #typeReport_anotherBtn{
+    width: 0px;
+    height: 100%;
+    background: #e6e6e6;
+    border-radius: 3px;
+    box-sizing: border-box;
+    float: left;
+    position: relative;
+    text-align: center;
+    line-height: 28px;
+}
+#report_sponsorWrap .typeReport_wrap  #typeReport_anotherBtn:hover{
+    background: #dfdbdb;
+}
+#report_sponsorWrap .typeReport_wrap  #typeReport_anotherBtn .select_ico{
+    position: absolute;
+    left: 8px;
+    top:0px;
+    height: 100%;
+    width: 66px;
+    color: #ed6c2b;
+    overflow: hidden;
+    line-height: 28px;
+    cursor: pointer;
+}
+#report_sponsorWrap .typeReport_wrap  #typeReport_anotherBtn .select_ico i{
+    display: block;
+    position: absolute;
+    right: 0;
+    top:1px;
+}
+#report_sponsorWrap #typeReport_anotherBtn .typeReport_hide{
+    position: absolute;
+    width: 568px;
+    top:39px;
+    left: -481px;
+    z-index: 999;
+    background: #fff;
+    padding: 15px 0px  5px 30px;
+    border-radius: 3px;
+    border: 1px solid #eee;
+    box-sizing: border-box;
+}
+#report_sponsorWrap #typeReport_anotherBtn .typeReport_hide .tabClick{
+    max-width: 538px;
+}
+#report_sponsorWrap #typeReport_anotherBtn .typeReport_hide .tabClick li{
+    margin-bottom: 10px;
+}
+#report_sponsorWrap #report_base_mmpager_wrap{
+    position: absolute;
+    right: 0px;
+    bottom: 35px;
+    margin-top: 40px;
+}
+#report_base_mmpager_wrap .report_base_mmpager{
+
+}
+/*媒体查询*/
+@media screen and (min-width:1600px){
+    #reportSummary_wrap{
+        width: 1267px;
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width:1600px) and (min-width:1200px){
+    #reportSummary_wrap{
+        width: 944px;
+        margin: 0 auto;
+    }
+}
+
+

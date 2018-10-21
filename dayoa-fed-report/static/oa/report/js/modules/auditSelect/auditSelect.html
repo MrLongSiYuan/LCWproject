@@ -1,0 +1,87 @@
+<div id="dialogAuditSelect" class="clearfix">
+	<div class="pos-person-tab clearfix">
+		<ul>
+			<li v-bind:class="{'selected':selectType == 'person'?true:false}" v-on:click.prevent="selectAuditType('person')" v-show="isSelectPerson">选择人员</li>
+			<li v-bind:class="{'selected':selectType == 'pos'?true:false}" v-on:click.prevent="selectAuditType('pos')" v-show="isSelectPos">选择职位</li>
+		</ul>
+	</div>
+
+	<div class="search">
+		<input type="text" name="keyword" v-model="keyword" v-on:keyup="searchResult($event,'keyup')" placeholder="人员姓名、拼音简写">
+		<span class="icon" v-on:click.prevent="searchResult($event,'click')">搜索</span>
+	</div>
+
+	<div class="clearfix" style="height: 369px;">
+		<dl class="orgList">
+			<dt>
+				<span>组织列表</span>
+				<div class="beautifulCheckbox" style="margin-left: 15px;">
+					<input type="checkbox" id="isIncludeChild" style="vertical-align: middle" v-model="isIncludeChild"><label for="isIncludeChild">包含下级</label>
+				</div>
+			</dt>
+			<dd>
+				<ul id="orgListTree" class="ztree">
+					数据加载中...
+				</ul>
+			</dd>
+		</dl>
+
+		<!--职位选择列表-->
+		<dl class="jobList" v-show="selectType == 'pos' && isSelectPos">
+			<dt>
+				<span>包含职位</span>
+				<span class="des" style="color: red;display: none;">职位下有多人的，请选择具体人员</span>
+			</dt>
+			<dd>
+				<ul id="jobListSelect">
+					<li v-for="item in aJobList" v-on:click.prevent="selectJob($event,item)">
+						<div class="beautifulRadio">
+							<input type="radio" id="poslist-radio-{{$index}}" name="posId" value="{{item.posId}}" v-bind:checked="item.isSelected" style="vertical-align: middle"><label for="poslist-radio-{{$index}}" title="{{item.posName}}">{{item.posName}}</label>
+						</div>
+					</li>
+				</ul>
+			</dd>
+		</dl>
+
+		<!--人员选择列表-->
+		<dl class="personList" v-bind:style="{left:selectType == 'person'?'302px':'526px'}">
+			<dt>
+				<span>包含人员({{aPersonList.length}}人)</span>
+			</dt>
+			<dd>
+				<ul id="personListSelect" v-if="addType != 'multiple'">
+					<li v-for="item in aPersonList" v-on:click.prevent="selectRadioResult($event,item)">
+						<div class="beautifulRadio">
+							<input type="radio" id="personlist-radio-{{$index}}" name="personId" value="{{item.personId}}" v-bind:checked="item.isSelected" style="vertical-align: middle"><label for="personlist-radio-{{$index}}" title="{{item.personName}}">{{item.personName}}</label>
+						</div>
+					</li>
+				</ul>
+				<ul id="personListSelect" v-if="addType == 'multiple'">
+					<li v-on:click.prevent="selectAllResult()">
+						<div class="beautifulCheckbox" v-if="aPersonList.length != 0">
+							<input type="checkbox" id="select_all_person" v-bind:checked="allBtnIsSelected" style="vertical-align: middle"><label for="select_all_person" title="全选">全选</label>
+						</div>
+					</li>
+					<li v-for="item in aPersonList" v-on:click.prevent="selectCheckBoxResult($event,item)">
+						<div class="beautifulCheckbox">
+							<input type="checkbox" id="personlist-radio-{{$index}}" name="personId" value="{{item.personId}}" v-bind:checked="item.isSelected" style="vertical-align: middle"><label for="personlist-radio-{{$index}}" title="{{item.personName}}">{{item.personName}}</label>
+						</div>
+					</li>
+				</ul>
+			</dd>
+		</dl>
+	</div>
+
+	<div class="clearfix">
+		<ul class="selectResult clearfix">
+			<li v-for="item in aResult">
+				<img v-if="item.headImg" :src="gMain.DayHRDomains.baseStaticDomain+item.headImg" alt="{{item.showName}}" class="personImg" title="{{item.dataType=='pos'?'包含人员：'+item.audit_person_name:''}}" style="width: 56px;height: 56px">
+				<!--<span class="person_img_span" v-if="!item.headImg && regExpName(item.audit_person_name)" :style="{'background-color':getRandomColor(item.audit_person_id),'font-size':'16px'}">{{item.audit_person_name.substr(0,1).toUpperCase()}}</span>-->
+				<span class="person_img_span" :style="{'background-color':getRandomColor(item.audit_person_id)}">{{regExpName(item.audit_person_name)}}</span>
+				<span class="personName" title="{{item.showName}}">{{item.showName}}</span>
+				<span class="close" v-on:click.prevent="removeResult($index)" title="移除"></span>
+			</li>
+		</ul>
+	</div>
+
+</div>

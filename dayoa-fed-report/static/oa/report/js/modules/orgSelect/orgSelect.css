@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+.common_orgSelect{
+    width: 338px;
+}
+.common_orgSelect .search{
+    width: 250px;
+    margin: 0 auto;
+    height: 31px;
+    border: 1px solid #bcbcbc;
+    border-radius: 2px;
+    position: relative;
+    box-sizing: content-box;
+}
+.common_orgSelect .search input[name='keyword']{
+    border: none;
+    width: 219px;
+    height: 31px;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+.common_orgSelect .search input[name='keyword']::-ms-input-placeholder{text-align: center;}
+.common_orgSelect .search input[name='keyword'][name='keyword']::-webkit-input-placeholder{text-align: center;}
+.common_orgSelect .search .submit{
+    width: 21px;
+    height: 21px;
+    background: url(../../../images/bgs.png) -1px -99px;
+    text-indent: -99em;
+    overflow: hidden;
+    top: 4px;
+    right: 5px;
+    position: absolute;
+    cursor: pointer;
+}
+.common_orgSelect label{
+    font-weight: normal;
+}
+
+.common_orgSelect .orglisthead{
+  width: 250px;
+    margin: 0 auto;
+    margin-top: 12px;
+    height: 30px;
+    line-height: 30px;
+}
+.common_orgSelect h3{display: inline;}
+.common_orgSelect .beautifulCheckbox{
+    
+}
+.common_orgSelect .orglisthead .removeAll{font-size: 14px;color: blue;margin-left: 27px;cursor: pointer;}
+
+.common_orgSelect .orgList{
+    width: 250px;
+    margin: 0 auto;
+    border: 1px solid #bcbcbc;
+    height: 239px;
+    overflow: auto;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.common_orgSelect .result{
+    width: 250px;
+    margin: 0 auto;
+    border: 1px solid #bcbcbc;
+    height: 105px;
+    padding: 0;
+    overflow: auto;
+    margin-top: 20px;
+}
+.common_orgSelect .result li{
+    position: relative;
+    display: inline-block;
+    background: #fff0bd;
+    margin: 2px 3px;
+    padding: 2px 7px;
+    padding-right: 15px;
+    vertical-align: bottom;
+    max-width: 90px;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+}
+.common_orgSelect .result li span.close{
+    position: absolute;
+    top: 1px;
+    right: 4px;
+    color: red;
+    cursor: pointer;
+    font-size: 12px;
+}

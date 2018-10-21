@@ -1,0 +1,44 @@
+<div class="resumeDealAddTemplate">
+
+</div>
+<script type="text/html" id="resume_deal_add">
+    <div class="resume_deal_add_title">
+        淘汰模板<span class="iconfont_daydao_recruit add" title="新增">&#xe640;</span>
+    </div>
+    <div class="resume_deal_add_body">
+        <table cellspacing="0" cellpadding="0" width="100%" border="1" borderColor="#CCC">
+            <thead>
+            <th class="t_1">操作</th>
+            <th class="t_2">淘汰原因</th>
+            <th>解释说明</th>
+
+            </thead>
+        </table>
+        <div class="table2">
+            <table cellspacing="0" cellpadding="0" width="100%" border="1" borderColor="#CCC">
+                <tbody>
+                {{each data as item}}
+                    <tr>
+                        <td class="t_1" data-id="{{item.templateId}}"><span class="iconfont_daydao_recruit edit" title="编辑">&#xe607;</span><span class="iconfont_daydao_recruit del" title="删除">&#xe6a0;</span></td>
+                        <td class="t_2">{{item.shortReason}}</td>
+                        <td class="t_3">{{item.detailReason}}</td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="resume_deal_add_bottom">
+    </div>
+</script>
+
+<script type="text/html" id="resume_deal_add_tpl">
+        <div class="resume_deal_add_tpl">
+            <p><span class="span_left">淘汰原因</span><span class="span_right"><input name="reason" value="{{reason}}"/></span></p>
+            <p><span class="span_left">解释说明</span><span class="span_right"><textarea name="content" rows="4">{{content}}</textarea></span></p>
+            <div class="resume_deal_add_bottom_button">
+                <button class="save">保存</button>
+                <button class="cancel">取消</button>
+            </div>
+        </div>
+</script>

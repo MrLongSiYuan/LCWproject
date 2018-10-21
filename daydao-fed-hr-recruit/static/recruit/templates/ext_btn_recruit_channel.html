@@ -1,0 +1,37 @@
+<div class="recruit-channel-list">
+     <div class="recruit-channel-list-title">
+         <span class="span-1">选择渠道 <b>*</b>：</span>
+         <span class="span-2"><div id="recruit_channel_drop" class="dayhr_drop_select"></div></span>
+         <img v-bind:src="gMain.baseStaticHrPath+'recruit/images/'+imgData[sId-1]"/>
+     </div>
+     <div class="recruit-channel-list-body">
+          <span class="span-1"><h2>请输入账号信息</h2></span>
+          <span class="span-2"><input type="text" name="recruit-channel-member" placeholder="请输入会员名(必填)" maxlength="30" value="" /></span>
+          <span class="span-3"><input type="text" name="recruit-channel-name" placeholder="请输入用户名(必填)" maxlength="30" value="" /></span>
+          <span class="span-4"><input type="text" name="recruit-channel-password" placeholder="请输入密码(必填)" maxlength="30" autocomplete="off" value="" /></span>
+          <button class="save" v-on:click="binding(add)" v-if="add == true">绑定账号</button>
+          <button class="save" v-on:click="binding(currentData.uuid)" v-if="add == false">保存</button>
+     </div>
+     <div class="recruit-channel-list-bottom">
+          <table cellpadding="0" cellspacing="0" border="1" borderColor="#CCC" width="100%" v-if="allData !=''">
+              <thead>
+                <th>操作</th>
+                <th>渠道</th>
+                <th>账号</th>
+                <th>绑定时间</th>
+                <th>账号状态</th>
+              </thead>
+              <tbody>
+                 <tr v-for="item in allData">
+                     <td><span v-on:click="editAccount(item)" class="iconfont_daydao_recruit" style="font-size: 20px;">&#xe607;</span><span v-on:click="deleteAccount(item.uuid)" class="iconfont_daydao_recruit" style="font-size: 16px;">&#xe6a0;</span></td>
+                     <td>{{item.channelTypeName}}</td>
+                     <td>{{item.accountName}}</td>
+                     <td>{{item.bindTime}}</td>
+                     <td v-if="item.status == 0">验证中</td>
+                     <td v-if="item.status == 1">正常</td>
+                     <td v-if="item.status == 2">无效账号</td>
+                 </tr>
+              </tbody>
+          </table>
+     </div>
+</div>

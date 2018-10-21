@@ -1,0 +1,369 @@
+@charset "utf-8";
+/* reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}
+body{font:14px/1.5 '微软雅黑','\5FAE\8F6F\96C5\9ED1','\5b8b\4f53',sans-serif;}
+table{border-collapse:collapse;border-spacing:0}
+img{border:0}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}
+ol,li{list-style:none}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+q:before,q:after{content:''}
+abbr,acronym{border:0;font-variant:normal}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+a,input,textarea,select{outline: none;}
+*:focus {outline: none;}
+input,textarea,select{*font-size:100%;}
+input[type="button"],button{border:none;}
+input[type="button"],input[type="text"]{-webkit-appearance: none;}
+em,b{font-style:normal}
+a{text-decoration:none}
+.l{ float: left;}
+.r{ float: right;}
+.hide{ display: none;}
+.show{ display: block;}
+object{display: none;} /*隐藏flash上传播放器的界面（无用）*/
+html{
+    width: 100%;
+    min-height: 100%;
+    background: #f2f2f2;
+}
+body{
+    width: 100%;
+    min-width:inherit;
+}
+#exp_site_tip{
+    display: none;
+}
+/*宽度大于750px*/
+@media only screen and (min-width: 750px){
+    html{
+        width: 100%;
+    }
+    body{
+        width: 750px;
+        margin: 0 auto;
+    }
+    body *{
+        max-width: 750px;
+    }
+}
+/*字体*/
+
+@font-face {
+    font-family: 'iconfont_dayoa';  /* project id 188657 */
+    src: url('../font/iconfont.eot');
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/iconfont.woff') format('woff'),
+    url('../font/iconfont.ttf') format('truetype'),
+    url('../font/iconfont.svg#iconfont_dayoa') format('svg');
+}
+
+.iconfont_dayoa {
+    font-family:"iconfont_dayoa" !important;
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*****************************\|/***扁平化按钮 ****\|/*****************************************/
+
+.flat-button {
+    display: inline-block;
+    zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
+    *display: inline;
+    vertical-align: middle;
+    margin: 0 2px;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    padding: .7em 2em .75em;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+    border: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "微软雅黑";
+    -webkit-appearance: none;
+}
+.flat-button[disabled]{
+    opacity: 0.5;
+}
+.flat-button:hover {
+    text-decoration: none;
+}
+.flat-button:active {
+    position: relative;
+    top: 1px;
+}
+
+.flat-bigrounded {
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+}
+.flat-medium {
+    font-size: 14px;
+    padding: 6px 20px 7px;
+}
+.flat-small {
+    font-size: 11px;
+    padding: .2em 1em .275em;
+}
+
+/* color styles
+---------------------------------------------- */
+
+/* red */
+.flat-red {
+    color: #faddde;
+    background: #d81b21;
+}
+.flat-red:hover {
+    background: #b61318;
+}
+.flat-red:active {
+    color: #de898c;
+}
+
+/* blue */
+.flat-blue {
+    color: #FFFFFF;
+    background: #36a3ff;
+}
+.flat-blue:hover {
+    background: #2065ae;
+}
+
+/* yellow */
+.flat-yellow {
+    color: #FFFFFF;
+    background: #ed6c2b;
+}
+.flat-yellow:hover {
+    background: #bd5018;
+}
+
+/* white */
+.flat-white {
+    color: #939393;
+    background: #FFFFFF;
+    border: 1px solid #d2d2d2!important;
+    padding: 5px 16px 6px;
+}
+.flat-white:hover {
+    color: #ed6c2b;
+    background-color: #ffffff;
+    border-color: #ed6c2b!important;
+    transition: all 0.3s;
+}
+
+/*****************************\|/***扁平化按钮 结束 ****\|/*****************************************/
+
+/*文字头像*/
+.base_head_img{
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    line-height: 54px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    font-size: 16px;
+    color: #FFFFFF;
+    display: inline-block;
+    font-style: normal;
+    margin: 5px;
+    background-color: #35A2FF;
+    border: 1px solid #cdcdcd;
+}
+/*真是图像*/
+.base_head_img_img{
+    width: 55px;
+    height: 55px;
+    margin: 5px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #cdcdcd;
+}
+
+
+/*
+主体内容部分*/
+
+.dayhr_table_list{
+    position: relative;
+}
+/*左侧*/
+#base_left_nav{
+    position:absolute;
+    left:0;
+    top:0;
+    width:151px;
+    height: 100%;
+    border-right: 1px solid #ccc;
+    padding-top: 20px;
+    display: none;
+}
+/**左侧菜单**/
+#base_left_nav dl {margin-bottom: 20px;}
+#base_left_nav dl dt{ font-size: 15px; font-weight: bold;}
+#base_left_nav dl dd{overflow: hidden; margin: 5px 0;}
+#base_left_nav dl dd a{width: 100%; display: block; padding-left:30px;color: #333333;}
+#base_left_nav dl dd a:hover{background: #ed6c2b;opacity: 0.5;color:#ffffff;}
+#base_left_nav dl dd.on a{background: #ed6c2b;color:#ffffff;}
+/*右侧*/
+#base_right_content{
+    margin-left:0;
+    margin-right:0;
+}
+
+
+
+/*多选框组件*/
+.beautifulCheckbox{
+    display: inline;
+}
+.beautifulCheckbox label{
+    display: inline;
+    position: relative;
+    padding-left: 22px;
+    height: 20px;
+    line-height: 20px;
+    cursor: pointer;
+    font-weight: normal;
+    white-space: nowrap;
+}
+.beautifulCheckbox label:before{
+    content:" ";
+    width:14px;
+    height:14px;
+    position:absolute;
+    top: 3px;
+    left: 0px;
+    background: url(../images/bgs.png) -20px -20px;
+}
+.beautifulCheckbox input[type='checkbox']{
+    display: none;
+}
+.beautifulCheckbox input[type='checkbox']:checked + label:before{
+    background: url(../images/bgs.png) -20px -3px;
+}
+
+/*单选框组件*/
+.beautifulRadio{
+    display: inline;
+}
+.beautifulRadio label{
+    display: inline;
+    position: relative;
+    padding-left: 22px;
+    height: 20px;
+    line-height: 20px;
+    cursor: pointer;
+    font-weight: normal;
+    white-space: nowrap;
+}
+.beautifulRadio label:before{
+    content:" ";
+    width:14px;
+    height:14px;
+    position:absolute;
+    top: 3px;
+    left: 0px;
+    background: url(../images/bgs.png) -3px -19px;
+}
+.beautifulRadio input[type='radio']{
+    display: none;
+}
+.beautifulRadio input[type='radio']:checked + label:before{
+    background: url(../images/bgs.png) -3px -3px;
+}
+
+/*
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+流程项目公用表单样式
+*/
+
+.workflow_formStyle{
+    margin-right: 20px;
+}
+.workflow_formStyle .form_item{
+    margin-bottom: 10px;
+}
+/*表单标签*/
+.workflow_formStyle .form_item_label{
+    float: left;
+    width: 115px;
+    text-align: right;
+    box-sizing: border-box;
+    padding-right: 10px;
+    height: 38px;
+    line-height: 38px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 12px;
+}
+.workflow_formStyle .required{
+    color: red;
+    margin-right: 3px;
+    font-size: 17px;
+    vertical-align: middle;
+}
+/*表单右侧内容*/
+.workflow_formStyle .form_content{
+    float: left;
+    width: calc(100% - 115px);
+    line-height: 38px;
+}
+.workflow_formStyle .f_input{
+    position: relative;
+}
+
+.workflow_formStyle input.text{
+    width: 100%;
+    height: 32px;
+    border: 1px solid #bcbcbc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    font-size: 12px;
+}
+.workflow_formStyle input.text.Wdate{
+    cursor:pointer;
+}
+.workflow_formStyle textarea{
+    width: 100%;
+    height: 32px;
+    border: 1px solid #bcbcbc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding: 10px;
+    min-height: 80px;
+    max-width: 100%;
+    font-size: 12px;
+}
+
+.workflow_formStyle .beautifulRadio{
+    margin-right: 10px;
+}
+.workflow_formStyle .beautifulCheckbox{
+    margin-right: 10px;
+}
+
+/*
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+流程项目公用表单样式 -- 结束
+*/

@@ -1,0 +1,62 @@
+#addAnnClassify{
+    width: 540px;
+}
+#addAnnClassify .addClass_sort{
+    height: 30px;
+    margin-top: 30px;
+}
+#addAnnClassify .addClass_name{
+    width: 70px;
+    height: 30px;
+    display: inline-block;
+    line-height: 30px;
+    text-align: right;
+}
+#addAnnClassify .addClass_ast{
+    color: #d62b33;
+}
+#addAnnClassify .addClass_inp{
+    width: 370px;
+    height: 30px;
+    border: 1px #bcbcbc solid;
+    padding-left: 10px;
+    border-radius: 5px;
+    margin-left: 15px;
+    box-sizing: border-box;
+}
+#addAnnClassify .addClass_state{
+    margin-top: 15px;
+    position: relative;
+}
+#addAnnClassify .addClass_sta{
+    width: 70px;
+    height: 30px;
+    display: inline-block;
+    line-height: 30px;
+    text-align: right;
+    position: relative;
+    top: -90px;
+}
+#addAnnClassify .addClass_text{
+    width: 370px;
+    height: 110px;
+    margin-left: 15px;
+    resize: none;
+    line-height: 30px;
+    border: 1px #bcbcbc solid;
+    border-radius: 5px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+#addAnnClassify .addClass_textNum{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+#addAnnClassify .addClass_num{
+    display: inline-block;
+    color: #d2d2d2;
+    position: absolute;
+    right: 90px;
+    bottom: 15px;
+}

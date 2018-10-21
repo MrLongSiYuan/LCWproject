@@ -1,0 +1,18 @@
+<!--工作流程表单基本信息设置-->
+<div id="workflow_form_set" class="clearfix">
+
+	<i-form :model="formItem" :label-width="80">
+		<Form-item label="表单名称">
+			<i-input :value.sync="name" name="name" placeholder="请输入表单名称"></i-input>
+		</Form-item>
+		<Form-item label="适用范围">
+			<i-input :value.sync="org_names" icon="ios-arrow-down" readonly data-ids="{{org_ids}}" v-on:click="selectOrgList" v-bind="{'title':org_names}" placeholder="点击选择适用范围"></i-input>
+		</Form-item>
+		<!--<Form-item label="表单说明">-->
+			<!--<i-input :value.sync="remark" type="textarea" v-bind:maxlength="200" placeholder="最多200个字"></i-input>-->
+		<!--</Form-item>-->
+		<Form-item label="汇报提醒">
+			<i-input class="report_remind_input_wrap" icon="ios-arrow-down" readonly v-on:click="setReportRemind" placeholder="点击进行设置" :value.sync="remindInfor.remindSwitch ? showValueInputBrief:'未开启'" :title="remindInfor.remindSwitch ? showValueInput:''"></i-input>
+		</Form-item>
+	</i-form>
+</div>

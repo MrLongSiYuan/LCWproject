@@ -1,0 +1,332 @@
+.reportContent{
+    width: 100%;
+    overflow: hidden;
+    box-sizing: content-box;
+    padding: 0 12px 90px;
+    margin-left: -12px;
+}
+.reportContent .singleReport{
+    width: 298px;
+    float: left;
+    height: 186px;
+    border: 1px solid #d2d2d2;
+    padding: 15px 15px 0;
+    border-radius: 8px;
+    margin-right: 25px;
+    margin-top:33px;
+    position: relative;
+    transition: 0.5s;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.reportContent .singleReport .originator_name{
+    height: 20px;
+    line-height: 34px;
+    color: #007cdb;
+    font-size: 12px;
+}
+.reportContent .singleReport:hover{
+    box-shadow: 0px 0px 7px 0px #aaa;
+    transform: translateY(-3px);
+    z-index: 99;
+}
+.reportContent .reportTit{
+    height: 25px;
+    width: 100%;
+    position: relative;
+}
+.reportContent .reportTit span{
+    display: block;
+}
+.reportContent .reportTit .dayReport_title{
+    max-width: 80px;
+    height: 100%;
+    line-height: 25px;
+    background: #67c2e3;
+    color: #fff;
+    padding: 0 12px;
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.reportContent .singleReport .reportTit .iconfont_dayoa{
+    color: #9a9a9a;
+    cursor: pointer;
+    position: absolute;
+    top:0;
+    right: 0;
+    line-height: 25px;
+    font-size: 22px;
+    z-index: 8;
+}
+.reportContent .singleReport .reportTit .iconfont_dayoa:hover{
+    color: #7a7878;
+}
+.reportContent .sendReport_date_box{
+    float: left;
+    position: relative;
+    left: 57%;
+}
+.reportContent .sendReport_date{
+    float: left;
+    position: relative;
+    right: 50%;
+    line-height: 25px;
+}
+.reportContent .singleReport_detail{
+    width: 100%;
+    height: 86px;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 10px 0;
+}
+.reportContent .singleReport_detail .dataListItem .left{
+    color: #8b8b8b;
+    font-size: 12px;
+}
+.reportContent .singleReport_detail .dataListItem .right{
+    font-size: 12px;
+    color: #333;
+}
+.reportContent .singleReport_detail .img_operation_item{
+    display: none;
+}
+.reportContent img.previewPic{
+    max-width: 60px;
+    height: auto;
+}
+/*
+*操作项
+****/
+.reportContent .reportFooter_box{
+    width: 100%;
+    height: 43px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #f3f3f3;
+    border-radius: 0 0 8px 8px;
+}
+.reportContent .reportFooter{
+    float: right;
+    height: 100%;
+    margin-right: 15px;
+}
+.reportContent .reportFooter .operation_item{
+    display: inline-block;
+    width: 27px;
+    margin-top: 5px;
+    position: relative;
+}
+/*头像盒子开始*/
+.reportContent .headimg_box{
+    width: 320px;
+    height: auto;
+    background: #fff;
+    border-radius: 4px;
+    position: absolute;
+    padding: 9px 12px;
+    left: -203px;
+    top:45px;
+    z-index: 9;
+    box-shadow: 0px 0px 7px 0px #aaa;
+    display: none;
+    cursor: default;
+}
+.reportContent .headimg_box .arrow_down{
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 12px solid #fff;
+    position: absolute;
+    left: 211px;
+    top: -11px;
+}
+.reportContent .headimg_box .loading{
+    width: 32px;
+    height: 32px;
+    background:url("../../../images/loading-1.gif") rgba(255,255,255,0.1) no-repeat center center;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 99;
+    display: none;
+}
+.reportContent .headimg_box .headimg_box_header{
+    width: 100%;
+    height: 29px;
+    border-bottom: 1px solid #dadada;
+    box-sizing: border-box;
+    line-height: 28px;
+    padding: 0 10px;
+    position: relative;
+}
+.reportContent .headimg_box .headimg_box_header .ivu-icon-ios-close-empty{
+    height: 100%;
+    width: 35px;
+    text-align: center;
+    font-size: 30px;
+    position: absolute;
+    right: 0px;
+    top:0;
+    line-height: 28px;
+    color: #bfbfbf;
+    cursor: pointer;
+}
+.reportContent .headimg_box .headimg_box_content{
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+}
+.reportContent .headimg_box .headimg_box_content li{
+    display: block;
+    font-size: 12px;
+    height: 28px;
+    line-height: 28px;
+    float: left;
+    color:#8B8B8B;
+}
+.reportContent .headimg_box .headimg_box_content li.aready_read{
+    color: #333;
+}
+.reportContent .headimg_box .headimg_box_content li.read_person:last-child span{
+    display: none;
+}
+.reportContent .headimg_box .headimg_box_content li:nth-last-child(2) span{
+    display: none;
+}
+.reportContent .headimg_box .headimg_box_content li img{
+    width: 100%;
+    height: 100%;
+    float: left;
+    border-radius: 100%;
+}
+.reportContent .headimg_box .headimg_box_footer{
+    width: 100%;
+    height: 29px;
+    border-top: 1px solid #dadada;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.reportContent .headimg_box .headimg_box_footer .ivu-page-simple-pager{
+    margin-top: 2px;
+}
+.reportContent .headimg_box .headimg_box_footer .ivu-page-simple-pager input{
+    height: 20px;
+}
+.reportContent .headimg_box .headimg_box_footer .ivu-page-next,.reportContent .headimg_box .headimg_box_footer .ivu-page-prev{
+    cursor: pointer;
+}
+/*头像盒子结束*/
+.reportContent .reportFooter .operation_item p{
+    display: block;
+    line-height: 18px;
+    width: 100%;
+    text-align: center;
+}
+.reportContent .reportFooter .operation_item p.iconfont_dayoa{
+    cursor: pointer;
+    font-size: 19px;
+}
+.reportContent .reportFooter .operation_item p.iconfont_dayoa_read{
+    color: #eaa622;
+}
+.reportContent .reportFooter .operation_item p.iconfont_dayoa_fabulous{
+    color: #eb6f6f;
+}
+.reportContent .reportFooter .operation_item p.iconfont_dayoa_comment{
+    color: #54aae1;
+}
+.reportContent .reportFooter .operation_item p.operation_item_num{
+    font-size: 12px;
+}
+.reportContent .nextplan{
+    color: #8b8b8b;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.reportContent .detailplan{
+    color: #4a4a4a;
+    font-size: 14px;
+}
+/*已发送结束*/
+/*未发送开始*/
+.reportContent_notSend .reportTit_draft_title{
+    display: block;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #43a6ca;
+    font-size: 15px;
+}
+.reportContent_notSend .reportFooter_box .sendReport_date{
+    display: block;
+    height: 100%;
+    line-height: 43px;
+    color: #8b8b8b;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-left: 15px;
+}
+.reportContent_notSend .reportFooter_box .delete_draft_reportBtn{
+    display: block;
+    height: 100%;
+    line-height: 43px;
+    color: #f01b2a;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-right: 15px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.reportContent_notSend .reportFooter_box .delete_draft_reportBtn:hover{
+    color: #f01b00;
+    text-decoration: underline;
+}
+/*无数据开始*/
+.reportContent .singleReport_noData{
+    width: 100%;
+    height: 410px;
+    background: url(../../../images/single_report_nodatanew.png) no-repeat center 164px;
+    position: relative;
+}
+.reportContent .singleReport_noData .nodata_text{
+    width: 100%;
+    height: 66px;
+    font-size: 14px;
+    color: #909090;
+    text-align: center;
+    line-height: 66px;
+    position: absolute;
+    bottom: 0;
+}
+/*无数据结束*/
+/*媒体查询*/
+@media screen and (min-width:1600px) {
+    .reportContent .singleReport:nth-child(4n) {
+        margin-right: 0px;
+    }
+}
+@media screen and (max-width:1600px) and (min-width:1200px){
+    .reportContent .singleReport:nth-child(3n) {
+        margin-right: 0px;
+    }
+}
+/*分页器*/
+.reportContent .singleReport .ivu-page-simple .ivu-page-simple-pager input{
+    width: 42px;
+}

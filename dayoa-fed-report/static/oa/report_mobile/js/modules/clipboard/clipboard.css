@@ -1,0 +1,198 @@
+#clipboard_wrap{
+}
+#clipboard_wrap .clipboard_box,#clipboard_wrap .in_fade-transition{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    -ms-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    z-index: 1000;
+    background: #fff;
+    background: rgba(0,0,0,0.6);
+    opacity: 1;
+}
+#clipboard_wrap .in_fade-enter,#clipboard_wrap .in_fade-leave{
+    opacity: 0;
+}
+#clipboard_wrap .clipboard_box .clipboard_center_box,#clipboard_wrap .clipboard_box .in_right-transition{
+    width: 6rem;
+    height: 272px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -3rem;
+    margin-top: -136px;
+    background: #fff;
+    border-radius: 10px;
+    -ms-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    -ms-transform: scale(1);
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    -ms-transform-origin:102% 102%;
+    -moz-transform-origin:102% 102%;
+    -webkit-transform-origin:102% 102%;
+    -o-transform-origin:102% 102%;
+    transform-origin:102% 102%;
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+#clipboard_wrap .clipboard_box  .in_right-enter,#clipboard_wrap .clipboard_box  .in_right-leave{
+   /* -ms-transform: scale(0.2);
+    -moz-transform: scale(0.2);
+    -webkit-transform: scale(0.2);
+    -o-transform: scale(0.2);
+    transform: scale(0.2);*/
+    /*-ms-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);*/
+    left: 150%;
+}
+#clipboard_wrap .clipboard_box .clipboard_center_box .close_header{
+    height: 44px;
+    text-align: center;
+    border-bottom: 1px solid #F2F2F2;
+    font-size: 16px;
+    color: #222;
+    line-height: 44px;
+    position: relative;
+}
+#clipboard_wrap .clipboard_box .clipboard_center_box .close_header .close_btn{
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    border-radius: 10px 0 0 0;
+    background-image: url(../../../images/pop_icon_right_def@2x.png);
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    background-size: 24px 24px;
+}
+#clipboard_wrap .clipboard_box .clipboard_header{
+    height: 32px;
+    font-size: 14px;
+    color: #666;
+    width: 100%;
+    line-height: 32px;
+    overflow: hidden;
+    background: #f2f2f2;
+    padding-left: 10px;
+}
+#clipboard_wrap .clipboard_box .clipboard_header .header_save_time{
+    height: 100%;
+    line-height: 40px;
+    width: 70%;
+    float: left;
+}
+#clipboard_wrap .clipboard_box .clipboard_header .note_number{
+    height: 100%;
+    line-height: 40px;
+    width: 30%;
+    float: left;
+}
+#clipboard_wrap .clipboard_box .input_box{
+    width: 100%;
+    height: calc(100% - 88px);
+    box-sizing: border-box;
+    padding: 10px;
+}
+#clipboard_wrap .clipboard_box .input_box textarea{
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #fff;
+    resize: none;
+    border: none;
+    font-size: 14px;
+}
+#clipboard_wrap .footer_btn{
+    height: 44px;
+    overflow: hidden;
+    float: right;
+    border-radius: 0 0 10px 0;
+    overflow: hidden;
+}
+#clipboard_wrap .footer_btn .clear_all_content,#clipboard_wrap .footer_btn .save_content{
+    height: 44px;
+    line-height: 44px;
+    text-align: right;
+    float: left;
+    box-sizing: border-box;
+    padding-right: 25px;
+    font-size: 16px;
+    color: #aaa;
+}
+#clipboard_wrap .footer_btn .save_content{
+    color: #FF7123;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 1px 45px;
+}
+#clipboard_wrap .footer_btn .save_content{
+}
+/*是否删除开始*/
+#clipboard_wrap .draft_cover_wrap{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    top:0;
+    display: none;
+    z-index: 10001;
+}
+#clipboard_wrap .draft_cover_wrap .draft_cover{
+    width: 5.4rem;
+    height: 127px;
+    background: #fff;
+    border-radius: 0.2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+#clipboard_wrap .draft_cover_wrap .draft_cover .cover_content{
+    width: 100%;
+    height: 83px;
+    text-align: center;
+    line-height: 83px;
+    font-size: 17px;
+    color: #222;
+    border-bottom: 1px solid #D2D2D2;
+}
+#clipboard_wrap .draft_cover_wrap .draft_cover .cover_btn_box{
+    width: 100%;
+    height: 44px;
+}
+#clipboard_wrap .draft_cover_wrap .draft_cover .cover_btn_box div{
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    line-height: 44px;
+    box-sizing: border-box;
+    font-size: 17px;
+    float: left;
+    color: #EF6518;
+}
+#clipboard_wrap .draft_cover_wrap .draft_cover .cover_btn_box .btn_left{
+    border-right: 1px solid #D2D2D2;
+    color: #666;
+}
+/*是否删除稿结束*/

@@ -1,0 +1,42 @@
+<div id="set_report_remind" class="clearfix">
+
+    <i-form :model="formItem" :label-width="80">
+        <Form-item label="汇报提醒">
+            <input id="switch_report_remind" type="checkbox" />
+        </Form-item>
+        <Form-item label="提醒时间">
+            <i-select :model.sync="modelChoose" style="width:75px" icon="ios-arrow-down" @on-change="changeChoose">
+                <i-option v-for="item in chooseOption.cycle" :value="item">{{ item }}</i-option>
+            </i-select>
+            <div class="weeks_wrap i_select_wrap" style="display: none">
+                <div class="show_content_remind show_content_remind_week" :title="weekShowContent">{{weekShowContent}}</div>
+                <i-select :model.sync="modelWeek" style="width:75px" icon="ios-arrow-down" multiple @on-change="changeWeek">
+                    <i-option v-for="item in chooseOption.weeks" :value="item">{{ item }}</i-option>
+                </i-select>
+            </div>
+            <div class="monthday_wrap i_select_wrap" style="display: none">
+                <div class="show_content_remind show_content_remind_day" :title="dayShowContent">{{dayShowContent}}</div>
+                <i-select :model.sync="modelDay" style="width:75px" icon="ios-arrow-down" multiple @on-change="changeMonthDay">
+                    <i-option v-for="item in chooseOption.monthdays" :value="item">{{ item }}</i-option>
+                </i-select>
+                <span class="suffix">日</span>
+            </div>
+            <div class="hour_wrap i_select_wrap">
+                <i-select :model.sync="modelHour" style="width:75px" icon="ios-arrow-down">
+                    <i-option v-for="item in chooseOption.hours" :value="item">{{ item }}</i-option>
+                </i-select>
+                <span class="suffix">时</span>
+            </div>
+            <div class="minute_wrap i_select_wrap">
+                <i-select :model.sync="modelMinute" style="width:75px" icon="ios-arrow-down">
+                    <i-option v-for="item in chooseOption.minutes" :value="item">{{ item }}</i-option>
+                </i-select>
+                <span class="suffix">分</span>
+            </div>
+        </Form-item>
+        <div class="remind_information">汇报适用范围内的员工，将于{{modelChoose+weekShowContent+(dayShowContent?dayShowContent + '日':'')+modelHour+':'+modelMinute}}收到提醒</div>
+       <!-- <Form-item label="提醒内容">
+            <i-input type="textarea" :autosize="{minRows: 4,maxRows: 9}" placeholder="请输入..." style="width:332px" :value.sync="showValue" :maxlength="60" id="show_content_value"></i-input>
+        </Form-item>-->
+    </i-form>
+</div>

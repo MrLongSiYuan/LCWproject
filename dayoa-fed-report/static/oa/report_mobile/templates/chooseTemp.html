@@ -1,0 +1,11 @@
+<div id="choose_report_template">
+    <div class="template_admin" @click="jumpGuide">管理员可登录系统后台自定义企业汇报模板&nbsp;>></div>
+    <div class="template_list_wrap">
+        <ul>
+            <li v-for="item in tempTypeList" @click="jumpWriteReport(item.uuid,item.formId,item.name)">
+                <div class="template_name">{{item.name}}</div>
+                <Icon type="ios-arrow-right"></Icon>
+            </li>
+        </ul>
+    </div>
+</div>

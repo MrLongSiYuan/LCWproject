@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>图片浏览插件</title>
+		<style type="text/css">
+			#img img{width:200px;height:200px;cursor:pointer;margin:5px;}
+		</style>
+	</head>
+	<body>
+		<div id="img">
+			<img src="img/Desert.jpg"/>
+			<img src="img/1.png" />
+			<img src="img/Hydrangeas.jpg"/>
+			<img src="img/Chrysanthemum.jpg" />
+			<img src="img/Jellyfish.jpg"/>
+			<img src="img/Koala.jpg"/>
+			<img src="img/Lighthouse.jpg"/>
+			<img src="img/Penguins.jpg"/>
+			<img src="img/Tulips.jpg"/>
+			<img src="img/qq.gif"/>
+			<img src="img/2.jpg"/>
+		</div>
+
+		<div>
+			<button type="button" id="btn">打开第二张图片</button>
+		</div>
+
+		<div>
+			<p>传src方式</p>
+			<a href="javascript:void(0);" class="imgsrc">img/2.jpg</a>
+			<a href="javascript:void(0);" class="imgsrc">img/qq.gif</a>
+			<a href="javascript:void(0);" class="imgsrc">img/Tulips.jpg</a>
+		</div>
+
+		<div>
+			<p>单个直接打开方式</p>
+			<a href="javascript:void(0);" class="imgsrc2">img/2.jpg</a>
+			<a href="javascript:void(0);" class="imgsrc2">img/qq.gif</a>
+			<a href="javascript:void(0);" class="imgsrc2">img/Tulips.jpg</a>
+		</div>
+		<script type="text/javascript" src="http://static.daydao.com/static/common/plugins/jquery-1.11.1.min.js?v=_VERSION_"></script>
+		<script type="text/javascript" src="http://static.daydao.com/static/common/plugins/sea.js?v=_VERSION_"></script>
+		<script type="text/javascript">
+
+            var gMain = {
+                version: 1,
+                jsdir: 'static'
+            };
+
+            seajs.config({
+                charset: 'utf-8'
+                ,map: [[ /^(.*\.(?:css|js|html))(.*)$/i, '$1?v=_VERSION_'+'-'+gMain.version]]  //加上版本号，清缓存用
+                //模块路径配置
+                //公共路径
+                ,paths:{
+                    "commonStaticDirectory":"//static.daydao.com/"+gMain.jsdir +"/common"
+                }
+            });
+
+            seajs.use(['commonStaticDirectory/plugins/piczoom/imgzoom.js'],function(imgzoom){
+                var imgZoom = $('img').imgZoom();
+
+                $('#btn').click(function(){
+                    imgZoom.show(1);
+                });
+
+                //--------------------
+                var imgZoom2 = new imgzoom({
+                    src: ['img/2.jpg', 'img/qq.gif', 'img/Tulips.jpg']
+                });
+                $('.imgsrc').click(function(){
+                    var index = $(this).index();
+                    imgZoom2.show(index)
+                });
+
+                //------------
+                $('.imgsrc2').click(function(){
+                    var $this = $(this);
+                    new imgzoom({
+                        src: $this.text(),
+                        autoShow: true
+                    });
+                });
+            });
+		</script>
+	</body>
+</html>

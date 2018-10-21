@@ -1,0 +1,150 @@
+@charset "utf-8";
+#recruitRecord{
+}
+#recruitRecord .recruit-record{
+    overflow: hidden;
+    background: #F0F0F0;
+}
+#recruitRecord .recruit-record .recruit-record-title{
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 3.3rem;
+    background: url("../images/recruit-bg.png") #FFF center top no-repeat;
+    text-align: center;
+    background-size:100% 1.9rem ;
+    /*position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 99999;*/
+}
+#recruitRecord .recruit-record .recruit-record-title img{
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    vertical-align: bottom;
+    border: 0.01rem solid #E3E3E3;
+    display: inline-block;
+    margin-top: 0.58rem;
+}
+#recruitRecord .recruit-record .recruit-record-title p .name{
+    font-size: 0.32rem;
+    line-height: 0.45rem;
+    color: #1C222B;
+    display: inline-block;
+    margin-top: 0.12rem;
+}
+#recruitRecord .recruit-record .recruit-record-title p .sex0{
+    width: 0.22rem;
+    height: 0.22rem;
+    background-size:100% 100%;
+    display: inline-block;
+    margin-right: 0.09rem;
+}
+#recruitRecord .recruit-record .recruit-record-title p .sex1{
+    width: 0.22rem;
+    height: 0.22rem;
+    background: url("../images/sex1.png") no-repeat;
+    background-size:100% 100%;
+    display: inline-block;
+    margin-left: 0.09rem;
+}
+#recruitRecord .recruit-record .recruit-record-title p .sex2{
+    width: 0.22rem;
+    height: 0.22rem;
+    background: url("../images/sex2.png") no-repeat;
+    background-size:100% 100%;
+    display: inline-block;
+    margin-left: 0.09rem;
+}
+#recruitRecord .recruit-record .recruit-record-title p.info{
+    line-height: 0.33rem;
+    color: #666;
+    font-size: 0.24rem;
+    margin-top: 0.05rem;
+}
+#recruitRecord .recruit-record .recruit-record-body{
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0 0.3rem 0.3rem;
+    /*margin-top: 3.3rem;*/
+}
+#recruitRecord .recruit-record .recruit-record-body ul li{
+    box-sizing: border-box;
+    position: relative;
+    padding-top: 1rem;
+}
+#recruitRecord .recruit-record .recruit-record-body ul li .content{
+    width: 100%;
+    background: #FFF;
+    border-radius: 0.08rem;
+    box-shadow: 0 0 0.14rem 0 #CCC;
+    color: #9999A6;
+    box-sizing: border-box;
+    padding: 0.25rem;
+    font-size: 0.24rem;
+}
+#recruitRecord .recruit-record .recruit-record-body ul li .content b{
+    font-weight: normal;
+}
+#recruitRecord .recruit-record .recruit-record-body ul li span{
+    display: inline-block;
+}
+#recruitRecord .recruit-record .recruit-record-body ul li span.name{
+    line-height: 0.33rem;
+    color: #666;
+    margin-bottom: 0.1rem;
+}
+#recruitRecord .recruit-record .recruit-record-body ul li span.name b{
+    color: #296695;
+}
+#recruitRecord .recruit-record .recruit-record-body ul li span.date{
+    line-height: 0.33rem;
+    color: #222;
+    margin-bottom: 0.1rem;
+}
+#recruitRecord .recruit-record .recruit-record-body ul li span.date b{
+    color: #666;
+}
+#recruitRecord .recruit-record .recruit-record-body ul li p{
+    color: #222;
+    line-height: 0.33rem;
+}
+#recruitRecord .recruit-record .recruit-record-body ul li p b{
+    color: #666;
+}
+#recruitRecord .recruit-record .recruit-record-body ul li::before{
+    content: "";
+    position: absolute;
+    width: 0.15rem;
+    height: 0.15rem;
+    background: #FF695D;
+    border-radius: 50%;
+    left: 0.1rem;
+    top: 0.5rem;
+    z-index: 9;
+}
+#recruitRecord .recruit-record .recruit-record-body ul li .time{
+    background: #D2D2D2;
+    border-radius: 0.04rem;
+    width: 2.65rem;
+    height: 0.38rem;
+    text-align: center;
+    color: #FFF;
+    display: block;
+    position: absolute;
+    font-size: 0.24rem;
+    left: 0.42rem;
+    top:0.4rem;
+    line-height: 0.42rem;
+}
+#recruitRecord .recruit-record .recruit-record-body ul li::after{
+    content: "";
+    width: 0.02rem;
+    height: 1rem;
+    position: absolute;
+    background: #FEC17C;
+    left: 0.16rem;
+    top:0;
+}

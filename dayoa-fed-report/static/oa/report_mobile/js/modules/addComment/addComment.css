@@ -1,0 +1,27 @@
+#comment_report{
+    width: 100%;
+    height: 100%;
+    background: #f2f2f2;
+    box-sizing: border-box;
+}
+#comment_report textarea{
+    width: 100%;
+    height: 192px;
+    background: #fff;
+    border: none;
+    resize: none;
+    font-size: 13px;
+    padding: 10px;
+    text-align: justify;
+}
+#comment_report .comment_sure{
+    width: 5.8rem;
+    height: 44px;
+    background: #FF7123;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 0.08rem;
+    text-align: center;
+    line-height: 44px;
+    margin: 20px auto;
+}

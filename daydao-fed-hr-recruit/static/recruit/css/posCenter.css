@@ -1,0 +1,101 @@
+@charset "utf-8";
+/*表格页签选项卡开始*/
+#recruitPosCenter .base_mmg_tabs{
+    overflow: hidden;
+    margin-top: 2px;
+    text-align: center;
+    position: relative;
+}
+#recruitPosCenter .base_mmg_tabs .return_pos{
+    color: #666;
+    font-size: 20px;
+    left: 0;
+    position: absolute;
+}
+#recruitPosCenter .base_mmg_tabs a.return_pos:hover{
+    color:#ed6c2b;
+}
+#recruitPosCenter .base_mmg_tabs ul{
+    display: inline-block;
+    overflow: hidden;
+}
+#recruitPosCenter .base_mmg_tabs ul li{
+    float: left;
+    width: 110px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-right: 1px solid #e0e1e2;
+}
+#recruitPosCenter .base_mmg_tabs ul li:last-child{
+    border-right:none;
+}
+
+#recruitPosCenter .base_mmg_tabs ul li.current{
+}
+#recruitPosCenter .base_mmg_tabs ul li.current a{
+    color:#ed6c2b;
+}
+#recruitPosCenter .base_mmg_tabs ul li a{
+    color: #9e9e9e;
+    font-size: 15px;
+    display: block;
+}
+/*表格页签选项卡结束*/
+#recruitPosCenter .body{
+    overflow: hidden;
+    margin-top: 20px;
+}
+#recruitPosCenter .body .body-1{
+    background:#FEF9F7;
+    height: 159px;
+    overflow: hidden;
+    width: 100%;
+}
+#recruitPosCenter .body .body-1 span{
+    display: block;
+    text-indent: 5px;
+}
+#recruitPosCenter .body .body-1 .span-1{
+    color: #909090;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 18px;
+}
+#recruitPosCenter .body .body-1 .span-2{
+    color: #333;
+    font-size: 36px;
+    line-height: 50px;
+    margin-top: 5px;
+}
+#recruitPosCenter .body .body-1 .span-3{
+    color: #909090;
+    font-size: 16px;
+    line-height: 22px;
+    color: #151515;
+}
+#recruitPosCenter .body .body-1 .span-3 b{
+    color:#ed6c2b;
+}
+#recruitPosCenter .body .body-1 .span-4{
+    color: #909090;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 10px;
+}
+#recruitPosCenter .body .body-2{
+    overflow:hidden;
+}
+#recruitPosCenter .body .body-2 span{
+    font-size: 16px;
+    color: #333;
+    line-height: 22px;
+    margin-bottom: 5px;
+    display: block;
+    margin-top: 30px;
+}
+#recruitPosCenter .body .body-2 p{
+    font-size: 14px;
+    color: #666;
+    line-height: 20px;
+}

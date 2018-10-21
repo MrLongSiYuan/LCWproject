@@ -1,0 +1,202 @@
+<div class="workflow_formPreview clearfix">
+	<div :class="item.field_type == 'group'?'form_item clearfix group_item':'form_item clearfix'" v-for="item in afields" v-if="item.field_type != 'default_field'" :data-class="item.data_class" :style="{'margin-top': (item.field_type == 'group' && item.data_class && item.data_class == 'new-group') ? '0':'','border-top':(item.field_type == 'group' && item.data_class && item.data_class == 'new-group') ? '0':''}">
+		<div class="form_item_box form_{{item.field_type}}_box">
+			<div class="form_item_label label_{{item.field_type}}" v-if="!(item.field_type == 'group' && item.group && item.group.fields)">{{item.label}}</div>
+			<!--明细的label-->
+			<div class="form_item_label label_{{item.field_type}}" v-if="item.field_type == 'group' && item.group && item.group.fields">{{item.label}}：{{item.describe}}</div>
+			<div class="form_content form_content_{{item.field_type}}">
+				<!--单行文本/无值-->
+				<div class="f_input f_{{item.field_type}}" v-if="item.field_type == 'text' && !item.value">
+					<input type="text" name="{{item.field_name}}" class="text" :placeholder="item.required == 'true'?item.describe+'(必填)':item.describe" @focus="inputOnfocus($event)" @blur="inputOnblur($event)">
+				</div>
+				<!--单行文本/有值-->
+				<div class="f_input f_{{item.field_type}}" v-if="item.field_type == 'text' && item.value">
+					<input type="text" name="{{item.field_name}}" class="text" :placeholder="item.required == 'true'?item.describe+'(必填)':item.describe" value="{{item.value}}" @focus="inputOnfocus($event)" @blur="inputOnblur($event)">
+				</div>
+				<!--*******************************************************************************************-->
+				<!--多行文本/无值-->
+				<div class="f_input f_{{item.field_type}}" v-if="item.field_type == 'paragraph' && !item.value">
+					<textarea name="{{item.field_name}}" @input="inputTextarea($event)" :placeholder="item.required == 'true'?item.describe+'(必填)':item.describe" @focus="inputOnfocus($event)" @blur="inputOnblur($event)"></textarea>
+				</div>
+				<!--多行文本/有值-->
+				<div class="f_input f_{{item.field_type}}" v-if="item.field_type == 'paragraph' && item.value">
+					<textarea name="{{item.field_name}}" @input="inputTextarea($event)" :placeholder="item.required == 'true'? item.describe+'(必填)':item.describe" @focus="inputOnfocus($event)" @blur="inputOnblur($event)">{{{item.value}}}</textarea>
+				</div>
+				<!--*******************************************************************************************-->
+				<!--日期控件/无值-->
+				<div class="f_input f_{{item.field_type}}" v-if="item.field_type == 'date' && !item.value">
+					<input type="text" name="{{item.field_name}}" class="text Wdate" readonly :placeholder="item.required == 'true'? item.describe+'(必填)':item.describe" data-type="{{item.field_options.date_type}}">
+					<Icon type="ios-arrow-right"></Icon>
+				</div>
+				<!--日期控件/有值-->
+				<div class="f_input f_{{item.field_type}}" v-if="item.field_type == 'date' && item.value">
+					<input type="text" name="{{item.field_name}}" class="text Wdate" readonly value="{{item.value}}" :placeholder="item.required == 'true'? item.describe+'(必填)':item.describe" data-type="{{item.field_options.date_type}}">
+					<Icon type="ios-arrow-right"></Icon>
+				</div>
+				<!--*******************************************************************************************-->
+				<!--日期区间控件-->
+				<!--开始时间无值-->
+				<div class="f_input f_{{item.field_type}}_startTime" v-if="item.field_type == 'datearea' && !item.startValue">
+					<input type="text" name="{{item.field_name}}" class="text Wdate startDate" readonly :placeholder="item.required == 'true'? item.describe+'(必填)':item.describe" data-type="{{item.field_options.date_type}}">
+					<Icon type="ios-arrow-right"></Icon>
+				</div>
+				<!--开始时间有值-->
+				<div class="f_input f_{{item.field_type}}_startTime" v-if="item.field_type == 'datearea' && item.startValue">
+					<input type="text" name="{{item.field_name}}" class="text Wdate startDate" readonly value="{{item.startValue}}" :placeholder="item.required == 'true'? item.describe+'(必填)':item.describe" data-type="{{item.field_options.date_type}}">
+					<Icon type="ios-arrow-right"></Icon>
+				</div>
+				<!--结束时间无值-->
+				<div class="f_input f_{{item.field_type}}_endTime" v-if="item.field_type == 'datearea' && !item.endValue">
+					<span class="endTime">{{item.label2}}</span>
+					<input type="text" name="{{item.field_name}}" class="text Wdate endDate" readonly :placeholder="item.required == 'true'? item.describe+'(必填)':item.describe" data-type="{{item.field_options.date_type}}">
+					<Icon type="ios-arrow-right"></Icon>
+				</div>
+				<!--结束时间有值-->
+				<div class="f_input f_{{item.field_type}}_endTime" v-if="item.field_type == 'datearea' && item.endValue">
+					<span class="endTime">{{item.label2}}</span>
+					<input type="text" name="{{item.field_name}}" class="text Wdate endDate" readonly value="{{item.endValue}}" :placeholder="item.required == 'true'? item.describe+'(必填)':item.describe" data-type="{{item.field_options.date_type}}">
+					<Icon type="ios-arrow-right"></Icon>
+				</div>
+				<!--*******************************************************************************************-->
+				<!--数字输入/无值-->
+				<div class="f_input f_{{item.field_type}}" v-if="item.field_type == 'number' && !item.value" >
+					<input type="number"  name="{{item.field_name}}" class="text" v-on:input.prevent="capitalShow($event,item)" :placeholder="item.required == 'true'?item.describe+'(必填)':item.describe" @focus="inputOnfocus($event)" @blur="inputOnblur($event)">
+				</div>
+				<!--数字输入/有值-->
+				<div class="f_input f_{{item.field_type}}" v-if="item.field_type == 'number' && item.value">
+					<input type="number" name="{{item.field_name}}"  class="text" v-on:input.prevent="capitalShow($event,item)" :placeholder="item.required == 'true'? item.describe+'(必填)':item.describe" v-bind="{value:item.value - 0}" @focus="inputOnfocus($event)" @blur="inputOnblur($event)">
+				</div>
+				<!--*******************************************************************************************-->
+				<!--单选控件-->
+				<div class="f_input f_{{item.field_type}}" v-if="item.field_type == 'radio' && item.field_options && item.field_options.options && !item.value">
+					<input type="text" id="{{item.field_name}}-radio-{{$index}}" readonly name="{{item.field_name}}" :placeholder="item.required == 'true'?item.describe+'(必填)':item.describe"   v-on:click="initRadioType($event,item.field_options.options)" data-sid="">
+					<Icon type="ios-arrow-right"></Icon>
+				</div>
+				<!--单选控件/有值-->
+				<div class="f_input f_{{item.field_type}}" v-if="item.field_type == 'radio' && item.field_options && item.field_options.options && item.value">
+					<input type="text" id="{{item.field_name}}-radio-{{$index}}" readonly name="{{item.field_name}}" :placeholder="item.required == 'true'? item.describe+'(必填)':item.describe"   v-on:click="initRadioType($event,item.field_options.options)" value="{{item.value}}" data-sid="">
+					<Icon type="ios-arrow-right"></Icon>
+				</div>
+				<!--*******************************************************************************************-->
+				<!--多选控件-->
+				<div class="f_input f_{{item.field_type}}" v-if="item.field_type == 'checkboxes' && item.field_options && item.field_options.options && !item.value">
+					<input type="text" id="{{item.field_name}}-radio-{{$index}}" readonly name="{{item.field_name}}" :placeholder="item.required == 'true'? item.describe+'(必填)':item.describe"  @click="showOrHideCover($event,item.field_name,item.label,item.field_options.options)">
+					<Icon type="ios-arrow-right"></Icon>
+				</div>
+				<!--多选控件/有值-->
+				<div class="f_input f_{{item.field_type}}" v-if="item.field_type == 'checkboxes' && item.field_options && item.field_options.options  && item.value">
+					<input type="text" id="{{item.field_name}}-radio-{{$index}}" readonly name="{{item.field_name}}" :placeholder="item.required == 'true'? item.describe+'(必填)':item.describe"  @click="showOrHideCover($event,item.field_name,item.label,item.field_options.options)" value="{{item.value}}">
+					<Icon type="ios-arrow-right"></Icon>
+				</div>
+				<!--*******************************************************************************************-->
+				<!--图片上传-->
+				<div class="f_input f_{{item.field_type}}" v-if="item.field_type == 'pic'">
+					<div class="most_pic_number">最多9张 <span v-if="item.required == 'true'">(必填)</span></div>
+					<!--图片预览区/无值-->
+					<div class="addPicPreview" data-name="{{item.field_name}}">
+						<div class="imgPreview" v-for="oFile in oFileList[item.field_name]" track-by="$index" data-uuid="{{oFile.uuid}}" v-if="oFileList[item.field_name]">
+							<!--上传图片-->
+							<a target="_blank" v-bind:href="oFile.url?'javascript:void(0)':'javascript:void(0)'" title="{{oFile.fileName}} ，点击打开预览大图" v-if="oFile.fileName"><img v-bind:src="oFile.url" class="preview"></a>
+							<!--草稿图片-->
+							<a target="_blank" v-bind:href="oFile.url?'javascript:void(0)':'javascript:void(0)'" title="点击打开预览大图" v-if="!oFile.fileName"><img v-bind:src="oFile.url" class="preview"></a>
+							<div class="loading preview" v-show="oFile.uploadStatus != 'success'" v-if="oFile.fileName"><img v-if="oFile.uploadStatus != 'faild'" v-bind:src="gMain.baseStaticPath +'common/images/loading-2.gif'" alt=""><span v-if="oFile.uploadStatus == 'faild'" style="color: red;">失败</span></div>
+							<div class="del" title="删除" v-on:click.prevent="delFilePreview(item.field_name,$index)"></div>
+						</div>
+						<div class="addPic" v-if="!oFileList[item.field_name] || (oFileList[item.field_name] && oFileList[item.field_name].length < 9)">
+							<div class="img_box">
+								<img name="{{item.field_name}}" :src="gMain.baseStaticPath+'oa/report_mobile/images/img_icon_add_def@3x.png'" alt="" @click.prevent="uploadImg($event)">
+							</div>
+							<!--<input type="file" name="{{item.field_name}}" accept="image/gif,image/jpeg,image/jpg,image/png,image/bmp" v-on:change.prevent="uploadFile($event,'img')" multiple="multiple">-->
+						</div>
+					</div>
+					<!--<span style="color: red;vertical-align: middle;">（限制大小2M）</span>-->
+				</div>
+				<!--*******************************************************************************************-->
+				<!--附件上传-->
+				<div class="f_input f_{{item.field_type}}" v-if="item.field_type == 'file'">
+					<!--文件预览区-->
+					<div class="addFilePreview" data-name="{{item.field_name}}">
+						<ul class="filePreviewList" v-if="oFileList[item.field_name]" track-by="$index">
+							<li v-for="oFile in oFileList[item.field_name]" data-uuid="{{oFile.uuid}}">
+								<span class="filename" title="{{oFile.fileName}}">{{oFile.fileName}}</span>
+								<!--上传文件-->
+								<span class="size" v-if="oFile.sizeWithUnit" style="display: none">{{oFile.sizeWithUnit}}</span>
+								<span class="fileSort" style="display: none;">{{oFile.fileSort}}</span>
+								<!--草稿文件-->
+								<span class="size" v-if="!oFile.sizeWithUnit" style="display: none">{{oFile.size}}</span>
+								<span class="status" v-bind:style="{color:oFile.uploadStatus=='success'?'green':'red'}" v-if="oFile.uploadStatus">{{{'uploading':'上传中','faild':'上传失败','success':'上传完成'}[oFile.uploadStatus]}}</span>
+								<div class="del iconfont_dayoa" title="删除" v-on:click.prevent="delFilePreview(item.field_name,$index)">
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="addFile">
+						<img  :src="gMain.baseStaticPath+'oa/report_mobile/images/list_icon_add_def@3x.png'" alt="">
+						<input type="text" name="{{item.field_name}}" readonly data-fileSize="{{item.file_size}}" @click.prevent="uploadFile($event)">
+						<!--<input type="file" name="{{item.field_name}}" data-fileSize="{{item.file_size}}" v-on:change.prevent="uploadFile($event,'file')" multiple="multiple">-->
+					</div>
+					<!--<span style="color: red;vertical-align: middle;">（限制大小{{item.file_size}}M）</span>-->
+				</div>
+				<!--*******************************************************************************************-->
+				<!--明细-->
+				<div class="f_input f_{{item.field_type}}" v-if="item.field_type == 'group' && item.group && item.group.fields" :data-name="item.field_name">
+					<dl class="f_group_wrap">
+						<dd>
+							<form-preview v-bind:afields="item.group.fields"></form-preview>
+						</dd>
+						<dd class="add_del_group" v-bind:style="{'text-align':'center','border-top':'1px solid #d2d2d2','padding-top':(item.data_can_add == 'noadd' ? '0':'14px')}">
+							<a class="add_group" href="javascript:void(0)" v-on:click.prevent="addGroupItem($event,item)" v-if="item.data_can_add == 'canadd'">添加</a>
+							<a class="del_group" href="javascript:void(0)" v-on:click.prevent="removeGroupItem($event,item)" v-if="item.field_name.indexOf('_new_') != -1" style="margin-left: 20px;"></a>
+						</dd>
+					</dl>
+				</div>
+
+				<!--说明-->
+				<div class="f_input f_{{item.field_type}}" v-if="item.field_type == 'remark'">
+					<div class="f_remark_wrap">
+						<div class="remark_cover_wrap">
+							<div class="remark_cover_footer">
+								<div class="close_sure" @click.stop="slideDownRemark">关闭</div>
+								<div class="f_remark_describe f_remark_nowrap">{{item.describe}}</div>
+							</div>
+						</div>
+						<div class="open_detail" v-on:click.prevent="slideUpRemark($event)" data-isslideup="false">
+							<Icon type="ios-arrow-right"></Icon>
+						</div>
+					</div>
+				</div>
+
+				<!--两列控件-->
+				<div class="f_input f_{{item.field_type}}" v-if="item.field_type == 'twoColumns' && ((item.firstCol && item.firstCol.fields) || (item.secondCol && item.secondCol.fields))">
+					<div class="f_twoColumns_wrap">
+						<div class="firstCol" v-if="item.firstCol && item.firstCol.fields">
+							<form-preview v-bind:afields="item.firstCol.fields"></form-preview>
+						</div>
+						<div class="secondCol" v-if="item.secondCol && item.secondCol.fields">
+							<form-preview v-bind:afields="item.secondCol.fields"></form-preview>
+						</div>
+					</div>
+				</div>
+
+				<!--三列控件-->
+				<div class="f_input f_{{item.field_type}}" v-if="item.field_type == 'threeColumns' && ((item.firstCol && item.firstCol.fields) || (item.secondCol && item.secondCol.fields)|| (item.thirdCol && item.thirdCol.fields))">
+					<div class="f_threeColumns_wrap">
+						<div class="firstCol" v-if="item.firstCol && item.firstCol.fields">
+							<form-preview v-bind:afields="item.firstCol.fields"></form-preview>
+						</div>
+						<div class="secondCol" v-if="item.secondCol && item.secondCol.fields">
+							<form-preview v-bind:afields="item.secondCol.fields"></form-preview>
+						</div>
+						<div class="thirdCol" v-if="item.thirdCol && item.thirdCol.fields">
+							<form-preview v-bind:afields="item.thirdCol.fields"></form-preview>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="capitalShow" data-name="{{item.field_name}}" v-if="item.field_type == 'number' && item.capital == 'true'">
+				大写：<span>{{item.capValue}}</span>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,7 @@
+.in_right-transition{
+    right: 0;
+    transition: all 0.8s;
+}
+.in_right-enter,.in_right-leave{
+    right: -100%;
+}

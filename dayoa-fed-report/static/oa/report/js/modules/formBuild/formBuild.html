@@ -1,0 +1,537 @@
+<div class="formBuilder">
+	<div class="formBuilderBox">
+		<div class="formBuilderBox-left">
+			<ul id="formBuilder-myTab-fieldView" class="nav nav-tabs">
+				<li data-to="tabLineType"><a href="javascript:void(0)">行列控件</a></li>
+				<li data-to="tabFieldType" class="active"><a href="javascript:void(0)">字段控件</a></li>
+			</ul>
+			<div id="formBuilder-myTabContent-fieldView" class="tab-content">
+				<div class="tab-pane fade" id="tabLineType">
+					<!-- 行列控件 -->
+					<ul id="viewRowFields">
+						<li data-type="twoColumns" class="filed-item clearfix row-fields-item">一行两列</li>
+						<li data-type="threeColumns" class="filed-item clearfix row-fields-item">一行三列</li>
+					</ul>
+				</div>
+				<div class="tab-pane fade in active" id="tabFieldType">
+					<!-- 字段控件 -->
+					<ul id="viewFieldView" class="">
+						<li data-type="text" class="filed-item">
+							<div class="handle">
+								<span class="fieldsIcon"></span>
+								<span class="fieldsName">单行文本</span>
+							</div>
+						</li>
+						<li data-type="paragraph" class="filed-item">
+							<div class="handle">
+								<span class="fieldsIcon"></span>
+								<span class="fieldsName">多行文本</span>
+							</div>
+						</li>
+						<li data-type="date" class="filed-item">
+							<div class="handle">
+								<span class="fieldsIcon"></span>
+								<span class="fieldsName">日期</span>
+							</div>
+						</li>
+						<li data-type="datearea" class="filed-item">
+							<div class="handle">
+								<span class="fieldsIcon"></span>
+								<span class="fieldsName">日期区间</span>
+							</div>
+						</li>
+						<li data-type="number" class="filed-item">
+							<div class="handle">
+								<span class="fieldsIcon"></span>
+								<span class="fieldsName">数字输入</span>
+							</div>
+						</li>
+						<li data-type="radio" class="filed-item">
+							<div class="handle">
+								<span class="fieldsIcon"></span>
+								<span class="fieldsName">单选框</span>
+							</div>
+						</li>
+						<li data-type="checkboxes" class="filed-item">
+							<div class="handle">
+								<span class="fieldsIcon"></span>
+								<span class="fieldsName">多选框</span>
+							</div>
+						</li>
+						<li data-type="pic" class="filed-item">
+							<div class="handle">
+								<span class="fieldsIcon"></span>
+								<span class="fieldsName">图片</span>
+							</div>
+						</li>
+						<li data-type="file" class="filed-item">
+							<div class="handle">
+								<span class="fieldsIcon"></span>
+								<span class="fieldsName">附件</span>
+							</div>
+						</li>
+						<li data-type="group" class="filed-item">
+							<div class="handle">
+								<span class="fieldsIcon"></span>
+								<span class="fieldsName"><!--分组-->明细</span>
+							</div>
+						</li>
+						<li data-type="remark" class="filed-item">
+							<div class="handle">
+								<span class="fieldsIcon"></span>
+								<span class="fieldsName">说明</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="formBuilderBox-center form">
+			<div id="builderViewHeader">编辑区域 (<span style="color: #999;">拖拽控件到此区域</span>)</div>
+			<!--表单编辑缺省字段区域-->
+			<div id="builderDefaultView">
+				<table>
+					<tr>
+						<td><div class="text">姓名</div><div class="des">缺省字段</div></td>
+						<td><div class="text">部门</div><div class="des">缺省字段</div></td>
+						<td><div class="text">发起时间</div><div class="des">缺省字段</div></td>
+					</tr>
+				</table>
+			</div>
+			<!--表单编辑拖拽区域-->
+			<div id="builderView" class="builderView">
+
+			</div>
+		</div>
+		<div class="formBuilderBox-right">
+			<ul id="formBuilder-myTab-fieldEdit" class="nav nav-tabs">
+				<li data-to="formBuilderEdit" class="active"><a href="javascript:void(0)">基本信息</a></li>
+				<li data-to="editFieldView"><a href="javascript:void(0)">字段属性</a></li>
+			</ul>
+			<div id="formBuilder-myTabContent-fieldEidt" class="tab-content">
+				<div class="tab-pane fade in active" id="formBuilderEdit">
+					<!-- 表单标题、图标、说明设置 -->
+					<!--隐藏信息-->
+					<input type="hidden" name="form_id" v-model="form_id">
+					<input type="hidden" name="uuid" v-model="uuid" >
+
+					<div class="edit-item">
+						<div class="edit-item-title">表单名称 <span class="verify" style="font-weight: normal;color: #ccc;">最多10个字</span></div>
+						<input class="edit-input" type="text" name="form_name" v-model="form_name" maxlength="10" />
+					</div>
+
+					<div class="edit-item">
+						<div class="edit-item-title">适用范围 <span class="verify" style="font-weight: normal;color: #ccc;">点击选择</span></div>
+						<div class="selectOrgList" style="position: relative;" v-on:click="selectOrgList" v-bind="{'title':org_names}">
+							<input class="edit-input" type="text" name="org_ids" v-model="org_names" data-ids="{{org_ids}}" readonly style="cursor: pointer;" placeholder="选择适用范围">
+							<span class="icon iconfont_header" style="position: absolute; right: -1px; top: 5px; transform: rotate(-90deg); font-size: 16px; height: 24px; line-height: 24px; width: 30px; text-align: center; background: #fff;">&#xe638;</span>
+						</div>
+					</div>
+
+					<div class="edit-item">
+						<!--<div class="edit-item-title">流程类型 <span class="verify" style="font-weight: normal;color: #ccc;">点击选择</span></div>-->
+						<!--<div class="workflow_type_select clearfix">-->
+							<!--<input class="edit-input" type="text" name="form_type" v-model="form_type" readonly data-id="{{form_type_id}}" v-on:click="isHiddenSelect = !isHiddenSelect">-->
+							<!--<div class="select_ico iconfont_dayhr_base" title="选择" v-on:click="isHiddenSelect = !isHiddenSelect">&#xe600;</div>-->
+							<!--<div class="select" v-bind:class="{'hidden':isHiddenSelect}">-->
+								<!--<ul class="select_ul">-->
+									<!--<li v-for="item in form_type_list">-->
+										<!--<div class="beautifulRadio">-->
+											<!--<input type="radio" id="form_type_list_{{$index}}" name="form_type_radio" value="{{item.name}}" v-bind="{'checked':item.name==form_type}" data-id="{{item.type_id}}" style="vertical-align: middle"><label for="form_type_list_{{$index}}" title="{{item.posName}}">{{item.name}}</label>-->
+										<!--</div>-->
+										<!--<span class="operation">-->
+											<!--<a href="javascript:;" class="add" v-on:click="addFormType" v-bind:style="{'visibility':$index==form_type_list.length-1?'visible':'hidden'}">增加</a>-->
+											<!--<a href="javascript:;" class="sub" v-bind:style="{'visibility':form_type_list.length==1?'hidden':'visible'}" v-on:click.prevent="removeFormType(item)">删除</a>-->
+										<!--</span>-->
+									<!--</li>-->
+								<!--</ul>-->
+								<!--<div class="buttons">-->
+									<!--<input type="button" class="flat-button flat-medium flat-white select_cancel" v-on:click="isHiddenSelect = true" value="取消">-->
+									<!--<input type="button" class="flat-button flat-medium flat-yellow select_ok" v-on:click="okSelectFormType" value="确定">-->
+								<!--</div>-->
+							<!--</div>-->
+						<!--</div>-->
+
+					</div>
+
+					<div class="edit-item">
+						<div class="edit-item-title">说明 <span class="verify" style="font-weight: normal;color: #ccc;">最多200个字</span></div>
+						<textarea name="remark" class="edit-textarea" v-model="remark" maxlength="200"></textarea>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="editFieldView">
+					<!-- 控件属性编辑 -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 表单模板 -->
+<script type="text/html" id="form_items_template">
+	<!-- 单行文本 -->
+	{{each fields as item}}
+		{{if item.field_type == 'text'}} {{include "view_text" item}} {{/if}}
+		<!-- 多行文本 -->
+		{{if item.field_type == 'paragraph'}} {{include "view_paragraph" item}} {{/if}}
+		<!-- 多选 -->
+		{{if item.field_type == 'checkboxes'}} {{include "view_checkboxes" item}} {{/if}}
+		<!-- 单选 -->
+		{{if item.field_type == 'radio'}} {{include "view_radio" item}} {{/if}}
+		<!-- 日期 -->
+		{{if item.field_type == 'date'}} {{include "view_date" item}} {{/if}}
+		<!-- 日期区间 -->
+		{{if item.field_type == 'datearea'}} {{include "view_datearea" item}} {{/if}}
+		<!-- 数字 -->
+		{{if item.field_type == 'number'}} {{include "view_number" item}} {{/if}}
+		<!-- 图片 -->
+		{{if item.field_type == 'pic'}} {{include "view_pic" item}} {{/if}}
+		<!-- 附件 -->
+		{{if item.field_type == 'file'}} {{include "view_file" item}} {{/if}}
+		<!-- 分组 -->
+		{{if item.field_type == 'group'}} {{include "view_group" item}} {{/if}}
+		<!-- 说明 -->
+		{{if item.field_type == 'remark'}} {{include "view_remark" item}} {{/if}}
+		<!--两列控件-->
+		{{if item.field_type == 'twoColumns'}} {{include "view_twoColumns" item}} {{/if}}
+		<!--三列控件-->
+		{{if item.field_type == 'threeColumns'}} {{include "view_threeColumns" item}} {{/if}}
+	{{/each}}
+</script>
+<!-- 单行文本 -->
+<script type="text/html" id="view_text">
+	<div id="{{cid}}" class="filed-item clearfix" data-id="{{cid}}" data-fieldName="{{field_name}}" data-fieldType="{{field_type}}" data-required="{{required}}" data-fieldoptions='{{field_options | jsonTostring}}' data-label="{{label | trim}}" data-describe="{{describe}}">
+		<div class="js-remove"></div>
+		<div class="handle">
+			<div class="text ">{{label}}</div>
+			<div class="des">
+				<span class="describe">{{describe}}</span>
+				<span class="required">{{if required == "true"}}(必填){{/if}}</span>
+			</div>
+		</div>
+	</div>
+</script>
+<!-- 多行文本 -->
+<script type="text/html" id="view_paragraph">
+	<div id="{{cid}}" class="filed-item clearfix paragraph" data-id="{{cid}}" data-fieldName="{{field_name}}" data-fieldType="{{field_type}}" data-required="{{required}}" data-fieldoptions='{{field_options | jsonTostring}}' data-label="{{label | trim}}" data-describe="{{describe}}">
+		<div class="js-remove"></div>
+		<div class="handle">
+			<div class="text ">{{label}}</div>
+			<div class="des">
+				<span class="describe">{{describe}}</span>
+				<span class="required">{{if required == "true"}}(必填){{/if}}</span>
+			</div>
+		</div>
+	</div>
+</script>
+<!-- 多选 -->
+<script type="text/html" id="view_checkboxes">
+	<div id="{{cid}}" class="filed-item clearfix choose" data-id="{{cid}}" data-fieldName="{{field_name}}" data-fieldType="{{field_type}}" data-required="{{required}}" data-fieldoptions='{{field_options | jsonTostring}}' data-label="{{label | trim}}" data-describe="{{describe}}">
+		<div class="js-remove"></div>
+		<div class="handle">
+			<div class="text ">{{label}}</div>
+			<div class="des">
+				<span class="required">{{if required == "true"}}(必填){{/if}}</span>
+				<span class="selectword">选择 &gt;</span>
+			</div>
+		</div>
+	</div>
+</script>
+<!-- 单选 -->
+<script type="text/html" id="view_radio">
+	<div id="{{cid}}" class="filed-item clearfix choose" data-id="{{cid}}" data-fieldName="{{field_name}}" data-fieldType="{{field_type}}" data-required="{{required}}" data-fieldoptions='{{field_options | jsonTostring}}' data-label="{{label | trim}}" data-describe="{{describe}}">
+		<div class="js-remove"></div>
+		<div class="handle">
+			<div class="text ">{{label}}</div>
+			<div class="des">
+				<span class="required">{{if required == "true"}}(必填){{/if}}</span>
+				<span class="selectword">选择 &gt;</span>
+			</div>
+		</div>
+	</div>
+</script>
+<!-- 日期 -->
+<script type="text/html" id="view_date">
+	<div id="{{cid}}" class="filed-item clearfix choose" data-id="{{cid}}" data-fieldName="{{field_name}}" data-fieldType="{{field_type}}" data-required="{{required}}" data-fieldoptions='{{field_options | jsonTostring}}' data-label="{{label | trim}}" data-describe={{describe}}>
+		<div class="js-remove"></div>
+		<div class="handle">
+			<div class="text ">{{label}}</div>
+			<div class="des">
+				<span class="required">{{if required == "true"}}(必填){{/if}}</span>
+				<span class="describe">{{describe}}</span>
+			</div>
+		</div>
+	</div>
+</script>
+<!-- 日期区间 -->
+<script type="text/html" id="view_datearea">
+	<div id="{{cid}}" class="filed-item clearfix choose" data-id="{{cid}}" data-fieldName="{{field_name}}" data-fieldType="{{field_type}}" data-required="{{required}}" data-fieldoptions='{{field_options | jsonTostring}}' data-label="{{label | trim}}" data-label2="{{label2 | trim}}" data-describe="{{describe}}">
+		<div class="js-remove"></div>
+		<div class="handle">
+			<div class="text">{{label}}</div>
+			<div class="des">
+				<span class="required">{{if required == "true"}}(必填){{/if}}</span>
+				<span class="describe">{{describe}}</span>
+			</div>
+		</div>
+		<div class="line">&nbsp;</div>
+		<div class="handle">
+			<div class="text">{{label2}}</div>
+			<div class="des">
+				<span class="required">{{if required == "true"}}(必填){{/if}}</span>
+				<span class="describe">{{describe}}</span>
+			</div>
+		</div>
+	</div>
+</script>
+<!-- 数字 -->
+<script type="text/html" id="view_number">
+	<div id="{{cid}}" class="filed-item clearfix" data-id="{{cid}}" data-fieldName="{{field_name}}" data-fieldType="{{field_type}}" data-required="{{required}}" data-fieldoptions='{{field_options | jsonTostring}}' data-label="{{label | trim}}" data-describe="{{describe}}" data-capital="{{capital}}">
+		<div class="js-remove"></div>
+		<div class="handle">
+			<div class="text ">{{label}} </div>
+			<div class="des">
+				<span class="required">{{if required == "true"}}(必填){{/if}}</span>
+				<span class="describe">{{describe}}</span>
+			</div>
+		</div>
+		<div class="capitalShow" {{if capital == "true"}}style="display: block;"{{else}}style="display: none;"{{/if}} ><span id="capitalShowValue">叁仟元整（示例）</span></div>
+	</div>
+</script>
+<!-- 图片 -->
+<script type="text/html" id="view_pic">
+	<div id="{{cid}}" class="filed-item clearfix choose" data-id="{{cid}}" data-fieldName="{{field_name}}" data-fieldType="{{field_type}}" data-required="{{required}}" data-fieldoptions='{{field_options | jsonTostring}}' data-label="{{label | trim}}" data-describe="{{describe}}">
+		<div class="js-remove"></div>
+		<div class="handle">
+			<div class="text ">{{label}}</div>
+			<div class="des">
+				<span class="required">{{if required == "true"}}(必填){{/if}}</span>
+				<span class="selectword">选择 &gt;</span>
+			</div>
+		</div>
+	</div>
+</script>
+<!-- 附件 -->
+<script type="text/html" id="view_file">
+	<div id="{{cid}}" class="filed-item clearfix choose" data-id="{{cid}}" data-fieldName="{{field_name}}" data-fieldType="{{field_type}}" data-required="{{required}}" data-fieldoptions='{{field_options | jsonTostring}}' data-label="{{label | trim}}" data-describe="{{describe}}" data-filesize="{{file_size}}">
+		<div class="js-remove"></div>
+		<div class="handle">
+			<div class="text ">{{label}}</div>
+			<div class="des">
+				<span class="required">{{if required == "true"}}(必填){{/if}}</span>
+				<span class="selectword">&nbsp;选择 &gt;</span>
+				<span class="describe">{{describe}}</span>
+			</div>
+		</div>
+	</div>
+</script>
+
+<!-- 明细 -->
+<script type="text/html" id="view_group">
+	<div id="{{cid}}" class="filed-item clearfix group" data-id="{{cid}}" data-fieldName="{{field_name}}" data-fieldType="{{field_type}}" data-required="{{required}}" data-fieldoptions='{{field_options | jsonTostring}}' data-label="{{label | trim}}" data-describe="{{describe}}" data-isWithoutAddButton="{{isWithoutAddButton}}">
+		<div class="js-remove"></div>
+		<div class="handle">
+			<div class="group-title"><span>{{label}}</span></div>
+			<div class="describe-group">{{describe}}</div>
+			<div class="addbtn"><span {{if isWithoutAddButton=='true'}} style="display: none;" {{else}} style="display: block;" {{/if}}>+ 添加 </span></div>
+		</div>
+		<div style="height: 1px; overflow: hidden;">&nbsp;</div>
+		{{if group && group.fields && group.fields.length}}
+			{{include "form_items_template" group}}
+		{{/if}}
+	</div>
+</script>
+
+<!-- 说明 -->
+<script type="text/html" id="view_remark">
+	<div id="{{cid}}" class="filed-item clearfix" data-id="{{cid}}" data-fieldName="{{field_name}}" data-fieldType="{{field_type}}" data-fieldoptions='{{field_options | jsonTostring}}' data-label="{{label | trim}}" data-describe="{{describe}}">
+		<div class="js-remove"></div>
+		<div class="handle">
+			<div class="text ">{{label}}</div>
+			<div class="des">
+				<span class="describe">{{describe}}</span>
+			</div>
+		</div>
+	</div>
+</script>
+
+<!--两列控件-->
+<script type="text/html" id="view_twoColumns">
+	<div id="{{cid}}" class="filed-item clearfix" data-id="{{cid}}" data-fieldName="{{field_name}}" data-fieldType="{{field_type}}" data-required="{{required}}" data-fieldoptions='{{field_options | jsonTostring}}' data-label="{{label | trim}}" data-describe="{{describe}}">
+		<div class="js-remove"></div>
+		<div class="view_twoColumns_wrap">
+			<div class="left">
+				{{if firstCol && firstCol.fields && firstCol.fields.length}}
+					{{include "form_items_template" firstCol}}
+				{{/if}}
+			</div>
+			<!--缝隙--><div class="gap"></div>
+			<div class="right">
+				{{if secondCol && secondCol.fields && secondCol.fields.length}}
+					{{include "form_items_template" secondCol}}
+				{{/if}}
+			</div>
+		</div>
+	</div>
+</script>
+
+<!--三列控件-->
+<script type="text/html" id="view_threeColumns">
+	<div id="{{cid}}" class="filed-item clearfix" data-id="{{cid}}" data-fieldName="{{field_name}}" data-fieldType="{{field_type}}" data-required="{{required}}" data-fieldoptions='{{field_options | jsonTostring}}' data-label="{{label | trim}}" data-describe="{{describe}}">
+		<div class="js-remove"></div>
+		<div class="view_threeColumns_wrap">
+			<div class="left">
+				{{if firstCol && firstCol.fields && firstCol.fields.length}}
+					{{include "form_items_template" firstCol}}
+				{{/if}}
+			</div>
+			<!--缝隙--><div class="gap"></div>
+			<div class="center">
+				{{if secondCol && secondCol.fields && secondCol.fields.length}}
+					{{include "form_items_template" secondCol}}
+				{{/if}}
+			</div>
+			<!--缝隙--><div class="gap"></div>
+			<div class="right">
+				{{if thirdCol && thirdCol.fields && thirdCol.fields.length}}
+					{{include "form_items_template" thirdCol}}
+				{{/if}}
+			</div>
+		</div>
+	</div>
+</script>
+
+
+<!-- 编辑 -->
+<script type="text/html" id="edit_text">
+	<div class="edit-content">
+
+		{{if fieldtype == 'twoColumns'}}
+		<div class="edit-item">
+			<div class="edit-item-title">两列控件</div>
+			<span style="display: inline-block;font-weight: normal;color: #ccc;">可以拖放两个字段控件在一行中放置</span>
+		</div>
+		{{/if}}
+
+		{{if fieldtype == 'threeColumns'}}
+		<div class="edit-item">
+			<div class="edit-item-title">三列控件</div>
+			<span style="display: inline-block;font-weight: normal;color: #ccc;">可以拖放三个字段控件在一行中放置</span>
+		</div>
+		{{/if}}
+
+		{{if fieldtype != 'twoColumns' && fieldtype != 'threeColumns'}}
+		<div class="edit-item">
+			<div class="edit-item-title">标题 <span class="verify" style="font-weight: normal;color: #ccc;">最多10个字</span></div>
+			<input class="edit-input" type="text" id="inputLabel" value="{{label}}" maxlength="10">
+		</div>
+		{{/if}}
+
+		<div class="edit-item"></div>
+
+		{{if fieldtype !='date' && fieldtype !='datearea' && fieldtype !='pic' && fieldtype != 'twoColumns' && fieldtype != 'threeColumns' && fieldtype != 'radio' && fieldtype != 'checkboxes' && fieldtype != 'remark' && fieldtype != 'group'}}
+		<div class="edit-item">
+			<div class="edit-item-title">提示文字 <span class="verify" style="font-weight: normal;color: #ccc;">最多20个字</span></div>
+			<input class="edit-input" type="text" id="inputDes" value="{{describe}}" maxlength="20">
+		</div>
+		{{else if fieldtype =='group'}}
+		<div class="edit-item">
+			<div class="edit-item-title">提示文字 <span class="verify" style="font-weight: normal;color: #ccc;">最多50个字</span></div>
+			<input class="edit-input" type="text" id="inputDes" value="{{describe}}" maxlength="50">
+		</div>
+
+		<div class="edit-item">
+			<input type="checkbox" id="inputWithoutAddButton" class="inputWithoutAddButton" style="vertical-align: top;" {{if isWithoutAddButton === 'true'}}checked{{/if}} />
+			<label for="inputWithoutAddButton" style="font-weight:normal;"> 仅用于多个字段组合 </label>
+		</div>
+		{{/if}}
+
+		{{if fieldtype =='datearea'}}
+		<div class="edit-item">
+			<div class="edit-item-title">标题2 <span class="verify" style="font-weight: normal;color: #ccc;">最多6个字</span></div>
+			<input class="edit-input" type="text" id="inputLabel2" value="{{label2}}" />
+		</div>
+		{{/if}}
+
+		{{if fieldtype ==='date' || fieldtype === 'datearea'}}
+		<div class="edit-item">
+			<div class="edit-item-title">日期格式 </div>
+			<label>
+				<input type="radio" name="datetime" data-type="datetime" value="1" class="radio-date" {{if field_options.date_type == 1}} checked{{/if}}> 年-月-日 时:分
+			</label>
+			<br>
+			<label>
+				<input type="radio" name="datetime" value="2" data-type="date" class="radio-date" {{if field_options.date_type == 2}} checked{{/if}}> 年-月-日
+			</label>
+			<br>
+			<label>
+				<input type="radio" name="datetime" value="3" data-type="date_year_month" class="radio-date" {{if field_options.date_type == 3}} checked{{/if}}> 年-月
+			</label>
+		</div>
+		{{/if}}
+
+		{{if fieldtype ==='radio' || fieldtype ==='checkboxes'}}
+		<div class="edit-item">
+			<div class="edit-item-title">选项 <span class='verify {{if "field_options.options.length >= 20"}}verify-error{{/if}}' style="font-weight: normal;color: #ccc;">最上限200项，每项最多20个字</span></div>
+			{{if field_options.options.length ==1}}
+				{{each field_options.options as item index}}
+				<div class="option" data-index="{{index}}">
+					<input type="text" class="option-label-input {{item.label | maxlength}}" value="{{item.label}}">
+					<a class="js-add-option fb-button" title="添加选项"><i class="fa glyphicon glyphicon-plus-sign"></i></a>
+				</div>
+				{{/each}}
+			{{else}}
+				{{each field_options.options as item index}}
+				<div class="option" data-index="{{index}}">
+					<input type="text" class="option-label-input {{item.label | maxlength}}" value="{{item.label}}" maxlength="20">
+					<a class="js-add-option fb-button" title="添加选项"><i class="fa glyphicon glyphicon-plus-sign"></i></a>
+					<a class="js-remove-option fb-button" title="移除选项"><i class="fa glyphicon glyphicon-minus-sign"></i></a>
+				</div>
+				{{/each}}
+			{{/if}}
+		</div>
+		{{/if}}
+
+		{{if fieldtype == 'file'}}
+		<div class="edit-item">
+			<div class="edit-item-title">大小控制 <span class="verify" style="font-weight: normal;color: #ccc;">小于或等于几M</span></div>
+			<input class="edit-input" type="number" id="fileSize" value="{{fileSize || 20}}" style="width:150px;"> M
+		</div>
+		{{/if}}
+
+
+		{{if fieldtype == "remark"}}
+		<div class="edit-item">
+			<div class="edit-item-title">提示文字 <span class="verify" style="font-weight: normal;color: #ccc;">最多500个字</span></div>
+			<textarea id="inputDes" maxlength="500" class="edit-textarea">{{describe}}</textarea>
+		</div>
+		{{/if}}
+
+
+
+		{{if fieldtype !='group' && fieldtype != 'twoColumns' && fieldtype != 'threeColumns'}}
+		<div class="edit-item">
+			<input type="checkbox" id="inputRequired" style="vertical-align: top;" {{if required === 'true'}}checked{{/if}} />
+			<label for="inputRequired" style="font-weight:normal;"> 必填 </label>
+		</div>
+		{{/if}}
+
+		{{if fieldtype =='number'}}
+		<div class="edit-item">
+			<label style="font-weight: normal;">
+				<input type="checkbox" name="inputCapital" id="inputCapital" {{if capital === 'true'}}checked{{/if}} style="vertical-align: top;"> 大写金额 <br>
+				<span style="font-size: 12px;">（将数字转换为大写金额，显示于输入框下方）</span>
+			</label>
+		</div>
+		{{/if}}
+
+		{{if fieldtype =='pic'}}
+		<div class="edit-item">
+			<div class="edit-item-title"> </div>
+			<div></div>
+		</div>
+		{{/if}}
+
+
+		</div>
+</script>

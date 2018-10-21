@@ -1,0 +1,118 @@
+<div id="single_report_detail">
+    <div class="report_single_content" v-show="tempName || nodeData.length != 0">
+        <div class="reporter_info_wrap">
+            <div class="head_img_box">
+                <img v-app-head-img="singleReportData.wrData"/>
+            </div>
+            <div class="name_post">
+                <div class="name">{{singleReportData.wrData.personName}}</div>
+                <div class="post">{{sponsorInfor.orgName}}</div>
+            </div>
+            <div class="report_time_wrap">
+                <div class="report_time_zh">
+                    <span class="report_name" v-start-time-handle="singleReportData.wrData"></span>
+                </div>
+                <div class="report_time_num">{{singleReportData.wrData.createTime}}</div>
+            </div>
+        </div>
+        <div class="formData clearfix">
+            <ul class="dataList">
+                <form-data-show v-bind:a-fields="nodeData"></form-data-show>
+            </ul>
+        </div>
+        <div class="blank_separate_box"></div>
+        <div class="add_report_receive_wrap more_infor_wrap" @click="goReceiverList">
+            <div class="title">汇报对象：</div>
+            <div class="content">
+                <ul>
+                    <li v-for="item in singleReportData.receiverList" v-if="item.isTransfer == 0">
+                        <div class="person_headImg">
+                            <img v-receiver-head-img="item"/>
+                        </div>
+                        <div class="personName">{{item.receiverName}}</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="more_btn">
+                <div class="arrow_right">
+                    <Icon type="ios-arrow-right"></Icon>
+                </div>
+            </div>
+        </div>
+        <div class="add_report_read_wrap more_infor_wrap" @click="goReaderList">
+            <div class="title">已阅：</div>
+            <div class="content">
+                <span>{{readCounts}}人</span>
+            </div>
+            <div class="more_btn">
+                <div class="arrow_right">
+                    <Icon type="ios-arrow-right"></Icon>
+                </div>
+            </div>
+        </div>
+        <div class="comment_number_wrap">
+            <span>评论</span>
+            <span>({{commentTotal}}条)</span>
+        </div>
+        <div class="comment_list_wrap">
+            <div class="comment_list" v-for="item in commentInforList" @click="commentListEvent($event,item.reviewer,item.reviewerName)">
+                <div class="comment_head_img">
+                    <div class="img_box">
+                        <img v-comment-head-img="item"/>
+                    </div>
+                </div>
+                <div class="comment_detail_wrap">
+                    <div class="comment_name_time">
+                        <div class="person_name">{{item.reviewerName}}</div>
+                        <div class="create_time">{{item.createTime}}</div>
+                    </div>
+                    <div class="box">
+                        <div class="comment_text"><span v-if="item.replyTo != null">回复<a href="javascript:void(0)">@{{item. replyToName}}</a>：</span>{{{item.content}}}</div>
+                        <div  class="del_comment_btn" v-if="personInfor.personId == item.reviewer" @click="deletecomment(item.uuid)"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dropload-refresh" style="display:none">↑&nbsp;上拉加载更多</div>
+        <div class="dropload-load" style="display:none"><span class="loading"></span>加载中...</div>
+        <div class="dropload-noData" style="display:none">没有更多了~</div>
+        <div class="bottom_footer_blank"></div>
+        <!--操作项-->
+        <div class="single_report_footer">
+            <div class="operation_item_wrap">
+                <div class="share_item operation_item" @click="chooseReceiver" v-if="singleReportData.wrData.forwardType == 0">
+                    <div class="center_box_wrap">
+                        <div class="center_box">
+                            <div class="operation_logo"></div>
+                            <div class="operation_describe">转发</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="commtent_item operation_item" @click="goCommentReport('comment')">
+                    <div class="center_box_wrap">
+                        <div class="center_box">
+                            <div :class="commentInfo.isComment == 1 ? 'operation_logo active' : 'operation_logo'"></div>
+                            <div class="operation_describe">{{commentTotal == 0 ? '评论': commentTotal}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="praise_item operation_item" @click="reportPraise">
+                    <div class="center_box_wrap">
+                        <div class="center_box">
+                            <div :class="praiseInfo.isPraise == 1 ? 'operation_logo active' : 'operation_logo'"></div>
+                            <div class="operation_describe">{{praiseInfo.count == 0 ? '赞' : praiseInfo.count}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--评论-->
+    <div id="report_clipboard_inputBtn" :style="{width: '45px',height: '33px','position': 'fixed','left': 'calc(100% - 45px)','top': '50%','margin-top': '-16.5px','background': 'url('+gMain.baseStaticPath+'oa/report_mobile/images/tag_icon_notes_def@3x.png) no-repeat','background-size': '100% 100%','z-index':'999'}" @click="jumpClipboard"></div>
+    <div class="report_not_find_box" style="display: none">
+        <div class="report_not_find"> 汇报已经被删除啦！</div>
+    </div>
+</div>
+<div class="single_report_child">
+    <router-view></router-view>
+</div>

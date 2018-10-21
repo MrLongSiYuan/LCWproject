@@ -1,0 +1,187 @@
+@charset "utf-8";
+/* reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}
+body{font:14px/1.5 '微软雅黑','\5FAE\8F6F\96C5\9ED1','\5b8b\4f53',sans-serif;}
+table{border-collapse:collapse;border-spacing:0}
+img{border:0}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}
+ol,li{list-style:none}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+q:before,q:after{content:''}
+abbr,acronym{border:0;font-variant:normal}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+a,input,textarea,select{outline: none;}
+*:focus {outline: none;}
+input,textarea,select{*font-size:100%;}
+input[type="button"],button{border:none;}
+input[type="button"],input[type="text"]{-webkit-appearance: none;}
+em,b{font-style:normal}
+a{text-decoration:none}
+.l{ float: left;}
+.r{ float: right;}
+.hide{ display: none;}
+.show{ display: block;}
+
+/*****************************\|/***扁平化按钮 ****\|/*****************************************/
+
+.flat-button {
+    display: inline-block;
+    zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
+    *display: inline;
+    vertical-align: middle;
+    margin: 0 2px;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    padding: .7em 2em .75em;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+    border: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "微软雅黑";
+    -webkit-appearance: none;
+}
+.flat-button[disabled]{
+    opacity: 0.5;
+}
+.flat-button:hover {
+    text-decoration: none;
+}
+.flat-button:active {
+    position: relative;
+    top: 1px;
+}
+
+.flat-bigrounded {
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+}
+.flat-medium {
+    font-size: 14px;
+    padding: 6px 20px 7px;
+}
+.flat-small {
+    font-size: 11px;
+    padding: .2em 1em .275em;
+}
+
+/* color styles
+---------------------------------------------- */
+
+/* red */
+.flat-red {
+    color: #faddde;
+    background: #d81b21;
+}
+.flat-red:hover {
+    background: #b61318;
+}
+.flat-red:active {
+    color: #de898c;
+}
+
+/* blue */
+.flat-blue {
+    color: #FFFFFF;
+    background: #36a3ff;
+}
+.flat-blue:hover {
+    background: #2065ae;
+}
+
+/* yellow */
+.flat-yellow {
+    color: #FFFFFF;
+    background: #ed6c2b;
+}
+.flat-yellow:hover {
+    background: #bd5018;
+}
+
+/* white */
+.flat-white {
+    color: #939393;
+    background: #FFFFFF;
+    border: 1px solid #d2d2d2!important;
+    padding: 5px 16px 6px;
+}
+.flat-white:hover {
+    color: #ed6c2b;
+    background-color: #ffffff;
+    border-color: #ed6c2b!important;
+    transition: all 0.3s;
+}
+
+/*****************************\|/***扁平化按钮 结束 ****\|/*****************************************/
+
+/*文字头像*/
+.base_head_img{
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    line-height: 54px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    font-size: 16px;
+    color: #FFFFFF;
+    display: inline-block;
+    font-style: normal;
+    margin: 5px;
+    background-color: #35A2FF;
+    border: 1px solid #cdcdcd;
+}
+/*真是图像*/
+.base_head_img_img{
+    width: 55px;
+    height: 55px;
+    margin: 5px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #cdcdcd;
+}
+
+
+/*
+主体内容部分*/
+
+
+.dayhr_table_list{
+    position: relative;
+}
+/*左侧*/
+#base_left_nav{
+    position:absolute;
+    left:0;
+    top:0;
+    width:151px;
+    height: 100%;
+    border-right: 1px solid #ccc;
+    padding-top: 20px;
+    display: none;
+}
+/**左侧菜单**/
+#base_left_nav dl {margin-bottom: 20px;}
+#base_left_nav dl dt{ font-size: 15px; font-weight: bold;}
+#base_left_nav dl dd{overflow: hidden; margin: 5px 0;}
+#base_left_nav dl dd a{width: 100%; display: block; padding-left:30px;color: #333333;}
+#base_left_nav dl dd a:hover{background: #ed6c2b;opacity: 0.5;color:#ffffff;}
+#base_left_nav dl dd.on a{background: #ed6c2b;color:#ffffff;}
+/*右侧*/
+#base_right_content{
+    margin-left:0;
+    margin-right:0;
+}
+

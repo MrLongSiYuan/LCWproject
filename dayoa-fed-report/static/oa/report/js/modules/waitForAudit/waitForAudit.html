@@ -1,0 +1,142 @@
+<div id="workflow_waitForAudit_wrap"  v-show="aFormStyle.length != 0">
+	<div class="preview_remind_box"></div>
+	<div class="all_waitForAudit_box">
+		<div id="workflow_waitForAudit" class="clearfix">
+			<div class="reporter_informationWrap">
+				<div class="reporter_information_box">
+					<div class="repoter_infomationRow" v-for="reporter in reporters">
+						<span class="repoter_infomationName_left">{{reporter.inforTitle}}</span>
+						<span class="repoter_infomationName_right">{{reporter.inforContent}}</span>
+					</div>
+				</div>
+				<div class="ready_mark" v-if="reportsSource == 'received'"></div>
+			</div>
+			<div class="formData clearfix">
+				<ul class="dataList">
+					<form-data-show v-bind:a-fields="aFormStyle" v-bind:uuid="uuid"></form-data-show>
+				</ul>
+			</div>
+
+			<!--接收人-->
+			<div class="auditPersonList clearfix">
+				<div class="form_item_label">汇报对象</div>
+				<!--提交汇报预览接收人显示-->
+				<ul v-if="previewType == 'submitPre' || previewType == 'singleDraftPre'">
+					<li v-for="item in aAuditList">
+						<span class="recipientName" v-bind:recipientId="item.person_id">{{item.person_name}}</span>
+					</li>
+				</ul>
+				<!--单个汇报预览接收人显示-->
+				<ul v-if="previewType == 'singlePre'">
+					<li v-for="item in aAuditList">
+						<span class="recipientName" v-bind:recipientId="item.receiverId" v-if="item.isTransfer == 0">{{item.receiverName}}</span>
+					</li>
+				</ul>
+			</div>
+			<!--按钮-->
+			<div class="report_next_prev_btnBox" v-if="(reportsSource == 'received' || reportsSource == 'sendOut') && !( reportsSource == 'sendOut' && sendAready == '2')">
+				<div class="report_next_prev_btn">
+					<div class="report_prevBtn" v-on:click="getPrevReport($event)">上一篇</div>
+					<div class="report_nextBtn" v-on:click="getNextReport($event)" v-if="theAllReportsLength > 1">下一篇</div>
+					<div class="report_nextBtn" v-on:click="getNextReport($event)" v-if="!(theAllReportsLength > 1)" style="background: rgb(191, 191, 191); cursor: default;">下一篇</div>
+				</div>
+			</div>
+			<!--操作项-->
+			<div class="reportFooter_box" v-if="(reportsSource == 'received' || reportsSource == 'sendOut') && !( reportsSource == 'sendOut' && sendAready == '2')">
+				<div class="reportFooter">
+					<!--阅读-->
+					<div class="operation_item" v-on:click="openAdditionalContent('read')">
+						<p class="iconfont_dayoa"  v-if="reportsSource == 'sendOut'||(reportsSource == 'received' && sendAready == '2')">&#xe66a;</p>
+						<p class="iconfont_dayoa iconfont_dayoa_read"  v-if="reportsSource == 'received' && sendAready == '1'">&#xe668;</p>
+						<p class="operation_item_num">{{reportData.wrData.readCounts}}</p>
+					</div>
+					<!--点赞-->
+					<div class="operation_item">
+						<p class="iconfont_dayoa" v-if="reportData.wrData.praiseInfo.isPraise == 0" v-on:click="reportPraise('0',$event)">&#xe669;</p>
+						<p class="iconfont_dayoa iconfont_dayoa_fabulous" v-if="reportData.wrData.praiseInfo.isPraise == 1" v-on:click="reportPraise('1',$event)" v-bind:praise-id="reportData.wrData.praiseInfo.praiseId">&#xe66c;</p>
+						<p class="operation_item_num" v-on:click="openAdditionalContent('praise')">{{reportData.wrData.praiseInfo.count}}</p>
+					</div>
+					<!--评论-->
+					<div class="operation_item"  v-on:click="openAdditionalContent('comment')">
+						<p class="iconfont_dayoa" v-if="reportData.wrData.commentInfo.isComment == 0">&#xe66d;</p>
+						<p class="iconfont_dayoa iconfont_dayoa_comment" v-if="reportData.wrData.commentInfo.isComment == 1">&#xe66e;</p>
+						<p class="operation_item_num">{{pageInforComment.total}}</p>
+					</div>
+					<div class="operation_item separate_line_wrap" v-if="forwardType == '0'">
+						<p class="separate_line"></p>
+						<p class="operation_item_num"></p>
+					</div>
+					<!--转发-->
+					<div class="operation_item" v-if="forwardType == '0'" @click="reportShare($event)">
+						<p class="iconfont_dayoa">&#xe650;</p>
+						<p class="operation_item_num"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--添加评论-->
+		<div id="add_comment_content_wrap" class="additional_content_wrap" v-if="canComment">
+			<div class="arrow_up" style="left:507px"></div>
+			<textarea name="comment_content" class="comment_content_input" placeholder="所有工作的进步都离不开细心的点评与指导" v-model="commentContent" @focus="commentOnfocus()"></textarea>
+			<div class="button_box">
+				<div v-on:click="reportComment('comment')" :class="[commentContent?'comment_submit active':'comment_submit']">提交</div>
+			</div>
+			<div class="all_comment_wrap">
+				<div class="person_comment" v-for="item in showCommentInforList" v-bind:comment-id="item.uuid">
+					<div class="headimg">
+						<img v-bind:src="item.reviewerHeadImg?gMain.DayHRDomains.baseStaticDomain+item.reviewerHeadImg:(gMain.baseStaticPath+'oa/report/images/personImg.png')" alt="" v-bind:title="item.reviewerName">
+					</div>
+					<div class="person_comment_personInfo">
+						<span class="person_comment_name" v-bind:reviewer-id="item.reviewer">{{item.reviewerName}}</span>
+						<span class="person_comment_createtime">{{item.createTime}}</span>
+						<div class="delete_comment" v-if="item.reviewer == userInfo.personId" v-on:click="deletecomment(item.uuid)">删除</div>
+						<div class="reply_comment" v-if="!(item.reviewer == userInfo.personId)" v-on:click="replycomment(item.uuid,item.reviewerName,item.reviewer,item.reviewerHeadImg,$event)">回复</div>
+					</div>
+					<div class="person_comment_content">
+						<span v-if="item.replyTo">回复<a href="javascript:void(0)">@{{item. replyToName}}</a>:</span>
+						{{{item.content}}}
+					</div>
+					<div class="reply_comment_box" style="display: none" v-if="!(item.reviewer == userInfo.personId)">
+						<textarea name="comment_content" class="comment_content_input" v-bind:placeholder="commentPlaceholder" v-model="replyContent" @focus="replyOnfocus(item.uuid,item.reviewerName,item.reviewer,item.reviewerHeadImg)"></textarea>
+						<div class="button_box">
+							<div :class="[replyContent?'comment_submit active':'comment_submit']" v-on:click="reportComment('reply',$event)">回复</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="page_search_wrap" v-if="pageInforComment.total != 0">
+				<div class="page_search">
+					<Page :total="pageInforComment.total" size="small" show-elevator show-sizer show-total class = "report_base_mmpager" :page-size="pageInforComment.onePageNum" :current="pageInforComment.pageNo" :page-size-opts="pageInforComment.onePageNumArr" v-on:on-change="changePageNo" v-on:on-page-size-change="changeOneDataNum"></Page>
+				</div>
+			</div>
+		</div>
+		<!--阅读人头像-->
+		<div id="reader_headimg_content_wrap" class="additional_content_wrap" v-if="openReadImg">
+			<div class="arrow_up" style="left: 417px"></div>
+			<div class="people_number"><span>{{pageInforRead.total}}</span>人已阅读</div>
+			<ul class="people_headimg_detail clearfix">
+				<li v-for="item in showReadHeadImgList">
+					<div class="img_box"><img :src="item.headImg?gMain.DayHRDomains.baseStaticDomain+item.headImg:(gMain.baseStaticPath+'oa/report/images/personImg.png')" alt="" :title="item.personName"></div>
+					<div class="people_name">{{item.personName}}</div>
+				</li>
+			</ul>
+			<div class="page_search" v-if="pageInforRead.total != 0">
+				<Page :total="pageInforRead.total" simple size="small" :current="pageInforRead.pageNo" v-on:on-change="changeReadPageNo" class = "report_base_mmpager" :page-size="pageInforRead.onePageNum"></Page>
+			</div>
+		</div>
+		<!--点赞人头像-->
+		<div id="praise_headimg_content_wrap" class="additional_content_wrap" v-if="openPraiseImg">
+			<div class="arrow_up" style="left: 462px"></div>
+			<div class="people_number"><span>{{pageInforPraise.total}}</span>人赞过</div>
+			<ul class="people_headimg_detail clearfix">
+				<li v-for="item in showPraiseHeadImgList">
+					<div class="img_box"><img :src="item.headImg?gMain.DayHRDomains.baseStaticDomain+item.headImg:(gMain.baseStaticPath+'oa/report/images/personImg.png')" alt="" :title="item.personName"></div>
+					<div class="people_name">{{item.personName}}</div>
+				</li>
+			</ul>
+			<div class="page_search" v-if="pageInforPraise.total != 0">
+				<Page :total="pageInforPraise.total" simple size="small" :current="pageInforPraise.pageNo" v-on:on-change="changePraisePageNo" class = "report_base_mmpager" :page-size="pageInforPraise.onePageNum"></Page>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,80 @@
+<div id="annSend">
+    <div class="annSend_title clearfix">
+        <span class="annSend_title_left"><i class="must_input">*</i>标题</span>
+        <input type="text" class="annSend_titInp" v-model="annTitle" maxlength="20" placeholder="最多可输入20个字"/>
+    </div>
+    <div class="annSend_receive clearfix">
+        <span class="annSend_title_left"><i class="must_input">*</i>发布范围</span>
+        <div id="dropSelect_person" class="dayhr_drop_MulSelect"></div>
+    </div>
+    <div class="ann_add_classify clearfix">
+        <span class="annSend_title_left"><i class="must_input">*</i>分类</span>
+        <div id="dropSelect_classify" class="dayhr_drop_select"></div>
+        <span v-on:click="addClassifys" class="annSend_selPer"><span>+</span>添加分类</span>
+    </div>
+    <div class="annSend_content clearfix">
+        <span class="annSend_title_left"><i class="must_input">*</i>正文</span>
+        <textarea  class="annSend_text"  v-model="annContent"></textarea>
+        <!--<span class="annSend_num">{{currLen}}/{{maxLen}}</span>-->
+    </div>
+    <!--图片上传-->
+    <div class="announce_add_pic f_input_wrap clearfix">
+        <span class="annSend_title_left">图片</span>
+        <!--图片预览区/无值-->
+        <div class="addPicPreview">
+            <div class="imgPreview" v-for="oFile in oFileList['imgList']" track-by="$index" data-uuid="{{oFile.uuid}}" v-if="oFileList['imgList']">
+                <!--上传图片-->
+                <a target="_blank" v-bind:href="oFile.url?'javascript:void(0)':'javascript:void(0)'" title="{{oFile.fileName}} ，点击打开预览大图" v-if="oFile.fileName"><img v-bind:src="oFile.url" class="preview" v-on:click.prevent="previewPic($event,oFile.url)"></a>
+                <!--草稿图片-->
+                <a target="_blank" v-bind:href="oFile.url?'javascript:void(0)':'javascript:void(0)'" title="点击打开预览大图"><img v-bind:src="oFile.url" class="preview" v-if="!oFile.fileName" v-on:click.prevent="previewPic($event,oFile.url)"></a>
+                <div class="loading" v-show="oFile.uploadStatus != 'success'" v-if="oFile.fileName"><img v-if="oFile.uploadStatus != 'faild'" v-bind:src="gMain.baseStaticPath +'common/images/loading-2.gif'" alt=""><span v-if="oFile.uploadStatus == 'faild'" style="color: red;">失败</span></div>
+                <div class="del iconfont_dayoa" title="删除" v-on:click.prevent="delFilePreview('imgList',$index)">&#xe600;</div>
+            </div>
+            <div class="addPic">
+                <span>+</span>
+                <input type="file" name="imgList" accept="image/gif,image/jpeg,image/jpg,image/png,image/bmp" v-on:change.prevent="uploadFile($event,'img')" multiple="multiple">
+            </div>
+            <span style="color: red;vertical-align: middle;display: inline-block;line-height: 45px;height: 45px">（限制大小10M）</span>
+        </div>
+    </div>
+    <!--*******************************************************************************************-->
+    <!--附件上传-->
+    <div class="announce_add_file f_input_wrap clearfix">
+        <span class="annSend_title_left">附件</span>
+        <!--文件预览区-->
+        <div class="file_content_wrap">
+            <div class="addFilePreview" data-name="fileList">
+                <ul class="filePreviewList" v-if="oFileList['fileList']" track-by="$index">
+                    <li v-for="oFile in oFileList['fileList']" data-uuid="{{oFile.uuid}}">
+                        <span class="icon">图标：</span>
+                        <span class="filename" title="fileList" v-on:click.prevent="previewFile($event,oFile.uuid,oFile.fileSort)">{{oFile.fileName}}</span>
+                        <!--上传文件-->
+                        <span class="size" v-if="oFile.sizeWithUnit">{{oFile.sizeWithUnit}}</span>
+                        <span class="fileSort" style="display: none;">{{oFile.fileSort}}</span>
+                        <!--草稿文件-->
+                        <span class="size" v-if="!oFile.sizeWithUnit">{{oFile.size}}</span>
+                        <span class="status" v-bind:style="{color:oFile.uploadStatus=='success'?'green':'red'}" v-if="oFile.uploadStatus">{{{'uploading':'上传中','faild':'上传失败','success':'上传完成'}[oFile.uploadStatus]}}</span>
+                        <div class="del iconfont_dayoa" title="删除" v-on:click.prevent="delFilePreview('fileList',$index)">&#xe600;</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="addPic">
+                <span>+</span>
+                <input type="file" name="fileList" data-fileSize="20" v-on:change.prevent="uploadFile($event,'file')" multiple="multiple">
+            </div>
+            <span style="color: red;vertical-align: middle;line-height: 45px">（限制大小20M）</span>
+        </div>
+    </div>
+    <div class="can_comment_wrap switch_wrap clearfix">
+        <span class="annSend_title_left">允许评论</span>
+        <div class="switch" tabindex="0">
+            <input id="cancomment" type="checkbox" />
+        </div>
+    </div>
+    <div class="can_watermark_wrap switch_wrap clearfix">
+        <span class="annSend_title_left">显示水印</span>
+        <div class="switch" tabindex="0">
+            <input id="canwatermark" type="checkbox" />
+        </div>
+    </div>
+</div>

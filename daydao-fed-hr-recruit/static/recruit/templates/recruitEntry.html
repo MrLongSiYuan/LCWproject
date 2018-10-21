@@ -1,0 +1,276 @@
+<div class="recruit-entry">
+     <div class="recruit-entry-left">
+         <div class="recruit-entry-left-wrap">
+             <ul>
+                 <li v-bind:class="[statusData[index] == true?'on':'']" v-on:click="tabFn(index)" v-for="(index,item) in titleData">{{item}}</li>
+             </ul>
+         </div>
+     </div>
+     <div class="recruit-entry-right">
+         <div class="recruit-entry-right-0" v-show="statusData[0]==true">
+             <form id="recruit-entry-right-0" v-if="entryId == ''">
+                  <div class="body-1">
+                      <div class="wrap">
+                           <div class="float-left span-1">姓名</div><div class="float-right span-2"><input type="text" class="self" maxlength="50" v-model="entryData.name" name="entry_name"/></div>
+                      </div>
+                      <div class="wrap">
+                          <div class="float-left span-1"><b>*</b>入职组织</div><div class="float-right span-2"><div id="recruit_entry_hr_org"  class="dayhr_drop_select"></div></div>
+                      </div>
+                      <div class="wrap">
+                          <div class="float-left span-1"><b>*</b>人员状态</div><div class="float-right span-2"><div id="recruit_entry_ct_310"  class="dayhr_drop_select"></div></div>
+                      </div>
+                      <div class="wrap">
+                          <div class="float-left span-1"><b>*</b>移动电话</div><div class="float-right span-2"><input type="text" class="self" maxlength="50" v-model="entryData.phone" name="entry_phone"/></div>
+                      </div>
+                      <div class="wrap">
+                          <div class="float-left span-1">证件类型</div><div class="float-right span-2"><div id="recruit_entry_ct_304"  class="dayhr_drop_select"></div></div>
+                      </div>
+                      <div class="wrap">
+                          <div class="float-left span-1">出生日期</div><div class="float-right span-2"><input type="text" class="self Wdate" maxlength="50" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" v-model="entryData.birthday" name="entry_birthday"/></div>
+                      </div>
+                      <div class="wrap">
+                          <div class="float-left span-1">民族</div><div class="float-right span-2"><div id="recruit_entry_ct_302"  class="dayhr_drop_select"></div></div>
+                      </div>
+                      <div class="wrap">
+                          <div class="float-left span-1">政治面貌</div><div class="float-right span-2"><div id="recruit_entry_ct_303"  class="dayhr_drop_select"></div></div>
+                      </div>
+                      <div class="wrap">
+                          <div class="float-left span-1">学历</div><div class="float-right span-2"><div id="recruit_entry_ct_321"  class="dayhr_drop_select"></div></div>
+                      </div>
+                      <div class="wrap">
+                          <div class="float-left span-1">家庭住址</div><div class="float-right span-2"><input type="text" class="self" maxlength="50" v-model="entryData.address" name="entry_address"/></div>
+                      </div>
+                      <div class="wrap">
+                          <div class="float-left span-1">出生地</div><div class="float-right span-2"><input type="text" class="self" maxlength="50" v-model="entryData.place" name="entry_place"/></div>
+                      </div>
+                  </div>
+                  <div class="body-2">
+                      <div class="wrap">
+                          <div class="float-left span-1"><b>*</b>入职日期</div><div class="float-right span-2"><input type="text" class="self Wdate" maxlength="50" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" v-model="entryData.joinDate" name="entry_joinDate"/></div>
+                      </div>
+                      <div class="wrap">
+                          <div class="float-left span-1">担任职位</div><div class="float-right span-2"><div id="recruit_entry_r_hr_org_pos"  class="dayhr_drop_select"></div></div>
+                      </div>
+                      <div class="wrap">
+                          <div class="float-left span-1"><b>*</b>人员类型</div><div class="float-right span-2"><div id="recruit_entry_ct_314"  class="dayhr_drop_select"></div></div>
+                      </div>
+                      <div class="wrap">
+                          <div class="float-left span-1">邮箱</div><div class="float-right span-2"><input type="text" class="self" maxlength="50" v-model="entryData.email" name="entry_email"/></div>
+                      </div>
+                      <div class="wrap">
+                          <div class="float-left span-1">证件号码</div><div class="float-right span-2"><input type="text" class="self" maxlength="50" v-model="entryData.num" name="entry_num"/></div>
+                      </div>
+                      <div class="wrap">
+                          <div class="float-left span-1">性别</div><div class="float-right span-2"><div id="recruit_entry_ct_300"  class="dayhr_drop_select"></div></div>
+                      </div>
+                      <div class="wrap">
+                          <div class="float-left span-1">籍贯</div><div class="float-right span-2"><div id="recruit_entry_ct_110"  class="dayhr_drop_select"></div></div>
+                      </div>
+                      <div class="wrap">
+                          <div class="float-left span-1">婚姻状态</div><div class="float-right span-2"><div id="recruit_entry_ct_306"  class="dayhr_drop_select"></div></div>
+                      </div>
+                      <div class="wrap">
+                          <div class="float-left span-1">参加工作日期</div><div class="float-right span-2"><input type="text" class="self Wdate" maxlength="50" v-model="entryData.workDate" name="entry_workDate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})"/></div>
+                      </div>
+                      <div class="wrap">
+                          <div class="float-left span-1">员工编码</div><div class="float-right span-2"><input type="text" class="self" maxlength="50" v-model="entryData.code" name="entry_code"/></div>
+                      </div>
+                      <div class="wrap">
+                          <div class="float-left span-1">排序号</div><div class="float-right span-2"><input type="text" class="self" maxlength="50" v-model="entryData.order" name="entry_order"/></div>
+                      </div>
+                  </div>
+             </form>
+             <form id="recruit-entry-right-0" v-if="entryId != ''">
+                 <div class="body-1">
+                     <div class="wrap">
+                         <div class="float-left span-1">姓名：</div><div class="float-right span-2">{{oData.person_name}}</div>
+                     </div>
+                     <div class="wrap">
+                         <div class="float-left span-1">入职组织：</div><div class="float-right span-2">{{oData.org_id}}</div>
+                     </div>
+                     <div class="wrap">
+                         <div class="float-left span-1">人员状态：</div><div class="float-right span-2">{{oData.person_status}}</div>
+                     </div>
+                     <div class="wrap">
+                         <div class="float-left span-1">移动电话：</div><div class="float-right span-2">{{oData.cell_phone}}</div>
+                     </div>
+                     <div class="wrap">
+                         <div class="float-left span-1">证件类型：</div><div class="float-right span-2">{{oData.id_type}}</div>
+                     </div>
+                     <div class="wrap">
+                         <div class="float-left span-1">出生日期：</div><div class="float-right span-2">{{oData.birthday}}</div>
+                     </div>
+                     <div class="wrap">
+                         <div class="float-left span-1">民族：</div><div class="float-right span-2">{{oData.national}}</div>
+                     </div>
+                     <div class="wrap">
+                         <div class="float-left span-1">政治面貌：</div><div class="float-right span-2">{{oData.political_status}}</div>
+                     </div>
+                     <div class="wrap">
+                         <div class="float-left span-1">学历：</div><div class="float-right span-2">{{oData.education_level}}</div>
+                     </div>
+                     <div class="wrap">
+                         <div class="float-left span-1">家庭住址：</div><div class="float-right span-2">{{oData.home_address}}</div>
+                     </div>
+                     <div class="wrap">
+                         <div class="float-left span-1">出生地：</div><div class="float-right span-2">{{oData.birth_place}}</div>
+                     </div>
+                 </div>
+                 <div class="body-2">
+                     <div class="wrap">
+                         <div class="float-left span-1">入职日期：</div><div class="float-right span-2">{{oData.join_date}}</div>
+                     </div>
+                     <div class="wrap">
+                         <div class="float-left span-1">担任职位：</div><div class="float-right span-2">{{oData.sys_ext1_r_hr_org_pos_value}}</div>
+                     </div>
+                     <div class="wrap">
+                         <div class="float-left span-1">人员类型：</div><div class="float-right span-2">{{oData.person_type}}</div>
+                     </div>
+                     <div class="wrap">
+                         <div class="float-left span-1">邮箱：</div><div class="float-right span-2">{{oData.email_address}}</div>
+                     </div>
+                     <div class="wrap">
+                         <div class="float-left span-1">证件号码：</div><div class="float-right span-2">{{oData.id_num}}</div>
+                     </div>
+                     <div class="wrap">
+                         <div class="float-left span-1">性别：</div><div class="float-right span-2">{{oData.sex}}</div>
+                     </div>
+                     <div class="wrap">
+                         <div class="float-left span-1">籍贯：</div><div class="float-right span-2">{{oData.home_town}}</div>
+                     </div>
+                     <div class="wrap">
+                         <div class="float-left span-1">婚姻状态：</div><div class="float-right span-2">{{oData.marital_status}}</div>
+                     </div>
+                     <div class="wrap">
+                         <div class="float-left span-1">参加工作日期：</div><div class="float-right span-2">{{oData.first_work_date}}</div>
+                     </div>
+                     <div class="wrap">
+                         <div class="float-left span-1">员工编码：</div><div class="float-right span-2">{{oData.emp_code}}</div>
+                     </div>
+                     <div class="wrap">
+                         <div class="float-left span-1">排序号：</div><div class="float-right span-2">{{oData.person_order}}</div>
+                     </div>
+                 </div>
+             </form>
+              <div class="body-3" v-if="entryId == ''">
+                  <button class="save a-btn" type="submit" v-on:click="okEntry">确定</button><button class="cancel a-btn" v-on:click="cancelEntry">取消</button>
+              </div>
+         </div>
+         <div class="recruit-entry-right-1" v-show="statusData[1]==true">
+              <div class="body-1">
+                   <div class="body-1-title">
+                       <h2>工作经历</h2><span class="add iconfont_daydao_recruit"  title="新增" style="font-size: 15px;" v-on:click="addOrEdit('','work')">&#xe640;</span>
+                   </div>
+                   <div class="body-1-content">
+                      <ul>
+                          <li v-for="item in workListData">
+                              <div class="body-1-content-left">
+                                  <p>{{item.date_from}}~{{item.date_to}}，<b>{{item.company}}</b></p>
+                                  <p>任职情况：{{item.job}}</p>
+                                  <p>工作职责：{{item.desc}}</p>
+                              </div>
+                              <div class="body-1-content-right">
+                                  <span class="edit iconfont_daydao_recruit"  title="编辑" style="font-size: 18px;" v-on:click="addOrEdit(item,'work')">&#xe607;</span>
+                                  <span class="delete iconfont_daydao_recruit"  title="删除" style="font-size: 15px;" v-on:click="deleteFn(item,'work')">&#xe6a0;</span>
+                              </div>
+                          </li>
+                      </ul>
+                   </div>
+              </div>
+         </div>
+         <div class="recruit-entry-right-2" v-show="statusData[2]==true">
+             <div class="body-2">
+                 <div class="body-2-title">
+                     <h2>教育经历</h2><span class="add iconfont_daydao_recruit"  title="新增" style="font-size: 15px;" v-on:click="addOrEdit('','edu')">&#xe640;</span>
+                 </div>
+                 <div class="body-2-content">
+                     <ul>
+                         <li v-for="item in eduListData">
+                             <div class="body-2-content-left">
+                                 <p>{{item.begin_date}}~{{item.end_date}}，就读于<b>{{item.school}}</b>{{item.major}}专业，取得<b>{{item.educational_level_name}}</b>学历，获得<b>{{item.degree_name}}</b>学位【{{item.education_type_name}}】</p>
+                             </div>
+                             <div class="body-2-content-right">
+                                 <span class="edit iconfont_daydao_recruit"  title="编辑" style="font-size: 18px;" v-on:click="addOrEdit(item,'edu')">&#xe607;</span>
+                                 <span class="delete iconfont_daydao_recruit"  title="删除" style="font-size: 15px;" v-on:click="deleteFn(item,'edu')">&#xe6a0;</span>
+                             </div>
+                         </li>
+                     </ul>
+                 </div>
+             </div>
+             <div class="body-2">
+                 <div class="body-2-title">
+                     <h2>语言能力</h2><span class="add iconfont_daydao_recruit"  title="新增" style="font-size: 15px;" v-on:click="addOrEdit('','language')">&#xe640;</span>
+                 </div>
+                 <div class="body-2-content">
+                     <ul>
+                         <li v-for="item in lanListData">
+                             <div class="body-2-content-left">
+                                 <p>{{item.language_id}}{{item.language_level}}</p>
+                             </div>
+                             <div class="body-2-content-right">
+                                 <span class="edit iconfont_daydao_recruit"  title="编辑" style="font-size: 18px;" v-on:click="addOrEdit(item,'language')">&#xe607;</span>
+                                 <span class="delete iconfont_daydao_recruit"  title="删除" style="font-size: 15px;" v-on:click="deleteFn(item,'language')">&#xe6a0;</span>
+                             </div>
+                         </li>
+                     </ul>
+                 </div>
+             </div>
+             <div class="body-2">
+                 <div class="body-2-title">
+                     <h2>专业技术资格</h2><span class="add iconfont_daydao_recruit"  title="新增" style="font-size: 15px;" v-on:click="addOrEdit('','pro')">&#xe640;</span>
+                 </div>
+                 <div class="body-2-content">
+                     <ul>
+                         <li v-for="item in proListData">
+                             <div class="body-2-content-left">
+                                 <p>{{item.tech_name_name}}，资格等级：{{item.tech_level}}，资格编号：{{item.tech_number}}，获得日期：{{item.acqure_date}}，注册单位：{{item.regist_unit}}</p>
+                             </div>
+                             <div class="body-2-content-right">
+                                 <span class="edit iconfont_daydao_recruit"  title="编辑" style="font-size: 18px;" v-on:click="addOrEdit(item,'pro')">&#xe607;</span>
+                                 <span class="delete iconfont_daydao_recruit"  title="删除" style="font-size: 15px;" v-on:click="deleteFn(item,'pro')">&#xe6a0;</span>
+                             </div>
+                         </li>
+                     </ul>
+                 </div>
+             </div>
+             <div class="body-2">
+                 <div class="body-2-title">
+                     <h2>职业资格</h2><span class="add iconfont_daydao_recruit"  title="新增" style="font-size: 15px;" v-on:click="addOrEdit('','pos')">&#xe640;</span>
+                 </div>
+                 <div class="body-2-content">
+                     <ul>
+                         <li v-for="item in posListData">
+                             <div class="body-2-content-left">
+                                 <p>{{item.acqure_date}}获得由 {{item.award_unit}} 颁发的<b>{{item.license_id_name}}</b>[证书编号：{{item.license_number}}]</p>
+                             </div>
+                             <div class="body-2-content-right">
+                                 <span class="edit iconfont_daydao_recruit"  title="编辑" style="font-size: 18px;" v-on:click="addOrEdit(item,'pos')">&#xe607;</span>
+                                 <span class="delete iconfont_daydao_recruit"  title="删除" style="font-size: 15px;" v-on:click="deleteFn(item,'pos')">&#xe6a0;</span>
+                             </div>
+                         </li>
+                     </ul>
+                 </div>
+             </div>
+         </div>
+         <div class="recruit-entry-right-3" v-show="statusData[3]==true">
+             <div class="body-3">
+                 <div class="body-3-title">
+                     <h2>社会关系</h2><span class="add iconfont_daydao_recruit"  title="新增" style="font-size: 15px;" v-on:click="addOrEdit('','res')">&#xe640;</span>
+                 </div>
+                 <div class="body-3-content">
+                     <ul>
+                         <li v-for="item in resListData">
+                             <div class="body-3-content-left">
+                                 <p>{{item.name}},是本人的{{item.relation_id_name}}，联系方式：{{item.phone}}，{{item.address}}，{{item.company}}，{{item.job}}</p>
+                             </div>
+                             <div class="body-3-content-right">
+                                 <span class="edit iconfont_daydao_recruit"  title="编辑" style="font-size: 18px;" v-on:click="addOrEdit(item,'res')">&#xe607;</span>
+                                 <span class="delete iconfont_daydao_recruit"  title="删除" style="font-size: 15px;" v-on:click="deleteFn(item,'res')">&#xe6a0;</span>
+                             </div>
+                         </li>
+                     </ul>
+                 </div>
+             </div>
+         </div>
+     </div>
+</div>

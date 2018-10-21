@@ -1,0 +1,21 @@
+<div class="announcement_content_list_wrap">
+    <div class="single_announcement_content" v-for="(index,item) in annoucementList" v-bind:data-uuid="item.uuid" @click="previewSingleAnn(item.uuid)">
+        <div class="announcement_content_box">
+            <div class="announcement_title">{{item.title}}</div>
+            <div class="announcement_text" v-ann-content-handle="item"></div>
+            <div class="content_footer">
+                <div class="release_name"
+                     v-text="item.status == '发布' ? item.person_name:item.status"
+                     :style="{color:item.status == '发布' ? '':'#FF7123 '}">
+                </div>
+                <div class="release_time" v-add-ann-time="item"></div>
+                <div class="annoucement_classify">{{item.type_name}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="no-data-page" v-if="annoucementList.length == 0">
+        <div class="no-data-box">
+            该分类下还没有公告
+        </div>
+    </div>
+</div>

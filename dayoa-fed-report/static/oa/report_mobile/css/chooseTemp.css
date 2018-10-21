@@ -1,0 +1,48 @@
+#choose_report_template{
+    width: 100%;
+    background: #f2f2f2;
+}
+#choose_report_template .template_admin{
+    width: 100%;
+    height: 33px;
+    background: #F49C66;
+    color: #fff;
+    /*background: #f2f2f2;
+    color: #666;*/
+    box-sizing: border-box;
+    padding-left: 0.3rem;
+    font-size: 14px;
+    line-height: 33px;
+}
+#choose_report_template .template_list_wrap{
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #D2D2D2;
+    padding-left: 0.3rem;
+    background: #fff;
+}
+#choose_report_template .template_list_wrap ul li{
+    width: 100%;
+    height: 56px;
+    display: block;
+    border-bottom: 1px solid #D2D2D2;
+}
+#choose_report_template .template_list_wrap ul li:nth-last-child(1){
+    border-bottom: none;
+}
+#choose_report_template .template_list_wrap ul li .template_name{
+    height: 100%;
+    float: left;
+    line-height: 56px;
+    font-size: 16px;
+    color: #222;
+}
+#choose_report_template .template_list_wrap ul li i{
+    height: 100%;
+    display: block;
+    line-height: 56px;
+    float: right;
+    font-size: 18px;
+    margin-right: 0.24rem;
+    color: #999;
+}

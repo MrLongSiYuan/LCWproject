@@ -1,0 +1,43 @@
+@charset "utf-8";
+/*表格页签选项卡开始*/
+#resumeDetail .base_mmg_tabs{
+    overflow: hidden;
+    margin-top: 2px;
+    text-align: center;
+    position: relative;
+}
+#resumeDetail .base_mmg_tabs .return_detail{
+    color: #666;
+    font-size: 20px;
+    left: 0;
+    position: absolute;
+}
+#resumeDetail .base_mmg_tabs a.return_detail:hover{
+    color:#ed6c2b;
+}
+#resumeDetail .base_mmg_tabs ul{
+    display: inline-block;
+    overflow: hidden;
+}
+#resumeDetail .base_mmg_tabs ul li{
+    float: left;
+    width: 110px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-right: 1px solid #e0e1e2;
+}
+#resumeDetail .base_mmg_tabs ul li:last-child{
+    border-right:none;
+}
+
+#resumeDetail .base_mmg_tabs ul li.current{
+}
+#resumeDetail .base_mmg_tabs ul li.current a{
+    color:#ed6c2b;
+}
+#resumeDetail .base_mmg_tabs ul li a{
+    color: #9e9e9e;
+    font-size: 15px;
+    display: block;
+}

@@ -1,0 +1,10 @@
+<div id="report_receive_preview">
+	<ul>
+		<li v-for="item in receiverList">
+			<div class="img_box">
+				<img v-app-head-img="item"/>
+			</div>
+			<span class="personName" person-id="{{item.personId}}">{{item.personName}}</span>
+		</li>
+	</ul>
+</div>

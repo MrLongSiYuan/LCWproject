@@ -1,0 +1,5 @@
+projectKey=daydao-fed-hr-recruit
+serverUrl=http://sonar.daydao.com
+dashboardUrl=http://sonar.daydao.com/dashboard/index/daydao-fed-hr-recruit
+ceTaskId=AV--OrDPA4suxahiXuEh
+ceTaskUrl=http://sonar.daydao.com/api/ce/task?id=AV--OrDPA4suxahiXuEh

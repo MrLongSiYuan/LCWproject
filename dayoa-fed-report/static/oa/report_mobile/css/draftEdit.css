@@ -1,0 +1,462 @@
+.draft_report_handle{
+    width: 100%;
+    background: #fff;
+}
+.draft_report_handle .blank_for_submitBtn{
+    height: 61px;
+    background: #F2F2F2;
+}
+.draft_report_handle .form_item:nth-child(1){
+    margin-top: 0;
+}
+.draft_report_handle .blank_separate_box{
+    width: 100%;
+    height: 0.33rem;
+    background: #f2f2f2;
+}
+.draft_report_handle .report_quoteLastTimeBtn_wrap{
+    width: 100%;
+    height: 0.7rem;
+    box-sizing: border-box;
+    padding-top: 0.12rem;
+    padding-right: 0.2rem;
+    border-bottom: 1px solid #D2D2D2;
+}
+.draft_report_handle .report_quoteLastTimeBtn_wrap .report_quoteLastTimeBtn {
+    display: block;
+    width: 2.1rem;
+    height:0.45rem;
+    background: #bfbfbf;
+    font-size: 0.24rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.45rem;
+    float: right;
+    border-radius:0.45rem;
+    cursor: default;
+}
+.draft_report_handle .report_quoteLastTimeBtn_wrap  .active{
+    display: block;
+    width: 2.1rem;
+    height:0.45rem;
+    background: #f19d38;
+    font-size: 0.24rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.45rem;
+    float: right;
+    border-radius:0.45rem;
+    cursor: default;
+}
+/*接收人开始*/
+.draft_report_handle .add_report_receive_wrap{
+    width: 100%;
+    height: 70px;
+    min-height: 55px;
+    box-sizing: border-box;
+    padding: 0 0.3rem;
+    position: relative;
+    border-bottom: 1px solid #D2D2D2;
+    border-top: 1px solid #D2D2D2;
+    overflow: hidden;
+}
+.draft_report_handle .add_report_receive_wrap .title{
+    width: 25%;
+    float: left;
+    height: 35px;
+    line-height: 35px;
+    font-size: 16px;
+    color: #222;
+    position: absolute;
+    top: 50%;
+    margin-top: -17.5px;
+}
+.draft_report_handle .add_report_receive_wrap .content{
+    width: 65%;
+    min-height: 55px;
+    margin-left: 33%;
+}
+.draft_report_handle .add_report_receive_wrap .content ul{
+    overflow: hidden;
+    float: right;
+}
+.draft_report_handle .add_report_receive_wrap .content ul li{
+    display: block;
+    width: 40px;
+    height: 70px;
+    float: left;
+    position: relative;
+    padding-top: 7.5px;
+    margin-left: 15px;
+    box-sizing: border-box;
+}
+.draft_report_handle .add_report_receive_wrap .content ul li .img_box{
+    width: 40px;
+    height:40px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+.draft_report_handle .add_report_receive_wrap .content ul li .img_box b{
+    display: inline-block;
+    width: 100% !important;
+    height: 100% !important;
+    text-align: center;
+    line-height: 40px !important;
+    font-size: 12px !important;
+}
+.draft_report_handle .add_report_receive_wrap .content ul li .img_box img{
+    width: 100%;
+    height: 100%;
+}
+.draft_report_handle .add_report_receive_wrap .content ul li span{
+    display: block;
+    width: 40px;
+    line-height: 1.5;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 10px;
+    color: #666;
+}
+.draft_report_handle .add_report_receive_wrap .content ul li i{
+    font-size: 14px;
+    color: #FF6258;
+    position: absolute;
+    top:6px;
+    right: 8px;
+    display: none;
+}
+.draft_report_handle .add_report_receive_wrap .del{
+    width: 10%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top:0;
+}
+.draft_report_handle .add_report_receive_wrap .del .arrow_right{
+    width: 27px;
+    height: 55px;
+    position: absolute;
+    top: 50%;
+    margin-top: -27.5px;
+    line-height: 55px;
+    right: 0;
+    text-align: center;
+    z-index: 9;
+}
+.draft_report_handle .add_report_receive_wrap .del .arrow_right i{
+    font-size: 18px;
+    color: #999;
+    line-height: 55px;
+}
+/*接收人结束*/
+/*接收人覆盖层开始*/
+.draft_report_handle .report_receive_cover{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    background: #fff;
+    position: fixed;
+    top:0;
+    right: -100%;
+    z-index: 100001;
+    box-sizing: border-box;
+    padding-bottom: 61px;
+}
+.draft_report_handle .report_receive_cover ul{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 25px 0.35rem;
+    overflow: hidden;
+}
+.draft_report_handle .report_receive_cover ul li{
+    display: block;
+    width: 1.2rem;
+    height: 77px;
+    margin-right: 0.3rem;
+    margin-bottom: 23px;
+    float: left;
+    position: relative;
+}
+.draft_report_handle .report_receive_cover ul li:nth-child(4n){
+    margin-right: 0;
+}
+.draft_report_handle .report_receive_cover ul li .img_box{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    overflow: hidden;
+    margin-bottom: 2.5px;
+}
+.draft_report_handle .report_receive_cover ul li .img_box img{
+    width: 100%;
+    height: 100%;
+}
+.draft_report_handle .report_receive_cover ul li span{
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    font-size: 11px;
+}
+.draft_report_handle .report_receive_cover ul li i{
+    position: absolute;
+    top:-5px;
+    right: -10px;
+    font-size: 18px;
+    color: #FF6258;
+}
+.draft_report_handle .report_receive_cover .choose_cover_sure{
+    width: 100%;
+    height:61px;
+    text-align: center;
+    line-height: 61px;
+    font-size: 18px;
+    color: #ff7123;
+    border-top: 1px solid #D2D2D2;
+    background: #FCFCFC;
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+}
+/*接收人覆盖层结束*/
+/*操作项*/
+.draft_report_handle .can_share_wrap{
+    width: 100%;
+    height: 55px;
+    border-bottom: 1px solid #D2D2D2;
+    border-top: 1px solid #D2D2D2;
+    box-sizing: content-box;
+}
+.draft_report_handle .can_share_wrap .title{
+    width: 29%;
+    height: 55px;
+    font-size: 16px;
+    color: #222;
+    box-sizing: border-box;
+    padding-left: 0.3rem;
+    line-height: 55px;
+    float: left;
+}
+.draft_report_handle .can_share_wrap .switch_wrap{
+    width: 51px;
+    height: 30px;
+    background:#ccc;
+    float: right;
+    margin-right: 0.3rem;
+    margin-top: 12px;
+    border-radius: 31px;
+    position: relative;
+}
+.draft_report_handle .can_share_wrap .active{
+    background:#FF7123;
+}
+.draft_report_handle .can_share_wrap .switch_wrap .circle{
+    width: 28px;
+    height: 28px;
+    border-radius: 100%;
+    background: #fff;
+    position: absolute;
+    top:1px;
+    left: 1px;
+}
+.draft_report_handle .can_share_wrap .active .circle{
+    left: 22px;
+}
+.draft_report_handle .report_submit_wrap{
+    width: 100%;
+    height: 61px;
+    background: #f2f2f2;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    box-shadow: 0 -1px 3px 0 rgba(0,0,0,0.1);
+    z-index: 8;
+}
+.draft_report_handle .report_submit_wrap .report_submit{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 61px;
+    background: #FCFCFC;
+    font-size: 18px;
+    color: #FF7123;
+}
+/*汇报预览开始*//*--------------------------------------------------------------------------*/
+.draft_report_handle .formData{
+    padding-top: 5px;
+}
+.draft_report_handle .formData .dataList{}
+.draft_report_handle .formData .dataList .dataListItem{
+    margin-top: 12px;
+}
+.draft_report_handle .formData .dataList li{
+    display: block;
+    width: 100%;
+}
+.draft_report_handle .formData .dataList li .left{
+    font-size: 14px;
+    color: #aaa;
+    padding-left: 0.3rem;
+    line-height: 1.6;
+}
+.draft_report_handle .formData .dataList li .right{
+    font-size: 14px;
+    color: #222;
+    padding-left: 0.3rem;
+}
+/*图片*/
+.draft_report_handle .formData .dataList li .right_pic{
+    display: block;
+    width: 100%;
+    padding-left: 0.2rem;
+}
+.draft_report_handle .formData .dataList li .right_pic .imglist{
+    width: 100%;
+    overflow: hidden;
+}
+.draft_report_handle .formData .dataList li .right_pic .imglist li{
+    display: block;
+    width: 93px;
+    height: 93px;
+    float: left;
+    margin-right: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+.draft_report_handle .formData .dataList li .right_pic .imglist li .imglist_imgbox{
+    width: 100%;
+    height: 100%;
+}
+.draft_report_handle .formData .dataList li .right_pic .imglist li .imglist_imgbox img{
+    width: 100%;
+    height: 100%;
+}
+/*附件*/
+.draft_report_handle .formData .dataList .dataListItem[data-fieldtype='file'] .right_file{
+    padding: 0 0.3rem;
+}
+.draft_report_handle .formData .dataList li .right_file .addFilePreview ul li{
+    display: block;
+    width: 100%;
+    padding: 7px 0;
+    overflow: hidden;
+}
+.draft_report_handle .formData .dataList li .right_file .addFilePreview ul li .file_logo{
+    display: block;
+    width: 15.5%;
+    height: 0.36rem;
+    float: left;
+    background: url(../images/list_icon_annex_def@3x.png) no-repeat left center;
+    background-size: 0.41rem 0.36rem;
+}
+.draft_report_handle .formData .dataList li .right_file .addFilePreview ul li .filename{
+    display: block;
+    height: 100%;
+    float: left;
+    width:84.5%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    color: #296695;
+    line-height: 0.36rem;
+}
+.draft_report_handle .formData .dataList li .right_file .addFilePreview ul li .size{
+    display: block;
+    width: 1.65rem;
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    color: #9a9a9a;
+    line-height: 0.36rem;
+}
+/*说明*/
+.draft_report_handle .dataListItem[data-fieldtype='remark']{
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+.draft_report_handle .dataListItem[data-fieldtype='remark'] .left{
+    font-size: 16px;
+}
+/*明细*/
+.draft_report_handle .formData .dataList li .groupItem{
+    padding-left: 0.3rem;
+}
+.draft_report_handle .formData .dataList li .groupItem dt{
+    font-size: 14px;
+    color: #222;
+}
+.draft_report_handle .report_submit_wrap .report_submit_sure,.draft_report_handle .report_submit_wrap .report_submit_cancel{
+    width: 43%;
+    float: left;
+    height: 44px;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 0.08rem;
+    text-align: center;
+    line-height: 44px;
+    background: #FF7123;
+    margin-top: 21px;
+    margin-left: 0.3rem
+}
+.draft_report_handle .report_submit_wrap .report_submit_cancel{
+    background: #aaa;
+}
+/*汇报预览结束*/
+/*存草稿开始*/
+.draft_report_handle .draft_cover_wrap{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    top:0;
+    display: none;
+    z-index: 99999;
+}
+.draft_report_handle .draft_cover_wrap .draft_cover{
+    width: 5.4rem;
+    height: 127px;
+    background: #fff;
+    border-radius: 0.2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.draft_report_handle .draft_cover_wrap .draft_cover .cover_content{
+    width: 100%;
+    height: 83px;
+    text-align: center;
+    line-height: 83px;
+    font-size: 17px;
+    color: #222;
+    border-bottom: 1px solid #D2D2D2;
+}
+.draft_report_handle .draft_cover_wrap .draft_cover .cover_btn_box{
+    width: 100%;
+    height: 44px;
+}
+.draft_report_handle .draft_cover_wrap .draft_cover .cover_btn_box div{
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    line-height: 44px;
+    box-sizing: border-box;
+    font-size: 17px;
+    float: left;
+    color: #EF6518;
+}
+.draft_report_handle .draft_cover_wrap .draft_cover .cover_btn_box .btn_left{
+    border-right: 1px solid #D2D2D2;
+    color: #666;
+}
+/*存草稿结束*/

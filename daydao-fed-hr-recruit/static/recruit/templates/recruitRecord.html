@@ -1,0 +1,27 @@
+<div id="recruitRecord">
+    <div class="recruit-record">
+        <div class="recruit-record-title">
+            <img v-bind:src=gMain.baseStaticHrPath+"recruit/images/default_headImg.png" alt="头像" v-if="!infoData.image||infoData.image ==''"/>
+            <img v-bind:src="infoData.image" alt="头像" v-else/>
+            <p><span class="sex0"></span><span class="name">{{infoData.name}}</span><span v-bind:class="'sex' + infoData.gender"></span></p>
+            <p class="info" v-if="infoData.age==''&&infoData.educationName!=''&&infoData.workExperience!=''">{{infoData.educationName}}/{{infoData.workExperience}}</p>
+            <p class="info" v-if="infoData.age!=''&&infoData.educationName==''&&infoData.workExperience!=''">{{infoData.age}}岁/{{infoData.workExperience}}</p>
+            <p class="info" v-if="infoData.age!=''&&infoData.educationName!=''&&infoData.workExperience==''">{{infoData.age}}岁/{{infoData.educationName}}</p>
+            <p class="info" v-if="infoData.age==''&&infoData.educationName==''&&infoData.workExperience!=''">{{infoData.workExperience}}</p>
+            <p class="info" v-if="infoData.age==''&&infoData.educationName!=''&&infoData.workExperience==''">{{infoData.educationName}}</p>
+            <p class="info" v-if="infoData.age!=''&&infoData.educationName==''&&infoData.workExperience==''">{{infoData.age}}岁</p>
+            <p class="info" v-if="infoData.age!=''&&infoData.educationName!=''&&infoData.workExperience!=''">{{infoData.age}}岁/{{infoData.educationName}}/{{infoData.workExperience}}</p>
+            <p class="info" v-if="infoData.age==''&&infoData.educationName==''&&infoData.workExperience==''"></p>
+        </div>
+        <div class="recruit-record-body">
+            <ul>
+                <li v-for="item in recordData">
+                    <span class="time">2017年4月14日  13:20</span>
+                    <div class="content">
+                        {{{item.remark}}}
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1490 @@
+@charset "utf-8";
+
+#extBtnAddResume{
+    padding-bottom: 20px;
+}
+#extBtnAddResume .extBtnAddResume{
+    width: 1040px;
+    overflow: hidden;
+}
+#extBtnAddResume .extBtnAddResume .clear-both{
+    clear: both;
+}
+#extBtnAddResume .extBtnAddResume .float-left{
+    float: left;
+}
+#extBtnAddResume .extBtnAddResume .float-right{
+    float: right;
+}
+
+#extBtnAddResume .extBtnAddResume .bottom{
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 5px 0;
+    text-align: right;
+}
+#extBtnAddResume .extBtnAddResume span{
+    display: inline-block;
+}
+#extBtnAddResume .extBtnAddResume button.a-btn{
+    display: inline-block;
+    height: 30px;
+    line-height: 29px;
+    margin: 0 6px;
+    padding: 0 23px;
+    border-radius: 2px;
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .3s;
+}
+#extBtnAddResume .extBtnAddResume button.a-btn:active{
+    position: relative;
+    top:1px;
+}
+#extBtnAddResume .extBtnAddResume button.save{
+    border: 1px #ed6c2b solid;
+    background-color: #ed6c2b;
+    color: #fff;
+}
+#extBtnAddResume .extBtnAddResume button.save:hover{
+    text-decoration:none;
+    background: rgb(228,85,13);
+    border:1px #ed6c2b solid;
+    transition: all 0.3s;
+}
+#extBtnAddResume .extBtnAddResume button.cancel{
+    background-color: #fff;
+    color: #333;
+    border: 1px #d2d2d2 solid;
+}
+#extBtnAddResume .extBtnAddResume button.cancel:hover{
+    text-decoration:none;
+    border:1px #ed6c2b solid;
+    color: #ed6c2b;
+    transition: all 0.3s;
+}
+#extBtnAddResume .extBtnAddResume .title span.icon-bg{
+    width: 32px;
+    height: 32px;
+    line-height: 35px;
+    display: inline-block;
+    background: #EC8F0D;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 18px;
+    float: left;
+    position: relative;
+    margin-top: 4px;
+}
+/*上面为公共部分样式*/
+/*顶部按钮=====start*/
+#extBtnAddResume .header_btn_group_wrap{
+    height: 43px;
+    box-sizing: border-box;
+    border-bottom: 2px solid #DBDBDB;
+}
+#extBtnAddResume .header_btn_group_wrap .candidate_position_wrap{
+    float: left;
+}
+#extBtnAddResume .header_btn_group_wrap .candidate_position_wrap .candidate_status{
+    color: #333;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 600;
+    float: left;
+}
+#extBtnAddResume .header_btn_group_wrap .candidate_position_wrap .position_name{
+    color: #8B8B8B;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 500;
+    margin-left: 18px;
+    float: left;
+}
+#extBtnAddResume .header_btn_group_wrap .header_btn_box{
+    float: right;
+}
+#extBtnAddResume .header_btn_group_wrap .header_btn_box ul.btn_wrap_one{
+
+}
+#extBtnAddResume .header_btn_group_wrap .header_btn_box  li.list_one{
+    display: block;
+    float: left;
+    width: 84px;
+    height: 32px;
+    text-align: center;
+    line-height: 30px;
+    color: #999;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #CDCDCD;
+    margin-left: 20px;
+    cursor: pointer;
+}
+#extBtnAddResume .header_btn_group_wrap .header_btn_box  li.list_one:nth-child(1){
+    width: 108px;
+    background-color: #ED6C2A;
+    color: #fff;
+    margin-left: 0;
+    border: none;
+    line-height: 32px;
+    transition: all 0.6s;
+}
+#extBtnAddResume .header_btn_group_wrap .header_btn_box  li.list_one:nth-child(1) i{
+    margin-left: 6px;
+}
+#extBtnAddResume .header_btn_group_wrap .header_btn_box  li.list_one:nth-child(1):hover{
+    background-color: #bd5018;
+}
+/*顶部按钮=====end*/
+
+/*个人信息*/
+#extBtnAddResume .candidate_bottom{
+    padding-top: 23px;
+    position: relative;
+}
+#extBtnAddResume .candidate_bottom .candidate_bottom_left{
+    width: 764px;
+}
+#extBtnAddResume .candidate_bottom .candidate_bottom_right{
+    height: 100%;
+    width: calc(100% - 775px);
+    position: absolute;
+    top:0;
+    right: 0;
+    box-sizing: border-box;
+    border-left: 2px solid #DBDBDB;
+    padding-top: 23px;
+    padding-left: 20px;
+}
+#extBtnAddResume .candidate_bottom .candidate_bottom_right .application_record_title{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    color: #333;
+}
+#extBtnAddResume .candidate_bottom .candidate_bottom_right .record_box{
+    padding-top: 25px;
+}
+#extBtnAddResume .candidate_bottom .candidate_bottom_right .record_box li.record_list{
+    padding-bottom: 15px;
+    border-left: 1px dashed #E7E7E7;
+    position: relative;
+    padding-bottom: 23px;
+    padding-left: 10px;
+}
+#extBtnAddResume .candidate_bottom .candidate_bottom_right .record_box li.record_list .circle{
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    border: 2px solid #7BC9FF;
+    position: absolute;
+    top: 0px;
+    left: -4px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+#extBtnAddResume .candidate_bottom .candidate_bottom_right li.record_list .record_data_left{
+    width: 92px;
+    float: left;
+}
+#extBtnAddResume .candidate_bottom .candidate_bottom_right li.record_list .record_data_right{
+    float: left;
+    width: calc(100% - 92px);
+}
+#extBtnAddResume .candidate_bottom .candidate_bottom_right li.record_list .record_data_right .evaluate_btn{
+    background: none;
+    position: absolute;
+    right: 0;
+    top: 1px;
+    color: #0096FF;
+    cursor: pointer;
+}
+#extBtnAddResume .candidate_bottom .candidate_bottom_right li.record_list .candidate_bottom_content{}
+#extBtnAddResume .candidate_bottom .candidate_bottom_right li.record_list .candidate_bottom_content ul{}
+#extBtnAddResume .candidate_bottom .candidate_bottom_right li.record_list .candidate_bottom_content ul li{
+    font-size: 12px;
+    color: #999;
+}
+#extBtnAddResume .candidate_bottom .candidate_bottom_right li.record_list .candidate_bottom_content ul li .content_key{
+
+}
+/*--------------------------*/
+#extBtnAddResume .extBtnAddResume .candidate_bottom_left .resume_title{
+    border-bottom: 1px dashed #8b8b8b;
+    padding-bottom: 10px;
+    position: relative;
+    box-sizing: border-box;
+    padding-left: 14px;
+}
+#extBtnAddResume .extBtnAddResume .candidate_bottom_left .resume_title .blue_block{
+    width: 8px;
+    height: 24px;
+    background-color: #7BC9FF;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+#extBtnAddResume .extBtnAddResume .candidate_bottom_left .resume_title h2{
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-person-info span.icon{
+    position: absolute;
+    right: 0;
+    top:6px;
+    font-size: 20px;
+    webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    cursor: pointer;
+    color: #666666;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-person-info  span.icon:hover{
+    color: #ed6c2b;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-person-info .body{
+    /*overflow: hidden;*/
+    padding-bottom: 25px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-person-info .body-1{
+    width: 46%;
+    box-sizing: border-box;
+    padding: 33px 0 0;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-person-info .body-2{
+    width: 54%;
+    box-sizing: border-box;
+    padding: 33px 0 0;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-person-info .body .wrap{
+    height: 32px;
+    margin-bottom: 14px;
+    font-size: 14px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-person-info .body .wrap .span-1{
+    width: 110px;
+    line-height: 32px;
+    text-align: right;
+    box-sizing: border-box;
+    color: #333;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-person-info .body .wrap .span-1 b{
+    color: #FF0000;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-person-info .body .wrap .span-2{
+    width: calc(100% - 110px)
+}
+#extBtnAddResume .extBtnAddResume .add-resume-person-info .body .wrap .span-2 input.self{
+    padding: 0 5px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #bebebe;
+    border-radius: 3px;
+    color: #4a4a4a;
+    box-shadow: none;
+    width: 198px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-person-info .body .wrap .span-2 input:focus{
+    border: 1px solid #FF6200;
+    transition: all 0.5s;
+}
+
+#extBtnAddResume .extBtnAddResume .add-resume-person-info .body-show{
+    overflow: hidden;
+    position: relative;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-person-info .body-show-1{
+    width: 46%;
+    box-sizing: border-box;
+    padding: 33px 0;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-person-info .body-show-2{
+    width: 54%;
+    box-sizing: border-box;
+    padding: 33px 0;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-person-info .body-show .wrap{
+    overflow: hidden;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-person-info .body-show .wrap .span-1{
+    width: 110px;
+    line-height: 32px;
+    text-align: right;
+    box-sizing: border-box;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-person-info .body-show .wrap .span-2{
+    width: calc(100% - 110px);
+    line-height: 32px;
+}
+/*期望工作*/
+#extBtnAddResume .extBtnAddResume .add-resume-expected-work{
+}
+#extBtnAddResume .extBtnAddResume .add-resume-expected-work .title{
+    position: relative;
+    line-height: 40px;
+    height: 40px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-expected-work .title::before{
+    content:"";
+    border-bottom: 1px dashed #8b8b8b;
+    width: 100%;
+    position: absolute;
+    top:20px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-expected-work .title h2{
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    float: left;
+    background: #FFF;
+    position: relative;
+    padding-right: 10px;
+    position: relative;
+    padding-left: 5px;
+}
+
+#extBtnAddResume .extBtnAddResume .resume_title span.icon-make{
+    position: absolute;
+    right: 0;
+    top:5px;
+    font-size: 20px;
+    webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    cursor: pointer;
+    color: #666;
+}
+#extBtnAddResume .extBtnAddResume .resume_title span.icon-make:hover{
+    color: #ed6c2b;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-expected-work .body{
+    padding: 12px 0 0;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-expected-work .body .wrap{
+    width: 46%;
+    margin-bottom:14px;
+    height: 32px;
+    float: left;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-expected-work .body .wrap.on{
+    width: 54%;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-expected-work .body .wrap .span-1{
+    width: 110px;
+    line-height: 30px;
+    box-sizing: border-box;
+    text-align: right;
+    color: #333;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-expected-work .body .wrap .span-2{
+    width: calc(100% - 110px);
+}
+#extBtnAddResume .extBtnAddResume .add-resume-expected-work .body .wrap input.self{
+    padding: 0 5px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #bebebe;
+    border-radius: 3px;
+    color: #4a4a4a;
+    box-shadow: none;
+    width: 198px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-expected-work .body .wrap input:focus{
+    border: 1px solid #FF6200;
+    transition: all 0.5s;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-expected-work .body-show{
+    overflow: hidden;
+    padding-top: 3px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-expected-work .body-show .wrap{
+    overflow: hidden;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-expected-work .body-show .wrap span {
+    display: block;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-expected-work .body-show .wrap .span-1{
+    width: 110px;
+    line-height: 32px;
+    text-align: right;
+    box-sizing: border-box;
+    color: #333;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-expected-work .body-show .wrap .span-2{
+    width: calc(100% - 110px);
+    line-height: 32px;
+}
+/*工作经验*/
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience{
+    overflow: hidden;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .title{
+    position: relative;
+    line-height: 40px;
+    height: 40px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .title::before{
+    content:"";
+    border-bottom: 1px dashed #8b8b8b;
+    width: 100%;
+    position: absolute;
+    top:20px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .title h2{
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    float: left;
+    background: #FFF;
+    position: relative;
+    padding-right: 10px;
+    padding-left: 5px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .title span.icon-make{
+    position: absolute;
+    right: 0;
+    top:20px;
+    font-size: 20px;
+    webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    cursor: pointer;
+    color: #666;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .title span.icon-make:hover{
+    color: #ed6c2b;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .body{
+    padding-top: 20px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .body .wrap{
+    margin-bottom: 14px;
+    overflow: hidden;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .body .wrap input{
+    padding: 0 5px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #bebebe;
+    border-radius: 3px;
+    color: #4a4a4a;
+    box-shadow: none;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .body .wrap input:focus{
+    border: 1px solid #FF6200;
+    transition: all 0.5s;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .body .wrap textarea{
+    -webkit-appearance: textarea;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    user-select: text;
+    flex-direction: column;
+    resize:none;
+    cursor: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    float: left;
+    padding: 5px;
+    border: 1px solid #bebebe;
+    border-radius: 3px;
+    width: 562px;
+    word-break: break-all;
+    box-sizing: border-box;
+    color: #4a4a4a;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .body .wrap textarea:focus{
+    border: 1px solid #FF6200;
+    transition: all 0.5s;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .body .wrap .span-1{
+    width: 110px;
+    box-sizing: border-box;
+    text-align: right;
+    line-height: 30px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .body .wrap .span-3{
+    width: 45px;
+    text-align: center;
+    line-height: 30px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .body .wrap .span-2 input{
+    width: 198px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .body .wrap .span-4 input{
+    width: 198px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .body .wrap .span-5 input {
+    width: 550px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .body .wrap .span-6 {
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .body-show{
+    overflow: hidden;
+    padding-top: 15px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .body-show .wrap{
+    overflow: hidden;
+    margin-bottom: 14px;
+    font-size: 14px;
+    box-sizing: border-box;
+    position: relative;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .body-show .wrap .iconfont_daydao_recruit{
+    position: absolute;
+    webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    cursor: pointer;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .body-show .wrap .iconfont_daydao_recruit:hover{
+    color: #ed6c2b;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .body-show .wrap .edit{
+    right: 50px;
+    font-size: 20px;
+    top: 0;
+    color: #666;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .body-show .wrap .delete{
+    right: 25px;
+    font-size: 16px;
+    top: 3px;
+    color: #666;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .body-show .wrap .span-1{
+    width: 205px;
+    text-align: right;
+    margin-right: 25px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .body-show .wrap .span-2{
+    width: 430px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .body-show .wrap .span-2 b {
+    margin-right: 25px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-work-experience .body-show .wrap p{
+    padding-left: 38px;
+    margin-top: 15px;
+    padding-right: 86px;
+    box-sizing: border-box;
+    width: 100%;
+}
+/*教育经历*/
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience{
+}
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience .title{
+    position: relative;
+    line-height: 40px;
+    height: 40px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience .title::before{
+    content:"";
+    border-bottom: 1px dashed #8b8b8b;
+    width: 100%;
+    position: absolute;
+    top:20px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience .title h2{
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    float: left;
+    background: #FFF;
+    position: relative;
+    padding-right: 10px;
+    padding-left: 5px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience .title span.icon-make{
+    position: absolute;
+    right: 0;
+    top:20px;
+    font-size: 20px;
+    webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    cursor: pointer;
+    color: #666;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience .title span.icon-make:hover{
+    color: #ed6c2b;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience .body{
+    padding-top: 20px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience .body .wrap{
+    margin-bottom: 14px;
+    box-sizing: border-box;
+}
+
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience .body .wrap.on{
+    padding-left: 0;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience .body .wrap .span-1{
+    width: 110px;
+    line-height: 30px;
+    box-sizing: border-box;
+    text-align: right;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience .body .wrap .span-1.on{
+    width: 142px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience .body .wrap .span-2 input{
+    width: 198px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience .body .wrap .span-4 input{
+    width: 198px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience .body .wrap .span-3{
+    width: 45px;
+    line-height: 30px;
+    text-align: center;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience .body .wrap input.self{
+    padding: 0 5px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #bebebe;
+    border-radius: 3px;
+    color: #4a4a4a;
+    box-shadow: none;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience .body .wrap input:focus{
+    border: 1px solid #FF6200;
+    transition: all 0.5s;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience .body .wrap .span-5{
+    width: 275px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience .body .wrap .span-6 input{
+    width: 198px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience .body-show{
+    overflow: hidden;
+    padding-top: 15px;
+    position: relative;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience .body-show .wrap .iconfont_daydao_recruit{
+    position: absolute;
+    webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    cursor: pointer;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience .body-show .wrap .iconfont_daydao_recruit:hover{
+    color: #ed6c2b;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience .body-show .wrap .edit{
+    right: 50px;
+    font-size: 20px;
+    top: 0;
+    color: #666;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience .body-show .wrap .delete{
+    right: 25px;
+    font-size: 16px;
+    top: 3px;
+    color: #666;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience .body-show .wrap{
+    overflow: hidden;
+    margin-bottom: 14px;
+    font-size: 14px;
+    box-sizing: border-box;
+    position: relative;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience .body-show .wrap .span-1{
+    width: 205px;
+    text-align: right;
+    padding-right: 25px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience .body-show .wrap .span-2{
+    width: 430px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-edu-experience .body-show .wrap .span-2 b{
+    margin-right: 25px;
+}
+/*项目经验*/
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience{
+    overflow: hidden;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .title{
+    position: relative;
+    line-height: 40px;
+    height: 40px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .title::before{
+    content:"";
+    border-bottom: 1px dashed #8b8b8b;
+    width: 100%;
+    position: absolute;
+    top:20px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .title h2{
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    float: left;
+    background: #FFF;
+    position: relative;
+    padding-right: 10px;
+    padding-left: 5px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .title span.icon-make{
+    position: absolute;
+    right: 0;
+    top:20px;
+    font-size: 20px;
+    webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    cursor: pointer;
+    color: #666;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .title span.icon-make:hover{
+    color: #ed6c2b;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .body{
+    padding-top: 22px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .body .wrap{
+    margin-bottom: 14px;
+    overflow: hidden;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .body .wrap span{
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .body .wrap input{
+    padding: 0 5px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #bebebe;
+    border-radius: 3px;
+    color: #4a4a4a;
+    box-shadow: none;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .body .wrap input:focus{
+    border: 1px solid #FF6200;
+    transition: all 0.5s;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .body .wrap textarea{
+    -webkit-appearance: textarea;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    user-select: text;
+    flex-direction: column;
+    resize:none;
+    cursor: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    float: left;
+    padding: 5px;
+    border: 1px solid #bebebe;
+    border-radius: 3px;
+    width: 562px;
+    word-break: break-all;
+    box-sizing: border-box;
+    color: #4a4a4a;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .body .wrap textarea:focus{
+    border: 1px solid #FF6200;
+    transition: all 0.5s;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .body .wrap .span-1{
+    width: 110px;
+    box-sizing: border-box;
+    text-align: right;
+    line-height: 30px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .body .wrap .span-3{
+    width: 45px;
+    text-align: center;
+    line-height: 30px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .body .wrap .span-2 input {
+    width: 198px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .body .wrap .span-4 input{
+    width: 198px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .body .wrap .span-5 input {
+    width: 198px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .body .wrap .span-7 input {
+    width: 550px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .body .wrap .span-6 {
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .body-show{
+    overflow: hidden;
+    padding-top: 15px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .body-show .wrap .iconfont_daydao_recruit{
+    position: absolute;
+    webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    cursor: pointer;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .body-show .wrap .iconfont_daydao_recruit:hover{
+    color: #ed6c2b;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .body-show .wrap .edit{
+    right: 50px;
+    font-size: 20px;
+    top: 0;
+    color: #666;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .body-show .wrap .delete{
+    right: 25px;
+    font-size: 16px;
+    top: 3px;
+    color: #666;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .body-show .wrap{
+    overflow: hidden;
+    margin-bottom: 14px;
+    font-size: 14px;
+    box-sizing: border-box;
+    position: relative;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .body-show .wrap .span-1{
+    width: 205px;
+    text-align: right;
+    padding-right: 25px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .body-show .wrap .span-2{
+    width: 430px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .body-show .wrap .span-2 b{
+    margin-right: 25px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-project-experience .body-show .wrap p{
+    padding-left: 38px;
+    margin-top: 15px;
+    padding-right: 86px;
+    box-sizing: border-box;
+    width: 100%;
+}
+/*技能评价*/
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation{
+}
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation .title{
+    position: relative;
+    line-height: 40px;
+    height: 40px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation .title span.icon-make{
+    position: absolute;
+    right: 0;
+    top:20px;
+    font-size: 20px;
+    webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    cursor: pointer;
+    color: #666;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation .title span.icon-make:hover{
+    color: #ed6c2b;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation .title::before{
+    content:"";
+    border-bottom: 1px dashed #8b8b8b;
+    width: 100%;
+    position: absolute;
+    top:20px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation .title h2{
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    float: left;
+    background: #FFF;
+    position: relative;
+    padding-right: 10px;
+    padding-left: 5px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation .body{
+    padding-top: 22px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation .body .wrap{
+    margin-bottom:14px;
+    height: 32px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation .body .wrap .span-1{
+    width: 110px;
+    line-height: 30px;
+    box-sizing: border-box;
+    text-align: right;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation .body .wrap .span-1.on{
+    width: 143px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation .body .wrap .span-2 input{
+    width: 198px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation .body .wrap .span-3{
+    /*width: 80px;*/
+}
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation .body .wrap input.self{
+    padding: 0 5px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #bebebe;
+    border-radius: 3px;
+    color: #4a4a4a;
+    box-shadow: none;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation .body .wrap input:focus{
+    border: 1px solid #FF6200;
+    transition: all 0.5s;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation .body .wrap .span-4{
+    width: 130px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation .body-show{
+    overflow: hidden;
+    padding-top: 15px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation .body-show .wrap{
+    overflow: hidden;
+    margin-bottom: 10px;
+    font-size: 14px;
+    position: relative;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation .body-show .wrap .iconfont_daydao_recruit{
+    position: absolute;
+    webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    cursor: pointer;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation .body-show .wrap .iconfont_daydao_recruit:hover{
+    color: #ed6c2b;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation .body-show .wrap .edit{
+    right: 50px;
+    font-size: 20px;
+    top: 0;
+    color: #666;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation .body-show .wrap .delete{
+    right: 25px;
+    font-size: 16px;
+    top: 3px;
+    color: #666;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation .body-show .wrap span {
+    display: block;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation .body-show .wrap .span-1{
+    width: 155px;
+    line-height: 32px;
+    text-align: right;
+    box-sizing: border-box;
+    padding-right: 25px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-left: 38px;
+    white-space: nowrap;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation .body-show .wrap .span-2{
+    width: 450px;
+    line-height: 11px;
+    background: #ccc;
+    height: 11px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation .body-show .wrap  b{
+    float: left;
+    font-weight: normal;
+    margin-top: 5px;
+    margin-left: 25px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation .body-show .wrap .span-2 .percent{
+    height: 11px;
+    border-radius: 5px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-skill-evaluation .body-show .wrap .span-2 .percent .dh{
+    background: url("../images/levelbg.gif") repeat;
+    height: 11px;
+    border-radius: 5px;
+    animation: dongHua 3s;
+    -moz-animation: dongHua 3s;	/* Firefox */
+    -webkit-animation: dongHua 3s;	/* Safari 和 Chrome */
+    -o-animation: dongHua 3s;
+}
+@keyframes dongHua
+{
+    from {width: 0;}
+    to {width: 100%;}
+}
+
+@-moz-keyframes dongHua /* Firefox */
+{
+    from {width: 0;}
+    to {width: 100%;}
+}
+
+@-webkit-keyframes dongHua /* Safari 和 Chrome */
+{
+    from {width: 0;}
+    to {width: 100%;}
+}
+
+@-o-keyframes dongHua /* Opera */
+{
+    from {width: 0;}
+    to {width: 100%;}
+}
+/*培训经历*/
+#extBtnAddResume .extBtnAddResume .add-resume-training-experience{
+    overflow: hidden;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-training-experience .title{
+    position: relative;
+    line-height: 40px;
+    height: 40px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-training-experience .title span.icon-make{
+    position: absolute;
+    right: 0;
+    top:20px;
+    font-size: 20px;
+    webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    cursor: pointer;
+    color: #666;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-training-experience .title span.icon-make:hover{
+    color: #ed6c2b;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-training-experience .title::before{
+    content:"";
+    border-bottom: 1px dashed #8b8b8b;
+    width: 100%;
+    position: absolute;
+    top:20px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-training-experience .title h2{
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    float: left;
+    background: #FFF;
+    position: relative;
+    padding-right: 10px;
+    padding-left: 5px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-training-experience .body {
+    padding-top: 22px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-training-experience .body .wrap{
+    margin-bottom: 14px;
+    overflow: hidden;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-training-experience .body .wrap span{
+
+}
+#extBtnAddResume .extBtnAddResume .add-resume-training-experience .body .wrap input{
+    padding: 0 5px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #bebebe;
+    border-radius: 3px;
+    color: #4a4a4a;
+    box-shadow: none;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-training-experience .body .wrap input:focus{
+    border: 1px solid #FF6200;
+    transition: all 0.5s;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-training-experience .body .wrap .span-1{
+    width: 110px;
+    box-sizing: border-box;
+    text-align: right;
+    line-height: 30px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-training-experience .body .wrap .span-3{
+    width: 45px;
+    text-align: center;
+    line-height: 30px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-training-experience .body .wrap .span-2 input {
+    width: 198px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-training-experience .body .wrap .span-4 input{
+    width: 198px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-training-experience .body .wrap .span-5 input{
+    width: 198px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-training-experience .body-show{
+    overflow: hidden;
+    padding-top: 15px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-training-experience .body-show .wrap .iconfont_daydao_recruit{
+    position: absolute;
+    webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    cursor: pointer;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-training-experience .body-show .wrap .iconfont_daydao_recruit:hover{
+    color: #ed6c2b;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-training-experience .body-show .wrap .edit{
+    right: 50px;
+    font-size: 20px;
+    top: 0;
+    color: #666;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-training-experience .body-show .wrap .delete{
+    right: 25px;
+    font-size: 16px;
+    top: 3px;
+    color: #666;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-training-experience .body-show .wrap{
+    overflow: hidden;
+    margin-bottom: 10px;
+    font-size: 14px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+#extBtnAddResume .extBtnAddResume .add-resume-training-experience .body-show .wrap .span-1{
+    width: 205px;
+    text-align: right;
+    padding-right: 25px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-training-experience .body-show .wrap .span-2{
+    width: 430px;
+}
+/*语言能力*/
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability{
+
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .title{
+    position: relative;
+    line-height: 40px;
+    height: 40px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .title span.icon-make{
+    position: absolute;
+    right: 0;
+    top:20px;
+    font-size: 20px;
+    webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    cursor: pointer;
+    color: #666;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .title span.icon-make:hover{
+    color: #ed6c2b;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .title::before{
+    content:"";
+    border-bottom: 1px dashed #8b8b8b;
+    width: 100%;
+    position: absolute;
+    top:20px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .title h2{
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    float: left;
+    background: #FFF;
+    position: relative;
+    padding-right: 10px;
+    padding-left: 5px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .body{
+    padding-top: 22px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .body .wrap{
+    margin-bottom:14px;
+    height: 32px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .body .wrap .span-1{
+    width: 110px;
+    line-height: 30px;
+    box-sizing: border-box;
+    text-align: right;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .body .wrap .span-1.on{
+    width: 143px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .body .wrap .span-2 input{
+    width: 198px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .body .wrap .span-3{
+
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .body .wrap input.self{
+    padding: 0 5px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #bebebe;
+    border-radius: 3px;
+    color: #4a4a4a;
+    box-shadow: none;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .body .wrap input:focus{
+    border: 1px solid #FF6200;
+    transition: all 0.5s;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .body .wrap .span-4{
+    width: 130px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .body-show{
+    overflow: hidden;
+    padding-top: 15px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .body-show .wrap{
+    overflow: hidden;
+    margin-bottom: 10px;
+    font-size: 14px;
+    position: relative;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .body-show .wrap  b{
+    float: left;
+    font-weight: normal;
+    margin-top: 5px;
+    margin-left: 25px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .body-show .wrap .iconfont_daydao_recruit{
+    position: absolute;
+    webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    cursor: pointer;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .body-show .wrap .iconfont_daydao_recruit:hover{
+    color: #ed6c2b;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .body-show .wrap .edit{
+    right: 50px;
+    font-size: 20px;
+    top: 0;
+    color: #666;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .body-show .wrap .delete{
+    right: 25px;
+    font-size: 16px;
+    top: 3px;
+    color: #666;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .body-show .wrap .iconfont_daydao_recruit{
+    position: absolute;
+    webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    cursor: pointer;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .body-show .wrap .iconfont_daydao_recruit:hover{
+    color: #ed6c2b;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .body-show .wrap .edit{
+    right: 50px;
+    font-size: 20px;
+    top: 0;
+    color: #666;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .body-show .wrap .delete{
+    right: 25px;
+    font-size: 16px;
+    top: 3px;
+    color: #666;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .body-show .wrap span {
+    display: block;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .body-show .wrap .span-1{
+    width: 155px;
+    line-height: 32px;
+    text-align: right;
+    box-sizing: border-box;
+    padding-right: 25px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-left: 38px;
+    white-space: nowrap;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .body-show .wrap .span-2{
+    width: 450px;
+    line-height: 11px;
+    background: #ccc;
+    height: 11px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .body-show .wrap .span-2 .percent{
+    height: 11px;
+    border-radius: 5px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-language-ability .body-show .wrap .span-2 .percent .dh{
+    background: url("../images/levelbg.gif") repeat;
+    height: 11px;
+    border-radius: 5px;
+    animation: dongHua 3s;
+    -moz-animation: dongHua 3s;	/* Firefox */
+    -webkit-animation: dongHua 3s;	/* Safari 和 Chrome */
+    -o-animation: dongHua 3s;
+}
+/*自我描述*/
+#extBtnAddResume .extBtnAddResume .add-resume-self-description{
+    overflow: hidden;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-self-description .title{
+    position: relative;
+    line-height: 40px;
+    height: 40px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-self-description .title span.icon-make{
+    position: absolute;
+    right: 0;
+    top:20px;
+    font-size: 20px;
+    webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    cursor: pointer;
+    color: #666;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-self-description .title span.icon-make:hover{
+    color: #ed6c2b;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-self-description .title::before{
+    content:"";
+    border-bottom: 1px dashed #8b8b8b;
+    width: 100%;
+    position: absolute;
+    top:20px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-self-description .title h2{
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    float: left;
+    background: #FFF;
+    position: relative;
+    padding-right: 10px;
+    padding-left: 5px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-self-description .body{
+    padding-top: 22px;
+    padding-bottom: 30px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-self-description .body .wrap{
+    margin-bottom:10px;
+    padding-left: 110px;
+    height: 107px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-self-description .body .wrap textarea{
+    -webkit-appearance: textarea;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    user-select: text;
+    flex-direction: column;
+    resize:none;
+    cursor: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    float: left;
+    padding: 5px;
+    border: 1px solid #bebebe;
+    border-radius: 3px;
+    width: 562px;
+    word-break: break-all;
+    box-sizing: border-box;
+    color: #4a4a4a;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-self-description .body .wrap textarea:focus{
+    border: 1px solid #FF6200;
+    transition: all 0.5s;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-self-description .body-show{
+    overflow: hidden;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-self-description .body-show .wrap {
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+#extBtnAddResume .extBtnAddResume .add-resume-self-description .body-show .wrap p{
+    line-height: 30px;
+    text-indent: 2em;
+    word-break: break-all;
+}
+#extBtnAddResume a.a-btn{
+    display: inline-block;
+    height: 30px;
+    line-height: 29px;
+    margin: 0 6px;
+    padding: 0 23px;
+    border-radius: 2px;
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .3s;
+}
+#extBtnAddResume  a.a-btn:active{
+    position: relative;
+    top:1px;
+}
+#extBtnAddResume  a.cancel{
+    background-color: #fff;
+    color: #333;
+    border: 1px #d2d2d2 solid;
+    margin-right: 93px;
+}
+#extBtnAddResume  a.cancel:hover{
+    text-decoration:none;
+    border:1px #ed6c2b solid;
+    color: #ed6c2b;
+    transition: all 0.3s;
+}
+#extBtnAddResume  p{
+    word-break: break-all;
+}
+#extBtnAddResume .black-font{
+    font-family: "黑体";
+}

@@ -1,0 +1,167 @@
+@charset "utf-8";
+#recruitCenter{
+}
+#recruitCenter .recruit-center{
+    width: 100%;
+    margin: 0 auto;
+    color: #333;
+    overflow: hidden;
+    background: #f0f0f0;
+}
+#recruitCenter .recruit-center .recruit-center-title{
+    box-sizing: border-box;
+    background: #fbfbfb;
+    border-bottom: 0.02rem solid #d6d6d6;
+    margin:0 auto;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 999;
+}
+#recruitCenter .recruit-center .recruit-center-title .recruit-center-tab{
+    width: 50%;
+    height: 0.9rem;
+    line-height: 0.9rem;
+    float: left;
+    text-align: center;
+    font-size: 0.32rem;
+    color:#222;
+    display: block;
+}
+#recruitCenter .recruit-center .recruit-center-body-1{
+    margin-top: 1.15rem;
+}
+#recruitCenter .recruit-center ul li{
+    height: 1.8rem;
+    margin: 0.2rem 0.2rem;
+    background: #FFF;
+    border-radius: 0.08rem;
+    box-shadow: 0 0 0.14rem 0 #CCC;
+    position: relative;
+    color: #9999A6;
+}
+#recruitCenter .recruit-center ul li a{
+    color: #9999A6;
+}
+#recruitCenter .recruit-center ul li .wrap{
+    overflow: hidden;
+}
+#recruitCenter .recruit-center ul li img {
+    width: 0.96rem;
+    height: 0.96rem;
+    vertical-align: bottom;
+    border-radius: 50%;
+    border: 0.02rem solid #DDD;
+    box-sizing: border-box;
+    float: left;
+    margin: 0.42rem 0.3rem;
+}
+#recruitCenter .recruit-center ul li span.name{
+    font-size: 0.32rem;
+    margin-top: 0.3rem;
+    display: block;
+    color: #222;
+    line-height: 0.45rem;
+    float: left;
+}
+#recruitCenter .recruit-center ul li span.sex1{
+    width: 0.22rem;
+    height: 0.22rem;
+    float: left;
+    background: url("../images/sex1.png") no-repeat;
+    background-size:100% 100%;
+    margin-top: 0.4rem;
+    margin-left: 0.08rem;
+}
+#recruitCenter .recruit-center ul li span.sex2{
+    width: 0.22rem;
+    height: 0.22rem;
+    float: left;
+    background: url("../images/sex2.png") no-repeat;
+    background-size:100% 100%;
+    margin-top: 0.4rem;
+    margin-left: 0.08rem;
+}
+#recruitCenter .recruit-center ul li span.info{
+    font-size: 0.20rem;
+    margin-top: 0.4rem;
+    display: block;
+    color: #aaa;
+    line-height: 0.28rem;
+    float: left;
+    margin-left: 0.08rem;
+}
+#recruitCenter .recruit-center ul li p{
+    font-size: 0.24rem;
+    line-height: 0.33rem;
+    color: #666;
+    margin-top: 0.03rem;
+}
+#recruitCenter .recruit-center .recruit-center-body-2{
+    margin-top: 1.15rem;
+}
+#recruitCenter .recruit-center .recruit-center-body-2 .status{
+    width: 1.03rem;
+    height: 0.32rem;
+    position: absolute;
+    right: -0.08rem;
+    top:0.1rem;
+    background-size:100% 100% !important;
+}
+#recruitCenter .recruit-center .recruit-center-body-2 .status-0{
+    background: url("../images/status0.png") no-repeat;
+}
+#recruitCenter .recruit-center .recruit-center-body-2 .status-1{
+    background: url("../images/status1.png") no-repeat;
+}
+#recruitCenter .recruit-center .recruit-center-body-2 .status-2{
+    background: url("../images/status2.png") no-repeat;
+}
+#recruitCenter .recruit-center .recruit-center-body-2 .status-3{
+    background: url("../images/status3.png") no-repeat;
+}
+#recruitCenter .recruit-center .recruit-center-body-2 .status-4{
+    background: url("../images/status4.png") no-repeat;
+}
+#recruitCenter .recruit-center .recruit-center-body-2 .status-5{
+    background: url("../images/status5.png") no-repeat;
+}
+#recruitCenter .recruit-center span.on{
+    color: #ED6C2B !important;
+    position: relative;
+}
+#recruitCenter .recruit-center span.on::after{
+    content: "";
+    width: 50%;
+    height: 0.03rem;
+    position: absolute;
+    background: #ED6C2B;
+    left: 25%;
+    bottom:0;
+}
+#recruitCenter .recruit-center .no-data{
+    width: 100%;
+    height: 2.66rem;
+    position: fixed;
+    top:50%;
+    margin-top: -1.33rem;
+}
+#recruitCenter .recruit-center .no-data span{
+    display: block;
+    width: 2.02rem;
+    height: 2.02rem;
+    background: url("../images/no-data.png") no-repeat;
+    margin: 0 auto;
+    background-size:100% 100%;
+}
+#recruitCenter .recruit-center .no-data p{
+    text-align: center;
+    color: #aaa;
+    font-size:0.28rem;
+    line-height: 0.4rem;
+    margin-top: 0.24rem;
+}
+#recruitCenter .recruit-center .clear-both{
+    clear: both;
+}

@@ -1,0 +1,786 @@
+@charset "utf-8";
+
+/*表格区域 */
+#base_table_tools{
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+#base_metadata_wrap{
+    position: relative;
+    z-index: 7;
+    margin-top: 5px;
+}
+#base_metadata_wrap .ui-jqgrid .ui-jqgrid-view{
+    font-size: 14px;
+}
+#base_metadata_wrap .ui-jqgrid .ui-jqgrid-htable th div{
+    font-size: 13px;
+}
+#base_metadata_wrap .ui-widget-content{
+    color: #222222;
+    font-family: '微软雅黑';
+    margin-bottom: 15px;
+}
+
+/**
+ *---------------------------------------
+ *弹出编辑预览框模板 start
+ * ----------------------------
+ */
+#table_edit_wrap{
+
+}
+#table_edit_wrap .arrows{
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-top: 15px solid transparent;
+    border-right: 20px solid rgb(224, 219, 219);
+    border-bottom: 15px solid transparent;
+    left: -20px;
+    top: 20px;
+    z-index: 10;
+}
+
+#table_edit_dialog{
+    width: 902px;
+    margin: 0 auto;
+    background: #36322f;
+    font-size: 13px;
+    position: relative;
+}
+#table_edit_dialog .close{
+    position: absolute;
+    right: -6px;
+    top: -9px;
+    width: 26px;
+    height: 26px;
+    margin-left: 0;
+    background: rgb(119,119,119);
+    border: 3px solid #D2D2D2;
+    font-size: 14px;
+    line-height: 26px;
+    text-align: center;
+    border-radius: 50%;
+    color: #FAFAFA;
+    cursor: pointer;
+}
+#table_edit_dialog .close:hover{
+    background: rgb(47,141,237);
+}
+.table_edit_dialog_title_left{
+    display: inline-block;
+    background-color: #ffffff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 120px;
+    height: 44px;
+    line-height: 44px;
+}
+.table_edit_dialog_left{
+    float: left;
+    width: 120px;
+}
+.table_edit_dialog_left_ul{}
+.table_edit_dialog_left_ul li{
+    line-height: 56px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+}
+.table_edit_dialog_left_ul li:hover{
+    background: #211f1e;
+}
+.table_edit_dialog_left_ul li:hover:before{
+    content:" ";
+    background: #ed6c2b;
+    position: absolute;
+    width: 4px;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+.table_edit_dialog_left_ul li.on{
+    cursor: default;
+    border-right: none;
+    background: #ed6c2b;
+    color: #FFFFFF;
+}
+.table_edit_dialog_left_ul li.on:after{
+    content: " ";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-right: 9px solid #fff;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    top: 20px;
+    right: 0;
+}
+
+
+.table_edit_dialog_right{
+    float: left;
+    background: #fff;
+    width: 782px;
+    height: 580px;
+    border-top: 1px solid #dadada;
+    box-sizing: border-box;
+}
+
+.table_edit_dialog_right_ul{
+    min-height: 350px;
+}
+.table_edit_dialog_right_li{
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 350px;
+    padding: 0 24px;
+}
+/*滚动条优化 start*/
+.table_person_info::-webkit-scrollbar {
+    width: 8px;
+}
+.table_person_info::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    background: #f5f5f5;
+}
+.table_person_info::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    background: #D7D7D7;
+    -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
+}
+.table_person_info::-webkit-scrollbar-thumb:hover{
+    background: #c1c1c1;
+}
+
+.table_person_info::-webkit-scrollbar-thumb:window-inactive {
+    background: #D7D7D7;
+}
+
+
+.table_edit_dialog_right_li::-webkit-scrollbar {
+    width: 8px;
+}
+.table_edit_dialog_right_li::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    background: #f5f5f5;
+}
+.table_edit_dialog_right_li::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    background: #D7D7D7;
+    -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
+}
+.table_edit_dialog_right_li::-webkit-scrollbar-thumb:hover{
+    background: #c1c1c1;
+}
+
+.table_edit_dialog_right_li::-webkit-scrollbar-thumb:window-inactive {
+    background: #D7D7D7;
+}
+.table_edit_dialog_bottom{
+    margin-top: 20px;
+    text-align: right;
+}
+.table_edit_dialog_bottom .flat-button{
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+/*滚动条优化 end*/
+
+/*人员信息简介*/
+.table_person_info{
+    position: relative;
+    height: 137px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    color: #333;
+    margin-top: 10px;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+.table_person_info h3{
+    font-size: 14px;
+    line-height: 30px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333333;
+    height: 35px;
+    margin-top: 16px;
+}
+/*头像*/
+.base_table_rows_touxiang_wrap{
+    position: relative;
+    padding-left: 117px;
+}
+.base_table_rows_touxiang_wrap .base_person_img{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100px;
+    background-color: #35A2FF;
+    height: 100px;
+    border-radius: 50%;
+    line-height: 100px;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    overflow: hidden;
+    border: 1px solid #E7EBEE;
+}
+.base_table_rows_touxiang_wrap .base_person_img img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.base_table_rows_touxiang_wrap .base_person_img_edit{
+    position: absolute;
+    left: 0px;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    line-height: 100px;
+    text-align: center;
+    font-size: 30px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    display: block;
+    background-color: #fff;
+    cursor: pointer;
+}
+/*主模板的头像是否可以编辑*/
+.table_person_info[data-iseditable='false'] .base_person_img_edit{
+    display:none;
+}
+.base_person_img:hover .base_person_img_edit{
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    background-color: #000;
+    transition: all 0.5s;
+}
+
+
+/*分割线*/
+.table_edit_dialog_right_line{
+    background: #FFFFFF;
+    height: 2px;
+    overflow: hidden;
+    width: 666px;
+    margin-left: 12px;
+    margin-top: 10px;
+}
+/*按钮组*/
+.base_table_buttons{
+    position: absolute;
+    right: 7px;
+    top: 8px;
+    display:block;
+}
+.table_person_info .base_table_buttons{
+    right: 36px;
+    top: 18px;
+}
+.base_table_rows_data_yuju .base_table_buttons{
+    right: 6px;
+    top: 0px;
+}
+
+.base_table_buttons .iconfont_dayhr_base{
+    font-size: 18px;
+    color: #666666;
+    margin-left: 5px;
+}
+.base_table_buttons .iconfont_dayhr_base:hover{
+    color: #ed6c2b;
+}
+/*报表按钮组*/
+.base_table_report_buttons{
+    position: absolute;
+    right: 7px;
+    top: 1px;
+    display:block;
+}
+.base_table_report_buttons .iconfont_dayhr_base{
+    font-size: 18px;
+    color: #666666;
+    margin-left: 5px;
+}
+.base_table_report_buttons .iconfont_dayhr_base:hover{
+    color: #ed6c2b;
+}
+
+dl.base_table_edit_rows{
+    margin-bottom: 15px;
+    position: relative;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+}
+dl.base_table_edit_rows[data-tpl-id='yuju_tpl']:hover{
+
+    border: 1px solid #c8c8c8;
+}
+dl.base_table_edit_rows a.base_table_rows_data_biaoge_delete:hover,dl.base_table_edit_rows a.base_table_rows_data_biaoge_download:hover{
+    color: #5CAFFF!important;
+}
+dl.base_table_edit_rows dt{
+    line-height: 28px;
+    height: 28px;
+}
+dl.base_table_edit_rows dt[data-tpl-id='yuju_tpl']{
+    padding-left: 10px;
+}
+dl.base_table_edit_rows dt[data-tpl-id='yuju_tpl']{
+
+    background: #f8f8f8;
+}
+dl.base_table_edit_rows dt strong{
+    color: #333333;
+    font-size: 14px;
+    font-weight: bold;
+}
+dl.base_table_edit_rows[data-tpl-id='yuju_tpl'] dt strong{
+    color: #333333;
+}
+span#person_table_report {
+    margin-left: 355px;
+}
+dl.base_table_edit_rows dt a.add{
+    font-size: 15px;
+    color: #666666;
+    margin-left: 10px;
+    display: none;
+}
+dl.base_table_edit_rows dt a.add:hover{
+    color: #ed6c2b;
+}
+dl.base_table_edit_rows:hover dt a.add{
+    display:inline;
+}
+dl.base_table_edit_rows dd{
+    color: #7E7E7E;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+dl.base_table_edit_rows[data-tpl-id='yuju_tpl'] dd{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+dl.base_table_edit_rows dd:after{visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0;}
+/*data-iseditable为false的模板模块的新增编辑删除按钮不显示*/
+dl.base_table_edit_rows[data-iseditable='false'] a.add,dl.base_table_edit_rows[data-iseditable='false'] a.edit,dl.base_table_edit_rows[data-iseditable='false'] a.delete,.table_person_info[data-iseditable='false'] .edit{
+    display:none!important;
+}
+/*模板有三种类型展示*/
+/*1、语句模式*/
+.base_table_rows_data_yuju{position: relative; line-height: 24px;padding-right: 57px;}
+
+/*2、表格列表模式*/
+.base_table_rows_data_biaoge_wrap dd{padding-top: 10px;}
+/*3、卡片模式*/
+.base_table_rows_data_kapian_wrap dd{padding-top: 10px;}
+.base_table_rows_data_kapian_wrap .kanpianGroup{
+    width: 50%;
+    float: left;
+    line-height: 23px;
+    font-size: 13px;
+    word-break: break-all;
+}
+/*表单模式 showMode == 3*/
+.base_showEditPop_form_rows{
+    margin-top: 8px;
+}
+.base_showEditPop_form_rows label{
+    float: left;
+    width: 76px;
+    text-align: right;
+    padding-right: 5px;
+}
+.base_showEditPop_form_rows .base_showEditPop_rows_right{
+    float: right;
+    margin-right: 10px;
+}
+.base_showEditPop_form_rows .base_showEditPop_rows_right textarea{
+    width: 629px;
+    height: 50px;
+    max-width: 629px;
+}
+.base_showEditPop_form_rows .base_showEditPop_rows_right textarea[readonly]{
+    opacity: 0.7;
+
+    filter: alpha(opacity=70);
+}
+
+
+/**
+ *---------------------------------------
+ *弹出编辑预览框模板 end
+ * ----------------------------
+ */
+
+/**
+ * 表头编辑排序
+*/
+
+#base_table_default_sort{
+    width: 235px;
+}
+#base_table_default_sort h3{
+    font-size: 15px;
+    line-height: 30px;
+}
+#base_table_default_sort li{
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #748393;
+    margin: 2px 0;
+    padding: 0 5px;
+    cursor: move;
+}
+#base_table_default_sort li[data-placeholder=true]{
+    border: 1px dashed #000;
+}
+
+
+/*文件批量上传 -- start*/
+.webuploader-container {
+    position: relative;
+}
+.webuploader-element-invisible {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px,1px,1px,1px);
+}
+.webuploader-pick {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    background: #fd9309;
+    padding: 6px 15px;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    overflow: hidden;
+    vertical-align: middle;
+}
+.webuploader-pick-hover {
+    background: #e0690a;
+}
+
+.webuploader-pick-disable {
+    opacity: 0.6;
+    pointer-events:none;
+}
+.base_file_upload{
+    width:430px;
+    font-size: 12px;
+}
+.base_file_upload_btns{}
+#base_file_upload_btn1{
+    padding: 0;
+}
+#base_file_upload_btn2{}
+.base_file_upload_list{
+    margin-top: 10px;
+    height: 220px;
+    border: 1px solid #ccc;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.base_file_upload_list_title{
+    font-size: 12px;
+
+    line-height: 22px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.base_file_upload_list_item{
+
+    border-bottom: 1px dashed #ccc;
+
+    padding: 5px 10px;
+    position: relative;
+
+    height: 44px;
+
+}
+.base_file_upload_list_item:last-child{
+    border-bottom:none;
+}
+.base_file_upload_list_progress{
+    position: absolute;
+    border-radius: 1px;
+    width: 128px;    height: 15px;
+    left: 10px;
+    top: 27px;
+}
+.base_file_upload_list_progress_gray{
+    position:absolute;
+    left: 0px;
+    top: 0px;
+    width: 128px;
+    height: 15px;
+    border: 1px solid #CACACA;
+    background: #F4FFFF;
+}
+.base_file_upload_list_progress_green{
+    position:absolute;
+    left: 0px;
+    top: 0px;
+    height: 15px;
+    background: url(../images/loading_rectangle.jpg) 0 -17px;
+    width: 0%;
+    border: 1px solid #CACACA;
+}
+.base_file_upload_list_info{
+    position: absolute;
+    height: 20px;
+    text-align: right;
+    left: 150px;
+    width:250px;
+}
+.base_file_upload_list_progress_value{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
+/*文件批量上传 -- end*/
+
+/*组织人员数据图表 开始===============*/
+#base_org_person_reports{
+    width: 732px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.base_org_person_reports_box.base_import_infomation_show_btn{
+    position: absolute;
+    top:3px;
+    right: 0;
+    font-size:22px!important;
+    color: #36A3FF;
+    cursor: pointer;
+    display: inline;
+}
+.base_org_person_reports_box .base_import_infomation_show{
+    left: -81px;
+    top: 34px;
+    width: 100px;
+    background-color: #EAEAEA;
+    color: #333;
+    border-radius: 4px;
+    padding: 10px;
+    z-index: 9;
+    line-height: 26px;
+    font-size: 12px;
+    font-family: "微软雅黑";
+    -webkit-font-smoothing: none;
+    -webkit-text-stroke-width: 0px;
+    -moz-osx-font-smoothing: none;
+    cursor: default;
+    position: absolute;
+    display: none;
+}
+.base_org_person_reports_box .base_import_infomation_show:before{
+    left: 83px;
+    content: " ";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 11px solid rgb(234, 234, 234);
+    top: -11px;
+    border-radius: 0px;
+}
+.base_org_person_reports_box.base_import_infomation_show_btn:hover .base_import_infomation_show{
+    display: block;
+}
+
+.base_org_person_reports_title{
+    overflow: hidden;
+    margin-bottom: -1px;
+}
+.base_org_person_reports_box~.ztree>li{
+    margin-left: 18px;
+}
+.base_org_person_reports_title li{
+    width: 100px;
+    float: left;
+    overflow: hidden;
+    text-align: center;
+    line-height: 36px;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    background-color: #EFEFEF;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+.base_org_person_reports_title li:last-child{
+    border-right: 1px solid #ccc;
+}
+.base_org_person_reports_title li.on{
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+    cursor: default;
+}
+.base_org_person_reports_content{
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+.base_org_person_reports_content .base_content_li{
+    display: none;
+    padding:10px;
+    overflow: hidden;
+    position: relative;
+}
+.dimensionality_selection{
+
+}
+.dimensionality_selection h3{
+    line-height: 30px;
+    font-weight: bold;
+    color: #616161;
+}
+.dimensionality_buttons{
+    position: absolute;
+    top: 91px;
+    right: 35px;
+    z-index: 10;
+}
+.dimensionality_buttons a{
+    background: url(../images/bgs.png);
+    text-indent: -9999em;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+.dimensionality_buttons a.pie{
+    background-position: -3px -2px;
+}
+.dimensionality_buttons a.bar{
+    background-position: -28px -2px;
+}
+.dimensionality_buttons a.showdata{
+    background-position:-109px -2px;
+    opacity: 0.3;
+}
+.dimensionality_buttons a.showdata.hasShowData{
+    opacity: 1;
+}
+.dimensionality_selection_items{
+
+}
+.dimensionality_selection_items_dd{
+
+}
+.dimensionality_selection_items_dd strong{
+
+}
+.dimensionality_selection_items_dd a{
+    color: #4C4C4C;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+.dimensionality_selection_items_dd a.on{
+    background-color: #36A3FF;
+
+    color: #fff;
+}
+/*图表一：人员在岗状态分析容器*/
+#Personnel_structure_analysis{
+    width: 711px;
+    height: 344px;
+    margin-top: 10px;
+}
+/*图表二：人员流动分析容器*/
+#Employee_turnover_in_workplace{
+    width: 711px;
+    height: 344px;
+    margin-top: 10px;
+}
+
+
+/*组织人员数据图表 结束============*/
+
+/*
+ *============================================================================
+ *============================================================================
+ *表格扩展搜索插件的样式
+ *==========================================================================
+ *==========================================================================
+ */
+@-webkit-keyframes anim-shadow {
+    to {
+        box-shadow: 0px 0px 80px 40px #36A3FF;
+        opacity: 0;
+    }
+}
+@-moz-keyframes anim-shadow {
+    to {
+        box-shadow: 0px 0px 80px 40px #36A3FF;
+        opacity: 0;
+    }
+}
+
+@keyframes anim-shadow {
+    to {
+        box-shadow: 0px 0px 80px 40px #36A3FF;
+        opacity: 0;
+    }
+}
+
+/* 职位评估 -- start --*/
+#base_pop_pos_ipe{
+    padding: 20px 30px;
+    background: #f6f7f8;
+    height: 229px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: #363636;
+    line-height: 24px;
+}
+#base_pop_pos_ipe h6{
+    color: #484848;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+#base_pop_pos_ipe p{line-height: 24px;}
+#base_pop_pos_ipe input[type='radio'] {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+#base_pop_pos_ipe input[type='checkbox'] {
+    vertical-align: middle;
+    margin-right: 7px;
+}
+#base_pop_pos_ipe input[type='checkbox'],#base_pop_pos_ipe input[type='radio'],#base_pop_pos_ipe label{
+    cursor: pointer;
+}
+#base_pop_pos_ipe .flat-button{
+    padding: 0;
+    height: 30px;
+    width: 78px;
+    line-height: 30px;
+    text-align: center;
+}
+/* 职位评估 -- end --*/
+
+#base_initconfig_content .list_title{margin-bottom: 30px;}
+#base_initconfig_content .list_title strong{color:#3366FF;font-size: 18px;margin-right: 15px;}

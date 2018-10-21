@@ -1,0 +1,264 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title v-text="documentTitle">工作汇报</title>
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="//static.daydao.com/static/oa/report_mobile/css/style.css?v=_VERSION_">
+    <link rel="Shortcut Icon" href="//static.daydao.com/static/common/images/logoOaicond.ico?v=_VERSION_"/>
+    <link rel="stylesheet" type="text/css" href="//static.daydao.com/static/common/plugins/layer/skin/layer.css?v=_VERSION_"/>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    console.log(clientWidth)
+                    if (!clientWidth) return;
+                    if (clientWidth >= 640) {
+                        docEl.style.fontSize = '100px';
+                    } else {
+                        docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                    }
+                };
+            recalc();
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document,window);
+    </script>
+    <style type="text/css">
+        #report_app_index_test{
+            width: 100%;
+            background: #f2f2f2;
+        }
+        #report_app_index_test .report_header_tap{
+            width: 100%;
+            height: 44px;
+            position: fixed;
+            top:0rem;
+            border-bottom: 1px solid #D2D2D2;
+            background: #FBFBFB;
+            z-index: 99;
+            box-sizing: border-box;
+        }
+        #report_app_index_test .report_header_tap ul{
+            display: block;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            padding:0rem  0.7rem;
+        }
+        #report_app_index_test .report_header_tap ul li{
+            display: block;
+            float: left;
+            width: 1.8rem;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        #report_app_index_test .report_header_tap ul li:nth-child(2){
+            float: right;
+        }
+        #report_app_index_test .report_header_tap ul li a{
+            width: 100%;
+            height: 100%;
+            display: block;
+            text-align: center;
+            padding-top: 9px;
+            color: #222222;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        #report_app_index_test .report_header_tap ul li.active a{
+            color: #FF7123;
+            border-bottom: 2px solid #FF7123;
+        }
+        /*顶部Tap切换end*/
+        /*汇报类型和历史汇报*/
+        #report_app_index_test .history_type_report_wrap{
+            width: 100%;
+            height: 54px;
+            box-sizing: border-box;
+            padding: 15px 0.3rem;
+            background: #f2f2f2;
+            position: fixed;
+            top:44px;
+            z-index: -1;
+        }
+        #report_app_index_test .report_type_btn,#report_app_index_test .report_history_btn{
+            color: #666666;
+            line-height: 22px;
+            font-size: 12px;
+            border: 1px solid #aaa;
+            border-radius: 0.06rem;
+            text-align: center;
+        }
+        #report_app_index_test .report_type_btn{
+            width: auto;
+            padding: 0 0.16rem;
+            height:24px;
+            line-height: 22px;
+            float: left;
+            box-sizing: border-box;
+        }
+        #report_app_index_test .report_type_btn span{
+            display: inline-block;
+            max-width: 1.7rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            float: left;
+        }
+        #report_app_index_test .report_type_btn i{
+            display: inline-block;
+            margin-left: 0.09rem;
+            height: 100%;
+            width: 9px;
+            background: url(//static.daydao.com/static/oa/report_mobile/images/tab_icon_down_def@2x.png) center center;
+            background-repeat:no-repeat;
+            background-size: 9px 5px;
+        }
+        #report_app_index_test .report_history_btn{
+            height: 22px;
+            float: right;
+            border: none;
+            overflow: hidden;
+            line-height: 24px;
+            font-size: 12px;
+            padding-left: 19px;
+            background: url(//static.daydao.com/static/oa/report_mobile/images/tab_icon_time_def@3x.png) no-repeat left center;
+            background-size: 14px 14px;
+        }
+        /*汇报类型和历史汇报end*/
+        #loading_wrap_test{
+            background: url(//static.daydao.com/static/oa/report_mobile/images/loading-1.gif) no-repeat center center;
+        }
+        #loading_wrap_detail{
+            background: url(//static.daydao.com/static/oa/report_mobile/images/loading-1.gif) no-repeat center center;
+        }
+    </style>
+</head>
+<body>
+
+<!--内容区-->
+<div id="mobile_main_wrap" class="main_wrap clearfix">
+    <div id="report_app_index_test" style="display: none">
+        <div id="loading_wrap_test" style="position: fixed; width: 100%;height: calc(100% - 43px);left: 0;top: 43px;display: block;"></div>
+        <div class="report_header_tap">
+            <ul class="clearfix">
+                <li class="active"><a href="javascript:void(0)">我发出的</a></li>
+                <li><a href="javascript:void(0)">我收到的</a></li>
+            </ul>
+        </div>
+        <div class="fade_in_out" transition="fadein_in_out">
+            <div class="history_type_report_wrap">
+                <div class="report_type_btn"><span>全部</span><i></i></div>
+                <div class="report_history_btn">历史汇报</div>
+            </div>
+        </div>
+    </div>
+    <div id="loading_wrap_detail" style="position: fixed; width: 100%;height:100%;left: 0;top: 0;display: none;"></div>
+    <!-- 路由外链 -->
+    <router-view></router-view>
+</div>
+<script>
+    var hrefStr = location.href;
+    var abody = document.getElementById("mobile_main_wrap");
+    var child = document.getElementById("report_app_index_test");
+    if(hrefStr.search(/singleReportDetail/g) != -1 || hrefStr.search(/addReport/g) != -1 || hrefStr.search(/chooseTemp/g) != -1 || hrefStr.search(/guidePage/g) != -1){
+        abody.removeChild(child);
+        document.getElementById("loading_wrap_detail").style.display = "block";
+    }else if(hrefStr.search(/received/g) != -1){
+        var taplifirst = document.querySelectorAll("#report_app_index_test .report_header_tap ul li")[0];
+        var taplisecond = document.querySelectorAll("#report_app_index_test .report_header_tap ul li")[1];
+        taplifirst.setAttribute("class","");
+        taplisecond.setAttribute("class","active");
+        child.style.display = "block";
+    }else{
+        child.style.display = "block";
+    }
+</script>
+    <script type="text/javascript" src="//static.daydao.com/static/common/plugins/jquery-1.11.1.min.js?v=_VERSION_"></script>
+    <script type="text/javascript" src="//static.daydao.com/static/common/plugins/sea.js?v=_VERSION_"></script>
+    <script type="text/javascript" src="//static.daydao.com/static/common/plugins/vue.js?v=_VERSION_"></script>
+    <script type="text/javascript" src="//static.daydao.com/static/common/plugins/vue-router.min.js?v=_VERSION_"></script>
+    <script type="text/javascript" src="//static.daydao.com/static/common/config.js?v=_VERSION_"></script>
+    <script type="text/javascript" src="//static.daydao.com/static/common/version.js?v=_VERSION_"></script>
+<script>
+    /*$.getScript("//static1.daydao.com/static/common/config.js",function () {
+        $.getScript("//static1.daydao.com/static/common/version.js",function () {
+            gMain.apiBasePath = gMain.basePath+  "apiReport/";  //nginx反向代理汇报路径
+            gMain.amBasePath = gMain.basePath+  "apiComment/";  //nginx反向代理公告路径
+            gMain.projectSource = "dayoa"; //属于oa项目
+            /!**
+             * seajs配置信息
+             *!/
+            seajs.config({
+                base: "//static.daydao.com/"+gMain.jsdir+"/oa/report_mobile/"  //seajs的基础路径（组织人事，元数据项目的模块）
+                ,map: [[ /^(.*\.(?:css|js|html))(.*)$/i, '$1?v=_VERSION_'+'-'+gMain.verson]]  //加上版本号，清缓存用
+                ,paths:{
+                    "workflowStaticDirectory":"//static.daydao.com/"+gMain.jsdir+"/workflow/workflow/",  //静态资源目录
+                    "commonStaticDirectory":"//static.daydao.com/"+gMain.jsdir+"/common",  //最后不带反斜杠
+                    "staticDirectory":"//static.daydao.com/"+gMain.jsdir  //静态资源目录
+                }
+            });
+
+            seajs.use(["commonStaticDirectory/header/header_app.js","commonStaticDirectory/plugins/jquery.loading.js"],function (Header) {
+                $("body").loading({zIndex:9999});
+                Header.init(function () {
+                    /!* 初始化路由 *!/
+                    seajs.use(["js/router.js"]);
+                });
+            });
+
+            /!* 初始化路由 *!/
+            /!*seajs.use(["js/main.js"],function (getIndexDo) {
+                //获取getIndexDo
+                new getIndexDo({
+                    callback:function () {
+                        seajs.use(["js/router.js"],function(){});
+                    }
+                });
+            });*!/
+
+        });
+    });*/
+    gMain.apiBasePath = gMain.basePath+  "apiReport/";  //nginx反向代理汇报路径
+    gMain.amBasePath = gMain.basePath+  "apiComment/";  //nginx反向代理公告路径
+    gMain.projectSource = "dayoa"; //属于oa项目
+    /**
+    * seajs配置信息
+    */
+    seajs.config({
+        base: "//static.daydao.com/"+gMain.jsdir+"/oa/report_mobile/"  //seajs的基础路径（组织人事，元数据项目的模块）
+        ,map: [[ /^(.*\.(?:css|js|html))(.*)$/i, '$1?v=_VERSION_'+'-'+gMain.verson]]  //加上版本号，清缓存用
+        ,paths:{
+            "workflowStaticDirectory":"//static.daydao.com/"+gMain.jsdir+"/workflow/workflow/",  //静态资源目录
+            "commonStaticDirectory":"//static.daydao.com/"+gMain.jsdir+"/common",  //最后不带反斜杠
+            "staticDirectory":"//static.daydao.com/"+gMain.jsdir  //静态资源目录
+        }
+    });
+    seajs.use(["js/router.js"]);
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                console.log(clientWidth)
+                if (!clientWidth) return;
+                if (clientWidth >= 640) {
+                    docEl.style.fontSize = '100px';
+                } else {
+                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                }
+            };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document,window);
+</script>
+</body>
+</html>

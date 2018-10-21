@@ -1,0 +1,352 @@
+@charset "utf-8";
+#recruitEntry {
+    overflow: hidden;
+    height: 580px;
+    width: 100%;
+    box-sizing: border-box;
+}
+#recruitEntry .recruit-entry {
+    overflow: hidden;
+}
+#recruitEntry .recruit-entry .recruit-entry-left{
+    width: 120px;
+    float: left;
+    background: #ddd;
+    height: 580px;
+}
+#recruitEntry .recruit-entry .recruit-entry-right{
+    border-top: 1px solid #dadada;
+    width: 780px;
+    float: left;
+    height: 579px;
+}
+#recruitEntry .recruit-entry .recruit-entry-left-wrap{
+    width: 112px;
+    float: left;
+    background: #36322f;
+    height: 580px;
+}
+#recruitEntry .recruit-entry .recruit-entry-left-wrap ul li{
+    line-height: 56px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+    webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+#recruitEntry .recruit-entry .recruit-entry-left-wrap ul li.on{
+    cursor: default;
+    border-right: none;
+    background: #ed6c2b;
+    color: #FFFFFF;
+}
+#recruitEntry .recruit-entry .recruit-entry-left-wrap ul li.on::after{
+    content: " ";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-right: 9px solid #fff;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    top: 20px;
+    right: 0;
+}
+#recruitEntry .recruit-entry .recruit-entry-left-wrap ul li:hover{
+    background: rgb(33,31,30);
+}
+#recruitEntry .recruit-entry .recruit-entry-left-wrap ul li.on:hover{
+    background: #ed6c2b;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-0{
+    overflow: hidden;
+    padding: 20px;
+    position: relative;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-0 .float-left{
+    float: left;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-0 .float-right{
+    float: right;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-0 .body-1{
+    width: 45%;
+    float: left;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-0 .body-2{
+    width: 50%;
+    float: left;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-0 .wrap{
+    margin-bottom: 14px;
+    height: 32px;
+    font-size: 14px;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-0 .wrap b {
+    color: red;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-0 .span-1{
+    width: 115px;
+    line-height: 32px;
+    text-align: right;
+    box-sizing: border-box;
+    color: #333;
+    padding-right: 15px;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-0 .span-2{
+    width: calc(100% - 115px);
+    line-height: 32px;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-0 input.self{
+    padding: 0 5px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #bebebe;
+    border-radius: 3px;
+    color: #4a4a4a;
+    box-shadow: none;
+    width: 168px;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-0 input:focus{
+    border: 1px solid #FF6200;
+    transition: all 0.5s;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-0 .body-3{
+    text-align: right;
+    box-sizing: border-box;
+    padding-right: 23px;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-0 .body-3 button.a-btn{
+    display: inline-block;
+    height: 30px;
+    line-height: 29px;
+    margin: 0 6px;
+    padding: 0 23px;
+    border-radius: 2px;
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .3s;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-0 .body-3 button.a-btn:active{
+    position: relative;
+    top:1px;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-0 .body-3 button.save{
+    border: 1px solid #ed6c2b;
+    background-color: #ed6c2b;
+    color: #fff;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-0 .body-3 button.save:hover{
+    text-decoration:none;
+    background: rgb(228,85,13);
+    border:1px solid #ed6c2b;
+    transition: all 0.3s;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-0 .body-3 button.cancel{
+    background-color: #fff;
+    color: #333;
+    border: 1px #d2d2d2 solid;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-0 .body-3 button.cancel:hover{
+    text-decoration:none;
+    border:1px solid #ed6c2b;
+    color: #ed6c2b;
+    transition: all 0.3s;
+}
+
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-1{
+    margin: 20px;
+    height: 539px;
+    overflow-y:auto;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-1 .body-1{
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    overflow-y: hidden;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-1 .body-1:hover{
+    border:1px solid #C8C8C8;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-1 .body-1 .body-1-title{
+    background: #f8f8f8;
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    width: 100%;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-1 .body-1 .body-1-title h2{
+    float: left;
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+    margin-right: 10px;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-1 .body-1 .body-1-content{
+    overflow: hidden;
+    padding: 5px 10px;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-1 .body-1 .body-1-content ul li{
+    width: 100%;
+    overflow: hidden;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-1 .body-1 .body-1-content ul li .body-1-content-left{
+    width: calc(100% - 57px);
+    float: left;
+    overflow: hidden;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-1 .body-1 .body-1-content ul li .body-1-content-left p{
+    line-height: 24px;
+    color: #7e7e7e;
+    word-break: break-all;
+    font-size: 13px;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-1 .body-1 .body-1-content ul li .body-1-content-right{
+    width: 57px;
+    float: right;
+    overflow: hidden;
+    text-align: center;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-1 .body-1 .iconfont_daydao_recruit{
+    cursor: pointer;
+    color: #666;
+    webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-1 .body-1 .iconfont_daydao_recruit:hover{
+    color: #ed6c2b;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-2{
+    margin: 20px;
+    height: 539px;
+    overflow-y:auto;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-2 .body-2{
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-2 .body-2:hover{
+    border:1px solid #C8C8C8;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-2 .body-2 .body-2-title{
+    background: #f8f8f8;
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    width: 100%;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-2 .body-2 .body-2-title h2{
+    float: left;
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+    margin-right: 10px;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-2 .body-2 .body-2-content{
+    overflow: hidden;
+    padding: 5px 10px;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-2 .body-2 .body-2-content ul li{
+    width: 100%;
+    overflow: hidden;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-2 .body-2 .body-2-content ul li .body-2-content-left{
+    width: calc(100% - 57px);
+    float: left;
+    overflow: hidden;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-2 .body-2 .body-2-content ul li .body-2-content-left p{
+    line-height: 24px;
+    color: #7e7e7e;
+    word-break: break-all;
+    font-size: 13px;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-2 .body-2 .body-2-content ul li .body-2-content-right{
+    width: 57px;
+    float: right;
+    overflow: hidden;
+    text-align: center;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-2 .body-2 .iconfont_daydao_recruit{
+    cursor: pointer;
+    color: #666;
+    webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-2 .body-2 .iconfont_daydao_recruit:hover{
+    color: #ed6c2b;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-3{
+    margin: 20px;
+    height: 539px;
+    overflow-y:auto;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-3 .body-3{
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-3 .body-3:hover{
+    border:1px solid #C8C8C8;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-3 .body-3 .body-3-title{
+    background: #f8f8f8;
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    width: 100%;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-3 .body-3 .body-3-title h2{
+    float: left;
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+    margin-right: 10px;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-3 .body-3 .body-3-content{
+    overflow: hidden;
+    padding: 5px 10px;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-3 .body-3 .body-3-content ul li{
+    width: 100%;
+    overflow: hidden;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-3 .body-3 .body-3-content ul li .body-3-content-left{
+    width: calc(100% - 57px);
+    float: left;
+    overflow: hidden;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-3 .body-3 .body-3-content ul li .body-3-content-left p{
+    line-height: 24px;
+    color: #7e7e7e;
+    word-break: break-all;
+    font-size: 13px;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-3 .body-3 .body-3-content ul li .body-3-content-right{
+    width: 57px;
+    float: right;
+    overflow: hidden;
+    text-align: center;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-3 .body-3 .iconfont_daydao_recruit{
+    cursor: pointer;
+    color: #666;
+    webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+#recruitEntry .recruit-entry .recruit-entry-right .recruit-entry-right-3 .body-3 .iconfont_daydao_recruit:hover{
+    color: #ed6c2b;
+}

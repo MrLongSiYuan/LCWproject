@@ -1,0 +1,244 @@
+<div class="resumeDeal">
+
+</div>
+<script type="text/html" id="resume_deal_1">
+    <div class="resume_deal_1">
+        <div class="title">
+            <span class="zj" title="转荐">转荐</span>
+            <span class="ly" title="录用">录用</span>
+            <span class="fq" title="放弃或淘汰">放弃或淘汰</span>
+        </div>
+        <div class="clear_both"></div>
+        <div class="content">
+            <form id="resume_deal_form_1">
+                <div class="wrap no">
+                    <span class="wrap_left">面试职位：</span><span class="wrap_right">{{posName}}</span>
+                </div>
+                <div class="wrap">
+                    <span class="wrap_left"></span><span class="wrap_right">
+
+                    <input class="resume_deal_input" id="form_1_notice" name="form_1_notice" type="checkbox"/><label for="form_1_notice"></label>同时向<b class="mar">{{name}}({{email}})</b>发送面试通知</span>
+                </div>
+                <div class="wrap">
+                    <span class="wrap_left">面试时间：</span><span class="wrap_right"><input class="resume_deal_input Wdate" name="form_1_date" type="text" style="width: 283px;" onClick="WdatePicker()"/></span>
+                </div>
+                <div class="wrap">
+                    <span class="wrap_left">面试地点：</span><span class="wrap_right"><input class="resume_deal_input" name="form_1_address" type="text" style="width: 283px;"/></span>
+                </div>
+                <div class="wrap">
+                    <span class="wrap_left">联系人：</span><span class="wrap_right"><input class="resume_deal_input" name="form_1_contract" type="text" style="width: 138px;"/></span>
+                </div>
+                <div class="wrap">
+                    <span class="wrap_left">联系电话：</span><span class="wrap_right"><input class="resume_deal_input" name="form_1_contract_mobile" type="text" style="width: 138px;"/></span>
+                </div>
+                <div class="wrap" style="overflow: hidden;">
+                    <span class="wrap_left">备注信息：</span><span class="wrap_right"><textarea type="text" resize="none" name="form_1_remark" style="width: 283px;" rows="4"></textarea></span>
+                </div>
+                <div class="wrap">
+                    <span class="wrap_left">面试官：</span><span class="wrap_right"><div style="width: 148px;" id="dropSelect" class="dayhr_drop_select"></div><input class="resume_deal_input" type="text" style="width: 125px; margin-left: 10px;" placeholder="面试官手机号" name="form_1_mobile"/></span>
+                </div>
+            </form>
+        </div>
+        <div class="bottom">
+            <button class="btn1 btn">发送</button><button class="btn2 btn">预览</button>
+        </div>
+    </div>
+    </div>
+</script>
+
+<!--转荐模板-->
+<script type="text/html" id="resume_deal_zj">
+    <div class="resume_deal_zj">
+        <p>请选择推荐到的职位：</p>
+        <div id="dropSelect_zj" class="dayhr_drop_select"></div>
+    </div>
+</script>
+
+<!--录用模板-->
+<script type="text/html" id="resume_deal_ly">
+    <div class="resume_deal_ly">
+        <div class="content">
+            <form id="resume_deal_form_2">
+                <div class="wrap no">
+                    <span class="wrap_left">应聘职位：</span><span class="wrap_right">{{posName}}</span>
+                </div>
+                <div class="wrap">
+                    <span class="wrap_left"></span><span class="wrap_right"><input class="resume_deal_input" id="form_2_notice" name="form_2_notice" type="checkbox"/><label for="form_2_notice"></label>同时向<b class="mar">{{name}}({{email}})</b>发送<b>Offer</b></span>
+                </div>
+                <div class="wrap">
+                    <span class="wrap_left">报到时间：</span><span class="wrap_right"><input class="resume_deal_input Wdate" name="form_2_date" type="text" style="width: 283px;" onClick="WdatePicker()"/></span>
+                </div>
+                <div class="wrap">
+                    <span class="wrap_left">报到地点：</span><span class="wrap_right"><input class="resume_deal_input" name="form_2_address" type="text" style="width: 283px;"/></span>
+                </div>
+                <div class="wrap">
+                    <span class="wrap_left">联系人：</span><span class="wrap_right"><input class="resume_deal_input" name="form_2_contract" type="text" style="width: 138px;"/></span>
+                </div>
+                <div class="wrap">
+                    <span class="wrap_left">联系电话：</span><span class="wrap_right"><input class="resume_deal_input" name="form_2_contract_mobile" type="text" style="width: 138px;"/></span>
+                </div>
+                <div class="wrap" style="overflow: hidden;">
+                    <span class="wrap_left">备注信息：</span><span class="wrap_right"><textarea type="text" resize="none" name="form_2_remark" style="width: 283px;" rows="4"></textarea></span>
+                </div>
+            </form>
+                <div class="wrap">
+                    <span class="wrap_left">Offer文件：</span><span class="wrap_right" style="position: relative">
+                    <a href="javascript:;" class="a-file">点击选择上传文档</a><input title="点击选择上传文档" class="resume_deal_input" type="file" name="form_2_file" multiple="" accept="*/*"/>
+                    <button class="upload">开始上传</button></span>
+                </div>
+        </div>
+        <div class="bottom">
+            <button class="btn5 btn">确定</button><button class="btn6 btn">预览Offer</button>
+        </div>
+    </div>
+    </div>
+</script>
+
+<!--预览offer-->
+<script type="text/html" id="resume_deal_yl">
+    <div class="resume_deal_yl">
+        <p><b>{{posName}}</b>录用通知——{{company}} 发送给<b>{{name}}</b></p>
+        <p class="p_wrap p_1">{{name}}，您好~</p>
+        <p class="p_wrap p_2">欢迎加入{{company}}，期待与您一起共创辉煌！附件为Offer，请查收，谢谢！</p>
+        <div class="body">
+            <p>应聘公司：{{company}}</p>
+            <p>应聘职位：{{posName}}</p>
+            <p>报到时间：{{arrivalTime}}</p>
+            <p>报到地点：{{arrivalPlace}}</p>
+            <p>联系人：{{contract}}</p>
+            <p>联系电话：{{mobile}}</p>
+        </div>
+        <p class="p_wrap p_3">Offer文件：
+            {{if offerUrl != ""&&offerUrl != undefined}}
+            <a href="{{offerUrl}}" target="_blank" title="{{fileName}}">{{fileName}}</a>
+            {{else}}
+            无
+            {{/if}}
+        </p>
+        <div class="bottom">
+            <button class="btn7 btn">发送</button><button class="btn8 btn">返回修改</button>
+        </div>
+    </div>
+</script>
+
+<!--预览简历-->
+<script type="text/html" id="resume_deal_jl">
+    <div class="resume_deal_jl">
+        <p><b>{{posName}}</b>面试邀请——{{company}} 发送给<b>{{name}}</b></p>
+        <p class="p_wrap p_1">{{name}}，您好~</p>
+        <p class="p_wrap p_2">你的简历已通过我们的筛选，很高兴邀请您参加我们的面试。</p>
+        <div class="body">
+            <p>应聘公司：{{company}}</p>
+            <p>应聘职位：{{posName}}</p>
+            <p>报到时间：{{interviewDate}}</p>
+            <p>报到地点：{{interviewAddress}}</p>
+            <p>联系人：{{contract}}</p>
+            <p>联系电话：{{contractMobile}}</p>
+        </div>
+        <div class="bottom">
+            <button class="btn3 btn">发送</button><button class="btn4 btn">返回修改</button>
+        </div>
+    </div>
+</script>
+
+<!--放弃模板-->
+<script type="text/html" id="resume_deal_fq">
+    <div class="resume_deal_fq">
+        <p class="label1"><input class="input_fq" type="checkbox" name="fq1" id="fq1"/><label for="fq1"></label>将<b>{{name}}</b>加入人才库</p>
+        <div class="tp"><span class="type">选择人才类别：</span><div id="dropSelect_type" class="dayhr_drop_select"></div></div>
+        <p class="reason">选择淘汰或放弃原因：</p>
+        <ul class="ul_fq">
+
+        </ul>
+        <div class="content">
+            <p class="tip">解释说明：</p>
+            <textarea rows="5" id="textarea_fq"></textarea>
+            <div class="clear_both"></div>
+            <p class="notice label1"><input type="checkbox" class="input_fq" name="fq2" id="fq2"/><label for="fq2"></label>同时向<b>{{name}}({{email}})</b>发送淘汰通知</p>
+        </div>
+        <div class="body">
+            <p class="self">自愿放弃原因：</p>
+            <div id="dropSelect_fq" class="dayhr_drop_select"></div>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="resume_deal_fq_li">
+        {{each data as item k }}
+        <li><input type="radio" name="fq" class="input_fq" id="fq_{{k}}" data-id="{{item.detailReason}}"><label for="fq_{{k}}"></label>{{item.shortReason}}</li>
+        {{/each}}
+        <li><input type="radio" name="fq" class="input_fq" id="fq_" data-id="other"><label for="fq_"></label>自愿放弃</li>
+</script>
+<!--面试中模板-->
+<script type="text/html" id="resume_deal_2">
+    <div class="resume_deal_2">
+        <div class="title">
+            <span class="xl" title="安排下轮面试">安排下轮面试</span>
+            <span class="zj" title="转荐">转荐</span>
+            <span class="ly" title="录用">录用</span>
+            <span class="fq" title="放弃或淘汰">放弃或淘汰</span>
+        </div>
+        <div class="clear_both"></div>
+        <div class="content">
+            <form id="resume_deal_form_3">
+                <div class="wrap">
+                    <span class="wrap_left">面试官：</span><span class="wrap_right"><div  style="width: 198px;" id="dropSelect_1"  class="dayhr_drop_select"></div></span>
+                </div>
+                <div class="wrap">
+                    <span class="wrap_left">面试时间：</span><span class="wrap_right"><input class="resume_deal_input Wdate" type="text" name="form_3_date" style="width: 388px;" onClick="WdatePicker()"/></span>
+                </div>
+                <div class="wrap" style="overflow: hidden;">
+                    <span class="wrap_left">评价记录：</span><span class="wrap_right"><textarea type="text" resize="none" style="width: 388px;" rows="4" name="form_3_record"></textarea></span>
+                </div>
+                <div class="wrap">
+                    <span class="wrap_left">面试结果：</span><span class="wrap_right"><div  style="width: 198px;" id="dropSelect_2" class="dayhr_drop_select"></div></span>
+                </div>
+            </form>
+        </div>
+        <div class="button2">
+            <button class="save2">保存</button><button class="cancel2">取消</button>
+        </div>
+        <div class="bottom2">
+            <p class="wrap">应聘记录</p>
+            <ul class="status-{{status}}"></ul>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="resume_deal_li">
+    {{each data as item k }}
+        <li>
+            <div class="span-2">
+                <p>{{#item.remark}}</p>
+            </div>
+        </li>
+    {{/each}}
+</script>
+<!--已录用模板-->
+<script type="text/html" id="resume_deal_3">
+    <div class="resume_deal_3">
+        <div class="title">
+            <span class="rz" title="办理入职">办理入职</span>
+            <span class="fq" title="放弃或淘汰">放弃或淘汰</span>
+        </div>
+        <div class="clear_both"></div>
+        <div class="bottom2">
+            <ul class="status-{{status}}"></ul>
+        </div>
+    </div>
+</script>
+<!--已入职模板-->
+<script type="text/html" id="resume_deal_4">
+    <div class="resume_deal_4">
+        <div class="bottom2">
+            <ul class="status-{{status}}"></ul>
+        </div>
+    </div>
+</script>
+
+<!--已淘汰模板-->
+<script type="text/html" id="resume_deal_5">
+    <div class="resume_deal_5">
+        <div class="bottom2">
+            <ul class="status-{{status}}"></ul>
+        </div>
+    </div>
+</script>

@@ -1,0 +1,16 @@
+<div id="reader_list_wrap">
+    <div class="read_counts">已阅{{readerHeadImgList.length}}人</div>
+    <ul>
+        <li v-for="item in readerHeadImgList">
+            <div class="head_img_box">
+                <div class="img_box">
+                    <img v-app-head-img="item"/>
+                </div>
+            </div>
+            <div class="person_infor">
+                <div class="person_name">{{item.personName}}</div>
+                <div class="share_person_name" v-if="item.whoTransfer">{{item.whoTransfer}}&nbsp;转发</div>
+            </div>
+        </li>
+    </ul>
+</div>

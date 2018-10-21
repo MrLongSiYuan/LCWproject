@@ -1,0 +1,7 @@
+<div id="choose_cover_wrap">
+    <div class="choose_describe">多选，可选择多个选项</div>
+    <ul>
+        <li @click="coverChooseOption($event,'radio')" v-for="item in chooseInfor.options" :class="chooseResult.indexOf(item.label) != -1?'active':''"><i></i><span>{{item.label}}</span></li>
+    </ul>
+    <div class="choose_cover_sure" @click="chooseSureOrCancel($event,'sure')">确定</div>
+</div>

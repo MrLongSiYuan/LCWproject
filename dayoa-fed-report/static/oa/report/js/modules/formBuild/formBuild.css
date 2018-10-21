@@ -1,0 +1,635 @@
+@charset "utf-8";
+/*表单设计器*/
+
+#buildFormWrap{
+    border:1px solid #ccc;
+    overflow: hidden;
+    width: 1300px;
+}
+#buildFormWrap label{
+    font-weight: normal;
+}
+.formBuilderBox{
+    
+position: relative;
+}
+.formBuilderBox-left{
+    width: 232px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.formBuilderBox-center{margin-left: 236px;margin-right: 235px;}
+.formBuilderBox-right{
+    position: absolute;
+    width: 232px;
+    top: 0;
+    right: 0;
+}
+
+
+#buildFormWrap .form-item-head {
+    background: #5F9EDF;
+}
+
+#buildFormWrap .filed-item {
+
+}
+#buildFormWrap .filed-item > .js-remove {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: -10px;
+    right: -8px;
+    background: url(../../../images/fieldsIcons.png) no-repeat -103px 0;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    display: none;
+    z-index: 999;
+}
+
+#buildFormWrap .filed-item-hover {
+    border:1px dashed #c00 !important;
+}
+
+#buildFormWrap .filed-item-hover > .js-remove {
+    display: block  ;
+}
+
+#buildFormWrap .form {
+    background: #f5f5f7;
+    padding: 20px 0px;
+    border-top: none;
+    border-bottom: none;
+    padding-top: 15px;
+}
+
+#buildFormWrap .active {
+     border: 1px solid #ed6c2b !important;
+}
+
+
+/*控件类型切换区--菜单*/
+#formBuilder-myTab-fieldView {
+    
+border: none;
+    
+width: 208px;
+    
+margin: 18px auto 0;
+}
+#formBuilder-myTab-fieldView li{
+    height: 30px;
+    line-height: 30px;
+    width: 104px;
+    margin: 0;
+}
+#formBuilder-myTab-fieldView li a{
+    padding: 0;
+    border: none;
+    line-height: 30px;
+    border-radius: 0;
+    margin: 0;
+    text-align: center;
+    box-sizing: border-box;
+    color: #333333;
+    background: #f4f4f4;
+    font-weight: bold;
+    border-bottom: 2px solid #f4f4f4;
+    font-size: 14px;
+}
+#formBuilder-myTab-fieldView li.active{}
+#formBuilder-myTab-fieldView li.active a{
+    color: #ed6c2b;
+    border-bottom: 2px solid #ed6c2b;
+}
+
+#formBuilder-myTabContent-fieldView{
+    width: 208px;
+    margin: 10px auto 0;
+}
+
+
+
+/*控件区---行列控件*/
+#viewRowFields{
+    margin-top: 20px;
+}
+#viewRowFields li{
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    color: #333;
+    cursor: move;
+    background:#fff!important;
+}
+
+/*控件区---字段控件*/
+#viewFieldView {list-style: none;overflow: hidden;}
+#viewFieldView li{
+    width: 80px;
+    float: left;
+    margin-bottom: 18px;
+    cursor: move;
+    margin-left: 11px;
+    margin-right: 11px;
+    box-sizing: border-box;
+    border:1px dashed #fff;
+    background: none!important;
+}
+#viewFieldView li:hover{
+    border: 1px solid #ccc;
+}
+#viewFieldView li .handle{
+    width: 60px;
+    margin: 0 auto;
+    text-align: center;
+    height: 66px;
+}
+#viewFieldView li .fieldsIcon{
+    background-image: url(../../../images/fieldsIcons.png);
+    width:37px;
+    height:36px;
+    display: inline-block;
+}
+#viewFieldView li[data-type='text'] .fieldsIcon{background-position: 0 0;}
+#viewFieldView li[data-type='paragraph'] .fieldsIcon{background-position: -49px 0;}
+#viewFieldView li[data-type='date'] .fieldsIcon{
+    background-position: 0 -43px;}
+#viewFieldView li[data-type='datearea'] .fieldsIcon{
+    background-position: -49px -43px;}
+#viewFieldView li[data-type='number'] .fieldsIcon{
+    background-position: 0 -85px;}
+#viewFieldView li[data-type='radio'] .fieldsIcon{
+    background-position: -48px -85px;}
+#viewFieldView li[data-type='checkboxes'] .fieldsIcon{
+    background-position: 0 -128px;}
+#viewFieldView li[data-type='pic'] .fieldsIcon{
+    background-position: -48px -128px;}
+#viewFieldView li[data-type='file'] .fieldsIcon{
+    background-position: 0 -172px;}
+#viewFieldView li[data-type='group'] .fieldsIcon{
+    background-position: -48px -172px;}
+#viewFieldView li .fieldsName{
+    display: block;
+    text-align: center;
+    font-size: 12px;
+}
+
+
+
+
+/*控件预览区*/
+#builderViewHeader{
+    
+font-size: 14px;
+    
+margin: 0 25px;
+    
+color: #333333;
+    
+margin-bottom: 5px;
+    
+font-weight: bold;
+}
+.builderView{
+    background: #f7f7f7;
+    height: 555px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    list-style:none;
+    font-size: 15px;
+    padding: 0px 20px;
+    padding-bottom: 10px;
+}
+.builderView::-webkit-scrollbar-track
+{
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+    background-color: #f7f7f7;
+}
+
+.builderView::-webkit-scrollbar
+{
+    width: 6px;
+    background-color: #f7f7f7;
+}
+
+.builderView::-webkit-scrollbar-thumb
+{
+    background-color: #333;
+}
+
+.builderView .filed-item{
+    background: #ffffff!important;
+    border: 1px dashed #b5b5b5;
+    margin: 10px 0;
+    padding: 8px 10px;
+    position: relative;
+    cursor: move;
+}
+.builderView li.filed-item{
+    text-indent: -999em;
+    height: 15px;
+    background: #fff;
+    border: 2px dashed #ff0000;
+    position: relative;
+    border-radius: 0;
+}
+
+#builderViewPreview .builderView .filed-item{
+   border-style: solid;
+   border-color: #d6d6d6;
+   cursor: default;
+}
+#builderViewPreview .builderView .filed-item[data-fieldtype='twoColumns'] .filed-item,#builderViewPreview .builderView .filed-item[data-fieldtype='threeColumns'] .filed-item{margin: 0;}
+
+.builderView .filed-item[data-capital='true']{margin-bottom: 32px;}
+
+
+/*
+.builderView li:before{position: absolute;content:"";width: 3px;height: 10px;background: #f00;left: 0;top:0;}
+.builderView li:after{ position: absolute;content:"";width: 3px; height: 10px; background: #f00; right: 0; top:0; }
+*/
+.builderView .handle{
+    overflow: hidden;
+}
+.builderView .filed-item:after{ content:"";display:block; clear: both; overflow:hidden; }
+.builderView .text{
+    display: inline-block;
+    width: 78px;
+    padding-right: 15px;
+    font-size: 14px;
+    color: #333333;
+    white-space: nowrap;
+    margin-right: 5px;
+    float: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.builderView .choose .text{
+    
+width: 60px;
+    
+padding-right: 0px;
+    
+margin-right: 0px;
+}
+.builderView .des{display: inline-block;color: #999;font-size: 12px;float: right;width: calc(100% - 105px);line-height: 20px;height: 20px;}
+/*多行文本*/
+.builderView .paragraph{height: 80px;}
+/*单选、多选*/
+.builderView .choose .des{width: calc(100% - 64px);}
+.builderView .choose .des .required{
+    float:left;
+    line-height: 20px;
+    height: 20px;
+}
+.builderView .choose .des .selectword{
+    float:right;
+    line-height: 20px;
+    height: 20px;
+}
+.builderView .choose .des .describe{
+    float:right;
+    line-height: 20px;
+    height: 20px;
+}
+.builderView .line {
+    height: 1px;
+    background-color: #eee;
+    margin: 6px 0;
+}
+
+/*分组*/
+/*  .builderView .addbtn{ position: absolute; bottom:0; background: #8AD0EA; height: 30px; line-height: 30px; width: 98%; text-align: center; }*/
+.builderView .addbtn{position: absolute;bottom:0;left: 0;background: #ffffff;height: 30px;line-height: 30px;text-align: center;margin-top: 30px;display: block;width: 100%;border-top: 1px dashed #ccc;}
+.builderView .group .handle{/*display: block;*/}
+.builderView .group{
+    min-height: 110px;
+    padding-bottom:30px;
+    padding-top:30px;
+    background: #f0f0f0;
+    }
+.builderView .group-title{position: absolute;height: 36px;width: 100%;top: 0;left: 0;line-height: 36px;background: #ffffff;border-bottom: 1px dashed #ccc;padding-left: 10px;box-sizing: border-box;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+
+.builderView .group-title span{
+
+display: block;
+
+width: 84px;
+
+overflow: hidden;
+
+text-overflow: ellipsis;
+
+white-space: nowrap;
+}
+
+.builderView .filed-item.group .describe-group{
+
+position: absolute;
+
+height: 36px;
+
+left: 97px;
+
+top: 0;
+
+line-height: 36px;
+
+color: #9f9f9f;
+
+font-size: 12px;
+
+width: calc(100% - 97px);
+
+overflow: hidden;
+
+text-overflow: ellipsis;
+
+white-space: nowrap;
+}
+
+    /*数字*/
+.builderView .filed-item .capitalShow{
+    position: absolute;
+    top: 48px;
+    left: 64px;
+    font-size: 12px;
+    display: none;
+}
+.builderView .filed-item .capitalShowValue{}
+
+/*两列控件*/
+.builderView .view_twoColumns_wrap{
+    height: 30px;
+}
+.builderView .view_twoColumns_wrap .left{
+    min-height: 30px;
+    float: left;
+    width: calc(50% - 5px);
+}
+.builderView .view_twoColumns_wrap .gap{
+    min-height: 30px;
+    float: left;
+    width: 10px;
+}
+.builderView .view_twoColumns_wrap .right{
+    min-height: 30px;
+    float: left;
+    width: calc(50% - 5px);
+}
+
+/*三列控件*/
+.builderView .view_threeColumns_wrap{}
+.builderView .view_threeColumns_wrap .left{
+    min-height: 30px;
+    float: left;
+    width: calc(33% - 6px);
+}
+.builderView .view_threeColumns_wrap .gap{
+    min-height: 30px;
+    float: left;
+    width: 9px;
+}
+#builderViewPreview .builderView .view_threeColumns_wrap .gap{
+    
+width: 13px;
+}
+.builderView .view_threeColumns_wrap .center{
+    min-height: 30px;
+    float: left;
+    width: calc(33% - 6px);
+}
+.builderView .view_threeColumns_wrap .right{
+    min-height: 30px;
+    float: left;
+    width: calc(33% - 6px);
+}
+
+
+/*
+=================================================================
+
+表单信息区--菜单*/
+#formBuilder-myTab-fieldEdit{
+    border: none;
+    width: 211px;
+    margin: 18px auto 0;
+}
+#formBuilder-myTab-fieldEdit li{
+    height: 30px;
+    line-height: 30px;
+    width: 104px;
+    margin: 0;
+}
+#formBuilder-myTab-fieldEdit li a{
+    padding: 0;
+    border: none;
+    line-height: 30px;
+    border-radius: 0;
+    margin: 0;
+    text-align: center;
+    box-sizing: border-box;
+    color: #333333;
+    background: #f4f4f4;
+    font-weight: bold;
+    border-bottom: 2px solid #f4f4f4;
+}
+#formBuilder-myTab-fieldEdit li.active{}
+#formBuilder-myTab-fieldEdit li.active a{
+    color: #ed6c2b;
+    border-bottom: 2px solid #ed6c2b;
+}
+#formBuilder-myTabContent-fieldEidt{
+    width: 211px;
+    margin: 10px auto 0;
+    height: 556px;
+    overflow: auto;
+}
+
+
+/*编辑框*/
+#formBuilder-myTab-fieldView .active,#formBuilder-myTabContent-fieldView .active,#formBuilder-myTab-fieldEdit .active,#formBuilder-myTabContent-fieldEidt .active{ border:none !important; }
+.edit-content{padding: 10px 0;}
+.edit-item{margin-bottom: 10px;}
+.edit-item-title{
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+.edit-item  .edit-input {border: 1px solid rgb(201,201,201);width: 87%;height: 32px;line-height: 32px;border-radius: 3px;padding: 0 10px;color: #888;}
+.edit-item  .edit-input:focus{
+    border: 1px solid #84d0ff;
+}
+.edit-item .option-label-input{border:1px solid #e8e8e8;padding: 5px;margin-bottom: 3px;width: 153px;}
+
+.edit-content .fa{cursor: pointer;color: rgb(146,146,146);}
+.edit-item .edit-textarea{
+    width: 98%;
+    height: 88px;
+    border: 1px solid #bcbcbc;
+    border-radius: 3px;
+    max-width: 98%;
+    box-sizing: border-box;
+    padding: 5px 10px;
+}
+.edit-item .edit-textarea:focus{
+    border: 1px solid #84d0ff;
+}
+
+.verify-error {color: #c00;}
+.red-border{border:1px solid #c00 !important;}
+.capital{  margin-top: 5px; background: #f7f7f7; display: block !important; padding: 5px; color: #999; }
+
+/*审批设置*/
+#formBuilderEdit{ padding: 10px 0; }
+
+/*审批图标*/
+#approveIcon{ margin:0; padding:5px 0 0 0; width: 280px; overflow: hidden;}
+#approveIcon li{ width:40px; height:40px; float:left; list-style:none; margin:6px; position:relative; cursor: pointer;}
+
+#approveIcon li img{width:100%;}
+#approveIcon .active:after {
+    content:"√";
+    width:18px; height:18px; position:absolute; top:-7px; right:-7px;
+    border-radius:50%; line-height:18px; text-align:center;
+    background:rgba(255,00,0,0.6); color:#ffffff;
+}
+
+.option-error{ color:#c30;}
+
+.cricle-plus{ width:40px; height:40px; font-size:20px; line-height:40px; text-align:center; border:1px dashed #ccc; color:#ccc;}
+.tips{ position: absolute; top: -50px;    z-index: 9999 }
+.ani{-webkit-animation-duration:0.7s;-webkit-animation-delay:0;-webkit-animation-timing-function:ease;-webkit-animation-fill-mode:both;-moz-animation-duration:1s;-moz-animation-delay:0;-moz-animation-timing-function:ease;-moz-animation-fill-mode:both}
+
+.fadeInDown{-webkit-animation-name:fadeInDown;-moz-animation-name:fadeInDown}
+@-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translateY(0)}
+    100%{opacity:1;-webkit-transform:translateY(50px)}}
+@-moz-keyframes fadeInDown{0%{opacity:0;-moz-transform:translateY(0)}
+    100%{opacity:1;-moz-transform:translateY(50px)}}
+
+
+.fadeOutUp{-webkit-animation-name:fadeOutUp;-moz-animation-name:fadeOutUp}
+@-webkit-keyframes fadeOutUp{0%{opacity:1;-webkit-transform:translateY(50px)}
+    100%{opacity:0;-webkit-transform:translateY(-50px)}}
+@-moz-keyframes fadeOutUp{0%{opacity:1;-moz-transform:translateY(50px)}
+    100%{opacity:0;-moz-transform:translateY(-50px)}}
+
+
+/*
+选择流程类型*/
+.workflow_type_select{
+    position: relative;
+    cursor: pointer;
+}
+.workflow_type_select input[name='form_type']{
+    cursor: pointer;
+}
+.workflow_type_select .select_ico{
+    position: absolute;
+    right: 11px;
+    top: 6px;
+    color: #555;
+}
+
+.workflow_type_select .select{
+    border: 1px solid #c8c8c8;
+    border-top: none;
+    position: absolute;
+    top: 33px;
+    width: 203px;
+    padding: 10px 0;
+}
+.workflow_type_select .select_ul{
+
+max-height: 200px;
+
+overflow: auto;
+
+background: #fff;
+}
+.workflow_type_select .select li{
+    padding: 1px 5px;
+    overflow: hidden;
+    height: 25px;
+}
+.workflow_type_select .select li:hover{
+    background:#e8e8e8;
+}
+.workflow_type_select .beautifulRadio{
+    display:inline-block;
+    float: left;
+    margin-top: 2px;
+}
+
+
+.workflow_type_select .select .operation{float: right;}
+.workflow_type_select .select .add{
+    width: 16px;
+    height: 16px;
+    background: url(../../../images/bgs.png);
+    background-position: -2px -40px;
+    display: inline-block;
+    text-indent: -99em;
+    overflow: hidden;
+    vertical-align: middle;
+    margin-right: 5px;
+    cursor: pointer;
+}
+.workflow_type_select .select .sub{
+    width: 16px;
+    height: 16px;
+    background: url(../../../images/bgs.png);
+    background-position: -2px -60px;
+    display: inline-block;
+    text-indent: -99em;
+    overflow: hidden;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.workflow_type_select .buttons{
+    overflow: hidden;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 2px;
+    padding-bottom: 2px;
+}
+.workflow_type_select .buttons input[type='button']{
+    padding: 4px 16px 5px;
+}
+
+/*
+表单编辑缺省字段区域*/
+#builderDefaultView{
+    width: 788px;
+    margin: 0 auto;
+    background: #fff;
+}
+#builderDefaultView table{
+    width: 100%;
+}
+#builderDefaultView td{height: 38px;line-height: 38px;border: 1px solid #bcbcbc;}
+#builderDefaultView .text{
+    float: left;
+    margin-left: 10px;
+}
+#builderDefaultView .des{
+    float: right;
+    color: #999;
+    margin-right: 21px;
+}
+
+/* artDialog弹窗按钮的样式定义 */
+.ui-dialog-button button[i-id='formBuilder-button-nextStep']{ 
+    background-color: green; 
+    border-color: green;
+}
+.ui-dialog-button button[i-id='formBuilder-button-nextStep']:hover{ 
+    background-color: #003c00; 
+    border-color: #003c00;
+}

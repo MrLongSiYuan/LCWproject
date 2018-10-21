@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+
+/*多选框组件*/
+.beautifulCheckbox{
+    display: inline;
+}
+.beautifulCheckbox label{
+    display: inline;
+    position: relative;
+    padding-left: 22px;
+    height: 20px;
+    line-height: 20px;
+    cursor: pointer;
+    font-weight: normal;
+    white-space: nowrap;
+}
+.beautifulCheckbox label:before{
+    content:" ";
+    width:14px;
+    height:14px;
+    position:absolute;
+    top: 3px;
+    left: 0px;
+    background: url(../assets/images/bgs.png) -20px -20px;
+}
+.beautifulCheckbox input[type='checkbox']{
+    display: none;
+}
+.beautifulCheckbox input[type='checkbox']:checked + label:before{
+    background: url(../assets/images/bgs.png) -20px -3px;
+}
+
+/*单选框组件*/
+.beautifulRadio{
+    display: inline;
+}
+.beautifulRadio label{
+    display: inline;
+    position: relative;
+    padding-left: 22px;
+    height: 20px;
+    line-height: 20px;
+    cursor: pointer;
+    font-weight: normal;
+    white-space: nowrap;
+}
+.beautifulRadio label:before{
+    content:" ";
+    width:14px;
+    height:14px;
+    position:absolute;
+    top: 3px;
+    left: 0px;
+    background: url(../assets/images/bgs.png) -3px -19px;
+}
+.beautifulRadio input[type='radio']{
+    display: none;
+}
+.beautifulRadio input[type='radio']:checked + label:before{
+    background: url(../assets/images/bgs.png) -3px -3px;
+}

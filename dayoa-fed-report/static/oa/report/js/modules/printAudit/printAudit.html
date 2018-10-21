@@ -1,0 +1,36 @@
+<div id="workflow_printAudit">
+	<div class="formData clearfix">
+		<h1>{{auditName}}</h1>
+		<ul class="printInfo">
+			<li>
+				部门名称： {{posName}}
+			</li>
+			<li>
+				申请人：{{userName}}
+			</li>
+			<li>
+				申请日期：{{applyDate}}
+			</li>
+		</ul>
+		<ul class="dataList">
+			<form-data-show v-bind:a-fields="aFormStyle"></form-data-show>
+		</ul>
+	</div>
+
+	<div class="auditPersonList clearfix">
+		<ul>
+			<li v-for="item in aAuditList">
+				<div class="left">审批人{{$index + 1}}</div>
+				<div class="info clearfix">
+					<div class="status">{{item.auditPersonName}}审批完成 <span class="time">{{item.timeCreated}}</span></div>
+					<div class="des">{{item.auditOpinion}}</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<ul class="printFooterInfo">
+		<li>打印日期：{{printTime}}</li>
+		<li>打印人：{{userName}}</li>
+	</ul>
+</div>

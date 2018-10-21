@@ -1,0 +1,71 @@
+#choose_cover_wrap{
+    display: block;
+    width: 100%;
+    background: #f2f2f2;
+    padding-bottom: 61px;
+}
+#choose_cover_wrap .choose_describe{
+    width: 100%;
+    height: 0.65rem;
+    box-sizing: border-box;
+    padding-left: 0.2rem;
+    font-size: 0.24rem;
+    color: #666;
+    line-height: 0.65rem;
+}
+#choose_cover_wrap .choose_cover_sure{
+    width: 100%;
+    height:61px;
+    text-align: center;
+    line-height: 61px;
+    font-size: 18px;
+    color: #ff7123;
+    border-top: 1px solid #D2D2D2;
+    background: #FCFCFC;
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+}
+#choose_cover_wrap  ul{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background: #fff;
+}
+#choose_cover_wrap  ul li{
+    width: 100%;
+    height: 55px;
+    border-bottom: 1px solid #D2D2D2;
+}
+#choose_cover_wrap  ul li:nth-child(1){
+    border-top: 1px solid #D2D2D2;
+}
+#choose_cover_wrap  ul li span{
+    display: block;
+    height: 100%;
+    line-height: 55px;
+    font-size: 16px;
+    color: #222;
+    float: left;
+    max-width: 5.35rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#choose_cover_wrap  ul li i{
+    font-style: normal;
+    display: block;
+    width: 22px;
+    height: 22px;
+    float: left;
+    border: 1px solid #aaa;
+    border-radius: 100%;
+    margin-top: 17px;
+    margin-left: 0.31rem;
+    margin-right: 0.28rem;
+}
+#choose_cover_wrap  ul li.active i{
+    border: none;
+    background: url(../../../images/list_icon_choice_pre@3x.png) no-repeat;
+    background-size: 22px 22px;
+}

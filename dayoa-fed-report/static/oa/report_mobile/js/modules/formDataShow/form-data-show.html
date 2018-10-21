@@ -1,0 +1,107 @@
+<li class="dataListItem clearfix" v-for="item in aFields" data-fieldType="{{item.field_type}}" data-name="{{item.field_name}}" v-if="item.field_type!='default_field'">
+	<template v-if="
+				item.field_type == 'text' ||
+				item.field_type == 'paragraph' ||
+				item.field_type == 'date' ||
+				item.field_type == 'number' ||
+				item.field_type == 'radio' ||
+				item.field_type == 'checkboxes'
+				">
+		<div class="left">
+			{{item.label}}：
+		</div>
+		<div class="right">
+			{{{item.value}}}
+			<!--人民币大写-->
+			<template v-if="item.capital == 'true' && item.value">({{item.value | arabiaToChinese}})</template>
+		</div>
+	</template>
+
+	<!--说明字段-->
+	<template v-if="item.field_type == 'remark'">
+		<div class="left" style="height: 47px;overflow: hidden">
+			{{item.label}}：<span>{{item.describe}}</span>
+		</div>
+		<div class="right" @click="remarkOpenClose($event)" v-if="item.describe.length > 35">展开</div>
+	</template>
+
+	<!--日期区间-->
+	<template v-if="item.field_type == 'datearea'">
+		<div class="clearfix">
+			<div class="left">
+				{{item.label}}：
+			</div>
+			<div class="right">
+				{{item.startValue}}
+			</div>
+		</div>
+		<div class="clearfix">
+			<div class="left">
+				{{item.label2}}：
+			</div>
+			<div class="right">
+				{{item.endValue}}
+			</div>
+		</div>
+	</template>
+
+	<!--图片类型-->
+	<template v-if="item.field_type == 'pic'">
+		<!--<div class="left">-->
+			<!--{{item.label}}：-->
+		<!--</div>-->
+		<div class="right right_pic">
+			<ul class="imglist clearfix" v-if="item.valueUrls">
+				<li v-for="itemPic in item.valueUrls" track-by="$index" data-uuid="{{itemPic.uuid}}">
+					<div class="imglist_imgbox">
+						<img v-bind:src="(typeof itemPic.url == 'string' && itemPic.url.indexOf('http') != -1)?itemPic.url:(gMain.baseStaticPath +'common/images/loading-2.gif')" class="previewPic" alt="" @click.prevent="previewPic($event,itemPic.uuid)" >
+					</div>
+				</li>
+			</ul>
+		</div>
+	</template>
+
+	<!--附件类型-->
+	<template v-if="item.field_type == 'file'">
+		<!--<div class="left">-->
+			<!--{{item.label}}：-->
+		<!--</div>-->
+		<div class="right right_file">
+			<div class="addFilePreview clearfix">
+				<ul v-if="item.value.length" class="clearfix">
+					<li v-for="itemFile in item.value" track-by="$index" data-uuid="{{itemFile.uuid}}" v-on:click="previewFile(itemFile.uuid,itemFile.fileSort)">
+						<span class="file_logo"></span>
+						<span class="filename" title="{{itemFile.fileName}}">{{itemFile.fileName}}</span>
+						<!--<span class="size">({{itemFile.size}})</span>-->
+					</li>
+				</ul>
+			</div>
+		</div>
+	</template>
+
+	<!--两列控件-->
+	<template v-if="item.field_type == 'twoColumns' && ((item.firstCol && item.firstCol.fields) || (item.secondCol && item.secondCol.fields))">
+		<form-data-show v-bind:a-fields="item.firstCol.fields"></form-data-show>
+		<form-data-show v-bind:a-fields="item.secondCol.fields"></form-data-show>
+	</template>
+
+	<!--三列控件-->
+	<template v-if="item.field_type == 'threeColumns' && ((item.firstCol && item.firstCol.fields) || (item.secondCol && item.secondCol.fields)  || (item.thirdCol && item.thirdCol.fields))">
+		<form-data-show v-bind:a-fields="item.firstCol.fields"></form-data-show>
+		<form-data-show v-bind:a-fields="item.secondCol.fields"></form-data-show>
+		<form-data-show v-bind:a-fields="item.thirdCol.fields"></form-data-show>
+	</template>
+
+	<!--明细控件-->
+	<template v-if="item.field_type == 'group' && item.group && item.group.fields">
+		<dl class="groupItem">
+			<dt>{{item.label}}</dt>
+			<dd>
+				<ul>
+					<form-data-show v-bind:a-fields="item.group.fields"></form-data-show>
+				</ul>
+			</dd>
+		</dl>
+	</template>
+
+</li>

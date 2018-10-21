@@ -1,0 +1,38 @@
+{
+  "name": "dayoa-fed-report",
+  "version": "1.0.0",
+  "description": "OA工作汇报项目",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "gulp clean",
+    "zip": "gulp zip",
+    "build": "gulp default_build",
+    "sonarqube": "gulp sonarqube"
+  },
+  "keywords": [
+    "OA工作汇报项目"
+  ],
+  "author": "qi_zhang",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-html2js": "^0.4.2",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-make-css-url-version": "^0.0.13",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^2.1.2",
+    "gulp-zip": "^4.0.0",
+    "sonarqube-scanner": "^1.3.0"
+  },
+  "dependencies": {
+    "weui": "^1.1.0"
+  }
+}

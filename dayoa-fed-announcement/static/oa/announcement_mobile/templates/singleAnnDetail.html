@@ -1,0 +1,97 @@
+<div id="single_ann_detail">
+    <div class="ann_detail_wrap" v-show="announcementData">
+        <div class="ann_single_content">
+            <div class="ann_header_wrap">
+                <div class="ann_title">{{announcementData.title}}</div>
+                <div class="ann_information clearfix">
+                    <div class="annoucement_classify">{{announcementData.type_name}}</div>
+                    <div class="another_infor clearfix">
+                        <div class="ann_releaser">{{announcementData.person_name}}</div>
+                        <div class="operation_time" v-add-ann-time="announcementData"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="announcement_text" V-ann-content-handle="announcementData"></div>
+            <div class="right right_pic">
+                <ul class="imglist clearfix">
+                    <li v-for="itemPic in oFileList" track-by="$index" data-uuid="{{itemPic.resourceUrl}}" v-if="itemPic.fileType == 2">
+                        <div class="imglist_imgbox">
+                            <img v-bind:src="itemPic.realUrl" class="previewPic" alt="" @click.prevent="previewPic($event,itemPic.resourceUrl)" >
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="right right_file">
+                <div class="addFilePreview clearfix">
+                    <ul class="clearfix">
+                        <li v-for="itemFile in oFileList" track-by="$index" data-uuid="{{itemFile.resourceUrl}}" v-on:click="previewFile(itemFile.resourceUrl,itemFile.fileSort)" v-if="itemFile.fileType == 1">
+                            <span class="file_logo"></span>
+                            <span class="filename" title="{{itemFile.fileName}}">{{itemFile.fileName}}</span>
+                            <!--<span class="size">({{itemFile.size}})</span>-->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="watermark_wrap"></div>
+        </div>
+        <div class="ann_single_range">
+            <div class="release_range_title">发布范围({{publishRange.length}})：
+                <span class="more_btn" @click="releaseRangeAllshow($event)">
+                <Icon type="ios-arrow-down"></Icon>
+            </span>
+            </div>
+            <div class="content" data-release="0">
+                <ul class="clearfix">
+                    <li v-for="item in publishRange">
+                        {{item.receiver_name}}
+                        <i>、</i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="add_report_read_wrap more_infor_wrap" @click="goReaderList">
+            <div class="title">已读：</div>
+            <div class="content">
+                <span>{{announcementData.readCount}}人</span>
+            </div>
+            <div class="more_btn">
+                <div class="arrow_right">
+                    <Icon type="ios-arrow-right"></Icon>
+                </div>
+            </div>
+        </div>
+        <div id="comment_assembly"></div>
+        <div class="bottom_footer_blank"></div>
+        <!---->
+        <!--<template v-if="announcementId">-->
+        <!--<daydao-fed-comment :uuid="announcementId" :person-id="personId"></daydao-fed-comment>-->
+        <!--</template>-->
+        <!--操作项-->
+        <div class="single_report_footer">
+            <div class="operation_item_wrap">
+                <div class="commtent_item operation_item" @click="commonAddComment" v-if="announcementData.is_comment">
+                    <div class="center_box_wrap">
+                        <div class="center_box">
+                            <div :class="announcementData.isComment? 'operation_logo active' : 'operation_logo'"></div>
+                            <div class="operation_describe">{{commentInfo.count == 0 ? '评论': commentInfo.count}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="praise_item operation_item" @click="praiseOperation($event)" :style="{width:announcementData.is_comment?'':'100%'}">
+                    <div class="center_box_wrap">
+                        <div class="center_box">
+                            <div :class="announcementData.isPraise == 1 ? 'operation_logo active' : 'operation_logo'"></div>
+                            <div class="operation_describe">{{announcementData.praiseCount == 0 ? '赞' : announcementData.praiseCount}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="data_not_find_box" style="display: none">
+        <div class="data_not_find"> 公告已经被删除啦！</div>
+    </div>
+</div>
+<div class="single_report_child">
+    <router-view></router-view>
+</div>

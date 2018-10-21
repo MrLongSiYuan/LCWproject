@@ -1,0 +1,172 @@
+#report_search_wrap{
+    width: 100%;
+    min-height: 100%;
+    background: #fff;
+}
+#report_search_wrap .search_option_title{
+    width: 100%;
+    height: 34px;
+    background: #f2f2f2;
+    box-sizing: border-box;
+    padding-left: 0.3rem;
+    line-height: 34px;
+    font-size: 14px;
+    color: #FF7123;
+}
+#report_search_wrap .reporter_name_wrap{
+    width: 100%;
+}
+#report_search_wrap .reporter_name_wrap .name_input_wrap{
+    width: 100%;
+    height: 44px;
+    background: #E0E0E0;
+    overflow: hidden;
+}
+#report_search_wrap .reporter_name_wrap .name_input_wrap .name_text{
+    width: 29%;
+    height: 100%;
+    line-height: 55px;
+    font-size: 16px;
+    color: #222;
+    float: left;
+    box-sizing: border-box;
+    padding-left: 0.3rem;
+}
+#report_search_wrap .reporter_name_wrap .name_input_wrap input{
+    display: block;
+    width: 6.12rem;
+    height: 29px;
+    font-size: 14px;
+    background: #fff;
+    border: none;
+    outline: none;
+    margin: 8px auto 0;
+    box-sizing: border-box;
+    padding-left: 0.3rem;
+    border-radius: 4px;
+}
+/*选择时间开始*/
+#report_search_wrap .report_time_wrap{
+    width: 100%;
+}
+#report_search_wrap .report_time_wrap .report_choose_time_wrap{
+    width: 100%;
+}
+#report_search_wrap .report_time_wrap .report_choose_time_wrap ul{
+    display: block;
+    box-sizing: border-box;
+    padding: 0.27rem;
+    overflow: hidden;
+    padding-bottom: 0;
+}
+#report_search_wrap .report_time_wrap .report_choose_time_wrap ul li{
+    width: 33.33%;
+    height: 30px;
+    float: left;
+    margin-bottom: 14px;
+}
+#report_search_wrap .report_time_wrap .report_choose_time_wrap ul li a{
+    display: block;
+    width: 1.67rem;
+    height:30px;
+    font-size: 14px;
+    color: #222;
+    text-align: center;
+    line-height: 30px;
+    margin: 0 auto;
+}
+#report_search_wrap .report_time_wrap .report_choose_time_wrap ul li.active a{
+    border: 1px solid #FF7123;
+    color: #FF7123;
+    border-radius: 0.08rem;
+}
+#report_search_wrap .report_time_wrap .report_choose_time_wrap .data_choose_wrap{
+    width: 100%;
+    display: none;
+}
+#report_search_wrap .report_time_wrap .report_choose_time_wrap .data_choose_wrap .blank{
+    width: 100%;
+    height: 15px;
+    background: #f2f2f2;
+}
+#report_search_wrap .time_date_box{
+    height: 55px;
+    padding-left: 0.3rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+#report_search_wrap .time_date_box .time_lable{
+    height: 100%;
+    line-height: 55px;
+    float: left;
+    width: 29%;
+    font-size: 16px;
+    color: #222;
+}
+#report_search_wrap .time_date_box .time_input_wrap{
+    width: 71%;
+    height: 100%;
+    float: left;
+}
+#report_search_wrap .time_date_box .time_input_wrap input{
+    display: block;
+    height: 100%;
+    width: 90%;
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    text-align: right;
+    box-sizing: border-box;
+    padding-right: 0.2rem;
+    font-size: 16px;
+}
+#report_search_wrap .time_date_box .time_input_wrap i{
+    display: block;
+    height: 100%;
+    width: 10%;
+    text-align: center;
+    line-height: 55px;
+    font-size: 18px;
+    float: left;
+    color: #999;
+}
+#report_search_wrap .time_date_box .start_time,#report_search_wrap .time_date_box .start_time_input{
+    border-bottom: 1px solid #D2D2D2;
+}
+/*选择时间结束*/
+/*选择模板结束*/
+#report_search_wrap .report_template_wrap .time_lable{
+    width: 40%;
+}
+#report_search_wrap .report_template_wrap .time_input_wrap{
+    width: 60%;
+}
+#report_search_wrap .report_template_wrap .time_input_wrap input{
+    width: 87%;
+    padding-right: 0.15rem;
+}
+#report_search_wrap .report_template_wrap .time_input_wrap i{
+    width: 13%;
+}
+/*选择模板结束*/
+#report_search_wrap .submit_wrap{
+    width: 100%;
+    height: 85px;
+    background: #f2f2f2;
+    overflow: hidden;
+}
+#report_search_wrap .submit_wrap .submit_btn,#report_search_wrap .submit_wrap .cancel_submit_btn{
+    width: 5.8rem;
+    height: 44px;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 0.08rem;
+    text-align: center;
+    line-height: 44px;
+    background: #FF7123;
+    margin: 20px auto 0;
+}
+#report_search_wrap .submit_wrap .cancel_submit_btn{
+    background: #aaa;
+}

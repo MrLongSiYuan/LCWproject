@@ -1,0 +1,127 @@
+@charset "utf-8";
+
+#workflow_addWorkflowSetting{
+}
+
+#workflow_addWorkflowSetting .add_select_template{width: 584px;}
+
+/*
+流程模板新建*/
+#workflow_addWorkflowSetting .add_template{}
+#workflow_addWorkflowSetting .add_template h1{
+    color: #000;
+    font-size: 16px;
+}
+#workflow_addWorkflowSetting .add_template .add{
+    width: 120px;
+    height: 124px;
+    border: 1px solid #c6c6c6;
+    background: #f4f5f7;
+    margin-top: 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+#workflow_addWorkflowSetting .add_template .add.selected{
+    border: 3px solid #ed6c2b;
+}
+#workflow_addWorkflowSetting .add_template .icon{
+    display: block;
+    text-align: center;
+    font-size: 50px;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    line-height: 50px;
+    margin-top: 17px;
+    color: #ccc;
+}
+#workflow_addWorkflowSetting .add_template .name{
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    width: 50px;
+    height: 38px;
+    margin: 0 auto;
+    line-height: 38px;
+}
+
+/*
+流程模板选择*/
+
+#workflow_addWorkflowSetting .select_template{
+    margin-top: 20px;
+}
+#workflow_addWorkflowSetting .select_template h1{
+    color: #000;
+    font-size: 16px;
+}
+#workflow_addWorkflowSetting .select_template .list{
+    height: 276px;
+    overflow: auto;
+    margin-top: 15px;
+}
+#workflow_addWorkflowSetting .select_template .list li{
+    width: 120px;
+    height: 124px;
+    background: #f4f5f7;
+    cursor: pointer;
+    float: left;
+    margin-right: 21px;
+    margin-bottom: 21px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+#workflow_addWorkflowSetting .select_template .list li.selected{border: 3px solid #ed6c2b;}
+
+#workflow_addWorkflowSetting .select_template .list li:nth-child(4n){
+    margin-right: 0;
+}
+#workflow_addWorkflowSetting .select_template .list .icon{
+    display: block;
+    text-align: center;
+    width: 52px;
+    height: 52px;
+    margin: 0 auto;
+    line-height: 50px;
+    margin-top: 17px;
+    background: url(../../../images/bgs.png) no-repeat -82px 0;
+}
+#workflow_addWorkflowSetting .select_template .list .name{
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    height: 38px;
+    margin: 0 auto;
+    line-height: 38px;
+    color: #8b8b8b;
+    overflow: hidden;
+    padding: 0 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#workflow_addWorkflowSetting .select_template .list .operate{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.54);
+    transition: all 0.2s;
+    transform: scale(0);
+}
+#workflow_addWorkflowSetting .select_template .list li:hover .operate{
+    transform: scale(1);
+}
+#workflow_addWorkflowSetting .select_template .list .operate span{
+    position: absolute;
+    bottom: 8px;
+    color: #fff;
+}
+
+/*
+第二步 表单信息填写*/
+#workflow_addWorkflowSetting .workflow_formStyle{
+    width:400px;
+}

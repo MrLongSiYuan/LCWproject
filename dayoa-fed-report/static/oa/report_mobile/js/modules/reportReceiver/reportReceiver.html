@@ -1,0 +1,24 @@
+<div id="report_receive_cover">
+    <ul>
+        <li v-for="item in receiverList">
+            <div class="img_box">
+                <img v-app-head-img="item"/>
+            </div>
+            <span class="personName" person-id="{{item.personId}}">{{item.personName}}</span>
+            <i class="del_report_receiver" v-if="canDelReceiverFlag" @click="delReceiverCh(item.personId)"></i>
+        </li>
+        <!--添加-->
+        <li>
+            <div class="img_box" @click="addReceiver">
+                <img :src="(gMain.baseStaticPath+'oa/report_mobile/images/task_button_add_def@3x.png')" alt="">
+            </div>
+        </li>
+        <!--删除-->
+        <li>
+            <div class="img_box" @click="canDelReceiver">
+                <img :src="(gMain.baseStaticPath+'oa/report_mobile/images/task_button_reduce_def@3x.png')" alt="">
+            </div>
+        </li>
+    </ul>
+    <div class="choose_cover_sure" @click="outReceiverCover">确定</div>
+</div>

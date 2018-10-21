@@ -1,0 +1,233 @@
+@charset "utf-8";
+#dialogAuditSelect *{
+    box-sizing: content-box;
+}
+#dialogAuditSelect .clearfix{
+    width: 711px;
+    margin: 0 auto;
+    position: relative;
+}
+#dialogAuditSelect dt{
+    font-weight:normal;
+}
+
+/*审批人选择器*/
+#dialogAuditSelect{
+    width: 756px;
+}
+
+/*职位人员tab切换*/
+#dialogAuditSelect .pos-person-tab{
+    height: 32px;
+    background: #f4f4f4;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+#dialogAuditSelect .pos-person-tab ul{
+}
+#dialogAuditSelect .pos-person-tab li{
+    float: left;
+    width: 100px;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 0 10px;
+}
+#dialogAuditSelect .pos-person-tab li.selected{border-bottom: 2px solid #ed6c2b;cursor: default;}
+
+
+/*搜索*/
+#dialogAuditSelect .search{
+    width: 706px;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 auto;
+    border: 1px solid #bcbcbc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    text-align: center;
+    color: #ccc;
+    position: relative;
+}
+#dialogAuditSelect .search input[name='keyword']{border: none;width: 663px;height: 30px;top: 0;left: 5px;position: absolute;}
+#dialogAuditSelect .search input[name='keyword']::-ms-input-placeholder{text-align: center;}
+#dialogAuditSelect .search input[name='keyword']::-webkit-input-placeholder{text-align: center;}
+#dialogAuditSelect .search .icon{
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    display: block;
+    right: 5px;
+    top: 4px;
+    text-indent: -99em;
+    overflow: hidden;
+    background: url(../../../images/bgs.png) -1px -99px;
+    cursor: pointer;
+}
+
+
+/*
+组织列表*/
+#dialogAuditSelect .orgList{
+    position: absolute;
+    width: 240px;
+    top: 20px;
+}
+#dialogAuditSelect .orgList:after{
+    content:" ";
+    position:absolute;
+    top: 48%;
+    width:34px;
+    height:31px;
+    background:url(../../../images/bgs.png) -3px -128px;
+    left: 255px;
+}
+#dialogAuditSelect .orgList dl{}
+#dialogAuditSelect .orgList dt{
+    line-height: 32px;
+    height: 32px;
+}
+#dialogAuditSelect .orgList dd{
+}
+#orgListTree {
+    border: 1px solid #bcbcbc;
+    height: 285px;
+    overflow: auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/*包含职位*/
+#dialogAuditSelect .jobList{
+    position: absolute;
+    width: 170px;
+    top: 20px;
+    left: 300px;
+}
+#dialogAuditSelect .jobList:after{
+    content:" ";
+    position:absolute;
+    top: 48%;
+    width:34px;
+    height:31px;
+    background:url(../../../images/bgs.png) -3px -128px;
+    left: 177px;
+}
+#dialogAuditSelect .jobList dl{}
+#dialogAuditSelect .jobList dt{
+    line-height: 32px;
+    height: 32px;
+}
+#dialogAuditSelect .jobList dd{}
+#jobListSelect {
+    border: 1px solid #bcbcbc;
+    box-sizing: border-box;
+    height: 285px;
+    overflow: auto;
+    padding: 5px 0px;
+}
+#jobListSelect li{
+    padding: 0 10px;
+    height: 22px;
+    line-height: 22px;
+}
+
+/*包含人员*/
+#dialogAuditSelect .personList{
+    position: absolute;
+    width: 170px;
+    top: 20px;
+    left: 504px;
+}
+#dialogAuditSelect .personList dl{}
+#dialogAuditSelect .personList dt{
+    line-height: 32px;
+    height: 32px;
+}
+#dialogAuditSelect .personList dd{
+
+}
+#personListSelect {
+    border: 1px solid #bcbcbc;
+    box-sizing: border-box;
+    height: 285px;
+    overflow: auto;
+    padding: 5px 0px;
+}
+#personListSelect li{
+    padding:0 10px;
+    height: 22px;
+    line-height: 22px;
+}
+
+/*
+选择结果*/
+#dialogAuditSelect .selectResult{min-height: 89px;border: 2px dashed #ccc;padding: 10px;width: 685px;max-height: 167px;overflow-y: auto;}
+#dialogAuditSelect .selectResult li{
+    display: inline-block;
+    width: 56px;
+    text-align: center;
+    position: relative;
+    padding-left: 26px;
+}
+#dialogAuditSelect .selectResult li .personImg{
+    vertical-align: bottom;
+}
+#dialogAuditSelect .selectResult li .person_img_span{
+    display: block;
+    width: 56px;
+    height: 56px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 56px;
+    color: #fff;
+    font-size: 14px;
+}
+#dialogAuditSelect .selectResult li .personName{
+    line-height: 28px;
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+}
+#dialogAuditSelect .selectResult li .close{
+    width:24px;
+    height:24px;
+    background: url(../../../images/bgs.png) -20px -37px;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    display: none;
+    cursor: pointer;
+}
+#dialogAuditSelect .selectResult li:hover .close{
+    display: block;
+}
+
+#dialogAuditSelect .selectResult li:after{
+    content:"    ";
+    position:absolute;
+    font-size: 24px;
+    color: #ccc;
+    width: 50px;
+    text-align: center;
+    line-height: 24px;
+    top: 17px;
+    left: -14px;
+}
+#dialogAuditSelect .selectResult li:first-child{
+    padding-left: 0;
+}
+#dialogAuditSelect .selectResult li:nth-child(8n+1){
+    padding-left: 0;
+}
+#dialogAuditSelect .selectResult li:first-child:after{
+    display: none;
+}
+
+/*
+添加到审批待选列表中*/
+#dialogAuditSelect .addAudit{position: absolute;top: 46%;left: 677px;font-size: 31px;color: #ea5f21;cursor: pointer;}

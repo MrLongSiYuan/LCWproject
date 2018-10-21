@@ -1,0 +1,55 @@
+<form id="report_previewAudit" class="clearfix">
+	<div class="report_quoteLastTimeBtn_wrap">
+		<div class="choose_report_time_wrap">
+			<div class="choose_report_left">汇报时间</div>
+			<div class="choose_report_right">
+				<i-select :model.sync="modleChooseTime" style="width:217px" v-if="tempName == '周报'">
+					<i-option v-for="item in modleChooseTimeList" :value="item">{{ item }}</i-option>
+				</i-select>
+				<input type="text"  class="Wdate" readonly data-type="2" v-if="tempName != '周报' && tempName != '月报'" :value="nowYear + '-' + nowMonth + '-' + nowDay">
+				<input type="text"  class="Wdate" readonly data-type="3" v-if="tempName == '月报'" :value="nowYear + '-' + nowMonth">
+			</div>
+		</div>
+		<button type="button" v-bind:class="[quoteReport.reportNotFirst?'report_quoteLastTimeBtn active':'report_quoteLastTimeBtn']" v-on:click="quoteLastReportOrNot($event)">引用上一次汇报</button>
+	</div>
+	<div class="reporter_informationWrap">
+		<div class="reporter_information_box">
+			<div class="repoter_infomationRow" v-for="reporter in reporters">
+				<span class="repoter_infomationName_left">{{reporter.inforTitle}}</span>
+				<span class="repoter_infomationName_right">{{reporter.inforContent}}</span>
+			</div>
+		</div>
+	</div>
+	<div id="report_previewAudit_formSubmitError" style="display: none;">
+		<span class="tipmsg"></span>
+	</div>
+
+	<form-preview v-bind:afields="aFields" v-bind:quoteclick="quoteClick"></form-preview>
+
+	<div class="recipient_listWrap">
+		<div class="auditInfoItem clearfix">
+			<div class="title">接收人</div>
+			<div class="content">
+				<ul id="workflow_processCcList">
+					<li v-for="item in auditInfo.process_cc" v-on:mouseenter="addProcessCcMouseenter" v-on:mouseleave="addProcessCcMouseleave">
+						<!--<img v-bind:src="gMain.currentStaticPath + 'workflow/images/personImg.png'" alt="" class="personImg">-->
+						<span class="personName" title="{{item.person_name}}">{{item.person_name}}</span>
+						<!--<span class="close" v-on:click.prevent="removeProcessCc($index)" title="移除"></span>-->
+						<Icon type="ios-close" @click="removeProcessCc($index)" title="移除"></Icon>
+					</li>
+					<li>
+						<span class="iconfont_dayoa processCcAdd" title="添加抄送人" v-on:click.prevent="addProcessCc()" >&#xe612;</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="notification1">允许转发</label>
+		<div class="controls">
+			<div class="switch" tabindex="0">
+				<input id="notification1" type="checkbox" />
+			</div>
+		</div>
+	</div>
+</form>

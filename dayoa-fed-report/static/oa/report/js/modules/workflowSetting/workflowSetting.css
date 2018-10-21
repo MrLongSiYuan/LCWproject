@@ -1,0 +1,332 @@
+@charset "utf-8";
+/*流程设置*/
+
+#workflow_edit_wrap{
+    width:952px;
+    border-bottom: 1px solid #dadada;
+}
+#workflow_edit_wrap .l{
+    float:left;
+    width:50%;
+    height: 326px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+#workflow_edit_wrap .r{
+    float:right;
+    width:50%;
+    border-left: 1px solid #dadada;
+    box-sizing: border-box;
+    height: 326px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/*左侧流程节点信息*/
+#workflow_auditDataInfo{
+    margin-top: 30px;
+    margin-left: 58px;
+}
+#workflow_auditDataInfo ul{}
+#workflow_auditDataInfo .auditInfoItem{
+    margin-bottom: 15px;
+}
+#workflow_auditDataInfo .auditInfoItem .title{
+    float: left;
+    width: 71px;
+    height: 27px;
+    line-height: 27px;
+    color: #333;
+}
+#workflow_auditDataInfo .auditInfoItem .content{
+    line-height: 27px;
+    color: #a2a2a2;
+    float: left;
+    width: calc(100% - 71px);
+    position: relative;
+}
+
+/*
+流程列表*/
+#auditDataList{
+    margin-top: 30px;
+    margin-left: 52px;
+}
+#auditDataList .auditItem{
+    width: 155px;
+    height: 72px;
+    position: relative;
+    margin-bottom: 10px;
+}
+#auditDataList .auditItem.selected{
+
+}
+#auditDataList .auditItem .node_number{
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #cccccc;
+    line-height: 22px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    top: 11px;
+}
+#auditDataList .auditItem.selected .node_number{
+    background:#ed6c2b;
+}
+#auditDataList .auditItem .audit_pos_name{
+    width: 87px;
+    height: 46px;
+    position: absolute;
+    top: 0;
+    left: 38px;
+    box-sizing: border-box;
+    background: #f8f8f8;
+    border: 1px solid #ececec;
+    line-height: 46px;
+    text-align: center;
+    color: #333333;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#auditDataList .auditItem.selected .audit_pos_name{
+    border-color: #ed6c2b;
+}
+#auditDataList .auditItem .subtract{
+    width: 16px;
+    height: 16px;
+    text-indent: -99em;
+    background: url(../../../images/bgs.png) -2px -60px;
+    position: absolute;
+    top: 17px;
+    right: 0;
+    cursor: pointer;
+}
+#auditDataList .auditItem .next{
+    width: 10px;
+    height: 17px;
+    background: url(../../../images/bgs.png?v=20170112203327461) -5px -79px;
+    position: absolute;
+    bottom: 0;
+    left: 75px;
+    text-indent: -99em;
+    overflow: hidden;
+}
+#auditDataList .auditItem .add{
+    position: absolute;
+    bottom: 0px;
+    left: 75px;
+    overflow: hidden;
+    cursor: pointer;
+    color: #ed6c2b;
+    font-size: 21px;
+    top: 48px;
+    background: none;
+    text-indent: inherit;
+    width: 21px;
+    height: 26px;
+    line-height: 26px;
+}
+
+.dialogFlowEdit .ui-dialog-body {
+    padding: 0;
+}
+
+/*
+抄送人开始*/
+#workflow_processCcList{
+    margin-top: -14px;
+}
+#workflow_processCcList li{
+    display: inline-block;
+    width: 56px;
+    text-align: center;
+    position: relative;
+    vertical-align: top;
+    margin-right: 10px;
+}
+#workflow_processCcList li .personImg{
+    vertical-align: bottom;
+}
+#workflow_processCcList li .personName{
+    line-height: 28px;
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+}
+#workflow_processCcList li .close{
+    width:24px;
+    height:24px;
+    background: url(../../../images/bgs.png) -20px -37px;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    display: none;
+    cursor: pointer;
+}
+#workflow_processCcList li:hover .close{
+    display: block;
+}
+#workflow_processCcList li:first-child{
+    padding-left: 0;
+}
+#workflow_processCcList li:last-child{
+    padding-left: 0;
+}
+#workflow_processCcList li:first-child:after,#workflow_processCcList li:last-child:after{
+    display: none;
+}
+#workflow_processCcList li .processCcAdd{
+    font-size: 23px;
+    color: #ccc;
+    width: 50px;
+    text-align: center;
+    height: 58px;
+    line-height: 58px;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    padding-left: 0px;
+    transition: all 0.3s;
+}
+#workflow_processCcList li .processCcAdd:hover{
+    color:#ed6c2b;
+}
+#workflow_add_process{
+    margin-top: 4px;
+    margin-left: 10px;
+}
+#workflow_add_process input[type="text"]{
+    height: 30px;
+    margin: 0;
+}
+#workflow_add_process .ztree{
+    border-color: #B7CDED;
+}
+/*
+抄送人结束*/
+
+
+/*
+节点审批人编辑*/
+#workflow_auditDataInfo .ndoeAuditOperate{}
+#workflow_auditDataInfo .nodeAudit{
+    width:112px;
+    height:50px;
+    float:left;
+}
+#workflow_auditDataInfo .nodeAuditShow{
+    color: #ccc;
+    width: 70px;
+    display: inline-block;
+    height: 28px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 32px;
+    white-space: nowrap;
+}
+#workflow_auditDataInfo .addForNodeAuditShow{
+    display: inline-block;
+    width: 24px;
+    height: 31px;
+    border: 1px solid #ccc;
+    line-height: 31px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+    float: right;
+    margin-right: 16px;
+}
+#workflow_auditDataInfo .addAudit{
+    float: right;
+    width: calc(100% - 112px);
+}
+#workflow_auditDataInfo .hasNoAudit{
+    background: #fff0bd;
+    font-size: 12px;
+    padding: 0px 10px;
+    display: inline-block;
+    line-height: 23px;
+    color: #000;
+    position: relative;
+    padding-right: 15px;
+    margin-left: 5px;
+    max-width: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+}
+#workflow_auditDataInfo .hasNoAudit .close{cursor: pointer;color: red;vertical-align: top;line-height: 18px;display: none;position: absolute;top: 0;right: 1px;height: 20px;width: 10px;text-align: center;}
+#workflow_auditDataInfo .hasNoAudit:hover .close{
+    display: inline;
+}
+#workflow_auditDataInfo .addHasNoAudit{
+    font-size: 20px;
+    cursor: pointer;
+    vertical-align: top;
+}
+#workflow_auditDataInfo .nodeAuditType{}
+#workflow_auditDataInfo .nodeAuditType .item{
+    display: inline-block;
+    line-height: 21px;
+    height: 21px;
+    font-size: 12px;
+    padding: 0 10px;
+    border: 1px solid #bcbcbc;
+    margin-right: 5px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+#workflow_auditDataInfo .nodeAuditType .item.selected{
+    background: #d1e9ff;
+    border-color: #d1e9ff;
+    color: #000;
+}
+
+
+/*
+字段权限管理*/
+#dialogFieldsPermissionWrap{
+    max-height: 500px;
+    overflow: auto;
+}
+#dialogFieldsPermissionWrap table{}
+#dialogFieldsPermissionWrap tr:first-child td{
+    color: #585858;
+}
+#dialogFieldsPermissionWrap td{
+    line-height: 36px;
+    height: 36px;
+}
+#dialogFieldsPermissionWrap .td1{
+    width: 112px;
+    text-align: right;
+    padding-right: 18px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+#dialogFieldsPermissionWrap .td2{
+    width: 106px;
+    text-align: center;
+}
+#dialogFieldsPermissionWrap .td3{
+    width: 113px;
+    text-align: center;
+}
+
+
+#dialogFieldsPermissionWrap .beautifulCheckbox label{
+    width: 1px;
+    display: inline-block;
+    vertical-align: middle;
+}

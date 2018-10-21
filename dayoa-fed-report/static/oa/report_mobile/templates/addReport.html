@@ -1,0 +1,52 @@
+<div id="single_report_handle"  v-show="aFields.length != 0 && isReportRouter">
+    <div class="edit_wrap" v-show="handle == 'edit'">
+        <form id="add_report_app">
+            <div class="choose_time_wrap">
+                <div class="choose_time_left">汇报时间</div>
+                <input type="text"  readonly class="choose_time" data-type="2" :value="nowYear + '-' + nowMonth + '-' + nowDay" v-if="tempName != '周报' && tempName != '月报'"  :max="nowYear +'-'+ nowMonth +'-'+ nowDay">
+                <input type="text"  readonly class="choose_time" data-type="3" :value="nowYear + '-' + nowMonth" v-if="tempName == '月报'" :max="nowYear +'-'+nowMonth">
+                <input type="text" readonly  v-on:click="initRadioChooseTime($event,modleChooseTimeList)"  data-sid="" class="radio_choose_time choose_time" :value="modleChooseTime" v-if="tempName == '周报'">
+                <Icon type="ios-arrow-right"></Icon>
+            </div>
+            <div class="report_quoteLastTimeBtn_wrap">
+                <button type="button" v-bind:class="[quoteReport.reportNotFirst?'report_quoteLastTimeBtn active':'report_quoteLastTimeBtn']" v-on:click="quoteLastReportOrNot($event)">引用上一次汇报</button>
+            </div>
+
+            <form-preview v-bind:afields.sync="aFields" v-bind:quoteclick="quoteClick"></form-preview>
+
+            <div class="blank_separate_box"></div>
+            <div class="add_report_receive_wrap" @click="inReceiverCover">
+                <div class="title">汇报对象</div>
+                <div class="content">
+                    <ul>
+                        <li v-for="item in receiverList">
+                            <div class="img_box">
+                                <img v-app-head-img="item"/>
+                            </div>
+                            <span class="personName" person-id="{{item.personId}}">{{item.personName}}</span>
+                            <Icon type="minus-circled" @click.stop="delReceiver(item.personId)"></Icon>
+                        </li>
+                    </ul>
+                </div>
+                <div class="del">
+                    <div class="arrow_right"><Icon type="ios-arrow-right"></Icon></div>
+                </div>
+            </div>
+            <div class="blank_separate_box"></div>
+            <div class="can_share_wrap">
+                <div class="title">允许转发</div>
+                <div class="switch_wrap active" @click="switchClick($event)" data-status="on">
+                    <div class="circle"></div>
+                </div>
+            </div>
+            <div class="blank_for_submitBtn"></div>
+            <div class="report_submit_wrap">
+                <div class="report_submit" @click="submitData">提交</div>
+            </div>
+        </form>
+    </div>
+    <div id="report_clipboard_inputBtn" :style="{width: '45px',height: '33px','position': 'fixed','left': 'calc(100% - 45px)','top': '50%','margin-top': '-16.5px','background': 'url('+gMain.baseStaticPath+'oa/report_mobile/images/tag_icon_notes_def@3x.png) no-repeat','background-size': '100% 100%','z-index':'999'}" @click="jumpClipboard"></div>
+</div>
+<div class="add-report-child">
+    <router-view></router-view>
+</div>

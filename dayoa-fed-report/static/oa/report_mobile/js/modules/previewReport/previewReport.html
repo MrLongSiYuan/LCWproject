@@ -1,0 +1,40 @@
+<div id="preview_report_wrap">
+	<div class="formData clearfix">
+		<ul class="dataList">
+			<form-data-show v-bind:a-fields="nodeData"></form-data-show>
+		</ul>
+	</div>
+	<div class="blank_separate_box"></div>
+	<div class="add_report_receive_wrap" @click="jumpPreviewReceiver">
+		<div class="title">汇报对象</div>
+		<div class="content">
+			<ul>
+				<li v-for="item in receiverList">
+					<div class="img_box">
+						<img v-app-head-img="item"/>
+					</div>
+					<span class="personName" person-id="{{item.personId}}">{{item.personName}}</span>
+					<Icon type="minus-circled" @click.stop="delReceiver(item.personId)"></Icon>
+				</li>
+			</ul>
+		</div>
+		<div class="del">
+			<div class="arrow_right"><Icon type="ios-arrow-right"></Icon></div>
+		</div>
+	</div>
+	<div class="blank_for_submitBtn_preview"></div>
+	<div class="report_submit_wrap">
+		<div class="report_submit_sure" @click="saveReport">确认提交</div>
+	</div>
+	<div class="draft_cover_wrap">
+		<div class="draft_cover">
+			<div class="cover_content"><p>当前环境已经切换，</p><p>请重新登录！</p></div>
+			<div class="cover_btn_box">
+				<div class="btn_left" @click="saveDraft()">确定</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="preview_report_child">
+	<router-view></router-view>
+</div>

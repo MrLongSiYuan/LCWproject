@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+.dayhApp_scrollSelect{
+    width:100%;position:fixed;bottom:0;left:0;z-index:10;    background: #000;
+}
+.dayhApp_scrollSelect_dt{
+    background: rgb(247,247,247);
+    /*border-top: 1px solid rgb(172,172,172);*/
+    height: 42px;
+    line-height: 42px;
+    font-size: 16px;
+    /*padding: 0 15px;*/
+    background-color: rgb(242,242,242);
+}
+.dayhApp_scrollSelect_dt .cancel{
+    float: left;
+    /*color: rgb(72,130,216);*/
+    color: #ff7123;
+    width: 100px;
+    text-align: left;
+    padding-left: 15px;
+}
+.dayhApp_scrollSelect_dt .ok{
+    float: right;
+    /*color: rgb(72,130,216);*/
+    color: #ff7123;
+    width: 100px;
+    text-align: right;
+    padding-right: 15px;
+}
+.dayhApp_scrollSelect_dd{}
+.dayhApp_scrollSelect_dd .mbsc-control{display:none;}
+.dayhApp_scrollSelect_dd select.dayhApp_scrollSelect_select{
+    display: none;
+}

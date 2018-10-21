@@ -1,0 +1,303 @@
+@charset "utf-8";
+
+/*
+流程发起预览*/
+#report_previewAudit{
+    width: 630px;
+    position: relative;
+    padding: 0 30px;
+    overflow-y: auto;
+    max-height: 660px;
+    overflow-x: hidden;
+}
+#report_previewAudit_formSubmitError{
+    text-align: center;
+    margin-bottom: 15px;
+    position: fixed;
+    z-index: 99;
+    top: 53px;
+    left: 50%;
+    transform: translate3d(-50% ,0,0);
+}
+#report_previewAudit .report_quoteLastTimeBtn_wrap{
+    height:32px;
+    margin-bottom: 10px;
+}
+#report_previewAudit .report_quoteLastTimeBtn_wrap .report_quoteLastTimeBtn {
+    display: block;
+    width: 130px;
+    height:30px;
+    background: #bfbfbf;
+    color: #fff;
+    text-align: center;
+    line-height: 24px;
+    float: right;
+    border-radius:30px;
+    cursor: default;
+}
+#report_previewAudit .report_quoteLastTimeBtn_wrap .active{
+    display: block;
+    width: 130px;
+    height:30px;
+    color: #fff;
+    text-align: center;
+    line-height: 24px;
+    float: right;
+    border-radius:30px;
+    background: #f19d38;
+    cursor: pointer;
+}
+#report_previewAudit .report_quoteLastTimeBtn_wrap .active:hover{
+    background: #ee8a12;
+}
+/*汇报选择时间开始*/
+.choose_report_time_wrap{
+    height: 100%;
+    float: left;
+}
+.choose_report_time_wrap .choose_report_left{
+    width: 115px;
+    height: 100%;
+    line-height: 32px;
+    box-sizing: border-box;
+    padding-right: 10px;
+    float: left;
+    text-align: right;
+}
+.choose_report_time_wrap .choose_report_right{
+    float: left;
+}
+.choose_report_time_wrap .choose_report_right .ivu-select-selection{
+    border: 1px solid #BCBCBC;
+}
+.choose_report_time_wrap .choose_report_right .ivu-select-selection:hover{
+    border: 1px solid #BCBCBC;
+}
+.choose_report_time_wrap .choose_report_right .ivu-select-visible .ivu-select-selection{
+    border: 1px solid #BCBCBC;
+    box-shadow: none;
+}
+.choose_report_time_wrap .choose_report_right input.Wdate{
+    width: 217px;
+    height: 32px;
+    border: 1px solid #bcbcbc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    font-size: 12px;
+}
+/*汇报选择时间结束*/
+/*
+汇报人信息开始*/
+#report_previewAudit .reporter_informationWrap{
+    height:auto;
+}
+#report_previewAudit .reporter_information_box{
+    width:100%;
+    height:auto;
+    box-sizing: border-box;
+    background: #f0f0f0;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+}
+#report_previewAudit .repoter_infomationRow{
+    width: 100%;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+}
+#report_previewAudit .repoter_infomationRow span{
+    display: block;
+    height:100%;
+    float: left;
+}
+#report_previewAudit .repoter_infomationRow .repoter_infomationName_left{
+    width: 58px;
+    color: #333333;
+    margin-right: 25px;
+    text-align: justify;
+    margin-left: 32px;
+}
+#report_previewAudit .repoter_infomationRow .repoter_infomationName_left::after {
+    width: 100%;
+    height: 0;
+    margin: 0;
+    display: inline-block;
+    overflow: hidden;
+    content: '';
+}
+#report_previewAudit .repoter_infomationRow .repoter_infomationName_right{
+    color:#8d8d8d;
+}
+/*汇报人信息结束*/
+/*
+转发按钮开始*/
+#report_previewAudit .control-group{
+    width: 100%;
+    height: 35px;
+    position: relative;
+}
+#report_previewAudit .control-group .control-label{
+    display: block;
+    position: absolute;
+    right: 85px;
+    height: 100%;
+    color: #8d8d8d;
+    font-size: 14px;
+    font-weight: normal;
+    padding-top: 5px;
+}
+#report_previewAudit .control-group .controls{
+    display: block;
+    position: absolute;
+    right: 0;
+    height: 100%;
+}
+/*转发按钮结束*/
+#report_previewAudit_formSubmitError .tipmsg{
+    color: #fff;
+    background: rgba(0,0,0,0.6);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+#report_previewAudit .form_item{
+    margin-bottom: 10px;
+}
+/*表单标签*/
+#report_previewAudit .form_item .label{
+    float: left;
+    width: 115px;
+    text-align: right;
+    box-sizing: border-box;
+    padding-right: 10px;
+    height: 38px;
+    line-height: 38px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 12px;
+}
+/*表单右侧内容*/
+#report_previewAudit .form_content{
+    float: left;
+    width: calc(100% - 115px);
+    line-height: 38px;
+}
+#report_previewAudit .form_content .f_paragraph textarea{
+    line-height: 1.5;
+}
+#report_previewAudit .form_items_wrap{
+    margin-right: 15px;
+}
+#report_previewAudit .form_item{
+    width: 100%;
+}
+/*
+接收人开始*/
+#report_previewAudit .recipient_listWrap{
+    margin-left: 80px;
+    margin-top: 24px;
+}
+#report_previewAudit .auditInfoItem{
+    margin-bottom: 15px;
+    position: relative;
+}
+#report_previewAudit .auditInfoItem .title{
+    float: left;
+    width: 45px;
+    height: 27px;
+    line-height: 27px;
+    color: #333;
+}
+#report_previewAudit .auditInfoItem .content{
+    line-height: 27px;
+    color: #a2a2a2;
+    float: left;
+    width: calc(100% - 71px);
+    position: relative;
+}
+#workflow_processCcList{
+    margin-top: -14px;
+}
+#workflow_processCcList li{
+    display: inline-block;
+    width: 53px;
+    text-align: center;
+    position: relative;
+    vertical-align: top;
+    cursor: pointer;
+    margin-right: 5px;
+}
+#workflow_processCcList li .personImg{
+    vertical-align: bottom;
+}
+#workflow_processCcList li .personName{
+    line-height: 28px;
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+    margin-top: 13px;
+}
+#workflow_processCcList li i{
+    position: absolute;
+    top:3px;
+    right: -8px;
+    color: #f72e3f;
+    font-size: 19px;
+    opacity: 0.4;
+    display: none;
+    cursor: pointer;
+}
+#workflow_processCcList li i:hover{
+    opacity: 0.7;
+}
+#workflow_processCcList li:hover .close{
+    display: block;
+}
+#workflow_processCcList li:first-child{
+    padding-left: 0;
+}
+#workflow_processCcList li:last-child{
+    padding-left: 0;
+}
+#workflow_processCcList li:first-child:after,#workflow_processCcList li:last-child:after{
+    display: none;
+}
+#workflow_processCcList li .processCcAdd{
+    font-size: 23px;
+    color: #ccc;
+    width: 50px;
+    text-align: center;
+    height: 58px;
+    line-height: 58px;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    padding-left: 0px;
+    transition: all 0.3s;
+}
+#workflow_processCcList li .processCcAdd:hover{
+    color:#ed6c2b;
+}
+/*
+接收人结束*/
+
+
+
+/*
+抄送人开始*/
+
+#report_previewAudit .processCcList{
+    line-height: 23px;
+    margin-top: 8px;
+}
+#report_previewAudit .processCcList li{
+    display: inline;
+}
+
+
+/*
+抄送人结束*/

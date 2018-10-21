@@ -1,0 +1,199 @@
+<div id="resumeDetail">
+    <div class="resume-detail">
+        <div class="base_mmg_tabs">
+            <a class="return_detail iconfont_daydao_recruit" title="返回" href="#!/metadata/infoSetId:recruit_resume_deal_list">&#xe6eb;</a>
+            <ul>
+                <li v-for="item in tabData" v-bind:class="[item.infoSetId=='recruit_resume_deal_list'?'current':'']">
+                    <a v-link="{path:'/metadata/infoSetId:'+item.infoSetId}">{{item.name}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="extBtnAddResume" style="width: 100%">
+<div class="extBtnAddResume">
+    <!--基本信息开始-->
+    <div class="add-resume-person-info">
+        <div class="title">
+            <h2>个人信息</h2>
+        </div>
+        <div class="body-show">
+            <div class="body-show-1 float-left">
+                <div class="wrap">
+                    <span class="span-1 float-left">姓名：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.name}}</span>
+                </div>
+                <div class="wrap">
+                    <span class="span-1 float-left">出生日期：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.birthday}}</span>
+                </div>
+                <div class="wrap">
+                    <span class="span-1 float-left">联系电话：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.mobile}}</span>
+                </div>
+                <div class="wrap">
+                    <span class="span-1 float-left">电子邮件：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.email}}</span>
+                </div>
+                <div class="wrap">
+                    <span class="span-1 float-left">籍贯：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.originPlace}}</span>
+                </div>
+                <div class="wrap">
+                    <span class="span-1 float-left">民族：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.nationName}}</span>
+                </div>
+                <div class="wrap">
+                    <span class="span-1 float-left">简历类别：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.deliverTypeName}}</span>
+                </div>
+            </div>
+            <div class="body-show-2 float-right">
+                <div class="wrap">
+                    <span class="span-1 float-left">性别：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.genderName}}</span>
+                </div>
+                <div class="wrap">
+                    <span class="span-1 float-left">开始工作日期：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.workTime}}</span>
+                </div>
+                <div class="wrap">
+                    <span class="span-1 float-left">求职状态：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.workStatusName}}</span>
+                </div>
+                <div class="wrap">
+                    <span class="span-1 float-left">所在地：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.city}}</span>
+                </div>
+                <div class="wrap">
+                    <span class="span-1 float-left">婚姻状况：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.maritalStatusName}}</span>
+                </div>
+                <div class="wrap">
+                    <span class="span-1 float-left">政治面貌：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.politicalName}}</span>
+                </div>
+                <div class="wrap">
+                    <span class="span-1 float-left">简历渠道：</span><span class="span-2 float-right">{{showInfoData.channelName}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--基本信息结束-->
+        <!--期望工作开始-->
+        <div class="add-resume-expected-work">
+            <div class="title">
+                <span class="iconfont_daydao_recruit icon-bg">&#xe635;</span><h2>期望工作</h2>
+            </div>
+            <div class="body-show">
+                <div class="wrap">
+                    <span class="span-1 float-left">期望职位：</span><span class="span-2 float-left">{{showHopeWorkData&&showHopeWorkData.posName}} {{showHopeWorkData&&showHopeWorkData.posPropertyName}}</span>
+                </div>
+                <div class="wrap">
+                    <span class="span-1 float-left">期望城市：</span><span class="span-2 float-left">{{showHopeWorkData&&showHopeWorkData.workSpaceName}}</span>
+                </div>
+                <div class="wrap">
+                    <span class="span-1 float-left">期望月薪：</span><span class="span-2 float-left">{{showHopeWorkData&&showHopeWorkData.payRangeName}}</span>
+                </div>
+            </div>
+        </div>
+        <!--期望工作结束-->
+        <!--工作经验开始-->
+        <div class="add-resume-work-experience">
+            <div class="title">
+                <span class="iconfont_daydao_recruit icon-bg">&#xe60c;</span><h2>工作经验</h2>
+            </div>
+            <div class="body-show">
+                <div class="wrap" v-for="item in showWorkExpData">
+                    <span class="span-1 float-left">{{item.startDate}}~{{item.endDate}}</span><span class="span-2 float-left"><b>{{item.company}}</b><b>{{item.posName}}</b></span>
+                    <p class="float-left">{{item.content}}</p>
+                </div>
+            </div>
+        </div>
+        <!--工作经验结束-->
+        <!--教育经历开始-->
+        <div class="add-resume-edu-experience">
+            <div class="title">
+                <span class="iconfont_daydao_recruit icon-bg">&#xe6ca;</span><h2>教育经历</h2>
+            </div>
+            <div class="body-show">
+                <div class="wrap" v-for="item in showEduExpData">
+                    <span class="span-1 float-left">{{item.startDate}}~{{item.endDate}}</span><span class="span-2 float-left"><b>{{item.school}}</b><b>{{item.profession}}</b>{{item.eduLevelName}}</span>
+                </div>
+            </div>
+        </div>
+        <!--教育经历结束-->
+        <!--项目经验开始-->
+        <div class="add-resume-project-experience">
+            <div class="title">
+                <span class="iconfont_daydao_recruit icon-bg">&#xe6c9;</span><h2>项目经验</h2>
+            </div>
+            <div class="body-show">
+                <div class="wrap" v-for="item in showProExpData">
+                    <span class="span-1 float-left">{{item.startDate}}~{{item.endDate}}</span><span class="span-2 float-left"><b>{{item.projectName}}</b>{{item.responsibility}}</span>
+                    <p class="float-left">{{item.projectDesc}}</p>
+                </div>
+            </div>
+        </div>
+        <!--项目经验结束-->
+        <!--技能评价开始-->
+        <div class="add-resume-skill-evaluation">
+            <div class="title">
+                <span class="iconfont_daydao_recruit icon-bg">&#xe605;</span><h2>技能评价</h2>
+            </div>
+            <div class="body-show">
+                <div class="wrap" v-for="item in showSkillData">
+                    <span class="span-1 float-left">{{item.name}}</span>
+                    <template v-if="item.level == 1">
+                        <span class="span-2 float-left" ><span class="percent" style="width: 25%"><span class="dh"></span></span></span><b>了解</b>
+                    </template>
+                    <template v-if="item.level == 2">
+                        <span class="span-2 float-left" ><span class="percent" style="width: 50%"><span class="dh"></span></span></span><b>掌握</b>
+                    </template>
+                    <template v-if="item.level == 3">
+                        <span class="span-2 float-left" ><span class="percent" style="width: 75%"><span class="dh"></span></span></span><b>精通</b>
+                    </template>
+                    <template v-if="item.level == 4">
+                        <span class="span-2 float-left" ><span class="percent" style="width: 100%"><span class="dh"></span></span></span><b>专家</b>
+                    </template>
+                </div>
+            </div>
+        </div>
+        <!--技能评价结束-->
+        <!--培训经历开始-->
+        <div class="add-resume-training-experience">
+            <div class="title">
+                <span class="iconfont_daydao_recruit icon-bg">&#xe602;</span><h2>培训经历</h2>
+            </div>
+            <div class="body-show">
+                <div class="wrap" v-for="item in showTraExpData">
+                    <span class="span-1 float-left">{{item.startDate}}~{{item.endDate}}</span><span class="span-2 float-left">{{item.course}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.organization}}</span>
+                </div>
+            </div>
+        </div>
+        <!--培训经历结束-->
+        <!--语言能力开始-->
+        <div class="add-resume-language-ability">
+            <div class="title">
+                <span class="iconfont_daydao_recruit icon-bg">&#xe60e;</span><h2>语言能力</h2>
+            </div>
+            <div class="body-show">
+                <div class="wrap" v-for="item in showLanguageData">
+                    <span class="span-1 float-left">{{item.language}}</span>
+                    <template v-if="item.level == 1">
+                        <span class="span-2 float-left" ><span class="percent" style="width: 25%"><span class="dh"></span></span></span><b>了解</b>
+                    </template>
+                    <template v-if="item.level == 2">
+                        <span class="span-2 float-left" ><span class="percent" style="width: 50%"><span class="dh"></span></span></span><b>掌握</b>
+                    </template>
+                    <template v-if="item.level == 3">
+                        <span class="span-2 float-left" ><span class="percent" style="width: 75%"><span class="dh"></span></span></span><b>精通</b>
+                    </template>
+                    <template v-if="item.level == 4">
+                        <span class="span-2 float-left" ><span class="percent" style="width: 100%"><span class="dh"></span></span></span><b>专家</b>
+                    </template>
+                </div>
+            </div>
+        </div>
+        <!--语言能力结束-->
+        <!--自我描述开始-->
+        <div class="add-resume-self-description">
+            <div class="title">
+                <span class="iconfont_daydao_recruit icon-bg">&#xe603;</span><h2>自我描述</h2>
+            </div>
+            <div class="body-show">
+                <div class="wrap">
+                    <p>{{showInfoData&&showInfoData.selfDesc}}</p>
+                </div>
+            </div>
+        </div>
+        <!--自我描述结束-->
+</div>
+</div>

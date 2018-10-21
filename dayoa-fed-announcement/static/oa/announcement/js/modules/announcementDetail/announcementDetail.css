@@ -1,0 +1,302 @@
+#announcement_detail{
+    width: 700px;
+    position: relative;
+}
+#announcement_detail .announcement_detail_box{
+    overflow: hidden;
+}
+#announcement_detail .preview_title{
+    height: 30px;
+    line-height: 30px;
+    margin-top: 10px;
+    font-weight:bold ;
+    text-align: center;
+}
+#announcement_detail .preview_sort{
+    height: 30px;
+    line-height: 30px;
+    color: #8b8b8b;
+    text-align: center;
+}
+#announcement_detail .preview_classify{
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+}
+#announcement_detail .preview_issuer{
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    margin-left: 40px;
+}
+#announcement_detail .preview_sTime{
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    margin-left: 40px;
+}
+#announcement_detail .preview_content{
+    white-space: normal;
+    word-break: break-all;
+}
+#announcement_detail .preview_imgD{
+    width: 400px;
+    height: 300px;
+}
+#announcement_detail .preview_imgF{
+    text-align: center;
+}
+#announcement_detail .preview_imgLi{
+    height: 50px;
+    width: 70px;
+    opacity: 0.5;
+}
+#announcement_detail .preview_imgSure{
+    border:1px solid #f57536;
+    opacity: 1;
+}
+#announcement_detail .preview_file{
+    height: 30px;
+    line-height: 30px;
+}
+#announcement_detail .preview_fileIcon{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: url("../../../images/announcement_accessory_icon.png") no-repeat;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+#announcement_detail .preview_publish{
+    width: 100%;
+    line-height: 30px;
+    color: #333;
+    overflow: hidden;
+    word-break: break-all;
+    padding-right: 30px;
+    position: relative;
+    height: 30px;
+    overflow-y: hidden;
+}
+#announcement_detail .preview_publish span{
+    color: #9a9a9a;
+}
+#announcement_detail .preview_publish span i{
+    font-style: normal;
+}
+#announcement_detail .preview_publish span:nth-last-child(2) i{
+    display: none;
+}
+#announcement_detail .preview_publisher{
+    display: inline-block;
+}
+#announcement_detail .preview_unfold{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    top:0;
+    right:0px;
+    color: #0033ff;
+    cursor: pointer;
+}
+#announcement_detail .preview_height{
+    height: 30px;
+}
+
+/*文件上传预览*/
+#announcement_detail .addFilePreview{
+
+    max-height: 300px;
+
+    overflow: auto;
+
+    width: 427px;
+}
+#announcement_detail .addFilePreview li{
+    position: relative;
+    height: 37px;
+    background: #f0f0f0;
+    width: 322px;
+    padding-left: 10px;
+    padding-top: 7px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+#announcement_detail .addFilePreview .icon{
+    background: url(../../../images/bgs.png) -1px -161px;
+    width: 23px;
+    height: 23px;
+    text-indent: -999em;
+    overflow: hidden;
+    float: left;
+}
+#announcement_detail .addFilePreview .filename{
+    float: left;
+    line-height: 23px;
+    margin-left: 7px;
+    white-space: nowrap;
+    width: calc(100% - 38px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#announcement_detail .addFilePreview .size{
+    line-height: 23px;
+    margin-left: 10px;
+    position: absolute;
+    right: -61px;
+}
+#announcement_detail .addFilePreview .status{
+    line-height: 23px;
+    margin-left: 10px;
+    position: absolute;
+    right: -132px;
+}
+
+/*文件上传预览 --结束*/
+
+/*图片展示开始*/
+#announcement_detail .ann_img_box{
+    margin-top: 20px;
+}
+#announcement_detail .ofile_type_name{
+    line-height: 30px;
+}
+#announcement_detail .imglist{
+    float: left;
+    width: 476px;
+}
+#announcement_detail .imglist li{
+    width: 60px;
+    float: left;
+    margin-right: 10px;
+    position: relative;
+    height: 70px;
+    /*overflow: hidden;*/
+    margin-bottom: 10px;
+}
+#announcement_detail .imglist li .imglist_imgbox{
+    width: 60px;
+    position: relative;
+    height: 60px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+#announcement_detail .imglist li img{position: absolute;top: 50%;transform: translate(-50%, -50%);max-width: 60px;left: 50%;}
+/*图片展示结束*/
+/*图片附件操作项开始*/
+#announcement_detail .preview_download_upload{
+    display: none;
+    width: 155px;
+    height: 36px;
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    left: 0px;
+    top:68px;
+    z-index: 9;
+    box-sizing: border-box;
+    padding: 0px 10px;
+}
+#announcement_detail .addFilePreview .preview_download_upload{
+    left:166px;
+    top:0px;
+}
+#announcement_detail .preview_download_upload .point_up{
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid rgba(0,0,0,0.5);
+    position: absolute;
+    left: 24px;
+    top:-8px;
+}
+#announcement_detail .addFilePreview .preview_download_upload .point_left{
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 8px solid rgba(0,0,0,0.5);
+    position: absolute;
+    left: -8px;
+    top:13px;
+    display: none;
+}
+#announcement_detail .preview_download_upload .img_operation_item{
+    float: left;
+    height: 100%;
+    margin-right: 30px;
+    cursor: pointer;
+}
+#announcement_detail .preview_download_upload .img_operation_item:nth-last-child(1){
+    margin-right: 0px;
+}
+#announcement_detail .preview_download_upload .img_operation_item span{
+    color: #fff;
+    display: inline-block;
+    height: 100%;
+    line-height: 36px;
+    float: left;
+    margin-left: 5px;
+}
+#announcement_detail .preview_download_upload .img_operation_item i{
+    color: #fff;
+    font-size: 24px;
+    display: inline-block;
+    line-height: 36px;
+    height: 100%;
+    float: left;
+}
+#announcement_detail .preview_download_upload .img_operation_item:hover i,#announcement_detail .preview_download_upload .img_operation_item:hover span{
+    color: #ed6c2b;
+}
+#announcement_detail .preview_download_upload .img_operation_item i.ivu-icon-ios-cloud-download-outline{
+    font-size: 20px;
+    line-height: 38px;
+}
+/*图片附件操作项结束*/
+#announcement_detail  .watermark_wrap{
+    position:absolute;
+    z-index:-1;
+    top:0;
+    background: #fff;
+}
+
+/*操作项开始*/
+#announcement_detail .operation_detail_wrap{
+    width: 100%;
+    height: 40px;
+    background-color: #f3f3f3;
+    font-size: 12px;
+    border-radius: 0 0 5px 5px;
+    position: relative;
+    z-index: 9;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-right: 26px;
+}
+#announcement_detail .operation_detail_wrap ul{
+    overflow: hidden;
+    float: right;
+}
+#announcement_detail .operation_detail_wrap ul li{
+    display: block;
+    float: left;
+    cursor: pointer;
+}
+#announcement_detail .operation_detail_wrap ul li .operation_logo{
+    height: 25px;
+    padding: 0px 10px;
+}
+#announcement_detail .operation_detail_wrap ul li .operation_num{
+    width:100%;
+    font-size: 10px;
+    line-height: 15px;
+    text-align: center;
+}
+#announcement_detail .operation_detail_wrap ul li:hover .operation_num{
+    color: #007cdb;
+    text-decoration: underline;
+}
+/*操作项结束*/

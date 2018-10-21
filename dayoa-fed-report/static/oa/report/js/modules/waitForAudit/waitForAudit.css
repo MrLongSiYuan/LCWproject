@@ -1,0 +1,916 @@
+@charset "utf-8";
+#workflow_waitForAudit_wrap{
+    overflow-y: auto;
+    max-height: 660px;
+    overflow-x: hidden;
+    position: relative;
+}
+#workflow_waitForAudit_wrap .all_waitForAudit_box{
+}
+#workflow_waitForAudit_wrap .preview_remind_box{
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    left:50%;
+    margin-left: -125px;
+    top:3px;
+    background: url(../../../images/preview_remind.png) no-repeat;
+    background-size: 100% 100%;
+    z-index: 999;
+    transition: all 0.5s;
+    transform: scale(0);
+    opacity: 0.3;
+}
+#workflow_waitForAudit *{
+    box-sizing: content-box;
+}
+/*
+待审页面*/
+#workflow_waitForAudit{
+    width: 630px;
+    padding: 0 30px;
+}
+#workflow_waitForAudit .formData{
+    padding-left: 12px;
+}
+#workflow_waitForAudit h1{
+    font-size: 19px;
+    font-weight: bold;
+    font-family: "黑体";
+}
+
+#workflow_waitForAudit .dataList{
+    margin-top: 15px;
+}
+#workflow_waitForAudit .dataList .dataListItem{line-height: 30px;margin-bottom: 8px;position: relative;}
+#workflow_waitForAudit .dataList .dataListItem .left{
+    float: left;
+    padding-right: 10px;
+    box-sizing: border-box;
+    color: #000;
+}
+#workflow_waitForAudit .dataList .dataListItem .right{
+    color: #8e8e8e;
+    word-break: break-all;
+    float: left;
+    margin-right: 10px;
+}
+/*
+汇报人信息开始*/
+#workflow_waitForAudit .reporter_informationWrap{
+    height:auto;
+    margin-bottom: 15px;
+    position: relative;
+}
+#workflow_waitForAudit .reporter_information_box{
+    width:100%;
+    height:auto;
+    box-sizing: border-box;
+    background: #f0f0f0;
+    /*float: left;*/
+    padding: 10px 15px;
+    position: relative;
+}
+#workflow_waitForAudit .ready_mark{
+    width: 98px;
+    height: 89px;
+    position: absolute;
+    top:0px;
+    right: -20px;
+    background: url(../../../images/ready.png);
+    background-size: 100% 100%;
+}
+#workflow_waitForAudit .repoter_infomationRow{
+    width: 100%;
+    height: 28px;
+    font-size: 14px;
+    line-height: 28px;
+}
+#workflow_waitForAudit .repoter_infomationRow span{
+    display: block;
+    height:100%;
+    float: left;
+}
+#workflow_waitForAudit .repoter_infomationRow .repoter_infomationName_left{
+    width: 58px;
+    color: #333333;
+    margin-right: 25px;
+    text-align: justify;
+}
+#workflow_waitForAudit .repoter_infomationRow .repoter_infomationName_left::after {
+    width: 100%;
+    height: 0;
+    margin: 0;
+    display: inline-block;
+    overflow: hidden;
+    content: '';
+}
+#workflow_waitForAudit .repoter_infomationRow .repoter_infomationName_right{
+    color:#8d8d8d;
+}
+/*汇报人信息结束*/
+/*数据实时编辑框*/
+#workflow_waitForAudit .dataList .dataListItem .field_value{
+    width: 200px;
+    height: 32px;
+    border: 1px solid #bcbcbc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    font-size: 12px;
+}
+#workflow_waitForAudit .dataList .dataListItem textarea.field_value{
+
+    min-height: 70px;
+
+    width: 200px;
+
+    padding-top: 10px;
+
+    padding-bottom: 10px;
+}
+/*编辑数据按钮*/
+#workflow_waitForAudit .dataList .dataListItem a.do_edit{
+    white-space: nowrap;margin-left: 10px;
+}
+#workflow_waitForAudit .dataList .dataListItem.datearea a.do_edit{
+    position: absolute;
+    left: 300px;
+    top: 0;
+}
+#workflow_waitForAudit .dataList .dataListItem.pic a.do_edit,#workflow_waitForAudit .dataList .dataListItem.file a.do_edit{
+
+    margin-left: 66px;
+
+    float: left;
+
+    margin-top: 10px;
+}
+#workflow_waitForAudit .dataList .dataListItem .data_edit_mode{
+
+    display: inline;
+}
+#workflow_waitForAudit .dataList .dataListItem.pic .data_edit_mode{
+
+    float: left;
+
+    width: 473px;
+}
+#workflow_waitForAudit .dataList .dataListItem.file .data_edit_mode{
+
+    float: left;
+
+    width: 473px;
+}
+
+/*图片编辑列表*/
+#workflow_waitForAudit .dataList .dataListItem .addPicPreview{display: inline;}
+#workflow_waitForAudit .dataList .dataListItem .addPicPreview .imgPreview{
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    position: relative;
+    float: left;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    background: #fff;
+    margin-bottom: 10px;
+}
+#workflow_waitForAudit .dataList .dataListItem .addPicPreview .imgPreview img{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#workflow_waitForAudit .dataList .dataListItem .addPicPreview .imgPreview .del{
+    position: absolute;
+    top: 2px;
+    right: 4px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+}
+#workflow_waitForAudit .dataList .dataListItem .addPicPreview .imgPreview:hover .del{
+    display:block;
+}
+/*添加图片*/
+
+#workflow_waitForAudit .dataList .dataListItem .addPic{
+    width: 45px;
+    height: 45px;
+    border: 1px solid #bcbcbc;
+    text-align: center;
+    line-height: 36px;
+    font-size: 46px;
+    color: #bcbcbc;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#workflow_waitForAudit .dataList .dataListItem .addPic input[type='file']{
+    opacity: 0;
+    width:45px;
+    height:45px;
+    position: absolute;
+    left:0;
+    top:0;
+    cursor: pointer;
+}
+/*添加附件*/
+/*单行文本、多行文本、多选框 开始*/
+#workflow_waitForAudit .dataListItem[data-fieldtype = "text"] .right{
+    width: 410px;
+}
+#workflow_waitForAudit .dataListItem[data-fieldtype = "paragraph"] .right{
+    width: 410px;
+}
+#workflow_waitForAudit .dataListItem[data-fieldtype = "checkboxes"] .right{
+    width: 410px;
+}
+/*单行文本、多行文本、多选框 结束*/
+
+#workflow_waitForAudit  .dataListItem .addFilePreview{
+
+    max-height: 300px;
+
+    overflow: auto;
+    width: 478px;
+}
+#workflow_waitForAudit  .dataListItem .addFilePreview li{
+    position: relative;
+    height: 37px;
+    background: #f0f0f0;
+    width: 374px;
+    padding-left: 10px;
+    padding-top: 7px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+#workflow_waitForAudit  .dataListItem .addFilePreview .icon{
+    background: url(../../../images/bgs.png) -1px -161px;
+    width: 23px;
+    height: 23px;
+    text-indent: -999em;
+    overflow: hidden;
+    float: left;
+}
+#workflow_waitForAudit  .dataListItem .addFilePreview .filename{
+    float: left;
+    line-height: 23px;
+    margin-left: 7px;
+    white-space: nowrap;
+    width: 326px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#workflow_waitForAudit  .dataListItem.addFilePreview .size{
+    line-height: 23px;
+    margin-left: 10px;
+    position: absolute;
+    right: -64px;
+}
+#workflow_waitForAudit  .dataListItem .addFilePreview .status{
+    line-height: 23px;
+    margin-left: 10px;
+    position: absolute;
+    right: -132px;
+}
+
+/*文件列表删除按钮*/
+#workflow_waitForAudit  .dataListItem .addFilePreview li .del{
+    display: none;
+    position: absolute;
+    right: 5px;
+    top:0;
+    color: red;
+    font-size: 16px;
+    cursor: pointer;
+}
+#workflow_waitForAudit  .dataListItem .addFilePreview li:hover .del{
+    display: block;
+}
+
+/*添加附件--结束*/
+
+
+
+/*明细控件*/
+#workflow_waitForAudit .dataList .groupItem{
+
+    padding: 10px;
+
+    /* border: 1px solid #ccc; */
+
+    position: relative;
+
+    margin-top: 16px;
+
+    padding-top: 18px;
+
+    background: #f5f5f5;
+}
+#workflow_waitForAudit .dataList .groupItem dt{
+
+    height: 30px;
+
+    line-height: 30px;
+
+    display: inline-block;
+
+    left: 11px;
+
+    color: #000;
+
+    font-weight: bold;
+}
+
+
+#workflow_waitForAudit .auditPersonList{
+    background: #f5f5f5;
+    padding:20px 15px;
+    margin-top: 20px;
+}
+#workflow_waitForAudit .auditPersonList .form_item_label{
+    float: left;
+    padding-right: 10px;
+    box-sizing: border-box;
+    color: #000;
+    font-weight: bold;
+    width: 70px;
+}
+#workflow_waitForAudit .auditPersonList ul{
+    float: left;
+    color: #8e8e8e;
+    box-sizing: border-box;
+    width: calc(100% - 70px);
+}
+#workflow_waitForAudit .auditPersonList ul li{
+    position:relative;
+    height: 23px;
+    float: left;
+    margin-right: 15px;
+}
+
+/*#workflow_waitForAudit .auditPersonList ul li:after {*/
+    /*content:" ";*/
+    /*position:absolute;*/
+    /*height: 20px;*/
+    /*top: 100%;*/
+    /*left: 25px;*/
+    /*width: 1px;*/
+    /*border-right: 1px dashed #85d65e;*/
+/*}*/
+#workflow_waitForAudit .auditPersonList ul li:last-child:after{
+    display:none;
+}
+#workflow_waitForAudit .auditPersonList img.headImg{
+    float: left;
+    width: 56px;
+    height: 56px;
+}
+#workflow_waitForAudit .auditPersonList .info{
+    float: left;
+    margin-left: 10px;
+    margin-top: 5px;
+    font-size: 12px;
+    width: calc(100% - 69px);
+}
+/*审批状态*/
+#workflow_waitForAudit .auditPersonList .status{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    background: url(../../../images/bgs.png);
+    display: none;
+    left: 37px;
+    top: 33px;
+}
+#workflow_waitForAudit .auditPersonList .status.wait{
+    background-position: -50px -59px;
+    display: block;
+}
+#workflow_waitForAudit .auditPersonList .status.success{
+    background-position: -50px -1px;
+    display: block;
+}
+#workflow_waitForAudit .auditPersonList .status.back{
+    background-position: -50px -30px;
+    display: block;
+}
+
+
+#workflow_waitForAudit .auditPersonList .personName{}
+#workflow_waitForAudit .auditPersonList .time{}
+#workflow_waitForAudit .auditPersonList .des{
+    word-break: break-all;
+}
+
+
+/*文件上传预览*/
+#workflow_waitForAudit .addFilePreview{
+
+    max-height: 300px;
+
+    overflow: auto;
+
+    width: 427px;
+}
+#workflow_waitForAudit .addFilePreview li{
+    position: relative;
+    height: 37px;
+    background: #f0f0f0;
+    width: 322px;
+    padding-left: 10px;
+    padding-top: 7px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+#workflow_waitForAudit .addFilePreview .icon{
+    background: url(../../../images/bgs.png) -1px -161px;
+    width: 23px;
+    height: 23px;
+    text-indent: -999em;
+    overflow: hidden;
+    float: left;
+}
+#workflow_waitForAudit .addFilePreview .filename{
+    float: left;
+    line-height: 23px;
+    margin-left: 7px;
+    white-space: nowrap;
+    width: calc(100% - 38px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#workflow_waitForAudit .addFilePreview .size{
+    line-height: 23px;
+    margin-left: 10px;
+    position: absolute;
+    right: -61px;
+}
+#workflow_waitForAudit .addFilePreview .status{
+    line-height: 23px;
+    margin-left: 10px;
+    position: absolute;
+    right: -132px;
+}
+
+/*文件上传预览 --结束*/
+
+/*图片展示开始*/
+#workflow_waitForAudit .imglist{
+    float: left;
+    width: 476px;
+}
+#workflow_waitForAudit .imglist li{
+    width: 60px;
+    float: left;
+    margin-right: 10px;
+    position: relative;
+    height: 70px;
+    /*overflow: hidden;*/
+    margin-bottom: 10px;
+}
+#workflow_waitForAudit .imglist li .imglist_imgbox{
+    width: 60px;
+    position: relative;
+    height: 60px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+#workflow_waitForAudit .imglist li img{position: absolute;top: 50%;transform: translate(-50%, -50%);max-width: 60px;left: 50%;}
+/*图片展示结束*/
+/*图片附件操作项开始*/
+#workflow_waitForAudit .preview_download_upload{
+    display: none;
+    width: 155px;
+    height: 36px;
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    left: 0px;
+    top:68px;
+    z-index: 9;
+    box-sizing: border-box;
+    padding: 0px 10px;
+}
+#workflow_waitForAudit .addFilePreview .preview_download_upload{
+    left:219px;
+    top:0px;
+}
+#workflow_waitForAudit .preview_download_upload .point_up{
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid rgba(0,0,0,0.5);
+    position: absolute;
+    left: 24px;
+    top:-8px;
+}
+#workflow_waitForAudit .addFilePreview .preview_download_upload .point_left{
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 8px solid rgba(0,0,0,0.5);
+    position: absolute;
+    left: -8px;
+    top:13px;
+    display: none;
+}
+#workflow_waitForAudit .preview_download_upload .img_operation_item{
+    float: left;
+    height: 100%;
+    margin-right: 30px;
+    cursor: pointer;
+}
+#workflow_waitForAudit .preview_download_upload .img_operation_item:nth-last-child(1){
+    margin-right: 0px;
+}
+#workflow_waitForAudit .preview_download_upload .img_operation_item span{
+    color: #fff;
+    display: inline-block;
+    height: 100%;
+    line-height: 36px;
+    float: left;
+    margin-left: 5px;
+}
+#workflow_waitForAudit .preview_download_upload .img_operation_item i{
+    color: #fff;
+    font-size: 24px;
+    display: inline-block;
+    line-height: 36px;
+    height: 100%;
+    float: left;
+}
+#workflow_waitForAudit .preview_download_upload .img_operation_item:hover i,#workflow_waitForAudit .preview_download_upload .img_operation_item:hover span{
+    color: #ed6c2b;
+}
+#workflow_waitForAudit .preview_download_upload .img_operation_item i.ivu-icon-ios-cloud-download-outline{
+    font-size: 20px;
+    line-height: 38px;
+}
+/*图片附件操作项结束*/
+/*一行多列开始*/
+#workflow_waitForAudit .dataList .dataListItem[data-fieldtype="twoColumns"] li.dataListItem{
+    display: block;
+    float: left;
+    width: 50%;
+}
+#workflow_waitForAudit .dataList .dataListItem[data-fieldtype="twoColumns"] li.dataListItem[data-fieldtype = "paragraph"] .right{
+    width: auto;
+}
+#workflow_waitForAudit .dataList .dataListItem[data-fieldtype="twoColumns"] li.dataListItem[data-fieldtype = "text"] .right{
+    width: auto;
+}
+#workflow_waitForAudit .dataList .dataListItem[data-fieldtype="threeColumns"] li.dataListItem{
+    display: block;
+    float: left;
+    width: 33.33%;
+}
+#workflow_waitForAudit .dataList .dataListItem[data-fieldtype="threeColumns"] li.dataListItem[data-fieldtype = "paragraph"] .right{
+    width: auto;
+}
+#workflow_waitForAudit .dataList .dataListItem[data-fieldtype="threeColumns"] li.dataListItem[data-fieldtype = "text"] .right{
+    width: auto;
+}
+/*一行多列结束*/
+/*按钮上一篇下一篇*/
+#workflow_waitForAudit .report_next_prev_btnBox{
+    width: 100%;
+    height: 35px;
+    padding: 15px 0px 25px;
+}
+#workflow_waitForAudit .report_next_prev_btn{
+    float: right;
+    width: 208px;
+}
+#workflow_waitForAudit .report_next_prev_btn div{
+    float:left;
+    width: 84px;
+    height: 35px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 35px;
+    color: #fff;
+    background: #ed6c2b;
+    cursor: pointer;
+}
+#workflow_waitForAudit .report_next_prev_btn div:hover{
+    background: #ed5f17;
+}
+#workflow_waitForAudit .report_next_prev_btn div.report_prevBtn{
+    margin-right: 33px;
+}
+/*
+*操作项
+****/
+#workflow_waitForAudit .reportFooter_box{
+    width: 100%;
+    height: 70px;
+}
+#workflow_waitForAudit .reportFooter{
+    float: right;
+    height: 44px;
+}
+#workflow_waitForAudit .reportFooter .operation_item{
+    display: block;
+    width: 46px;
+    float: left;
+}
+#workflow_waitForAudit .reportFooter .separate_line_wrap{
+    width: 9px;
+    margin-left: 10px;
+}
+#workflow_waitForAudit .reportFooter .operation_item p{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+#workflow_waitForAudit .reportFooter .operation_item p.iconfont_dayoa{
+    cursor: pointer;
+    height: 28px;
+    font-size: 26px;
+    line-height: 28px;
+}
+#workflow_waitForAudit .reportFooter .operation_item p.iconfont_dayoa_read{
+    color: #eaa622;
+}
+#workflow_waitForAudit .reportFooter .operation_item p.iconfont_dayoa_fabulous{
+    color: #eb6f6f;
+}
+#workflow_waitForAudit .reportFooter .operation_item p.iconfont_dayoa_comment{
+    color: #54aae1;
+}
+#workflow_waitForAudit .reportFooter .operation_item p.operation_item_num{
+    font-size: 12px;
+    line-height: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+#workflow_waitForAudit .reportFooter .operation_item p.operation_item_num:hover{
+    color: #007cdb;
+    text-decoration: underline;
+}
+/*#workflow_waitForAudit .reportFooter .operation_item:nth-child(3) p.operation_item_num:hover{*/
+    /*color: #333;*/
+    /*text-decoration: none;*/
+/*}*/
+#workflow_waitForAudit .reportFooter .operation_item p.separate_line{
+    border-left: 1px solid #d7d7d7;
+    height: 22px;
+    margin-top: 1px;
+}
+/*
+*操作项结束
+****/
+#workflow_waitForAudit .nextplan{
+    color: #8b8b8b;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+#workflow_waitForAudit .detailplan{
+    color: #4a4a4a;
+    font-size: 14px;
+}
+/*请输入审批理由*/
+#workflow_waitForAudit .audit_opinion{
+    padding: 0 15px;
+    margin-top: 20px;
+}
+#workflow_waitForAudit .audit_opinion textarea[name='audit_opinion']{
+    width: 100%;
+    height: 68px;
+    border-radius: 3px;
+    padding: 5px;
+    max-width: 100%;
+    border: 1px solid #bcbcbc;
+}
+
+/*添加评论内容详情*/
+#add_comment_content_wrap{}
+.additional_content_wrap{
+    width: 630px;
+    /*width: calc(100% - 27px * 2);*/
+    box-sizing: border-box;
+    padding: 14px 27px;
+    box-shadow: inset 0px 0px 8px 1px #d8d7d7;
+    background: #f5f5f5;
+    position: relative;
+    display: block;
+    margin-bottom: 40px;
+}
+.additional_content_wrap .arrow_up{
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid #e6e6e6;
+    position: absolute;
+    left: 301px;
+    top: -8px;
+}
+#add_comment_content_wrap .comment_content_input{
+    width: 100%;
+    height: 62px;
+    border: 1px solid #c8c8c8;
+    resize: none;
+    line-height: 1.6;
+    padding: 3px 6px 0;
+    box-sizing: border-box;
+}
+#add_comment_content_wrap .button_box{
+    width: 100%;
+    height: 32px;
+    padding: 10px 0;
+    box-sizing: content-box;
+}
+#add_comment_content_wrap .button_box .comment_submit{
+    width: 84px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    background: #bfbfbf;
+    float: right;
+    cursor: pointer;
+}
+#add_comment_content_wrap .button_box .active{
+    background: #ed6c2b;
+}
+#add_comment_content_wrap .button_box .comment_submit:hover{
+    background: #b3b0b0;
+}
+#add_comment_content_wrap .button_box .active:hover{
+    background: #ed5f17;
+}
+
+#add_comment_content_wrap .all_comment_wrap{
+    width: 100%;
+    padding: 0 3px;
+    max-height: 350px;
+    overflow: auto;
+}
+#add_comment_content_wrap .all_comment_wrap .person_comment{
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 54px;
+    padding: 9px 0 9px 59px;
+    position: relative;
+    border-top: 1px dashed #e1e1e1;
+}
+#add_comment_content_wrap .all_comment_wrap .person_comment .headimg{
+    width: 46px;
+    height: 46px;
+    position: absolute;
+    left:0;
+    top:9px;
+}
+#add_comment_content_wrap .all_comment_wrap .person_comment .headimg img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+#add_comment_content_wrap .person_comment_personInfo{
+    margin-bottom: 10px;
+}
+#add_comment_content_wrap .person_comment_personInfo .delete_comment{
+    float: right;
+    color: #f01b2a;
+    cursor: pointer;
+    margin-right: 12px;
+}
+#add_comment_content_wrap .person_comment_personInfo .reply_comment{
+    float: right;
+    color: #ed6c2b;
+    cursor: pointer;
+    margin-right: 12px;
+}
+#add_comment_content_wrap .person_comment_personInfo .reply_comment_cancel{
+    float: right;
+    color: #8d8d8d;
+    cursor: pointer;
+    margin-right: 12px;
+}
+#add_comment_content_wrap .person_comment_personInfo .person_comment_name{
+    color: #333;
+    margin-right: 12px;
+}
+#add_comment_content_wrap .person_comment_personInfo .person_comment_createtime{
+    color: #8b8b8b;
+    font-size: 13px;
+}
+#add_comment_content_wrap .person_comment_content{
+    word-break: break-all;
+    color: #8b8b8b;
+}
+#add_comment_content_wrap .person_comment_content a{
+    color: #2486dd;
+}
+#add_comment_content_wrap .person_comment_content a:hover{
+    color: #2486dd;
+}
+/*添加评论内容详情结束*/
+/*评论回复开始*/
+#add_comment_content_wrap .person_comment .reply_comment_box{
+    width: 100%;
+    margin-top: 20px;
+}
+/*评论回复结束*/
+/*评论内容分页开始*/
+#add_comment_content_wrap .page_search_wrap{
+    width: 100%;
+    height: 24px;
+}
+#add_comment_content_wrap .page_search{
+    height: 24px;
+    float: left;
+    position: relative;
+    left: 50%;
+}
+#add_comment_content_wrap .page_search .report_base_mmpager{
+    position: relative;
+    right: 50%;
+}
+#add_comment_content_wrap .page_search .report_base_mmpager .ivu-page-options-elevator input{
+    height: 21px;
+}
+#add_comment_content_wrap .page_search .ivu-page-next, .ivu-page-prev{
+    background-color:transparent;
+}
+#add_comment_content_wrap .page_search .ivu-page-item{
+    background-color:transparent;
+}
+#add_comment_content_wrap .page_search .ivu-page-item-active{
+    background-color: #39f;
+}
+/*评论内容分页结束*/
+/*--------分页器页码显示宽度--------*/
+#workflow_waitForAudit_wrap .ivu-page-simple .ivu-page-simple-pager input{
+    width: 39px;
+}
+/*阅读人头像开始*/
+#reader_headimg_content_wrap{
+    padding-right: 16px;
+}
+.additional_content_wrap .people_number{
+    margin-bottom: 6px;
+}
+.additional_content_wrap .people_number span{
+    color: #ED6C2B;
+    margin-right: 3px;
+}
+.additional_content_wrap .people_headimg_detail{
+    display: block;
+    width: 100%;
+}
+.additional_content_wrap .people_headimg_detail li{
+    display: block;
+    width: 36px;
+    margin-right:12px;
+    float: left;
+    margin-bottom: 15px;
+}
+.additional_content_wrap .people_headimg_detail li .img_box{
+    width: 36px;
+    height: 36px;
+    margin-bottom: 2px;
+}
+.additional_content_wrap .people_headimg_detail li .img_box img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+.additional_content_wrap .people_headimg_detail li .people_name{
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+}
+#praise_headimg_content_wrap .page_search{
+    height: 24px;
+}
+#praise_headimg_content_wrap .report_base_mmpager{
+    float: right;
+}
+#praise_headimg_content_wrap .report_base_mmpager .ivu-page-next{
+    background: transparent;
+}
+#reader_headimg_content_wrap .page_search{
+    height: 24px;
+}
+#reader_headimg_content_wrap .report_base_mmpager{
+    float: right;
+}
+#reader_headimg_content_wrap .report_base_mmpager .ivu-page-next {
+    background: transparent;
+}
+/*阅读人头像结束*/

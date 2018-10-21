@@ -1,0 +1,140 @@
+<!--简历模板-->
+<script type="text/html" id="resume_info_tpl">
+    <div id="recruitResumeInfo">
+        <h1 class="h1_1">个人信息</h1>
+        {{if baseInfo}}
+        <div class="user_info_box clearfix">
+            <div class="user_info_list">
+                <p class="user_info_p"><label>姓名：</label>{{baseInfo.name}}</p>
+                <p class="user_info_p"><label>联系电话：</label>{{baseInfo.telephone}}</p>
+                <p class="user_info_p"><label>电子邮件：</label>{{baseInfo.email}}</p>
+                <p class="user_info_p"><label>民族：</label>{{baseInfo.nation}}</p>
+                <p class="user_info_p"><label>政治面貌：</label>{{baseInfo.political}}</p>
+                <p class="user_info_p"><label>工作年限：</label>{{baseInfo.workExperience}}</p>
+                <p class="user_info_p"><label>职业状态：</label>{{baseInfo.workStatus}}</p>
+
+                <p class="user_info_p"><label><a href="javascript:;" id="recruit_typeBtn">人才分类</a></label><a href="javascript:;" id="recruit_downloadBtn">简历下载</a></p>
+
+                <p class="user_info_p"><label>性别：</label>{{baseInfo.gender=="1"?"男":"女"}}</p>
+                <p class="user_info_p"><label>年龄：</label>{{baseInfo.age}}</p>
+                <p class="user_info_p"><label>学历：</label>{{baseInfo.educationId}}</p>
+                <p class="user_info_p"><label>籍贯：</label>{{baseInfo.originPlace}}</p>
+                <p class="user_info_p"><label>婚姻状况：</label>{{baseInfo.maritalStatus}}</p>
+                <p class="user_info_p"><label>所在地：</label>{{baseInfo.city}}</p>
+                <p class="user_info_p"><label>到岗时间：</label>{{baseInfo.arrivalTime}}</p>
+            </div>
+            <div class="user_info_img">
+                {{if baseInfo.image}}
+                    <img src="{{baseInfo.filePrefix}}/{{baseInfo.image}}" alt="个人头像"/>
+                {{else}}
+                    <img src="{{baseInfo.baseStaticPath}}common/images/head_default.jpg" alt="个人头像"/>
+                {{/if}}
+
+            </div>
+        </div>
+        {{else}}
+            <li>无</li>
+        {{/if}}
+        <h1 class="h1_2"><span class="iconfont_daydao_recruit icon">&#xe635;</span>期望工作</h1>
+        <ul class="user_info_box clearfix">
+            {{if posInfo}}
+                <li class="expected_work"><span class="iconfont_daydao_recruit icon">&#xe60a;</span>{{posInfo.posName}}</li>
+                <li class="expected_work"><span class="iconfont_daydao_recruit icon">&#xe604;</span>{{posInfo.posProperty}}</li>
+                <li class="expected_work"><span class="iconfont_daydao_recruit icon">&#xe619;</span>{{posInfo.workSpace}}</li>
+                <li class="expected_work"><span class="iconfont_daydao_recruit icon">&#xe606;</span>{{posInfo.payRange}}</li>
+            {{else}}
+                <li>无</li>
+            {{/if}}
+        </ul>
+        <h1 class="h1_2"><span class="iconfont_daydao_recruit icon">&#xe60c;</span>工作经验</h1>
+        <ul class="user_info_box clearfix">
+            {{if workingList.length}}
+                {{each workingList as value i}}
+                <li class="work_experience_li">
+                    <h2>{{value.company}}</h2>
+                    <div class="work_experience clearfix">
+                        <div class="work_experience_txt">{{value.posName}}</div>
+                        <p class="work_experience_time">{{value.dateFrom}} - {{value.dateTo}}</p>
+                    </div>
+                </li>
+                {{/each}}
+            {{else}}
+                <li>无</li>
+            {{/if}}
+        </ul>
+        <h1 class="h1_2"><span class="iconfont_daydao_recruit icon">&#xe6ca;</span>教育经历</h1>
+        <ul class="user_info_box clearfix">
+            {{if eduList.length}}
+                {{each eduList as value i}}
+                <li class="work_experience_li">
+                    <h2>{{value.graduateSchool}}</h2>
+                    <div class="work_experience clearfix">
+                        <div class="work_experience_txt">{{value.degree}} / {{value.profession}} </div>
+                        <p class="work_experience_time">{{value.dateFrom}} - {{value.dateTo}}</p>
+                    </div>
+                </li>
+                {{/each}}
+            {{else}}
+                <li>无</li>
+            {{/if}}
+        </ul>
+        <h1 class="h1_2"><span class="iconfont_daydao_recruit icon">&#xe6c9;</span>项目经验</h1>
+        <ul class="user_info_box clearfix">
+            {{if programList.length}}
+                {{each programList as value i}}
+                <li class="work_experience_li">
+                    <h2>{{value.programName}}</h2>
+                    <div class="work_experience clearfix">
+                        <div class="work_experience_txt">{{value.programRole}}</div>
+                        <p class="work_experience_time">{{value.dateFrom}} - {{value.dateTo}}</p>
+                    </div>
+                    <p>{{value.programDesc}}</p>
+                </li>
+                {{/each}}
+            {{else}}
+            <li>无</li>
+            {{/if}}
+        </ul>
+        <h1 class="h1_2"><span class="iconfont_daydao_recruit icon">&#xe605;</span>技能评价</h1>
+        <ul class="user_info_box">
+            {{if skillList.length}}
+                {{each skillList as value i}}
+                <li class="skill_level_li">{{value.name}}<div class="skill_level_box"><span class="skill_level"></span></div>{{value.level}}</li>
+                {{/each}}
+            {{else}}
+            <li>无</li>
+            {{/if}}
+        </ul>
+        <h1 class="h1_2"><span class="iconfont_daydao_recruit icon">&#xe602;</span>培训经历</h1>
+        <ul class="user_info_box clearfix">
+            {{if trainList.length}}
+                {{each trainList as value i}}
+                <li class="work_experience_li">
+                    <h2>{{value.certificate}}</h2>
+                    <div class="work_experience clearfix">
+                        <div class="work_experience_txt">{{value.location}}  {{value.organization}}</div>
+                        <p class="work_experience_time">{{value.dateFrom}} - {{value.dateTo}}</p>
+                    </div>
+                </li>
+                {{/each}}
+            {{else}}
+                <li>无</li>
+            {{/if}}
+        </ul>
+        <h1 class="h1_2"><span class="iconfont_daydao_recruit icon">&#xe60e;</span>语言能力</h1>
+        <ul class="user_info_box">
+            {{if languageList.length}}
+                {{each languageList as value i}}
+                <li class="skill_level_li">{{value.language}}<div class="skill_level_box"><span class="skill_level"></span></div>{{value.level}}</li>
+                {{/each}}
+            {{else}}
+            <li>无</li>
+            {{/if}}
+
+        </ul>
+        <h1 class="h1_2"><span class="iconfont_daydao_recruit icon">&#xe603;</span>自我描述</h1>
+        <div class="user_info_box">
+            <p>{{baseInfo.selfDesc}}</p>
+        </div>
+    </div>
+</script>

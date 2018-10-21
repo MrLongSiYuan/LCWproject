@@ -1,0 +1,158 @@
+.ztree{
+    li{
+        line-height:27px !important;
+        a{
+            height:24px !important;
+            line-height:24px !important;
+            padding-left:3px !important;
+            padding-top:0 !important;
+            border-radius: 2px;
+            &:hover{
+                text-decoration: none !important;
+                background: #d5e8fc;
+                opacity:0.8;
+            }
+            &.curSelectedNode{
+                background-color: #d5e8fc !important;
+                border: none !important;
+
+                padding-top:0 !important;
+                opacity:1 !important;
+            }
+        }
+        span{
+            font-size:14px;
+            color: #657180;
+            &.button{
+                vertical-align: -1px !important;
+                &.switch{
+                    position: relative;
+                    background: none;
+                    width:10px !important;
+                    height:10px !important;
+                    &:after{
+                        content:"";
+                        display: inline-block;
+                        width:0px !important;
+                        height:0px !important;
+                        border:5px solid #657180;
+                        border-top-color: transparent;
+                        border-bottom-color: transparent;
+                        border-right-color: transparent;
+                        transition: all .3s ease-in-out;
+                        vertical-align: 2px !important;
+                    }
+                }
+                &.noline_open{
+                    left:-3px;
+                    top:2px;
+                    &:after{
+                        transform: rotate(90deg);
+                    }
+                }
+                &.noline_close{
+                    &:after{
+                        transform: rotate(0deg);
+                    }
+                }
+                &.noline_docu{
+                    &:after{
+                        border: none;
+                    }
+                }
+                &.chk {
+                    position: relative;
+                    background: none;
+                    border: 1px solid;
+                    border-radius: 2px;
+                    transition: border-color .2s ease-in-out, background-color .2s ease-in-out;
+                    &.checkbox_false_full, &.checkbox_false_full_focus {
+                        border-color: #C4CEDA;
+                    }
+                    &.checkbox_true_full, &.checkbox_true_full_focus, &.checkbox_true_part, &.checkbox_true_part_focus, &.checkbox_true_part_disable, &.checkbox_true_full_disable,&.checkbox_false_part,&.checkbox_false_part_disable {
+                        &:after {
+                            content: "";
+                            display: table;
+                            width: 4px;
+                            height: 8px;
+                            position: absolute;
+                            top: 1px;
+                            left: 4px;
+                            border: 2px solid #fff;
+                            border-top: 0;
+                            border-left: 0;
+                            transform: rotate(45deg) scale(1);
+                            transition: all .2s ease-in-out;
+                        }
+                    }
+                    &.checkbox_true_full, &.checkbox_true_full_focus {
+                        border-color: #3399ff;
+                        background: #3399ff;
+                        &:after {
+                            content: "";
+                            display: table;
+                            width: 4px;
+                            height: 8px;
+                            position: absolute;
+                            top: 1px;
+                            left: 4px;
+                            border: 2px solid #fff;
+                            border-top: 0;
+                            border-left: 0;
+                            transform: rotate(45deg) scale(1);
+                            transition: all .2s ease-in-out;
+                        }
+                    }
+                    &.checkbox_true_part,&.checkbox_false_part, &.checkbox_true_part_focus {
+                        border-color: #2d8cf0;
+                        background: #2d8cf0;
+                        &:after {
+                            border-color: #fff;
+                            border-bottom: none;
+                            transform: rotate(90deg) scale(1);
+                        }
+                    }
+                    &.checkbox_true_part_disable, &.checkbox_true_full_disable,&.checkbox_false_part_disable {
+                        border-color: #b2b8bf;
+                        background: #b2b8bf;
+                        cursor: not-allowed;
+                        &~a{
+                            cursor: not-allowed;
+                            &.curSelectedNode{
+                                background: none !important;
+                            }
+                            &:hover{
+                                background: none;
+                            }
+                        }
+                    }
+                    &.checkbox_true_part_disable,&.checkbox_false_part_disable,&.checkbox_false_part{
+                        &:after{
+                            border-color: #fff;
+                            border-bottom:none;
+                            transform: rotate(90deg) scale(1);
+                        }
+                    }
+                    &.checkbox_false_full_disable{
+                        &~a{
+                            cursor: not-allowed;
+                            &:hover{
+                                background: none;
+                            }
+                            &.curSelectedNode{
+                                background: none !important;
+                            }
+                            span{
+                                color: #939ba6;
+                            }
+                        }
+                        border-color: #c4ceda;
+                        background: #F4F4F4;
+                        cursor: not-allowed;
+                    }
+                }
+
+            }
+        }
+    }
+}

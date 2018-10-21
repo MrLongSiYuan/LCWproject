@@ -1,0 +1,15 @@
+@charset "utf-8";
+body{ padding-top: 0 !important;-webkit-overflow-scrolling:touch;}
+*{-webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-tap-highlight-color:transparent;}
+img{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+a{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -ms-touch-callout: none;
+    -moz-touch-callout: none;
+    -o-touch-callout: none;
+    touch-callout: none;
+}
+.main_wrap { padding: 0 !important;}
+.layui-m-layer .layui-m-layer-msg { bottom: 0 !important;}/*layer移动弹窗样式修复*/

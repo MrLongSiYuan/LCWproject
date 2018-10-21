@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title v-text="documentTitle">工作汇报</title>
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="stylesheet" type="text/css" href="//static.daydao.com/static/common/css/reset.css?v=_VERSION_">
+    <link rel="stylesheet" type="text/css" href="//static.daydao.com/static/oa/report/css/style.css?v=_VERSION_">
+    <link rel="Shortcut Icon" href="//static.daydao.com/static/common/images/logoOaicond.ico?v=_VERSION_"/>
+</head>
+<body>
+<!-- 头部悬浮导航容器 -->
+    <div id="headerBar_wrap"></div>
+
+<!--内容区-->
+    <!--<div id="main_menu" class="main_wrap">-->
+    <div id="main_wrap" class="main_wrap clearfix">
+        <!-- 路由外链 -->
+        <router-view></router-view>
+    </div>
+    <script type="text/javascript" src="//static.daydao.com/static/common/plugins/checkBrowser.js?v=_VERSION_"></script>
+    <script type="text/javascript" src="//static.daydao.com/static/common/plugins/jquery-1.11.1.min.js?v=_VERSION_"></script>
+    <script type="text/javascript" src="//static.daydao.com/static/common/plugins/sea.js?v=_VERSION_"></script>
+    <script type="text/javascript" src="//static.daydao.com/static/common/plugins/vue.js?v=_VERSION_"></script>
+    <script type="text/javascript" src="//static.daydao.com/static/common/plugins/vue-router.min.js?v=_VERSION_"></script>
+<script>
+    $.getScript("//static1.daydao.com/static/common/config.js",function () {
+        $.getScript("//static1.daydao.com/static/common/version.js",function () {
+
+            gMain.apiBasePath = gMain.basePath+  "apiReport/";  //nginx反向代理汇报路径
+            gMain.amBasePath = gMain.basePath+  "apiComment/";  //nginx反向代理公告路径
+            gMain.projectSource = "dayoa"; //属于oa项目
+
+            /**
+            * seajs配置信息
+            */
+            seajs.config({
+                base: "//static.daydao.com/"+gMain.jsdir+"/oa/report/"  //seajs的基础路径（组织人事，元数据项目的模块）
+                ,map: [[ /^(.*\.(?:css|js|html))(.*)$/i, '$1?v=_VERSION_'+'-'+gMain.verson]]  //加上版本号，清缓存用
+                ,paths:{
+                    "workflowStaticDirectory":"//static.daydao.com/"+gMain.jsdir+"/workflow/workflow"  //静态资源目录
+                }
+            });
+
+            seajs.use(["commonStaticDirectory/header/header.js"],function (Header) {
+                Header.init(function () {
+                    /* 初始化路由 */
+                    seajs.use(["js/router.js"]);
+                });
+            });
+
+        });
+    });
+</script>
+</body>
+</html>

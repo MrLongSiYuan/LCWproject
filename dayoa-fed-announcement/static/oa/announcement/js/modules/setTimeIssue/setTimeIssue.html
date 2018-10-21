@@ -1,0 +1,7 @@
+<div id="timeIssue">
+    <div class="timeIssue_timeSel">请选定定时发送的时间</div>
+    <div class="set_time_issue_choose">
+        <Date-picker type="datetime" format="yyyy-MM-dd HH:mm" placeholder="选择日期和时间（不含秒）" style="width: 243px" :value="setTime" :options="optionsMinTime"  @on-change="datePluginChange"  :clearable="false"></Date-picker>
+    </div>
+    <div class="timeIssue_timePub">此通知将在<span class="timeIssue_time">{{setTime}}</span>进行发布</div>
+</div>

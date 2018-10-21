@@ -1,0 +1,437 @@
+#annouce_list_wrap{
+    padding-top: 27px;
+}
+#annouce_list_wrap .annoucement_list{
+    border:1px #d3d3d3 solid;
+    border-radius: 5px;
+    margin-bottom:60px;
+    position: relative;
+    transition: 0.5s;
+    z-index: 1;
+    cursor: pointer;
+}
+#annouce_list_wrap .annoucement_list:hover{
+    box-shadow: 0px 0px 7px 0px #aaa;
+    transform: translateY(-3px);
+    z-index: 9;
+}
+/*头部*/
+#annouce_list_wrap .annoucement_list_header {
+    padding-left: 15px;
+    padding-top: 13px;
+    position: relative;
+}
+#annouce_list_wrap .annoucement_list_header .operation_notPublish{
+    float: right;
+    margin-right: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    color: #fff;
+    padding: 0 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    color: #ed6c2b;
+    border: 1px solid #ed6c2b;
+}
+#annouce_list_wrap .annoucement_list_header .annoucement_list_type{
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    color: #fff;
+    padding: 0 12px;
+    font-size: 14px;
+    background: #67c2e3;
+    float: left;
+    border-radius: 4px;
+}
+#annouce_list_wrap .annoucement_list_header .operation_receive{
+    float: left;
+}
+#annouce_list_wrap .annoucement_list_header .publish_dropdown{
+    position: relative;
+    z-index: 9;
+}
+#annouce_list_wrap .annoucement_list_header .publish_dropdown .ivu-btn{
+    padding: 3px 15px;
+    font-siz:13px;
+    border: none;
+}
+#annouce_list_wrap .annoucement_list_header .publish_dropdown .ivu-select-dropdown{
+    left: -5px;
+}
+#annouce_list_wrap .annoucement_list_header .publish_dropdown .ivu-dropdown-menu{
+    min-width: 75px;
+}
+#annouce_list_wrap .annoucement_list_header .publish_dropdown .ivu-dropdown-item{
+    text-align: center;
+}
+#annouce_list_wrap .annoucement_list_header .annoucement_list_title{
+    width: 100%;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 14px;
+    color: #333;
+}
+/*头部end*/
+/*公告基本信息开始*/
+#annouce_list_wrap .annoucement_list_inforWrap{
+    position: relative;
+    float: left;
+    left: 50%;
+}
+#annouce_list_wrap .annoucement_list_inforWrap .annoucement_list_inforBox{
+    position: relative;
+    float: left;
+    left: -50%;
+    padding-top: 9px;
+    padding-bottom: 6px;
+    line-height: 0;
+}
+#annouce_list_wrap .annoucement_list_inforWrap .annoucement_list_inforBox span{
+    margin-right: 40px;
+}
+#annouce_list_wrap .annoucement_list_inforWrap .annoucement_list_inforBox span:nth-child(3){
+    margin-right: 0;
+}
+/*公告基本信息结束*/
+/*公告具体内容开始*/
+#annouce_list_wrap .annoucement_content_wrap{
+    margin-top: 30px;
+    padding: 0 15px 11px;
+}
+#annouce_list_wrap .annoucement_content_wrap .fold_annoucement_content{
+    overflow: hidden;
+}
+#annouce_list_wrap .annoucement_content_wrap .fold_annoucement_content .fold_img_box{
+    float: left;
+    margin-right: 20px;
+}
+#annouce_list_wrap .annoucement_content_wrap .fold_annoucement_content .fold_img_box img{
+   max-width: 160px;
+   max-height: 120px;
+}
+#annouce_list_wrap .annoucement_content_wrap .annoucement_content{
+    float: left;
+    word-break: break-all;
+    height: 63px;
+    overflow: hidden;
+}
+#annouce_list_wrap .annoucement_content_wrap .annoucement_content p{
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/*展开内容*/
+#annouce_list_wrap .annoucement_content_wrap .open_img_box{
+    width: 400px;
+    height: 300px;
+    margin: 10px auto;
+}
+#annouce_list_wrap .annoucement_content_wrap .open_img_box img{
+    width: 100%;
+    height: 100%;
+}
+#annouce_list_wrap .annoucement_content_wrap .open_img_list{
+    padding: 0 6px;
+    margin-bottom: 8px;
+}
+#annouce_list_wrap .annoucement_content_wrap .open_img_list ul{
+    overflow: hidden;
+}
+#annouce_list_wrap .annoucement_content_wrap .open_img_list ul li{
+    display: block;
+    float: left;
+    width: 68px;
+    height: 50px;
+    box-sizing: content-box;
+    margin-right: 5px;
+    cursor: pointer;
+}
+#annouce_list_wrap .annoucement_content_wrap .open_img_list ul li.active{
+    border: 1px solid #ee7336;
+}
+#annouce_list_wrap .annoucement_content_wrap .open_img_list ul li:last-child{
+    margin-right: 0;
+}
+#annouce_list_wrap .annoucement_content_wrap .open_img_list ul li img{
+    width: 100%;
+    height: 100%;
+}
+#annouce_list_wrap .annoucement_content_wrap .open_file_list{
+
+}
+#annouce_list_wrap .annoucement_content_wrap .open_file_list ul{}
+#annouce_list_wrap .annoucement_content_wrap .open_file_list ul li{
+    display: block;
+    height: 20px;
+}
+#annouce_list_wrap .annoucement_content_wrap .open_file_list ul li .file_logo{
+    display: block;
+    width: 42px;
+    height: 20px;
+    background: url(../../../images/announcement_accessory_icon.png) no-repeat right top;
+    float: left;
+    margin-right: 8px;
+}
+#annouce_list_wrap .annoucement_content_wrap .open_file_list ul li .file_name{
+    display: block;
+    line-height: 20px;
+    font-size: 12px;
+    max-width:calc(100% - 50px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left;
+}
+#annouce_list_wrap .annoucement_content_wrap .release_range{
+    width: 100%;
+    height: 28px;
+    position: relative;
+    overflow: hidden;
+    padding-right: 40px;
+}
+#annouce_list_wrap .annoucement_content_wrap .release_range ul{}
+#annouce_list_wrap .annoucement_content_wrap .release_range ul li{
+    display: inline-block;
+    line-height: 28px;
+}
+#annouce_list_wrap .annoucement_content_wrap .release_range ul li:last-child span{
+    display: none;
+}
+#annouce_list_wrap .annoucement_content_wrap .release_range .more_release{
+    width: 30px;
+    height: 28px;
+    background: url(../../../images/announcement_tri_icon.png) no-repeat center center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+/*公告具体内容结束*/
+/*操作项开始*/
+#annouce_list_wrap .annoucement_list_footer{
+    width: 100%;
+    height: 40px;
+    background-color: #f3f3f3;
+    font-size: 12px;
+    border-radius: 0 0 5px 5px;
+    position: relative;
+    z-index: 9;
+}
+#annouce_list_wrap .annoucement_list_footer .last_operation_time {
+    height: 100%;
+    line-height: 40px;
+    padding-left: 15px;
+}
+#annouce_list_wrap .annoucement_list_footer .fold_open_btn{
+    height: 100%;
+    padding: 0 20px;
+    line-height: 40px;
+    color:#ed6c2b;
+    cursor: pointer;
+    float: left;
+}
+#annouce_list_wrap .annoucement_list_footer .other_operation_list{
+    padding-right: 26px;
+    height: 100%;
+    float: right;
+}
+#annouce_list_wrap .annoucement_list_footer .other_operation_list ul{
+    overflow: hidden;
+}
+#annouce_list_wrap .annoucement_list_footer .other_operation_list ul li{
+    display: block;
+    float: left;
+    cursor: pointer;
+}
+#annouce_list_wrap .annoucement_list_footer .other_operation_list ul li .operation_logo{
+    height: 25px;
+    padding: 0px 10px;
+}
+#annouce_list_wrap .annoucement_list_footer .other_operation_list ul li .operation_num{
+    width:100%;
+    font-size: 10px;
+    line-height: 15px;
+    text-align: center;
+}
+/*操作项结束*/
+/*水印开始*/
+#annouce_list_wrap .announcement_watermark_wrap{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+/*水印结束*/
+
+/*文件上传预览*/
+#annouce_list_wrap .addFilePreview{
+    width: 427px;
+}
+#annouce_list_wrap .addFilePreview li{
+    position: relative;
+    height: 37px;
+    background: #f0f0f0;
+    width: 322px;
+    padding-left: 10px;
+    padding-top: 7px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+#annouce_list_wrap .addFilePreview .icon{
+    background: url(../../../images/bgs.png) -1px -161px;
+    width: 23px;
+    height: 23px;
+    text-indent: -999em;
+    overflow: hidden;
+    float: left;
+}
+#annouce_list_wrap .addFilePreview .filename{
+    float: left;
+    line-height: 23px;
+    margin-left: 7px;
+    white-space: nowrap;
+    width: calc(100% - 38px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#annouce_list_wrap .addFilePreview .size{
+    line-height: 23px;
+    margin-left: 10px;
+    position: absolute;
+    right: -61px;
+}
+#annouce_list_wrap .addFilePreview .status{
+    line-height: 23px;
+    margin-left: 10px;
+    position: absolute;
+    right: -132px;
+}
+
+/*文件上传预览 --结束*/
+
+/*图片展示开始*/
+#annouce_list_wrap .imglist{
+    margin-top: 20px;
+}
+#annouce_list_wrap .imglist li{
+    width: 60px;
+    float: left;
+    margin-right: 10px;
+    position: relative;
+    height: 70px;
+    /*overflow: hidden;*/
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+#annouce_list_wrap .imglist li .imglist_imgbox{
+    width: 60px;
+    position: relative;
+    height: 60px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+#annouce_list_wrap .imglist li img{position: absolute;top: 50%;transform: translate(-50%, -50%);max-width: 60px;left: 50%;}
+/*图片展示结束*/
+/*图片附件操作项开始*/
+#annouce_list_wrap .preview_download_upload{
+    display: none;
+    width: 155px;
+    height: 36px;
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    left: 0px;
+    top:68px;
+    z-index: 9;
+    box-sizing: border-box;
+    padding: 0px 10px;
+}
+#annouce_list_wrap .addFilePreview .preview_download_upload{
+    left:166px;
+    top:0px;
+}
+#annouce_list_wrap .preview_download_upload .point_up{
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid rgba(0,0,0,0.5);
+    position: absolute;
+    left: 24px;
+    top:-8px;
+}
+#annouce_list_wrap .addFilePreview .preview_download_upload .point_left{
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 8px solid rgba(0,0,0,0.5);
+    position: absolute;
+    left: -8px;
+    top:13px;
+    display: none;
+}
+#annouce_list_wrap .preview_download_upload .img_operation_item{
+    float: left;
+    height: 100%;
+    margin-right: 30px;
+    cursor: pointer;
+}
+#annouce_list_wrap .preview_download_upload .img_operation_item:nth-last-child(1){
+    margin-right: 0px;
+}
+#annouce_list_wrap .preview_download_upload .img_operation_item span{
+    color: #fff;
+    display: inline-block;
+    height: 100%;
+    line-height: 36px;
+    float: left;
+    margin-left: 5px;
+}
+#annouce_list_wrap .preview_download_upload .img_operation_item i{
+    color: #fff;
+    font-size: 24px;
+    display: inline-block;
+    line-height: 36px;
+    height: 100%;
+    float: left;
+}
+#annouce_list_wrap .preview_download_upload .img_operation_item:hover i,#annouce_list_wrap .preview_download_upload .img_operation_item:hover span{
+    color: #ed6c2b;
+}
+#annouce_list_wrap .preview_download_upload .img_operation_item i.ivu-icon-ios-cloud-download-outline{
+    font-size: 20px;
+    line-height: 38px;
+}
+/*图片附件操作项结束*/
+#annouce_list_wrap  .watermark_wrap{
+    position:absolute;
+    z-index:-1;
+    top:0;
+    background: #fff;
+}
+
+/*无数据开始*/
+#annouce_list_wrap .no-data-page{
+    width: 100%;
+    height: 410px;
+    background: url(../../../images/announcement_noDatanew.png) no-repeat center 164px;
+    position: relative;
+    display: block;
+}
+#annouce_list_wrap .no-data-page .no-data-box{
+    width: 100%;
+    height: 66px;
+    font-size: 14px;
+    color: #909090;
+    text-align: center;
+    line-height: 66px;
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box;
+}
+/*无数据结束*/

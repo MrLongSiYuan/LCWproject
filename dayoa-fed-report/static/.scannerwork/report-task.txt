@@ -1,0 +1,5 @@
+projectKey=dayoa-fed-report
+serverUrl=http://sonar.daydao.com
+dashboardUrl=http://sonar.daydao.com/dashboard/index/dayoa-fed-report
+ceTaskId=AV_ImPFpA4suxahiXuKL
+ceTaskUrl=http://sonar.daydao.com/api/ce/task?id=AV_ImPFpA4suxahiXuKL

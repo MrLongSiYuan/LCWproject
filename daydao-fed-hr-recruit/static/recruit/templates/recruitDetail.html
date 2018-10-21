@@ -1,0 +1,62 @@
+<div id="recruitDetail">
+        <div class="recruitDetail-more" style="display: none">
+            <ul>
+                <li><a v-link="{path:'/resumePreview/'+gMain.resumeId}">查看简历</a></li>
+                <li><a v-link="{path:'/recruitRecord/'+gMain.resumeId}">应聘记录</a></li>
+                <li v-on:click="isTurn = true" v-if="isTurn == false" style="border: none;">转办该面试</li>
+                <li v-on:click="isTurn = false" v-if="isTurn == true " style="border: none;">返回评价</li>
+            </ul>
+        </div>
+     <div class="recruit-detail">
+         <div class="recruit-detail-title">
+             <img v-bind:src=gMain.baseStaticHrPath+"recruit/images/default_headImg.png" alt="头像" v-if="!infoData.image||infoData.image ==''"/>
+             <img v-bind:src="infoData.image" alt="头像" v-else/>
+             <div class="wrap"><span class="name">{{infoData.name}}</span><span v-bind:class="'sex' + infoData.gender"></span></div>
+             <p v-if="infoData.age==''&&infoData.education!=''&&infoData.work_experience!=''">{{infoData.education}}/{{infoData.work_experience}}</p>
+             <p v-if="infoData.age!=''&&infoData.education==''&&infoData.work_experience!=''">{{infoData.age}}岁/{{infoData.work_experience}}</p>
+             <p v-if="infoData.age!=''&&infoData.education!=''&&infoData.work_experience==''">{{infoData.age}}岁/{{infoData.education}}</p>
+             <p v-if="infoData.age==''&&infoData.education==''&&infoData.work_experience!=''">{{infoData.work_experience}}</p>
+             <p v-if="infoData.age==''&&infoData.education!=''&&infoData.work_experience==''">{{infoData.education}}</p>
+             <p v-if="infoData.age!=''&&infoData.education==''&&infoData.work_experience==''">{{infoData.age}}岁</p>
+             <p v-if="infoData.age!=''&&infoData.education!=''&&infoData.work_experience!=''">{{infoData.age}}岁/{{infoData.education}}/{{infoData.work_experience}}</p>
+             <p v-if="infoData.age==''&&infoData.education==''&&infoData.work_experience==''"></p>
+         </div>
+         <div class="recruit-detail-body" v-bind:class="[isTurn == true ? 'on':'']">
+             <ul>
+                 <li>
+                     <span class="float-left">应聘职位：</span>
+                     <span class="float-right">{{infoData.pos_name}}</span>
+                 </li>
+                 <li>
+                     <span class="float-left">面试时间：</span>
+                     <span class="float-right">{{infoData.interview_date}}</span>
+                 </li>
+                 <li>
+                     <span class="float-left">面试地点：</span>
+                     <span class="float-right">{{infoData.interview_address}}</span>
+                 </li>
+                 <li>
+                     <span class="float-left">招聘负责人：</span>
+                     <span class="float-right">{{infoData.contract}}</span>
+                     <a v-bind:href="'tel:' + infoData.contract_mobile"></a>
+                 </li>
+             </ul>
+         </div>
+         <div class="recruit-detail-bottom" v-if="isTurn == false">
+              <textarea placeholder="请填写面试评价，250字以内" rows="10" maxlength="250" v-model="evaluate"></textarea>
+             <div class="recruit-detail-bottom-button">
+                 <button class="nopass" v-on:click="passFun(0)">不通过</button>
+                 <button class="pass" v-on:click="passFun(1)">通过</button>
+             </div>
+         </div>
+
+         <div class="recruit-detail-bottom-other" v-else>
+              <div class="person" v-on:click="chooseInterviewer">
+                  <span class="float-left">转办面试官：</span>
+                  <span class="float-right">请选择</span>
+                  <div class="iconfont_daydao_recruit">&#xe727;</div>
+              </div>
+              <button class="turn" v-on:click="turnFun">转办</button>
+         </div>
+     </div>
+</div>

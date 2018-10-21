@@ -1,0 +1,164 @@
+@charset "utf-8";
+#resumeDealAddTemplate .resumeDealAddTemplate{
+    padding: 0 20px 40px;
+    overflow: hidden;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate .resume_deal_add_title{
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate .table2{
+    /*height:339px;
+    overflow-y: auto;*/
+}
+#resumeDealAddTemplate .resumeDealAddTemplate thead {
+    background: #e6e6e6;
+    border-top: 2px solid #999;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate th{
+    padding: 7px 10px;
+    font-weight: bold;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate td{
+    padding: 5px 10px;
+    word-break: break-all;
+    color: #818282;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate table .t_1{
+    width: 60px;
+    text-align: center;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate table .t_2{
+    width: 100px;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate table thead{
+    position: relative;
+    background: #F7F7F7;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate span{
+    webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate span.add{
+    font-size: 20px;
+    color: #666;
+    cursor: pointer;
+    margin-left: 5px;
+    font-weight: normal;
+    position: absolute;
+    top: -2px;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate span.del{
+    font-size: 16px;
+    color: #666;
+    cursor: pointer;
+    margin: 0 2px;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate span.edit{
+    font-size: 20px;
+    color: #666;
+    cursor: pointer;
+    margin: 0 2px;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate span.iconfont_daydao_recruit:hover{
+    color:#ed6c2b;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate .resume_deal_add_bottom{
+    overflow: hidden;
+    border: 1px solid #CCC;
+    border-top: none;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate .resume_deal_add_bottom .resume_deal_add_tpl{
+    margin-top: 20px;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate .resume_deal_add_bottom p {
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate .resume_deal_add_bottom span{
+    display: block;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate .resume_deal_add_bottom .span_left{
+    width: 120px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    float: left;
+    font-weight: bold;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate .resume_deal_add_bottom .span_right{
+    width: 492px;
+    float: right;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate .resume_deal_add_bottom .span_right input{
+    padding: 0 5px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #bcbcbc;
+    border-radius: 3px;
+    color: #4a4a4a;
+    box-shadow: none;
+    width: 450px;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate .resume_deal_add_bottom .span_right textarea{
+    -webkit-appearance: textarea;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    user-select: text;
+    flex-direction: column;
+    resize:none;
+    cursor: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    float: left;
+    padding: 5px;
+    border: 1px solid #bcbcbc;
+    border-radius: 3px;
+    width: 450px;
+    word-break: break-all;
+    color: #4a4a4a;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate .resume_deal_add_bottom_button{
+    text-align: right;
+    margin: 20px 0 50px;
+    box-sizing: border-box;
+    padding-right: 24px;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate .resume_deal_add_bottom_button button{
+    display: inline-block;
+    height: 30px;
+    line-height: 29px;
+    margin: 0 6px;
+    padding: 0 23px;
+    border-radius: 2px;
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .3s;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate .resume_deal_add_bottom_button button.save{
+    border: 1px #ed6c2b solid;
+    background-color: #ed6c2b;
+    color: #fff;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate .resume_deal_add_bottom_button button.save:hover{
+    text-decoration:none;
+    background: rgb(228,85,13);
+    border:1px #ed6c2b solid;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate .resume_deal_add_bottom_button button:active{
+    position: relative;
+    top:1px;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate .resume_deal_add_bottom_button button.cancel{
+    background-color: #fff;
+    color: #333;
+    border: 1px #d2d2d2 solid;
+}
+#resumeDealAddTemplate .resumeDealAddTemplate .resume_deal_add_bottom_button button.cancel:hover{
+    text-decoration:none;
+    border:1px #ed6c2b solid;
+    color: #ed6c2b;
+}

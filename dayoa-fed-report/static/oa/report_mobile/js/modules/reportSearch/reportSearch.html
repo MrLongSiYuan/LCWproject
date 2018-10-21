@@ -1,0 +1,52 @@
+<div id="report_search_wrap">
+    <div class="reporter_name_wrap">
+        <!--<div class="reporter_name search_option_title">发送人姓名</div>-->
+        <div class="name_input_wrap">
+            <!--<div class="name_text">姓名：</div>-->
+            <input type="text" placeholder="请输入发送人姓名" v-model="searchName">
+        </div>
+    </div>
+    <div class="report_time_wrap">
+        <div class="report_time search_option_title">选择时间</div>
+        <div class="report_choose_time_wrap">
+            <ul>
+                <li @click="chooseSearchTime($event)"><a href="javascript:void(0)">今天</a></li>
+                <li @click="chooseSearchTime($event)"><a href="javascript:void(0)">本周</a></li>
+                <li @click="chooseSearchTime($event)"><a href="javascript:void(0)">上周</a></li>
+                <li @click="chooseSearchTime($event)"><a href="javascript:void(0)">本月</a></li>
+                <li @click="chooseSearchTime($event)"><a href="javascript:void(0)">上月</a></li>
+                <li @click="chooseSearchTime($event)"><a href="javascript:void(0)">自定义</a></li>
+            </ul>
+            <div class="data_choose_wrap">
+                <div class="blank"></div>
+                <div class="time_date_box">
+                    <div class="start_time time_lable">开始时间：</div>
+                    <div class="start_time_input time_input_wrap">
+                        <input type="text" class="Wdate" readonly placeholder="请选择">
+                        <Icon type="ios-arrow-right"></Icon>
+                    </div>
+                </div>
+                <div class="time_date_box">
+                    <div class="end_time time_lable">结束时间：</div>
+                    <div class="end_time_input time_input_wrap">
+                        <input type="text" class="Wdate" readonly placeholder="请选择">
+                        <Icon type="ios-arrow-right"></Icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="report_template_wrap">
+        <div class="report_template search_option_title">选择汇报模板</div>
+        <div class="time_date_box">
+            <div class="end_time time_lable">选择汇报模板：</div>
+            <div class="time_input_wrap" @click="chooseTemplate($event)">
+                <input type="text"  readonly placeholder="请选择" temp-id="">
+                <Icon type="ios-arrow-right"></Icon>
+            </div>
+        </div>
+    </div>
+    <div class="submit_wrap">
+        <div class="submit_btn" @click="submitSearch">查询</div>
+    </div>
+</div>

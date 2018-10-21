@@ -1,0 +1,948 @@
+@charset "utf-8";
+.resumeDeal {
+
+}
+.resumeDeal .clear_both {
+    clear: both;
+}
+.resumeDeal .resume_deal_1{
+    padding-left: 20px;
+    overflow: hidden;
+}
+.resumeDeal .resume_deal_1 .title {
+    float: right;
+}
+.resumeDeal .resume_deal_1 .title span {
+    cursor: pointer;
+    color: #fff;
+    background: #d0d3e1;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 2px;
+    display: inline-block;
+}
+.resumeDeal .resume_deal_1 .title span:hover {
+    background: #a9adbb;
+}
+.resumeDeal .resume_deal_1 .content .wrap {
+    line-height: 32px;
+    min-height: 32px;
+    margin-bottom: 14px;
+}
+.resumeDeal .resume_deal_1 .content .no{
+    margin-bottom: 0 !important;
+}
+.resumeDeal .resume_deal_1 .content b.mar{
+    margin: 0 5px;
+}
+.resumeDeal .resume_deal_1 .content span.wrap_left {
+    float: left;
+    width: 81px;
+    text-align: right;
+    margin-right: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 32px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 400;
+}
+.resumeDeal .resume_deal_1 .content span.wrap_right {
+    float: left;
+    position: relative;
+    min-height: 32px;
+    white-space: nowrap;
+    width: calc(100% - 86px);
+}
+.resumeDeal .resume_deal_1 .content span.wrap_right input[type='text'].resume_deal_input{
+    width: 169px;
+    padding: 0 5px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #bcbcbc;
+    border-radius: 3px;
+    color: #4a4a4a;
+    box-shadow: none;
+}
+
+.resumeDeal .resume_deal_1 .content span.wrap_right input[type='text']:focus{
+    border: 1px solid #FF6200;
+    transition: all 0.5s;
+}
+.resumeDeal .resume_deal_1 .content span.wrap_right input[type='checkbox']{
+    display: none;
+}
+.resumeDeal .resume_deal_1 .content span.wrap_right input:checked + label{
+    background: url("../images/fuxuan.png") no-repeat;
+    border: none;
+}
+.resumeDeal .resume_deal_1 .content span.wrap_right label{
+    width: 12px;
+    height: 12px;
+    border: 1px solid #ccc;
+    display: block;
+    float: left;
+    box-sizing: border-box;
+    background: transparent;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+.resumeDeal .resume_deal_1 .content span.wrap_right textarea{
+    -webkit-appearance: textarea;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    user-select: text;
+    flex-direction: column;
+    resize:none;
+    cursor: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    float: left;
+    padding: 5px;
+    border: 1px solid #bcbcbc;
+    border-radius: 3px;
+    word-break: break-all;
+}
+.resumeDeal .resume_deal_1 .content span.wrap_right textarea:focus{
+    border: 1px solid #FF6200;
+    transition: all 0.5s;
+}
+.resumeDeal .resume_deal_zj{
+    padding:  20px 20px 72px;
+    overflow: hidden;
+}
+.resumeDeal .resume_deal_zj p {
+    margin-bottom: 15px;
+    color: #999;
+    font-size: 14px;
+    text-indent: 55px;
+}
+.resumeDeal .resume_deal_zj #dropSelect_zj{
+    display: block;
+    margin: 0 auto;
+}
+.resumeDeal .resume_deal_ly{
+    padding-left: 20px;
+    overflow: hidden;
+}
+.resumeDeal .resume_deal_ly .title {
+    float: right;
+}
+.resumeDeal .resume_deal_ly .title span {
+    cursor: pointer;
+    color: #999;
+    background: #eee;
+    padding: 2px 5px;
+    font-size: 12px;
+}
+.resumeDeal .resume_deal_ly .content .no{
+    margin-bottom: 0 !important;
+}
+.resumeDeal .resume_deal_ly .content b.mar{
+    margin: 0 5px;
+}
+.resumeDeal .resume_deal_ly .content .wrap {
+    line-height: 32px;
+    min-height: 32px;
+    margin-bottom: 14px;
+}
+.resumeDeal .resume_deal_ly .content span.wrap_left {
+    float: left;
+    width: 81px;
+    text-align: right;
+    margin-right: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 34px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 400;
+}
+.resumeDeal .resume_deal_ly .content span.wrap_right {
+    float: left;
+    width: calc(100% - 86px);
+    position: relative;
+    min-height: 34px;
+    white-space: nowrap;
+}
+.resumeDeal .resume_deal_ly .content span.wrap_right input[type='text'].resume_deal_input{
+    width: 169px;
+    padding: 0 5px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #bcbcbc;
+    border-radius: 3px;
+    color: #4a4a4a;
+    box-shadow: none;
+}
+.resumeDeal .resume_deal_ly .content span.wrap_right input[type='text']:focus{
+    border: 1px solid #FF6200;
+    transition: all 0.5s;
+}
+.resumeDeal .resume_deal_ly .content span.wrap_right input[type='checkbox']{
+    display: none;
+}
+.resumeDeal .resume_deal_ly .content span.wrap_right input:checked + label{
+    background: url("../images/fuxuan.png") no-repeat;
+    border: none;
+}
+.resumeDeal .resume_deal_ly .content span.wrap_right label{
+    width: 12px;
+    height: 12px;
+    border: 1px solid #ccc;
+    display: block;
+    float: left;
+    box-sizing: border-box;
+    background: transparent;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+.resumeDeal .resume_deal_ly .content span.wrap_right textarea{
+    -webkit-appearance: textarea;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    user-select: text;
+    flex-direction: column;
+    resize:none;
+    cursor: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    float: left;
+    padding: 5px;
+    border: 1px solid #bcbcbc;
+    border-radius: 3px;
+    word-break: break-all;
+}
+.resumeDeal .resume_deal_ly .content span.wrap_right textarea:focus{
+    border: 1px solid #FF6200;
+    transition: all 0.5s;
+}
+.resumeDeal .resume_deal_ly .content span.wrap_right button{
+    height: 32px;
+    line-height: 29px;
+    margin-left: 10px;
+    padding: 0 15px;
+    border: 1px #ed6c2b solid;
+    border-radius: 2px;
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .3s;
+    background-color: #ed6c2b;
+    color: #fff;
+    box-sizing: border-box;
+    top: -1px;
+    position: relative;
+}
+.resumeDeal .resume_deal_ly .a-file{
+    display: block;
+    border: 1px solid #bcbcbc;
+    border-radius: 3px;
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+    z-index: -1;
+    width: 200px;
+    height: 32px;
+    font-size: 14px;
+    color: #999;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 0 10px;
+    float: left;
+}
+.resumeDeal .resume_deal_ly input[name='form_2_file'] {
+    font-size: 0;
+    width: 200px;
+    height: 32px;
+    background: #000;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border: 0;
+    padding: 0;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+    margin: 0;
+    position: absolute;
+}
+.resumeDeal .resume_deal_ly .content span.wrap_right button:hover{
+    text-decoration:none;
+    background: rgb(228,85,13);
+    border:1px #ed6c2b solid;
+}
+.resumeDeal .resume_deal_ly .content span.wrap_right button:active{
+    position: relative;
+    top:1px;
+}
+.resumeDeal .resume_deal_yl{
+    overflow: hidden;
+    padding: 20px;
+}
+.resumeDeal .resume_deal_yl .body{
+    width:380px;
+    background:#f3f3f3;
+    margin:0 auto;
+    padding: 14px;
+    box-sizing: border-box;
+}
+.resumeDeal .resume_deal_yl p {
+    line-height: 25px;
+}
+.resumeDeal .resume_deal_yl p.p_wrap {
+    width: 360px;
+    margin: 0 auto;
+}
+.resumeDeal .resume_deal_yl p.p_1{
+    margin: 50px auto 15px;
+}
+.resumeDeal .resume_deal_yl p.p_2{
+    margin-bottom: 25px;
+}
+
+.resumeDeal .resume_deal_yl p.p_3{
+    margin: 10px auto;
+}
+.resumeDeal .resume_deal_yl p.p_3 a{
+    color: #333;
+    word-break: break-all;
+}
+.resumeDeal .resume_deal_yl b{
+    margin: 0 10px;
+}
+.resumeDeal .resume_deal_jl{
+    overflow: hidden;
+    padding: 20px;
+}
+.resumeDeal .resume_deal_jl b{
+    margin: 0 10px;
+}
+.resumeDeal .resume_deal_jl .body{
+    width:380px;
+    background:#f3f3f3;
+    margin:0 auto;
+    padding: 14px;
+    box-sizing: border-box;
+}
+.resumeDeal .resume_deal_jl p.p_wrap {
+    width: 380px;
+    margin: 0 auto;
+}
+.resumeDeal .resume_deal_jl p.p_1{
+    margin: 50px auto 15px;
+}
+.resumeDeal .resume_deal_jl p.p_2{
+    margin-bottom: 25px;
+}
+.resumeDeal .resume_deal_fq{
+    overflow: hidden;
+    padding:  0px 20px 72px;
+}
+.resumeDeal .resume_deal_fq  p b{
+    margin: 0 10px;
+}
+.resumeDeal .resume_deal_fq  p.reason{
+    margin: 25px 0 0px;
+}
+.resumeDeal .resume_deal_fq  p.tip{
+    margin: 25px 0 0;
+}
+.resumeDeal .resume_deal_fq  p.notice{
+    margin: 5px 0 0;
+}
+.resumeDeal .resume_deal_fq textarea{
+    -webkit-appearance: textarea;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    user-select: text;
+    flex-direction: column;
+    resize:none;
+    cursor: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    float: left;
+    padding: 5px;
+    border: 1px solid #bcbcbc;
+    border-radius: 3px;
+    width: 416px;
+    word-break: break-all;
+    color: #666;
+}
+.resumeDeal .resume_deal_fq input.input_fq{
+    display: none;
+}
+.resumeDeal .resume_deal_fq .label1 label{
+    width: 12px;
+    height: 12px;
+    border: 1px solid #ccc;
+    display: block;
+    float: left;
+    box-sizing: border-box;
+    background: transparent;
+    margin-top: 4px;
+    margin-right: 5px;
+}
+.resumeDeal .resume_deal_fq input[type='checkbox']:checked + label{
+    background: url("../images/fuxuan.png") no-repeat;
+    border: none;
+}
+.resumeDeal .resume_deal_fq ul{
+    overflow: hidden;
+}
+.resumeDeal .resume_deal_fq ul.ul_fq li{
+    width: 33.33%;
+    float: left;
+    line-height: 25px;
+}
+.resumeDeal .resume_deal_fq ul label{
+    width: 14px;
+    height: 14px;
+    border: 1px solid #ccc;
+    display: block;
+    float: left;
+    box-sizing: border-box;
+    background: transparent;
+    margin-top: 6px;
+    margin-right: 5px;
+    border-radius: 50%;
+}
+.resumeDeal .resume_deal_fq input[type='radio']:checked + label{
+    background: url("../images/danxuan.png") no-repeat;
+    border: none;
+}
+.resumeDeal .resume_deal_fq .content{
+    display: block;
+}
+.resumeDeal .resume_deal_fq .body{
+    display: none;
+}
+.resumeDeal .resume_deal_fq p.self{
+    margin: 10px 0 5px;
+}
+.resumeDeal .resume_deal_fq .tp{
+    margin-top: 5px;
+    display: none;
+}
+.resumeDeal .resume_deal_fq p span.type{
+    float: left;
+    line-height: 30px;
+}
+.resumeDeal .resume_deal_2{
+    padding:  0 0px 20px 20px;
+    overflow: hidden;
+}
+.resumeDeal .resume_deal_2 .title {
+    float: right;
+    margin-bottom: 10px;
+}
+.resumeDeal .resume_deal_2 .title span {
+    cursor: pointer;
+    color: #fff;
+    background: #d0d3e1;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 2px;
+    display: inline-block;
+}
+.resumeDeal .resume_deal_2 .title span:hover {
+    background: #a9adbb;
+}
+.resumeDeal .resume_deal_2 .content .wrap {
+    line-height: 32px;
+    min-height: 32px;
+    margin-bottom: 14px;
+}
+.resumeDeal .resume_deal_2 .content span.wrap_left {
+    float: left;
+    width: 81px;
+    text-align: right;
+    margin-right: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 34px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 400;
+}
+.resumeDeal .resume_deal_2 .content span.wrap_right {
+    float: left;
+    width: 360px;
+    position: relative;
+    min-height: 34px;
+    white-space: nowrap;
+}
+.resumeDeal .resume_deal_2 .content span.wrap_right input[type='text'].resume_deal_input{
+    width: 169px;
+    padding: 0 5px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #bcbcbc;
+    border-radius: 3px;
+    color: #4a4a4a;
+    box-shadow: none;
+}
+.resumeDeal .resume_deal_2 .content span.wrap_right input[type='text']:focus{
+    border: 1px solid #FF6200;
+    transition: all 0.5s;
+}
+.resumeDeal .resume_deal_2 .content span.wrap_right input[type='checkbox']{
+    width: 18px;
+    height: 18px;
+    position: relative;
+    top:4px;
+    margin-right: 3px;
+}
+.resumeDeal .resume_deal_2 .content span.wrap_right textarea{
+    -webkit-appearance: textarea;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    user-select: text;
+    flex-direction: column;
+    resize:none;
+    cursor: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    float: left;
+    padding: 5px;
+    border: 1px solid #bcbcbc;
+    border-radius: 3px;
+    word-break: break-all;
+}
+.resumeDeal .resume_deal_2 .button2{
+    text-align: right;
+    margin: 52px 0 20px;
+    overflow: hidden;
+    padding-right: 88px;
+    box-sizing: border-box;
+    padding-bottom: 1px;
+}
+.resumeDeal .resume_deal_2 .button2 button{
+    display: inline-block;
+    height: 30px;
+    line-height: 29px;
+    margin: 0 6px;
+    padding: 0 23px;
+    border-radius: 2px;
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .3s;
+}
+.resumeDeal .resume_deal_2 .button2 button.save2{
+    border: 1px #ed6c2b solid;
+    background-color: #ed6c2b;
+    color: #fff;
+}
+.resumeDeal .resume_deal_2 .button2 button.save2:hover{
+    text-decoration:none;
+    background: rgb(228,85,13);
+    border:1px #ed6c2b solid;
+}
+.resumeDeal .resume_deal_2 .button2 button:active{
+    position: relative;
+    top:1px;
+}
+.resumeDeal .resume_deal_2 .button2 button.cancel2{
+    background-color: #fff;
+    color: #333;
+    border: 1px #d2d2d2 solid;
+}
+.resumeDeal .resume_deal_2 .button2 button.cancel2:hover{
+    text-decoration:none;
+    border:1px #ed6c2b solid;
+    color: #ed6c2b;
+}
+.resumeDeal .resume_deal_2 .bottom2{
+    overflow: hidden;
+}
+.resumeDeal .resume_deal_2 .bottom2 p.wrap{
+    color: #999;
+    padding: 10px 0;
+    border-top: 1px solid #CCC;
+}
+.resumeDeal .resume_deal_2 .bottom2 ul {
+    overflow: hidden;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+.resumeDeal .resume_deal_2 .bottom2 ul li {
+    padding-bottom: 20px;
+    position: relative;
+    padding-left: 25px;
+    box-sizing: border-box;
+    overflow: hidden;
+    color: #6E6E6E;
+}
+.resumeDeal .resume_deal_2 .bottom2 ul li::before{
+    content: "";
+    background: #2FB23A;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #666;
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+.resumeDeal .resume_deal_2 .bottom2 ul li::after{
+    content: "";
+    width: 1px;
+    height: 100%;
+    background: #dbdbdb;
+    position: absolute;
+    top: 20px;
+    left: 7px;
+}
+.resumeDeal .resume_deal_2 .bottom2 ul li:last-child::after{
+    background: #fff;
+}
+.resumeDeal .resume_deal_2 .bottom2 ul li b{
+    font-weight: bold;
+    color: #333;
+}
+.resumeDeal .resume_deal_2 .bottom2 ul li .span-1{
+    width: 60px;
+    float: left;
+    word-break: break-all;
+}
+.resumeDeal .resume_deal_2 .bottom2 ul li .span-2{
+    float: left;
+    width: calc(100% - 60px);
+}
+.resumeDeal .resume_deal_3{
+    padding:  0 0 20px 20px;
+    overflow: hidden;
+}
+.resumeDeal .resume_deal_3 .title {
+    float: right;
+    margin-bottom: 10px;
+}
+.resumeDeal .resume_deal_3 .title span {
+    cursor: pointer;
+    color: #fff;
+    background: #d0d3e1;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 2px;
+    display: inline-block;
+}
+.resumeDeal .resume_deal_3 .title span:hover {
+    background: #a9adbb;
+}
+.resumeDeal .resume_deal_3 .content .wrap {
+    line-height: 32px;
+    min-height: 34px;
+    margin: 5px 0;}
+.resumeDeal .resume_deal_3 .content span.wrap_left {
+    float: left;
+    width: 81px;
+    text-align: right;
+    margin-right: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 34px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 400;
+}
+.resumeDeal .resume_deal_3 .content span.wrap_right {
+    float: left;
+    width: 360px;
+    position: relative;
+    min-height: 34px;
+    white-space: nowrap;
+}
+.resumeDeal .resume_deal_3 .bottom2{
+   overflow: hidden;
+}
+.resumeDeal .resume_deal_3 .bottom2 ul {
+    overflow: hidden;
+}
+.resumeDeal .resume_deal_3 .bottom2 ul li {
+    padding-bottom: 20px;
+    position: relative;
+    padding-left: 25px;
+    box-sizing: border-box;
+    overflow: hidden;
+    color: #6E6E6E;
+}
+.resumeDeal .resume_deal_3 .bottom2 ul li::before{
+    content: "";
+    background: #2FB23A;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #666;
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+.resumeDeal .resume_deal_3 .bottom2 ul li::after{
+    content: "";
+    width: 1px;
+    height: 100%;
+    background: #dbdbdb;
+    position: absolute;
+    top: 20px;
+    left: 7px;
+}
+.resumeDeal .resume_deal_3 .bottom2 ul li:last-child::after{
+    background: #fff;
+}
+.resumeDeal .resume_deal_3 .bottom2 ul li b{
+    font-weight: bold;
+    color: #333;
+}
+.resumeDeal .resume_deal_3 .bottom2 ul li .span-1{
+    width: 60px;
+    float: left;
+    word-break: break-all;
+}
+.resumeDeal .resume_deal_3 .bottom2 ul li .span-2{
+    float: left;
+    width: calc(100% - 60px);
+}
+.resumeDeal .resume_deal_4{
+    padding:  0 0 20px 20px;
+    overflow: hidden;
+}
+.resumeDeal .resume_deal_4 .bottom2{
+    overflow: hidden;
+}
+.resumeDeal .resume_deal_4 .bottom2 ul {
+    overflow: hidden;
+}
+.resumeDeal .resume_deal_4 .bottom2 ul li {
+    padding-bottom: 20px;
+    position: relative;
+    padding-left: 25px;
+    box-sizing: border-box;
+    overflow: hidden;
+    color: #6E6E6E;
+}
+.resumeDeal .resume_deal_4 .bottom2 ul li::before{
+    content: "";
+    background: #2FB23A;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #666;
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+.resumeDeal .resume_deal_4 .bottom2 ul li::after{
+    content: "";
+    width: 1px;
+    height: 100%;
+    background: #dbdbdb;
+    position: absolute;
+    top: 20px;
+    left: 7px;
+}
+.resumeDeal .resume_deal_4 .bottom2 ul li:last-child::after{
+    background: #fff;
+}
+.resumeDeal .resume_deal_4 .bottom2 ul li b{
+    font-weight: bold;
+    color: #333;
+}
+.resumeDeal .resume_deal_4 .bottom2 ul li .span-1{
+    width: 60px;
+    float: left;
+    word-break: break-all;
+}
+.resumeDeal .resume_deal_4 .bottom2 ul li .span-2{
+    float: left;
+    width: calc(100% - 60px);
+}
+.resumeDeal .resume_deal_5{
+    padding:  0 0 20px 20px;
+    overflow: hidden;
+}
+.resumeDeal .resume_deal_5 .bottom2{
+    overflow: hidden;
+}
+.resumeDeal .resume_deal_5 .bottom2 ul {
+    overflow: hidden;
+}
+.resumeDeal .resume_deal_5 .bottom2 ul li {
+    padding-bottom: 20px;
+    position: relative;
+    padding-left: 25px;
+    box-sizing: border-box;
+    overflow: hidden;
+    color: #6E6E6E;
+}
+.resumeDeal .resume_deal_5 .bottom2 ul li::before{
+    content: "";
+    background: #2FB23A;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #666;
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+.resumeDeal .resume_deal_5 .bottom2 ul li::after{
+    content: "";
+    width: 1px;
+    height: 100%;
+    background: #dbdbdb;
+    position: absolute;
+    top: 20px;
+    left: 7px;
+}
+.resumeDeal .resume_deal_5 .bottom2 ul li:last-child::after{
+    background: #fff;
+}
+.resumeDeal .resume_deal_5 .bottom2 ul li b{
+    font-weight: bold;
+    color: #333;
+}
+.resumeDeal .resume_deal_5 .bottom2 ul li .span-1{
+    width: 60px;
+    float: left;
+    word-break: break-all;
+}
+.resumeDeal .resume_deal_5 .bottom2 ul li .span-2{
+    float: left;
+    width: calc(100% - 60px);
+}
+.resumeDeal .bottom{
+    padding: 5px 0;
+    text-align: center;
+    margin: 20px 0 30px;
+}
+.resumeDeal button.btn{
+    display: inline-block;
+    height: 32px;
+    line-height: 31px;
+    margin: 0 6px;
+    padding: 0 23px;
+    border-radius: 2px;
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .3s;
+}
+.resumeDeal button.btn:active{
+    position: relative;
+    top:1px;
+}
+.resumeDeal button.btn1{
+    border: 1px #ed6c2b solid;
+    background-color: #ed6c2b;
+    color: #fff;
+}
+.resumeDeal button.btn1:hover{
+    text-decoration:none;
+    background: rgb(228,85,13);
+    border:1px #ed6c2b solid;
+    transition: all 0.3s;
+}
+.resumeDeal button.btn2{
+    background-color: #fff;
+    color: #333;
+    border: 1px #d2d2d2 solid;
+}
+.resumeDeal button.btn2:hover{
+    text-decoration:none;
+    border:1px #ed6c2b solid;
+    color: #ed6c2b;
+    transition: all 0.3s;
+}
+
+.resumeDeal button.btn3{
+    border: 1px #ed6c2b solid;
+    background-color: #ed6c2b;
+    color: #fff;
+}
+.resumeDeal button.btn3:hover{
+    text-decoration:none;
+    background: rgb(228,85,13);
+    border:1px #ed6c2b solid;
+    transition: all 0.3s;
+}
+.resumeDeal button.btn4{
+    background-color: #fff;
+    color: #333;
+    border: 1px #d2d2d2 solid;
+}
+.resumeDeal button.btn4:hover{
+    text-decoration:none;
+    border:1px #ed6c2b solid;
+    color: #ed6c2b;
+    transition: all 0.3s;
+}
+
+.resumeDeal button.btn5{
+    border: 1px #ed6c2b solid;
+    background-color: #ed6c2b;
+    color: #fff;
+}
+.resumeDeal button.btn5:hover{
+    text-decoration:none;
+    background: rgb(228,85,13);
+    border:1px #ed6c2b solid;
+    transition: all 0.3s;
+}
+.resumeDeal button.btn6{
+    background-color: #fff;
+    color: #333;
+    border: 1px #d2d2d2 solid;
+}
+.resumeDeal button.btn6:hover{
+    text-decoration:none;
+    border:1px #ed6c2b solid;
+    color: #ed6c2b;
+    transition: all 0.3s;
+}
+
+.resumeDeal button.btn7{
+    border: 1px #ed6c2b solid;
+    background-color: #ed6c2b;
+    color: #fff;
+}
+.resumeDeal button.btn7:hover{
+    text-decoration:none;
+    background: rgb(228,85,13);
+    border:1px #ed6c2b solid;
+    transition: all 0.3s;
+}
+.resumeDeal button.btn8{
+    background-color: #fff;
+    color: #333;
+    border: 1px #d2d2d2 solid;
+}
+.resumeDeal button.btn8:hover{
+    text-decoration:none;
+    border:1px #ed6c2b solid;
+    color: #ed6c2b;
+    transition: all 0.3s;
+}
+.resumeDeal .bottom2 ul.status-1 li:first-child::before{
+    background: #a6a6a6;
+}
+.resumeDeal .bottom2 ul.status-2 li:first-child::before{
+    background: #fec000;
+}
+.resumeDeal .bottom2 ul.status-3 li:first-child::before{
+    background: #7dce00;
+}
+.resumeDeal .bottom2 ul.status-4 li:first-child::before{
+    background: #d63fdf;
+}
+.resumeDeal .bottom2 ul.status-5 li:first-child::before{
+    background: #ff0000;
+}

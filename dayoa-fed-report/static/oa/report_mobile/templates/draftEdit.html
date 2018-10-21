@@ -1,0 +1,48 @@
+<div id="single_report_handle" class="draft_report_handle">
+    <div class="edit_wrap" v-show="handle == 'edit'">
+        <form id="add_report_app">
+            <form-preview v-bind:afields="aFields"></form-preview>
+            <div class="blank_separate_box"></div>
+            <div class="add_report_receive_wrap" @click="inReceiverCover">
+                <div class="title">汇报对象</div>
+                <div class="content">
+                    <ul>
+                        <li v-for="item in receiverList">
+                            <div class="img_box">
+                                <img v-app-head-img="item"/>
+                            </div>
+                            <span class="personName" person-id="{{item.personId}}">{{item.personName}}</span>
+                            <Icon type="minus-circled" @click.stop="delReceiver(item.personId)"></Icon>
+                        </li>
+                    </ul>
+                </div>
+                <div class="del">
+                    <div class="arrow_right"><Icon type="ios-arrow-right"></Icon></div>
+                </div>
+            </div>
+            <div class="blank_separate_box"></div>
+            <div class="can_share_wrap">
+                <div class="title">禁止转发</div>
+                <div class="switch_wrap" @click="switchClick($event)" data-status="off">
+                    <div class="circle"></div>
+                </div>
+            </div>
+            <div class="report_submit_wrap">
+                <div class="report_submit" @click="submitData">提交</div>
+            </div>
+        </form>
+        <div class="blank_for_submitBtn"></div>
+    </div>
+    <div class="draft_cover_wrap">
+        <div class="draft_cover">
+            <div class="cover_content">是否存草稿？</div>
+            <div class="cover_btn_box">
+                <div class="btn_left" @click="saveDraft('0')">否</div>
+                <div class="btn_right" @click="saveDraft('1')">是</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="add-report-child">
+    <router-view></router-view>
+</div>

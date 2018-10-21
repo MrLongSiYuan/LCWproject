@@ -1,0 +1,5 @@
+<div id="addAnnClassify">
+    <p class="addClass_sort"><span class="addClass_name"><span class="addClass_ast">*</span>分类名称</span><input v-model="sClass" maxlength="8" type="text" placeholder="最多可输入8个字" class="addClass_inp"/></p>
+    <p class="addClass_state"><span class="addClass_sta">说明</span><textarea v-model="sExplain" class="addClass_text" v-on:keydown="checkLen" maxlength="100"></textarea>
+    <span class="addClass_num">{{currLen}}/{{maxLen}}</span></p>
+</div>

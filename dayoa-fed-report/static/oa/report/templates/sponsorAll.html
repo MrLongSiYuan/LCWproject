@@ -1,0 +1,109 @@
+<!--我发起的日报周报月报-->
+<div id="reportSummary_wrap" v-cloak>
+    <div id="report_headerWrap" v-cloak>
+        <!--<div v-if="sParams == 'sendOut'" class="title_alreadySend_notSend clearfix" style="width: 100%">-->
+            <!--<span class="tabSendBtn"><a class="active">已发</a></span>-->
+            <!--<span class="tabSendBtn"><a >未发</a></span>-->
+            <!--<span class="moveBar"></span>-->
+        <!--</div>-->
+        <div class="title_alreadySend_notSend clearfix" style="width: 91%">
+            <span class="tabSendBtn"><a class="active">未阅</a></span>
+            <span class="tabSendBtn"><a>已阅</a></span>
+            <span class="tabSendBtn"><a>已发</a></span>
+            <span class="moveBar"></span>
+        </div>
+        <!--汇报查询-->
+        <div class="report_search_logo" v-if="reportList.reportsSource == 'received'">
+            <Icon type="ios-search-strong"></Icon>
+        </div>
+        <div class="report_search_wrap" v-if="reportList.reportsSource == 'received'" style="display: none">
+            <div class="normal_search">
+                <span class="search_btn" v-on:click.prevent="searchReportByName($event,'click')"></span>
+                <input type="text" placeholder="请输入发起人姓名" v-model="searchInfor.personName"  v-on:keyup="searchReportByName($event,'keyup')">
+                <i class="senior_search_show iconfont_dayhr_base">&#xe600;</i>
+            </div>
+            <div class="senior_search" v-if="seniorSearchShow" v-on:click.stop="">
+                <div class="senior_search_item">
+                    <span class="senior_search_title">开始时间</span>
+                    <div class="senior_search_content">
+                        <Date-picker size="small"  type="date" placeholder="选择日期" :value.sync="searchInfor.startTime"></Date-picker>
+                    </div>
+                </div>
+                <div class="senior_search_item">
+                    <span class="senior_search_title">结束时间</span>
+                    <div class="senior_search_content">
+                        <Date-picker size="small"  type="date" placeholder="选择日期" :value.sync="searchInfor.endTime"></Date-picker>
+                    </div>
+                </div>
+                <div class="senior_search_item">
+                    <span class="senior_search_title">关键词</span>
+                    <div class="senior_search_content">
+                        <i-input size="small" placeholder="请输入发起人姓名" :value.sync="searchInfor.personName"></i-input>
+                    </div>
+                </div>
+                <div class="senior_search_item">
+                    <div class="senior_search_btn" v-on:click.prevent="searchReportByName($event,'click')">搜索</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="report_sponsorWrap" v-cloak>
+        <!--汇报分类切换-->
+        <div class="typeReport_wrap">
+            <div class="typeReport">
+                <div class="typeReport_show">
+                    <ul class="tabClick" >
+                        <li class="active" v-bind:data-tempId="" v-if="!(reportList.reportsSource == 'received' && reportList.sendAready == '2') || ReadAllCounts == 0">
+                            <a href="javascript:void(0)">全部</a>
+                        </li>
+
+                        <li v-for="item in reportTypeList" v-bind:data-tempId="item.tempId" v-if="!(reportList.reportsSource == 'received' && reportList.sendAready == '2')" :title="item.tempName">
+                            <a href="javascript:void(0)">{{item.tempName}}</a>
+                        </li>
+                        <!--我收到的未阅且汇报数量不为0-->
+                        <li class="active" v-bind:data-tempId="" v-if="(reportList.reportsSource == 'received' && reportList.sendAready == '2') && ReadAllCounts != 0" style="padding: 0;">
+                            <a href="javascript:void(0)" style="width: 50%;text-align: right;">全部</a>
+                            <a href="javascript:void(0)" class="report_type_number">{{ReadAllCounts}}</a>
+                        </li>
+                        <li v-for="item in reportTypeList" v-bind:data-tempId="item.tempId" v-if="(reportList.reportsSource == 'received' && reportList.sendAready == '2')" style="padding: 0;" :title="item.tempName">
+                            <a href="javascript:void(0)" v-if="item.counts == 0">{{item.tempName}}</a>
+                            <a href="javascript:void(0)" style="width: 50%;text-align: right;" v-if="item.counts != 0">{{item.tempName}}</a>
+                            <a href="javascript:void(0)" class="report_type_number" v-if="item.counts != 0">{{item.counts}}</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="typeReport_anotherBtn" v-if="reportTypeList.length > 4">
+                    <!--<a href="javascript:void(0)">其他</a>-->
+                    <div class="select_ico">
+                        <span>展开</span>
+                        <i class="iconfont_dayhr_base">&#xe600;</i>
+                    </div>
+                    <div class="typeReport_hide" v-show="openWhether">
+                        <ul class="tabClick">
+                            <li v-for="item in reportTypeListAno" v-bind:data-tempId="item.tempId" v-if="!(reportList.reportsSource == 'received' && reportList.sendAready == '2')" :title="item.tempName">
+                                <a href="javascript:void(0)">{{item.tempName}}</a>
+                            </li>
+                            <!--我收到的未阅并且汇报数量不为0-->
+                            <li v-for="item in reportTypeListAno" v-bind:data-tempId="item.tempId" v-if="(reportList.reportsSource == 'received' && reportList.sendAready == '2')" style="padding: 0;" :title="item.tempName">
+                                <a href="javascript:void(0)" v-if="item.counts == 0">{{item.tempName}}</a>
+                                <a href="javascript:void(0)" style="width: 50%;text-align: right;" v-if="item.counts != 0">{{item.tempName}}</a>
+                                <a href="javascript:void(0)" class="report_type_number" v-if="item.counts != 0">{{item.counts}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="writeReport">
+                <ul class="tabClick ">
+                    <li class="addReport active" @click="add()"><a href="javascript:void(0)">写汇报</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--汇报分类结束-->
+        <reports-list-classify v-bind:report-list="reportList"></reports-list-classify>
+        <div id="report_base_mmpager_wrap">
+            <Page :total="reportTotal" size="small" show-elevator show-sizer show-total class = "report_base_mmpager" :page-size="pageChangeInfor.onePageNum-0" :current="pageChangeInfor.pageNo-0" :page-size-opts="pageChangeInfor.onePageNumArr" v-on:on-change="changePageNo" v-on:on-page-size-change="changeOneDataNum" v-if="reportTotal != 0"></Page>
+        </div>
+    </div>
+</div>
+

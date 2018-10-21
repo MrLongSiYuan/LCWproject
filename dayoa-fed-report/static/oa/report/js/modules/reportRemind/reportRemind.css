@@ -1,0 +1,48 @@
+.ivu-select-selection .ivu-tag{
+    display: none;
+}
+.ivu-select-multiple .ivu-select-selection .ivu-select-placeholder{
+    padding-right: 0;
+}
+.i_select_wrap{
+    width: 95px;
+    display: inline-block;
+    position: relative;
+    margin-left: 5px;
+}
+.i_select_wrap .suffix{
+    margin-left: 4px;
+}
+.weeks_wrap{
+    width: 75px;
+    display: inline-block;
+    position: relative;
+}
+.show_content_remind{
+    height: 100%;
+    width: 45px;
+    position: absolute;
+    left: 4px;
+    top: 0;
+    z-index: 9;
+    display: none;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.remind_information{
+    font-size: 12px;
+    color: #ED6C2B;
+    line-height: 1.5;
+    padding-left: 88px;
+    margin-top: -18px;
+    margin-bottom: 6px;
+    max-width: 470px;
+    padding-right: 14px;
+    word-break: break-all;
+}
+textarea.ivu-input{
+    resize: none;
+    font-size: 14px;
+    color: #333;
+}

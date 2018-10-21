@@ -1,0 +1,30 @@
+<div id="workflow_addWorkflowSetting" class="clearfix">
+
+	<!--选择模板--第1步-->
+	<div class="add_select_template clearfix">
+		<!--流程模板新建-->
+		<div class="add_template">
+			<h1>编辑样式</h1>
+			<div class="add" v-on:click="createCustomForm">
+				<span class="icon">+</span>
+				<span class="name">自定义</span>
+			</div>
+		</div>
+
+		<!--流程模板选择-->
+		<div class="select_template">
+			<h1>可选样式</h1>
+			<ul class="list">
+				<li v-for="item in templateList" track-by="$index" v-bind:class="{'selected':item.isSelected}">
+					<span class="icon"></span>
+					<span class="name">{{item.formName}}</span>
+					<div class="operate" title="{{item.formName}}">
+						<span style="left:10px;cursor:pointer;" v-on:click.prevent="previewTemplate($event,$index,item)">预览</span>
+						<span style="right:10px;cursor:pointer;" v-on:click.prevent="selectTemplate($event,$index,item)">应用</span>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+</div>

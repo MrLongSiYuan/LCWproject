@@ -1,0 +1,32 @@
+<div id="clipboard_wrap">
+    <div class="clipboard_box" transition="in_fade" v-show="showFlag">
+        <div class="clipboard_header" v-if="notshow">
+            <!--<div class="note_number">{{noteContent.length !=0 ? noteContent.length : '0'}}个字</div>-->
+            <div class="first_prompt" v-show="firstOpen">欢迎使用汇报便签，所有内容都会自动保存</div>
+            <div class="auto_save_time" v-show="autoFlag">自动保存于：{{autoSavaTime}}</div>
+            <div class="manual_save_time" v-show="manualFlag">保存于：{{manualSaveTime}}</div>
+        </div>
+        <div class="clipboard_center_box" v-show="centerBoxShow" transition="in_right">
+            <div class="close_header">
+                <div class="close_btn" @click="closeClipboard"></div>
+                便签
+            </div>
+            <div class="input_box">
+                <textarea placeholder="请复制或输入内容，内容将自动保存" v-model="noteContent" ></textarea>
+            </div>
+            <div class="footer_btn">
+                <div class="clear_all_content" @click="delteAllBtn">清空</div>
+                <div class="save_content" @click="saveContentBtn">复制全部</div>
+            </div>
+        </div>
+    </div>
+    <div class="draft_cover_wrap">
+        <div class="draft_cover">
+            <div class="cover_content">确定要清空全部内容？</div>
+            <div class="cover_btn_box">
+                <div class="btn_left" @click="deleteContent('0')">取消</div>
+                <div class="btn_right" @click="deleteContent('1')">确定</div>
+            </div>
+        </div>
+    </div>
+</div>

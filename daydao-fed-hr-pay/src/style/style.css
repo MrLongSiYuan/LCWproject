@@ -1,0 +1,59 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'iconfont_daydao_hr_pay';  /* project id 400656 */
+    src: url('./font/iconfont.eot');
+    src: url('./font/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('./font/iconfont.woff') format('woff'),
+    url('./font/iconfont.ttf') format('truetype'),
+    url('./font/iconfont.svg#iconfont_daydao_hr_pay') format('svg');
+}
+.iconfont_daydao_manage_admin {
+    font-family:"iconfont_daydao_hr_pay" !important;
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/*html{*/
+
+
+/*height:100%;*/
+
+
+/*}*/
+
+
+/*body{*/
+
+
+/*overflow: hidden;*/
+
+
+/*height:100%;*/
+
+
+/*}*/
+
+
+/*#daydao_main_app{*/
+
+
+/*height:100%;*/
+
+
+/*}*/
+
+
+/*
+路由切换动画
+*/
+
+
+/*.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s ease;
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}*/

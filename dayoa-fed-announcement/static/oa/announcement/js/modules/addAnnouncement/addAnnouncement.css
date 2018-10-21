@@ -1,0 +1,290 @@
+#annSend{
+    width: 540px;
+}
+#annSend .annSend_title{
+    height: 30px;
+}
+#annSend input::-webkit-input-placeholder {
+    color: #ddd;
+}
+#annSend input:-moz-placeholder {
+    color: #ddd;
+}
+#annSend input::-moz-placeholder {
+    color: #ddd;
+}
+#annSend input::-ms-input-placeholder {
+    color: #ddd;
+}
+#annSend .annSend_title_left{
+    height: 30px;
+    width: 100px;
+    display: block;
+    text-align: right;
+    line-height: 30px;
+    float: left;
+}
+#annSend .annSend_title_left .must_input{
+    display: inline-block;
+    height: 30px;
+    font-style: normal;
+    color: red;
+    margin-right: 6px;
+    font-size: 16px;
+    vertical-align: middle
+}
+#annSend .annSend_titInp{
+    width: 375px;
+    height: 30px;
+    display: block;
+    float: left;
+    border-radius: 2px;
+    border: 1px solid #bcbcbc;
+    padding-left:5px;
+    margin-left: 12px;
+    box-sizing: border-box;
+}
+#annSend .annSend_receive{
+    margin-top: 18px;
+}
+#annSend .annSend_receive .annSend_receive_title{
+
+}
+#annSend .annSend_receive #dropSelect_person{
+    float: left;
+    margin-left: 12px;
+}
+#annSend .ann_add_classify{
+    margin-top: 18px;
+}
+#annSend .ann_add_classify #dropSelect_classify{
+    float: left;
+    margin-left: 12px;
+}
+#annSend .annSend_selPer{
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 2px;
+    border: 1px solid #bcbcbc;
+    display: block;
+    float: left;
+    margin-left: 12px;
+    cursor: pointer;
+    box-sizing: content-box;
+}
+#annSend .annSend_content{
+    margin-top: 18px;
+}
+#annSend .annSend_content .annSend_text{
+    width:370px;
+    height: 100px;
+    resize: none;
+    margin-left: 12px;
+    padding: 5px;
+    border: 1px solid #bcbcbc;
+    border-radius: 5px;
+    float: left;
+    box-sizing: border-box;
+}
+#annSend .announce_add_pic{
+    margin-top: 18px;
+}
+#annSend .annSend_addFile{
+    width: 70px;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+#annSend .annSend_fileInp{
+    width: 70px;
+    height: 30px;
+    margin-left: -70px;
+    opacity: 0;
+    vertical-align: middle;
+}
+#annSend .annSend_num{
+    display: inline-block;
+    color: #d2d2d2;
+    position: absolute;
+    right: 70px;
+    bottom: 15px;
+}
+#annSend .annSend_file{
+    height: 30px;
+    text-align: center;
+    position: relative;
+}
+#annSend_comm{
+    vertical-align: middle;
+}
+
+/*添加图片*/
+#annSend .addPicPreview{
+    display:inline-block;
+    vertical-align: top;
+    margin-left: 16px;
+    float: left;
+    width: 400px;
+}
+#annSend .addPicPreview .imgPreview{
+    float: left;
+    width: 45px;
+    height: 45px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+#annSend .imgPreview .loading{
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height:100%;
+    background: rgba(0, 0, 0, 0.37);
+    text-align: center;
+    line-height: 45px;
+}
+#annSend .imgPreview .loading img{
+    position: absolute;
+    max-width: 45px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+#annSend .imgPreview img.preview{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 45px;
+    left: 50%;
+}
+#annSend .f_input_wrap .annSend_tit{
+    line-height: 45px;
+    float: left;
+}
+.f_input_wrap .addPic{
+    width: 45px;
+    height: 45px;
+    border: 1px solid #bcbcbc;
+    text-align: center;
+    line-height: 36px;
+    font-size: 46px;
+    color: #bcbcbc;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+}
+.f_input_wrap .addPic{
+    display: block;
+    float: left;
+}
+.f_input_wrap .addPic input[type='file']{
+    opacity: 0;
+    width:45px;
+    height:45px;
+    position: absolute;
+    left:0;
+    top:0;
+    cursor: pointer;
+}
+/*删除图片列表中的图片*/
+#annSend .imgPreview .del{
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    color: red;
+    cursor: pointer;
+    font-size: 15px;
+}
+#annSend .imgPreview:hover .del{
+    display: block;
+}
+/*添加图片结束*/
+/*添加附件*/
+#annSend .announce_add_file{
+    margin-top: 18px;
+}
+#annSend .addFilePreview{
+    max-height: 300px;
+    overflow: auto;
+    width: 412px;
+}
+#annSend .file_content_wrap{
+    float: left;
+    margin-left: 16px;
+}
+#annSend .addFilePreview li{
+    position: relative;
+    height: 37px;
+    background: #f0f0f0;
+    width: 255px;
+    padding-left: 10px;
+    padding-top: 7px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+#annSend .addFilePreview .icon{
+    background: url(../../../images/bgs.png) -1px -161px;
+    width: 23px;
+    height: 23px;
+    text-indent: -999em;
+    overflow: hidden;
+    float: left;
+}
+#annSend .addFilePreview .filename{
+    float: left;
+    line-height: 23px;
+    margin-left: 7px;
+    white-space: nowrap;
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#annSend .addFilePreview .size{
+    line-height: 23px;
+    margin-left: 10px;
+    position: absolute;
+    right: -64px;
+}
+#annSend .addFilePreview .status{
+    line-height: 23px;
+    margin-left: 10px;
+    position: absolute;
+    right: -132px;
+}
+
+/*文件列表删除按钮*/
+#annSend .addFilePreview li .del{
+    display: none;
+    position: absolute;
+    right: 5px;
+    top:0;
+    color: red;
+    font-size: 16px;
+    cursor: pointer;
+}
+#annSend .addFilePreview li:hover .del{
+    display: block;
+}
+/*添加附件结束*/
+/*switch插件开始*/
+#annSend .switch_wrap{
+    margin-top: 18px;
+}
+#annSend .switch_wrap .annSend_tit{
+    float: left;
+}
+#annSend .switch_wrap .switch{
+    float: left;
+    margin-left: 16px;
+}
+/*switch插件结束*/

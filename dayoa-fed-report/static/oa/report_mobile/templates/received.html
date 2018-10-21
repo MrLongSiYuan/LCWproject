@@ -1,0 +1,40 @@
+<div id="report_app_received">
+    <div id="loading_wrap" :style="{ position: 'fixed',
+    width: '100%',
+    height: 'calc(100% - 43px)',
+    left: '0',
+    top: '43px',
+    display: 'none',
+    background: 'url('+gMain.baseStaticPath+'oa/report_mobile/images/loading-1.gif) no-repeat center center',
+    'z-index':'99999' }"></div>
+    <div class="report_header_tap">
+        <ul class="clearfix">
+            <li><a href="javascript:void(0)" @click="jumpSendOut">我发出的</a></li>
+            <li class="active"><a href="javascript:void(0)">我收到的</a></li>
+        </ul>
+    </div>
+    <div class="fade_in_out" transition="fadein_in_out">
+        <div class="history_type_report_wrap">
+            <div class="report_type_btn" @click="showCover('parentRouter')"><span>全部</span><i></i></div>
+            <div class="report_history_btn" @click="goHistoryReport">历史汇报</div>
+            <!--<div class="report_history_btn" @click="searchReport">历史汇报</div>-->
+        </div>
+        <reports-list-classify v-bind:report-list-info="reportListInfo"></reports-list-classify>
+        <div class="dropload-refresh" style="display:none">↑&nbsp;上拉加载更多</div>
+        <div class="dropload-load" style="display:none"><span class="loading"></span>加载中...</div>
+        <div class="dropload-noData" style="display:none">没有更多了~</div>
+    </div>
+    <div class="report_type_cover" v-show="coverShow" @click="hideCover" transition="fade_cover">
+        <div class="reportType_list_wrap" @click.stop="" v-show="typeListShow" transition="type_rise">
+            <div class="all_reportType_btn active" @click="searchTempEvent($event,'')">全部</div>
+            <ul>
+                <li class="report_type_list_btn" v-for="item in reportTypeList" :temp-id="item.tempId" @click="searchTempEvent($event,item.tempId,item.tempName)">{{item.tempName}}</li>
+            </ul>
+        </div>
+    </div>
+    <!--搜索汇报-->
+    <div class="received">
+        <router-view></router-view>
+    </div>
+    <div id="report_clipboard_inputBtn" :style="{width: '45px',height: '33px','position': 'fixed','left': 'calc(100% - 45px)','top': '50%','margin-top': '-16.5px','background': 'url('+gMain.baseStaticPath+'oa/report_mobile/images/tag_icon_notes_def@3x.png) no-repeat','background-size': '100% 100%','z-index':'999'}" @click="jumpClipboard"></div>
+</div>

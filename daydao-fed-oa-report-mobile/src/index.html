@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> <!--此处设置其他浏览器设置为chrome内核或者为IE的最新版本渲染-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <link rel="Shortcut Icon" href="//static.daydao.com/static/common/images/logoicond.ico?v=<%= htmlWebpackPlugin.options.sVersion %>">
+    <link rel="stylesheet" href="//static.daydao.com/static/common/css/reset_v2.css?v=<%= htmlWebpackPlugin.options.sVersion %>"> <!--新本reset-->
+    <title>工作汇报</title>
+</head>
+<body>
+
+<!--页面视图渲染部分-->
+<div id="daydao_main_app">
+    <router-view></router-view>
+</div>
+
+<script src="//static.daydao.com/static/common/plugins/jquery-1.11.1.min.js?v=<%= htmlWebpackPlugin.options.sVersion %>"></script>
+<script src="//static.daydao.com/static/common/plugins/sea.js?v=<%= htmlWebpackPlugin.options.sVersion %>"></script>
+<script src="//static.daydao.com/static/common/plugins/vue2.js?v=<%= htmlWebpackPlugin.options.sVersion %>"></script>
+<script src="//static.daydao.com/static/common/plugins/vue-router2.js?v=<%= htmlWebpackPlugin.options.sVersion %>"></script>
+<script src="//static.daydao.com/static/common/plugins/vuex2.js?v=<%= htmlWebpackPlugin.options.sVersion %>"></script>
+<script>var sProjectVersion = "<%= htmlWebpackPlugin.options.sVersion %>";</script>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                console.log(clientWidth)
+                if (!clientWidth) return;
+                if (clientWidth >= 640) {
+                    docEl.style.fontSize = '100px';
+                } else {
+                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                }
+            };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document,window);
+</script>
+</body>
+</html>

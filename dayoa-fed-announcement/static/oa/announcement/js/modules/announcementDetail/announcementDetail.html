@@ -1,0 +1,111 @@
+<div id="announcement_detail">
+    <div class="announcement_detail_box">
+        <p class="preview_title">{{sTitle}}</p>
+        <p class="preview_sort">
+            <span class="preview_classify">分类：{{sClassify}}</span>
+            <span class="preview_issuer">发布人：{{releaser}}</span>
+            <span class="preview_sTime" v-add-ann-time="announcementData"></span>
+        </p>
+        <p class="preview_content" v-ann-content-handle="announcementData"></p>
+        <div class="ann_img_box">
+            <p class="ofile_type_name">图片：</p>
+            <ul class="imglist clearfix">
+                <li v-for="itemPic in oFileList" track-by="$index" data-uuid="{{itemPic.resourceUrl-0}}" v-if="itemPic.fileType == 2">
+                    <div class="preview_download_upload">
+                        <div class="point_up"></div>
+                        <div class="img_operation_item" v-on:click.prevent="previewPic($event,itemPic.realUrl)">
+                            <Icon type="ios-eye-outline"></Icon>
+                            <span>查看</span>
+                        </div>
+                        <!--<div class="img_operation_item">
+                            <Icon type="ios-cloud-upload-outline"></Icon>
+                            <span>存云盘</span>
+                        </div>-->
+                        <div class="img_operation_item" v-on:click.prevent="downloadFile(itemPic.resourceUrl)">
+                            <Icon type="ios-cloud-download-outline"></Icon>
+                            <span>下载</span>
+                        </div>
+                    </div>
+                    <div class="imglist_imgbox">
+                        <img v-bind:src="itemPic.realUrl" class="previewPic" alt="">
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="addFilePreview clearfix">
+            <p class="ofile_type_name">附件：</p>
+            <ul class="filelist clearfix">
+                <li v-for="itemFile in oFileList" track-by="$index" data-uuid="{{itemFile.resourceUrl-0}}" v-if="itemFile.fileType == 1">
+                    <div class="preview_download_upload">
+                        <div class="point_left"></div>
+                        <div class="img_operation_item" v-on:click.prevent="previewFile($event,itemFile.resourceUrl-0,itemFile.fileSort)">
+                            <Icon type="ios-eye-outline"></Icon>
+                            <span>查看</span>
+                        </div>
+                        <!--<div class="img_operation_item">
+                            <Icon type="ios-cloud-upload-outline"></Icon>
+                            <span>存云盘</span>
+                        </div>-->
+                        <div class="img_operation_item" v-on:click.prevent="downloadFile(itemFile.resourceUrl)">
+                            <Icon type="ios-cloud-download-outline"></Icon>
+                            <span>下载</span>
+                        </div>
+                    </div>
+                    <span class="icon">图标：</span>
+                    <span class="filename" title="{{itemFile.fileName}}">{{itemFile.fileName}}</span>
+                    <span class="size">{{itemFile.fileSize}}</span>
+                </li>
+            </ul>
+        </div>
+        <div class="preview_publish">发布范围({{sReceiver.length}}):
+            <template v-for="item in sReceiver">
+                <span class="preview_publisher">{{item.receiver_name}}<i>、</i></span>
+            </template>
+            <div class="publish_Range">
+                <div class="preview_unfold" @click="unfold" v-if="isShow">展开</div>
+                <div class="preview_unfold" @click="unfold" v-else>收起</div>
+            </div>
+        </div>
+    </div>
+    <div class="operation_detail_wrap" v-if="annoucementType != 'notPublish'">
+        <ul class="clearfix">
+            <!--阅读-->
+            <li @click="showOperation($event,'read')">
+                <div class="operation_logo" v-if="!announcementData.isRead"><img :src="gMain.baseStaticPath+'oa/announcement/images/announcement_unread_icon.png'" alt=""></div>
+                <div class="operation_logo" v-if="announcementData.isRead"><img :src="gMain.baseStaticPath+'oa/announcement/images/announcement_read_icon.png'" alt=""></div>
+                <div class="operation_num">{{announcementData.readCount}}</div>
+            </li>
+            <!--收藏-->
+            <!--<li>-->
+            <!--<div class="operation_logo" v-if="obj.iscollect == 0"><img :src="gMain.baseStaticPath+'oa/announcement/images/announcement_uncoll_icon.png'" alt=""></div>-->
+            <!--<div class="operation_logo" v-if="obj.iscollect == 1"><img :src="gMain.baseStaticPath+'oa/announcement/images/announcement_coll_icon.png'" alt=""></div>-->
+            <!--&lt;!&ndash;<div class="operation_num">{{}}</div>&ndash;&gt;-->
+            <!--</li>-->
+            <!--点赞-->
+            <li>
+                <div class="operation_logo" v-if="!announcementData.isPraise" @click="praiseOperation($event)"><img :src="gMain.baseStaticPath+'oa/announcement/images/announcement_unlike_icon.png'" alt=""></div>
+                <div class="operation_logo" v-if="announcementData.isPraise" @click="praiseOperation($event)"><img :src="gMain.baseStaticPath+'oa/announcement/images/announcement_like_icon.png'" alt=""></div>
+                <div class="operation_num" @click="showOperation($event,'praise')">{{announcementData.praiseCount}}</div>
+            </li>
+            <!--评论-->
+            <li @click="showOperation($event,'comment')" v-if="announcementData.is_comment">
+                <div class="operation_logo"  v-if="!announcementData.isComment"><img :src="gMain.baseStaticPath+'oa/announcement/images/announcement_uncomm_icon.png'" alt=""></div>
+                <div class="operation_logo" v-if="announcementData.isComment"><img :src="gMain.baseStaticPath+'oa/announcement/images/announcement_comm_icon.png'" alt=""></div>
+                <div class="operation_num">{{announcementData.commentscount}}</div>
+            </li>
+        </ul>
+    </div>
+    <div id="comment_wrap" v-show="showComment">
+        <div class="arrow_up" style="left: 622px"></div>
+        <div id="comment_plugin"></div>
+    </div>
+    <div id="read_wrap" v-show="showRead">
+        <div class="arrow_up" style="left: 622px"></div>
+        <div id="read_plugin"></div>
+    </div>
+    <div id="praise_wrap" v-show="showPraise">
+        <div class="arrow_up" style="left: 622px"></div>
+        <div id="praise_plugin"></div>
+    </div>
+    <div class="watermark_wrap"></div>
+</div>

@@ -1,0 +1,48 @@
+<div id="add_announcement_wrap">
+    <div class="choose_classify_box clearfix">
+        <div class="input_name">公告分类</div>
+        <input type="text" readonly  placeholder="请选择（必填）">
+        <Icon type="ios-arrow-right"></Icon>
+    </div>
+    <div class="announcement_title">
+        <input type="text" placeholder="请输入公告标题（20字以内）">
+    </div>
+    <div class="announcement_content">
+        <textarea placeholder="请输入公告内容"></textarea>
+    </div>
+    <div class="add_picture_wrap">
+        <div class="add_picture_header">
+            <span class="title">图片</span>
+            <span class="describe">最多9张（选填）</span>
+        </div>
+        <div class="add_picture_content">
+            <ul class="clearfix">
+                <li>
+                    <div class="img_box">
+                        <img :src="" alt="">
+                    </div>
+                </li>
+                <li class="add_mark">
+                    <div class="img_box">
+                        <img :src="gMain.baseStaticPath+'oa/announcement_mobile/images/img_icon_add_def@3x.png'" alt="">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="add_file_wrap clearfix">
+        <div class="input_name">公告分类</div>
+        <input type="text" readonly  placeholder="请选择（必填）">
+        <Icon type="ios-arrow-right"></Icon>
+    </div>
+    <div class="choose_publish_range clearfix">
+        <div class="input_name">发布范围</div>
+        <Icon type="ios-arrow-right"></Icon>
+    </div>
+    <div class="set_time_publish clearfix">
+        <div class="input_name">定时发布</div>
+        <div class="switch_wrap" @click="switchClick($event)" data-status="off">
+            <div class="circle"></div>
+        </div>
+    </div>
+</div>

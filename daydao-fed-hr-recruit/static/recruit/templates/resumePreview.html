@@ -1,0 +1,174 @@
+<div id="resumePreview">
+    <div class="resume-preview">
+        <div class="resume-preview-title">
+            <div class="resume-preview-title-content">
+                <img v-bind:src=gMain.baseStaticHrPath+"recruit/images/default_headImg.png" alt="头像" v-if="!infoData.image||infoData.image ==''"/>
+                <img v-bind:src="infoData.image" alt="头像" v-else/>
+                <p><span class="sex0"></span><span class="name">{{infoData.name}}</span><span v-bind:class="'sex' + infoData.gender"></span></p>
+                <p class="info" v-if="infoData.age==''&&infoData.educationName!=''&&infoData.workExperience!=''">{{infoData.educationName}}/{{infoData.workExperience}}</p>
+                <p class="info" v-if="infoData.age!=''&&infoData.educationName==''&&infoData.workExperience!=''">{{infoData.age}}岁/{{infoData.workExperience}}</p>
+                <p class="info" v-if="infoData.age!=''&&infoData.educationName!=''&&infoData.workExperience==''">{{infoData.age}}岁/{{infoData.educationName}}</p>
+                <p class="info" v-if="infoData.age==''&&infoData.educationName==''&&infoData.workExperience!=''">{{infoData.workExperience}}</p>
+                <p class="info" v-if="infoData.age==''&&infoData.educationName!=''&&infoData.workExperience==''">{{infoData.educationName}}</p>
+                <p class="info" v-if="infoData.age!=''&&infoData.educationName==''&&infoData.workExperience==''">{{infoData.age}}岁</p>
+                <p class="info" v-if="infoData.age!=''&&infoData.educationName!=''&&infoData.workExperience!=''">{{infoData.age}}岁/{{infoData.educationName}}/{{infoData.workExperience}}</p>
+                <p class="info" v-if="infoData.age==''&&infoData.educationName==''&&infoData.workExperience==''"></p>
+            </div>
+
+        </div>
+        <div class="resume-preview-body-0">
+            <div class="resume-preview-body-0-top">
+                简介
+            </div>
+            <div class="resume-preview-body-0-content">
+                <p>{{infoData.selfDesc}}</p>
+            </div>
+        </div>
+        <div class="resume-preview-clear-both"></div>
+        <div class="resume-preview-body-1">
+            <div class="resume-preview-body-1-top">
+                 基本信息
+            </div>
+            <div class="resume-preview-body-1-content">
+                 <p>最高学历：{{infoData.educationName}}</p>
+                 <p>工作年限：{{infoData.workExperience}}</p>
+                 <p>所在城市：{{infoData.city}}</p>
+                 <p>联系电话：{{infoData.mobile}}</p>
+                 <p>联系邮箱：{{infoData.email}}</p>
+            </div>
+        </div>
+        <div class="resume-preview-clear-both"></div>
+        <div class="resume-preview-body-2">
+            <div class="resume-preview-body-2-top">
+                期望工作
+            </div>
+            <div class="resume-preview-body-2-content">
+                <p>期望薪资：{{infoData.hopeSalaryName}}</p>
+                <p>期望职位：{{infoData.hopePosName}}</p>
+                <p>期望城市：{{infoData.hopeWorkSpaceName}}</p>
+                <p>职位类型：{{infoData.hopePosType}}</p>
+            </div>
+        </div>
+
+        <template v-if="infoData.workingList&&infoData.workingList.length > 0">
+            <div class="resume-preview-clear-both"></div>
+            <div class="resume-preview-body-3">
+                <div class="resume-preview-body-3-top">
+                    工作经验
+                </div>
+                <div class="resume-preview-body-3-content">
+                    <div class="wrap" v-for="item in infoData.workingList">
+                         <p class="p1">{{item.posName}} | {{item.company}}</p>
+                         <p class="p2">{{item.startDate}}-{{item.endDate}}</p>
+                         <p class="p2">{{item.content}}</p>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template v-if="infoData.educationList&&infoData.educationList.length > 0">
+            <div class="resume-preview-clear-both"></div>
+            <div class="resume-preview-body-4">
+                <div class="resume-preview-body-4-top">
+                    教育经历
+                </div>
+                <div class="resume-preview-body-4-content">
+                    <div class="wrap" v-for="item in infoData.educationList">
+                        <p class="p1">{{item.school}} | {{item.profession}} | {{item.eduLevelName}}</p>
+                        <p class="p2">{{item.startDate}}-{{item.endDate}}</p>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template v-if="infoData.projectList&&infoData.projectList.length > 0">
+            <div class="resume-preview-clear-both"></div>
+            <div class="resume-preview-body-5">
+                <div class="resume-preview-body-5-top">
+                    项目经验
+                </div>
+                <div class="resume-preview-body-5-content">
+                    <div class="wrap" v-for="item in infoData.projectList">
+                        <p class="p1">{{item.projectName}} | {{item.responsibility}}</p>
+                        <p class="p2">{{item.startDate}}-{{item.endDate}}</p>
+                        <p class="p2">{{item.projectDesc}}</p>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template v-if="infoData.technologieList&&infoData.technologieList.length > 0">
+            <div class="resume-preview-clear-both"></div>
+            <div class="resume-preview-body-6">
+                <div class="resume-preview-body-6-top">
+                    技能评价
+                </div>
+                <div class="resume-preview-body-6-content">
+                    <div class="wrap" v-for="item in infoData.technologieList">
+                        <template v-if="item.level == 1">
+                            <p class="p1" >{{item.name}} | 了解</p>
+                            <span class="percent"><span class="percent-wrap" style="width:25%"></span></span>
+                        </template>
+                        <template v-if="item.level == 2">
+                            <p class="p1" >{{item.name}} | 掌握</p>
+                            <span class="percent"><span class="percent-wrap" style="width:50%"></span></span>
+                        </template>
+                        <template v-if="item.level == 3">
+                            <p class="p1" >{{item.name}} | 精通</p>
+                            <span class="percent"><span class="percent-wrap" style="width:75%"></span></span>
+                        </template>
+                        <template v-if="item.level == 4">
+                            <p class="p1" >{{item.name}} | 专家</p>
+                            <span class="percent"><span class="percent-wrap" style="width:100%"></span></span>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template v-if="infoData.trainLis&&infoData.trainList.length > 0">
+            <div class="resume-preview-clear-both"></div>
+            <div class="resume-preview-body-7">
+                <div class="resume-preview-body-7-top">
+                    培训经历
+                </div>
+                <div class="resume-preview-body-7-content">
+                    <div class="wrap" v-for="item in infoData.trainList">
+                        <p class="p1">{{item.course}}</p>
+                        <p class="p2">{{item.startDate}}-{{item.endDate}}</p>
+                        <p class="p2">{{item.organization}}</p>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template v-if="infoData.languageList&&infoData.languageList.length > 0">
+            <div class="resume-preview-clear-both"></div>
+            <div class="resume-preview-body-8">
+                <div class="resume-preview-body-8-top">
+                    语言能力
+                </div>
+                <div class="resume-preview-body-8-content">
+                    <div class="wrap" v-for="item in infoData.languageList">
+                        <template v-if="item.level == 1">
+                            <p class="p1" >{{item.language}} | 了解</p>
+                            <span class="percent"><span class="percent-wrap" style="width:25%"></span></span>
+                        </template>
+                        <template v-if="item.level == 2">
+                            <p class="p1" >{{item.language}} | 掌握</p>
+                            <span class="percent"><span class="percent-wrap" style="width:50%"></span></span>
+                        </template>
+                        <template v-if="item.level == 3">
+                            <p class="p1" >{{item.language}} | 精通</p>
+                            <span class="percent"><span class="percent-wrap" style="width:75%"></span></span>
+                        </template>
+                        <template v-if="item.level == 4">
+                            <p class="p1" >{{item.language}} | 专家</p>
+                            <span class="percent"><span class="percent-wrap" style="width:100%"></span></span>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+</div>

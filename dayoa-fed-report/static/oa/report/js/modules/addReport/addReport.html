@@ -1,0 +1,22 @@
+<div id="report_addReportSetting" class="clearfix">
+    <!--选择模板--第1步-->
+    <div class="add_select_template clearfix">
+        <div class="select_template">
+            <ul class="list" style="min-height: 124px;">
+                <li v-for="item in templateList" track-by="$index" v-bind:class="{'selected':item.isSelected}" v-on:click.prevent="previewAudit(item,'start')">
+                    <span class="img_box">
+                        <img :src="gMain.baseStaticPath+'oa/report/images/report_day.png'" alt="" v-if="item.name == '日报'">
+                        <img :src="gMain.baseStaticPath+'oa/report/images/report_month.png'" alt="" v-if="item.name == '月报'">
+                        <img :src="gMain.baseStaticPath+'oa/report/images/report_week.png'" alt="" v-if="item.name == '周报'">
+                        <img :src="gMain.baseStaticPath+'oa/report/images/report_another.png'" alt="" v-if="item.name != '日报' && item.name != '月报' && item.name != '周报'">
+                    </span>
+                    <span class="name" title="{{item.name}}">{{item.name}}</span>
+                    <!--<div class="operate" title="{{item.name}}">-->
+                        <!--<span style="left:45px;cursor:pointer;" v-on:click.prevent="previewAudit(item,'start')">发起</span>-->
+                    <!--</div>-->
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>

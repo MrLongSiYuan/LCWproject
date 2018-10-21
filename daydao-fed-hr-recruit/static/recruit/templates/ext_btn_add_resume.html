@@ -1,0 +1,454 @@
+<div class="extBtnAddResume" :style="{width:editDialog ? '1040px':'764px'}">
+    <div class="header_btn_group_wrap clearfix" v-if="editDialog">
+        <div class="candidate_position_wrap clearfix">
+            <h2 class="candidate_status">新简历</h2>
+            <h2 class="position_name">销售总监</h2>
+        </div>
+        <div class="header_btn_box">
+            <ul class="btn_wrap_one clearfix">
+                <li class="list_one">移至待沟通<i class="iconfont_dayhr_base">&#xe600;</i></li>
+                <li class="list_one">淘汰</li>
+                <li class="list_one">转荐</li>
+            </ul>
+        </div>
+    </div>
+    <div class="candidate_bottom">
+        <div class="candidate_bottom_left">
+            <!--基本信息开始-->
+            <div class="add-resume-person-info">
+                <div class="resume_title">
+                    <div class="blue_block"></div>
+                    <h2>基本信息</h2>
+                    <span class="iconfont_daydao_recruit icon" title="编辑" v-if="editInfo == false" v-on:click="editInfoFun">&#xe607;</span>
+                </div>
+                <div class="body" v-if="editInfo == true">
+                    <form id="add-resume-person-info">
+                        <div class="body-1 float-left">
+                            <div class="wrap">
+                                <span class="span-1 float-left"><b>*</b>姓名：</span><span class="span-2 float-right"><input class="self" name="resume_name" v-model="infoData.sName"  type="text" maxlength="32"/></span>
+                            </div>
+                            <div class="wrap">
+                                <span class="span-1 float-left"><b>*</b>出生日期：</span><span class="span-2 float-right"><input class="self Wdate" name="resume_birthday" v-model="infoData.sBirthday" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" type="text" maxlength="32"/></span>
+                            </div>
+                            <div class="wrap">
+                                <span class="span-1 float-left"><b>*</b>手机号：</span><span class="span-2 float-right"><input class="self" name="resume_mobile" v-model="infoData.sMobile" type="text" maxlength="32"/></span>
+                            </div>
+                            <div class="wrap">
+                                <span class="span-1 float-left"><b>*</b>邮箱：</span><span class="span-2 float-right"><input class="self" name="resume_email" v-model="infoData.sEmail" type="text" maxlength="32"/></span>
+                            </div>
+                            <div class="wrap">
+                                <span class="span-1 float-left">最高学历：</span><span class="span-2 float-right"><div id="recruit_resume_drop_ct_321a" name="resume_sEdu" class="dayhr_drop_select"></div></span>
+                            </div>
+                            <div class="wrap">
+                                <span class="span-1 float-left">籍贯：</span><span class="span-2 float-right"><div id="recruit_resume_drop_ct_110a" name="resume_originPlace" class="dayhr_drop_select"></div></span>
+                            </div>
+                            <div class="wrap">
+                                <span class="span-1 float-left">民族：</span><span class="span-2 float-right"><div id="recruit_resume_drop_ct_302" name="resume_nation" class="dayhr_drop_select"></div></span>
+                            </div>
+                            <div class="wrap">
+                                <span class="span-1 float-left">简历类别：</span><span class="span-2 float-right"><div id="recruit_resume_drop_re_1" name="resume_deliverType" class="dayhr_drop_select"></div></span>
+                            </div>
+                        </div>
+                        <div class="body-2 float-right">
+                            <div class="wrap">
+                                <span class="span-1 float-left"><b>*</b>性别：</span><span class="span-2 float-right"><div id="recruit_resume_drop_ct_300" name="resume_gender" class="dayhr_drop_select"></div></span>
+                            </div>
+                            <div class="wrap">
+                                <span class="span-1 float-left"><b>*</b>参加工作日期：</span><span class="span-2 float-right"><input  class="self Wdate" name="resume_workTime" v-model="infoData.sWorkTime" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" type="text" maxlength="32"/></span>
+                            </div>
+                            <div class="wrap">
+                                <span class="span-1 float-left">求职状态：</span><span class="span-2 float-right"><div id="recruit_resume_drop_re_2" name="resume_workStatus" class="dayhr_drop_select"></div></span>
+                            </div>
+                            <div class="wrap">
+                                <span class="span-1 float-left"><b>*</b>所在地：</span><span class="span-2 float-right"><div id="recruit_resume_drop_ct_110b" name="resume_city" class="dayhr_drop_select"></div></span>
+                            </div>
+                            <div class="wrap">
+                                <span class="span-1 float-left">婚姻状况：</span><span class="span-2 float-right"><div id="recruit_resume_drop_ct_306" name="resume_maritalStatus" class="dayhr_drop_select"></div></span>
+                            </div>
+                            <div class="wrap">
+                                <span class="span-1 float-left">政治面貌：</span><span class="span-2 float-right"><div id="recruit_resume_drop_ct_303" name="resume_political" class="dayhr_drop_select"></div></span>
+                            </div>
+                            <div class="wrap">
+                                <span class="span-1 float-left">简历渠道：</span><span class="span-2 float-right"><div id="recruit_resume_drop_ct_re_07" name="resume_channelName" class="dayhr_drop_select"></div></span>
+                            </div>
+                        </div>
+                        <div class="clear-both"></div>
+                        <div class="bottom">
+                            <button class="save a-btn" type="submit">保存</button>
+                            <a class="cancel a-btn" v-on:click="cancelInfo" v-if="generate == false">取消</a>
+                            <a class="cancel a-btn" v-on:click="cancelInfoOther" v-if="generate == true">取消</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="body-show" v-if="editInfo == false">
+                    <div class="body-show-1 float-left">
+                        <div class="wrap">
+                            <span class="span-1 float-left">姓名：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.name}}</span>
+                        </div>
+                        <div class="wrap">
+                            <span class="span-1 float-left">出生日期：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.birthday}}</span>
+                        </div>
+                        <div class="wrap">
+                            <span class="span-1 float-left">手机号：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.mobile}}</span>
+                        </div>
+                        <div class="wrap">
+                            <span class="span-1 float-left">邮箱：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.email}}</span>
+                        </div>
+                        <div class="wrap">
+                            <span class="span-1 float-left">最高学历：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.educationName}}</span>
+                        </div>
+                        <div class="wrap">
+                            <span class="span-1 float-left">籍贯：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.originPlaceName}}</span>
+                        </div>
+                        <div class="wrap">
+                            <span class="span-1 float-left">民族：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.nationName}}</span>
+                        </div>
+                        <div class="wrap">
+                            <span class="span-1 float-left">简历类别：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.deliverTypeName}}</span>
+                        </div>
+                    </div>
+                    <div class="body-show-2 float-right">
+                        <div class="wrap">
+                            <span class="span-1 float-left">性别：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.genderName}}</span>
+                        </div>
+                        <div class="wrap">
+                            <span class="span-1 float-left">参加工作日期：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.workTime}}</span>
+                        </div>
+                        <div class="wrap">
+                            <span class="span-1 float-left">求职状态：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.workStatusName}}</span>
+                        </div>
+                        <div class="wrap">
+                            <span class="span-1 float-left">所在地：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.cityName}}</span>
+                        </div>
+                        <div class="wrap">
+                            <span class="span-1 float-left">婚姻状况：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.maritalStatusName}}</span>
+                        </div>
+                        <div class="wrap">
+                            <span class="span-1 float-left">政治面貌：</span><span class="span-2 float-right">{{showInfoData&&showInfoData.politicalName}}</span>
+                        </div>
+                        <div class="wrap">
+                            <span class="span-1 float-left">简历渠道：</span><span class="span-2 float-right">{{showInfoData.channelName}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--基本信息结束-->
+            <template v-if="generate == true">
+                <!--期望工作开始-->
+                <div class="add-resume-expected-work">
+                    <div class="resume_title">
+                        <div class="blue_block"></div>
+                        <h2>期望工作</h2><span class="iconfont_daydao_recruit icon-make" title="编辑" v-if="editHopeWork == false" v-on:click="editHopeWorkFun">&#xe607;</span>
+                    </div>
+                    <div class="body" v-if="editHopeWork == true">
+                        <form id="add-resume-expected-work">
+                            <div class="wrap">
+                                <span class="span-1 float-left">期望职位：</span><span class="span-2 float-left"><input type="text" v-model="hopeWorkData.posName" name="posName" class="self" /></span>
+                            </div>
+                            <div class="wrap on">
+                                <span class="span-1 float-left">在职模式：</span><span class="span-2 float-left"><div id="recruit_resume_drop_re_3"  class="dayhr_drop_select"></div></span>
+                            </div>
+                            <div class="wrap">
+                                <span class="span-1 float-left">期望城市：</span><span class="span-2 float-left"><div id="recruit_resume_drop_ct_110"  class="dayhr_drop_select"></div></span>
+                            </div>
+                            <div class="wrap on">
+                                <span class="span-1 float-left">期望月薪：</span><span class="span-2 float-left"><div id="recruit_resume_drop_re_4"  class="dayhr_drop_select"></div></span>
+                            </div>
+                            <div class="clear-both"></div>
+                            <div class="bottom">
+                                <button class="save a-btn">保存</button><a class="cancel a-btn" v-on:click="editHopeWork = false">取消</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="body-show" v-if="editHopeWork == false">
+                        <div class="wrap">
+                            <span class="span-1 float-left">期望职位：</span><span class="span-2 float-left">{{showHopeWorkData&&showHopeWorkData.posName}} {{showHopeWorkData&&showHopeWorkData.posPropertyName}}</span>
+                        </div>
+                        <div class="wrap">
+                            <span class="span-1 float-left">期望城市：</span><span class="span-2 float-left">{{showHopeWorkData&&showHopeWorkData.workSpaceName}}</span>
+                        </div>
+                        <div class="wrap">
+                            <span class="span-1 float-left">期望月薪：</span><span class="span-2 float-left">{{showHopeWorkData&&showHopeWorkData.payRangeName}}</span>
+                        </div>
+                    </div>
+                </div>
+                <!--期望工作结束-->
+                <!--工作经验开始-->
+                <div class="add-resume-work-experience">
+                    <div class="resume_title">
+                        <div class="blue_block"></div>
+                        <h2>工作经验</h2><span class="iconfont_daydao_recruit icon-make" title="新增" v-if="editWorkExp == false" v-on:click="makeWorkExp">&#xe640;</span>
+                    </div>
+                    <div class="body" v-if="editWorkExp == true">
+                        <form id="add-resume-work-experience">
+                            <div class="wrap">
+                                <span class="span-1 float-left">在职时间：</span><span class="span-2 float-left"><input type="text" id="workExp1" onClick="WdatePicker({dateFmt:'yyyy-MM-dd',maxDate:'#F{$dp.$D(\'workExp2\')}'})"  v-model="workExpData.startDate" class="Wdate" name="workExp_startDate"/></span><span class="span-3 float-left">至</span><span class="span-4 float-left"><input id="workExp2" type="text" v-model="workExpData.endDate" name="workExp_endDate" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd',minDate:'#F{$dp.$D(\'workExp1\')}'})" /></span>
+                            </div>
+                            <div class="wrap">
+                                <span class="span-1 float-left">公司：</span><span class="span-5 float-left"><input type="text" name="workExp_company" v-model="workExpData.company"/></span>
+                            </div>
+                            <div class="wrap">
+                                <span class="span-1 float-left">职位：</span><span class="span-2 float-left"><input type="text" name="workExp_position" v-model="workExpData.posName"/></span>
+                            </div>
+                            <div class="wrap">
+                                <span class="span-1 float-left">工作内容：</span><span class="span-6 float-left"><textarea type="text" rows="5" name="workExp_content" v-model="workExpData.content"></textarea></span>
+                            </div>
+                            <div class="clear-both"></div>
+                            <div class="bottom">
+                                <button class="save a-btn">保存</button><a class="cancel a-btn" v-on:click="editWorkExp = false">取消</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="body-show">
+                        <div class="wrap" v-for="item in showWorkExpData">
+                            <span class="edit iconfont_daydao_recruit"  title="编辑" v-on:click="editWorkExpFun(item)">&#xe607;</span>
+                            <span class="delete iconfont_daydao_recruit"  title="删除" v-on:click="deleteFun(item.uuid,'7')">&#xe6a0;</span>
+                            <span class="span-1 float-left">{{item.startDate}}~{{item.endDate}}</span><span class="span-2 float-left"><b>{{item.company}}</b><b>{{item.posName}}</b></span>
+                            <p class="float-left">{{item.content}}</p>
+                        </div>
+                    </div>
+                </div>
+                <!--工作经验结束-->
+                <!--教育经历开始-->
+                <div class="add-resume-edu-experience">
+                    <div class="resume_title">
+                        <div class="blue_block"></div>
+                        <h2>教育经历</h2><span class="iconfont_daydao_recruit icon-make" title="新增" v-if="editEduExp == false" v-on:click="makeEduExp">&#xe640;</span>
+                    </div>
+                    <div class="body" v-if="editEduExp == true">
+                        <form id="add-resume-edu-experience">
+                            <div class="wrap float-left">
+                                <span class="span-1 float-left">时间：</span><span class="span-2 float-left"><input id="eduWork1" type="text" class="Wdate self" name="eduWork_startDate" v-model="eduExpData.startDate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd',maxDate:'#F{$dp.$D(\'eduWork2\')}'})" /></span><span class="span-3 float-left">至</span><span class="span-4 float-left"><input id="eduWork2" type="text" v-model="eduExpData.endDate" name="eduWork_endDate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd',minDate:'#F{$dp.$D(\'eduWork1\')}'})" class="Wdate self"/></span>
+                            </div>
+                            <div class="wrap float-left">
+                                <span class="span-1 float-left">学校：</span><span class="span-6 float-left"><div id="recruit_resume_drop_ct_324"  class="dayhr_drop_select"></div></span>
+                            </div>
+                            <div class="clear-both"></div>
+                            <div class="wrap float-left">
+                                <span class="span-1 float-left">学历：</span><span class="span-5 float-left"><div id="recruit_resume_drop_ct_321"  class="dayhr_drop_select"></div></span>
+                            </div>
+                            <div class="clear-both"></div>
+                            <div class="wrap float-left">
+                                <span class="span-1 float-left">专业：</span><span class="span-6 float-left"><div id="recruit_resume_drop_ct_322"  class="dayhr_drop_select"></div></span>
+                            </div>
+                            <div class="clear-both"></div>
+                            <div class="bottom">
+                                <button class="save a-btn">保存</button><a class="cancel a-btn" v-on:click="editEduExp = false">取消</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="body-show">
+                        <div class="wrap" v-for="item in showEduExpData">
+                            <span class="edit iconfont_daydao_recruit"  title="编辑" v-on:click="editEduExpFun(item)">&#xe607;</span>
+                            <span class="delete iconfont_daydao_recruit"  title="删除" v-on:click="deleteFun(item.uuid,'3')">&#xe6a0;</span>
+                            <span class="span-1 float-left">{{item.startDate}}~{{item.endDate}}</span><span class="span-2 float-left"><b>{{item.school}}</b><b>{{item.profession}}</b>{{item.eduLevelName}}</span>
+                        </div>
+                    </div>
+                </div>
+                <!--教育经历结束-->
+                <!--项目经验开始-->
+                <div class="add-resume-project-experience">
+                    <div class="resume_title">
+                        <div class="blue_block"></div>
+                        <h2>项目经验</h2><span class="iconfont_daydao_recruit icon-make" title="新增" v-if="editProExp == false" v-on:click="makeProExp">&#xe640;</span>
+                    </div>
+                    <div class="body" v-if="editProExp == true">
+                        <form id="add-resume-project-experience">
+                            <div class="wrap">
+                                <span class="span-1 float-left">起止时间：</span><span class="span-2 float-left"><input id="proExp1" type="text" name="proExp_startDate" v-model="proExpData.startDate" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd',maxDate:'#F{$dp.$D(\'proExp2\')}'})"/></span><span class="span-3 float-left">至</span><span class="span-4 float-left"><input id="proExp2" type="text" name="proExp_endDate" v-model="proExpData.endDate" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd',minDate:'#F{$dp.$D(\'proExp1\')}'})"/></span>
+                            </div>
+                            <div class="wrap">
+                                <span class="span-1 float-left">项目名称：</span><span class="span-5 float-left"><input type="text" name="proExp_projectName" v-model="proExpData.projectName"/></span>
+                            </div>
+                            <div class="wrap">
+                                <span class="span-1 float-left">项目职责：</span><span class="span-7 float-left"><input type="text" name="proExp_responsibility" v-model="proExpData.responsibility"/></span>
+                            </div>
+                            <div class="wrap">
+                                <span class="span-1 float-left">项目描述：</span><span class="span-6 float-left"><textarea type="text" rows="5" name="proExp_projectDesc" v-model="proExpData.projectDesc"></textarea></span>
+                            </div>
+                            <div class="clear-both"></div>
+                            <div class="bottom">
+                                <button class="save a-btn">保存</button><a class="cancel a-btn" v-on:click="editProExp = false">取消</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="body-show">
+                        <div class="wrap" v-for="item in showProExpData">
+                            <span class="edit iconfont_daydao_recruit"  title="编辑" v-on:click="editProExpFun(item)">&#xe607;</span>
+                            <span class="delete iconfont_daydao_recruit"  title="删除" v-on:click="deleteFun(item.uuid,'4')">&#xe6a0;</span>
+                            <span class="span-1 float-left">{{item.startDate}}~{{item.endDate}}</span><span class="span-2 float-left"><b>{{item.projectName}}</b>{{item.responsibility}}</span>
+                            <p class="float-left">{{item.projectDesc}}</p>
+                        </div>
+                    </div>
+                </div>
+                <!--项目经验结束-->
+                <!--技能评价开始-->
+                <div class="add-resume-skill-evaluation">
+                    <div class="resume_title">
+                        <div class="blue_block"></div>
+                        <h2>技能评价</h2><span class="iconfont_daydao_recruit icon-make" title="新增" v-if="editSkill == false" v-on:click="makeSkill">&#xe640;</span>
+                    </div>
+                    <div class="body" v-if="editSkill == true">
+                        <form id="add-resume-skill-evaluation">
+                            <div class="wrap float-left">
+                                <span class="span-1 float-left">技能名称：</span><span class="span-2 float-left"><input type="text" class="self" name="skill_name" v-model="skillData.name"/></span>
+                            </div>
+                            <div class="wrap float-left">
+                                <span class="span-1 float-left on">熟练程度：</span><span class="span-3 float-right"><div id="recruit_resume_drop_re_5"  class="dayhr_drop_select"></div></span>
+                            </div>
+                            <div class="clear-both "></div>
+                            <div class="bottom">
+                                <button class="save a-btn">保存</button><a class="cancel a-btn" v-on:click="editSkill = false">取消</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="body-show">
+                        <div class="wrap" v-for="item in showSkillData">
+                            <span class="edit iconfont_daydao_recruit"  title="编辑" v-on:click="editSkillFun(item)">&#xe607;</span>
+                            <span class="delete iconfont_daydao_recruit"  title="删除" v-on:click="deleteFun(item.uuid,'2')">&#xe6a0;</span>
+                            <span class="span-1 float-left">{{item.name}}</span>
+                            <template v-if="item.level == 1">
+                                <span class="span-2 float-left" ><span class="percent" style="width: 25%"><span class="dh"></span></span></span><b>了解</b>
+                            </template>
+                            <template v-if="item.level == 2">
+                                <span class="span-2 float-left" ><span class="percent" style="width: 50%"><span class="dh"></span></span></span><b>掌握</b>
+                            </template>
+                            <template v-if="item.level == 3">
+                                <span class="span-2 float-left" ><span class="percent" style="width: 75%"><span class="dh"></span></span></span><b>精通</b>
+                            </template>
+                            <template v-if="item.level == 4">
+                                <span class="span-2 float-left" ><span class="percent" style="width: 100%"><span class="dh"></span></span></span><b>专家</b>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+                <!--技能评价结束-->
+                <!--培训经历开始-->
+                <div class="add-resume-training-experience">
+                    <div class="resume_title">
+                        <div class="blue_block"></div>
+                        <h2>培训经历</h2><span class="iconfont_daydao_recruit icon-make" title="新增" v-if="editTraExp == false" v-on:click="makeTraExp">&#xe640;</span>
+                    </div>
+                    <div class="body" v-if="editTraExp == true">
+                        <form id="add-resume-training-experience">
+                            <div class="wrap">
+                                <span class="span-1 float-left">时间：</span><span class="span-2 float-left"><input id="traExp1" type="text" name="traExp_startDate" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd',maxDate:'#F{$dp.$D(\'traExp2\')}'})" v-model="traExpData.startDate"/></span><span class="span-3 float-left">至</span><span class="span-4 float-left"><input id="traExp2" type="text" name="traExp_endDate" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd',minDate:'#F{$dp.$D(\'traExp1\')}'})" v-model="traExpData.endDate"/></span>
+                            </div>
+                            <div class="wrap">
+                                <span class="span-1 float-left">培训课程：</span><span class="span-5 float-left"><input type="text" name="traExp_course" v-model="traExpData.course"/></span>
+                            </div>
+                            <div class="wrap">
+                                <span class="span-1 float-left">培训机构：</span><span class="span-5 float-left"><input type="text" name="traExp_organization" v-model="traExpData.organization"/></span>
+                            </div>
+                            <div class="clear-both"></div>
+                            <div class="bottom">
+                                <button class="save a-btn">保存</button><a class="cancel a-btn" v-on:click="editTraExp = false">取消</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="body-show">
+                        <div class="wrap" v-for="item in showTraExpData">
+                            <span class="edit iconfont_daydao_recruit"  title="编辑" v-on:click="editTraExpFun(item)">&#xe607;</span>
+                            <span class="delete iconfont_daydao_recruit"  title="删除" v-on:click="deleteFun(item.uuid,'5')">&#xe6a0;</span>
+                            <span class="span-1 float-left">{{item.startDate}}~{{item.endDate}}</span><span class="span-2 float-left">{{item.course}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.organization}}</span>
+                        </div>
+                    </div>
+                </div>
+                <!--培训经历结束-->
+                <!--语言能力开始-->
+                <div class="add-resume-language-ability">
+                    <div class="resume_title">
+                        <div class="blue_block"></div>
+                        <h2>语言能力</h2><span class="iconfont_daydao_recruit icon-make" title="新增" v-if="editLanguage == false" v-on:click="makeLanguage">&#xe640;</span>
+                    </div>
+                    <div class="body" v-if="editLanguage == true">
+                        <form id="add-resume-language-ability">
+                            <div class="wrap float-left">
+                                <span class="span-1 float-left">语言名称：</span><span class="span-2 float-left"><input type="text" name="language_name" v-model="languageData.language" class="self"/></span>
+                            </div>
+                            <div class="wrap float-left">
+                                <span class="span-1 float-left on">熟练程度：</span><span class="span-3 float-right"><div id="recruit_resume_drop_re_6"  class="dayhr_drop_select"></div></span>
+                            </div>
+                            <div class="clear-both"></div>
+                            <div class="bottom">
+                                <button class="save a-btn">保存</button><a class="cancel a-btn" v-on:click="editLanguage = false">取消</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="body-show">
+                        <div class="wrap" v-for="item in showLanguageData">
+                            <span class="edit iconfont_daydao_recruit"  title="编辑" v-on:click="editLanguageFun(item)">&#xe607;</span>
+                            <span class="delete iconfont_daydao_recruit"  title="删除" v-on:click="deleteFun(item.uuid,'6')">&#xe6a0;</span>
+                            <span class="span-1 float-left">{{item.language}}</span>
+                            <template v-if="item.level == 1">
+                                <span class="span-2 float-left" ><span class="percent" style="width: 25%"><span class="dh"></span></span></span><b>了解</b>
+                            </template>
+                            <template v-if="item.level == 2">
+                                <span class="span-2 float-left" ><span class="percent" style="width: 50%"><span class="dh"></span></span></span><b>掌握</b>
+                            </template>
+                            <template v-if="item.level == 3">
+                                <span class="span-2 float-left" ><span class="percent" style="width: 75%"><span class="dh"></span></span></span><b>精通</b>
+                            </template>
+                            <template v-if="item.level == 4">
+                                <span class="span-2 float-left" ><span class="percent" style="width: 100%"><span class="dh"></span></span></span><b>专家</b>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+                <!--语言能力结束-->
+                <!--自我描述开始-->
+                <div class="add-resume-self-description">
+                    <div class="resume_title">
+                        <div class="blue_block"></div>
+                        <h2>自我描述</h2><span class="iconfont_daydao_recruit icon-make" title="编辑" v-if="editDesc == false" v-on:click="editDescFun">&#xe607;</span>
+                    </div>
+                    <div class="body" v-if="editDesc == true">
+                        <form id="add-resume-self-description">
+                            <div class="wrap" v-if="editDesc == true">
+                                <textarea type="text" rows="5" maxlength="500" v-model="descData" name="desc"></textarea>
+                            </div>
+                            <div class="clear-both"></div>
+                            <div class="bottom">
+                                <button class="save a-btn">保存</button><a class="cancel a-btn" v-on:click="editDesc = false">取消</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="body-show" v-if="editDesc == false">
+                        <div class="wrap">
+                            <p>{{showInfoData&&showInfoData.selfDesc}}</p>
+                        </div>
+                    </div>
+                </div>
+                <!--自我描述结束-->
+            </template>
+        </div>
+        <div class="candidate_bottom_right" v-if="editDialog">
+            <h3 class="application_record_title">应聘记录</h3>
+            <ul class="record_box">
+                <li class="record_list clearfix">
+                    <div class="record_data_left">2017-03-23</div>
+                    <div class="record_data_right">
+                        <span class="record_status">面试</span>
+                    </div>
+                    <i class="circle"></i>
+                </li>
+                <li class="record_list clearfix">
+                    <div class="record_data_left">2017-03-23</div>
+                    <div class="record_data_right">
+                        <div class="record_status">面试</div>
+                        <div class="evaluate_btn">评价</div>
+                        <div class="candidate_bottom_content">
+                            <ul>
+                                <li>
+                                    <span class="content_key">面试时间</span>
+                                    <span class="content_value">2017-02-23</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <i class="circle"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

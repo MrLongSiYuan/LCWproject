@@ -1,0 +1,139 @@
+<li class="dataListItem clearfix" v-for="item in aFields" data-fieldType="{{item.field_type}}" data-name="{{item.field_name}}">
+	<template v-if="
+				item.field_type == 'text' ||
+				item.field_type == 'paragraph' ||
+				item.field_type == 'date' ||
+				item.field_type == 'number' ||
+				item.field_type == 'radio' ||
+				item.field_type == 'checkboxes'
+				">
+		<div class="left">
+			{{item.label}}：
+		</div>
+		<div class="right">
+			{{{item.value}}}
+			<!--人民币大写-->
+			<template v-if="item.capital == 'true'">（{{item.value | arabiaToChinese}}）</template>
+		</div>
+	</template>
+
+	<!--说明字段-->
+	<template v-if="item.field_type == 'remark'">
+		<div class="left">
+			{{item.label}}：
+		</div>
+		<div class="right">
+			{{item.describe}}
+		</div>
+	</template>
+
+	<!--日期区间-->
+	<template v-if="item.field_type == 'datearea'">
+		<div class="clearfix">
+			<div class="left">
+				{{item.label}}：
+			</div>
+			<div class="right">
+				{{item.startValue}}
+			</div>
+		</div>
+		<div class="clearfix">
+			<div class="left">
+				{{item.label2}}：
+			</div>
+			<div class="right">
+				{{item.endValue}}
+			</div>
+		</div>
+	</template>
+
+	<!--图片类型-->
+	<template v-if="item.field_type == 'pic'">
+		<div class="left">
+			{{item.label}}：
+		</div>
+		<div class="right">
+			<ul class="imglist clearfix" v-if="item.valueUrls">
+				<li v-for="itemPic in item.valueUrls" track-by="$index" data-uuid="{{itemPic.uuid}}">
+					<div class="preview_download_upload">
+						<div class="point_up"></div>
+						<div class="img_operation_item" v-on:click.prevent="previewPic($event,itemPic.url)">
+							<Icon type="ios-eye-outline"></Icon>
+							<span>查看</span>
+						</div>
+						<!--<div class="img_operation_item">
+							<Icon type="ios-cloud-upload-outline"></Icon>
+							<span>存云盘</span>
+						</div>-->
+						<div class="img_operation_item" v-on:click.prevent="downloadFile(itemPic.uuid)">
+							<Icon type="ios-cloud-download-outline"></Icon>
+							<span>下载</span>
+						</div>
+					</div>
+					<div class="imglist_imgbox">
+						<img v-bind:src="(typeof itemPic.url == 'string' && itemPic.url.indexOf('http') != -1)?itemPic.url:(gMain.baseStaticPath +'common/images/loading-2.gif')" class="previewPic" alt="">
+					</div>
+				</li>
+			</ul>
+		</div>
+	</template>
+
+	<!--附件类型-->
+	<template v-if="item.field_type == 'file'">
+		<div class="left">
+			{{item.label}}：
+		</div>
+		<div class="right">
+			<div class="addFilePreview clearfix">
+				<ul v-if="item.value.length" class="clearfix">
+					<li v-for="itemFile in item.value" track-by="$index" data-uuid="{{itemFile.uuid}}">
+						<div class="preview_download_upload">
+							<div class="point_left"></div>
+							<div class="img_operation_item" v-on:click.prevent="previewFile($event,itemFile.uuid,itemFile.fileSort)">
+								<Icon type="ios-eye-outline"></Icon>
+								<span>查看</span>
+							</div>
+							<!--<div class="img_operation_item">
+                                <Icon type="ios-cloud-upload-outline"></Icon>
+                                <span>存云盘</span>
+                            </div>-->
+							<div class="img_operation_item" v-on:click.prevent="downloadFile(itemFile.uuid)">
+								<Icon type="ios-cloud-download-outline"></Icon>
+								<span>下载</span>
+							</div>
+						</div>
+						<span class="icon">图标：</span>
+						<span class="filename" title="{{itemFile.fileName}}">{{itemFile.fileName}}</span>
+						<span class="size">{{itemFile.size}}</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</template>
+
+	<!--两列控件-->
+	<template v-if="item.field_type == 'twoColumns' && ((item.firstCol && item.firstCol.fields) || (item.secondCol && item.secondCol.fields))">
+		<form-data-show v-bind:a-fields="item.firstCol.fields"></form-data-show>
+		<form-data-show v-bind:a-fields="item.secondCol.fields"></form-data-show>
+	</template>
+
+	<!--三列控件-->
+	<template v-if="item.field_type == 'threeColumns' && ((item.firstCol && item.firstCol.fields) || (item.secondCol && item.secondCol.fields)  || (item.thirdCol && item.thirdCol.fields))">
+		<form-data-show v-bind:a-fields="item.firstCol.fields"></form-data-show>
+		<form-data-show v-bind:a-fields="item.secondCol.fields"></form-data-show>
+		<form-data-show v-bind:a-fields="item.thirdCol.fields"></form-data-show>
+	</template>
+
+	<!--明细控件-->
+	<template v-if="item.field_type == 'group' && item.group && item.group.fields">
+		<dl class="groupItem">
+			<dt>{{item.label}}</dt>
+			<dd>
+				<ul>
+					<form-data-show v-bind:a-fields="item.group.fields"></form-data-show>
+				</ul>
+			</dd>
+		</dl>
+	</template>
+
+</li>

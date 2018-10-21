@@ -1,0 +1,37 @@
+<form id="report_setting_wrap" class="clearfix">
+	<div class="report_quoteLastTimeBtn_wrap">
+		<button type="button" v-bind:class="[reportFirst?'report_quoteLastTimeBtn active':'report_quoteLastTimeBtn']">引用上一次汇报</button>
+	</div>
+	<div class="reporter_informationWrap">
+		<div class="reporter_information_box">
+			<div class="repoter_infomationRow" v-for="reporter in reporters">
+				<span class="repoter_infomationName_left">{{reporter.inforTitle}}</span>
+				<span class="repoter_infomationName_right">{{reporter.inforContent}}</span>
+			</div>
+		</div>
+	</div>
+	<div id="report_setting_formSubmitError" style="display: none;">
+		<span class="tipmsg"></span>
+	</div>
+
+	<form-preview v-bind:afields="aFields"></form-preview>
+
+	<div class="recipient_listWrap">
+		<div class="auditInfoItem clearfix">
+			<div class="title">接收人</div>
+			<div class="content">
+				<ul id="workflow_processCcList">
+					<li v-for="item in auditInfo.process_cc">
+						<!--<img v-bind:src="gMain.currentStaticPath + 'workflow/images/personImg.png'" alt="" class="personImg">-->
+						<span class="personName" title="{{item.person_name}}">{{item.person_name}}</span>
+						<span class="close" v-on:click.prevent="removeProcessCc($index)" title="移除"></span>
+					</li>
+					<li>
+						<span class="iconfont_dayoa processCcAdd" title="添加抄送人" v-on:click.prevent="addProcessCc()" v-on:mouseenter="addProcessCcMouseenter" v-on:mouseleave="addProcessCcMouseleave">&#xe612;</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+</form>

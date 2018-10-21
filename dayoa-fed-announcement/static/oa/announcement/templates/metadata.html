@@ -1,0 +1,260 @@
+<!--元数据表格公共模板-->
+<!--表格控件开始-->
+<div class="dayhr_table_list clearfix">
+    <div id="base_left_nav">
+
+    </div>
+    <div id="base_right_content">
+        <div class="clearfix" id="base_table_tools">
+            <div id="mmmmButton">
+
+            </div>
+            <div id="base_mmSearch">
+
+            </div>
+        </div>
+
+        <div id="mmPositionTools">
+
+        </div>
+
+        <div id="base_metadata_wrap" class="myjqgrid_wrap" style="width:100%;height: auto;">
+
+
+        </div>
+    </div>
+</div>
+
+
+<!--弹出编辑预览框模板-->
+<script type="text/html" id="table_edit_dialog_tpl" class="metadata_tpl">
+    <div id="table_edit_dialog" class="clearfix">
+        <div class="hd table_edit_dialog_left clearfix">
+            <ul class="table_edit_dialog_left_ul clearfix" data-maintemplateid="{{editTemplate.mainTemplateId}}">
+                {{each editTemplate.aData as value i}}
+                <li class="table_edit_dialog_left_li" data-templateid="{{value.templateId}}" data-templatename="{{value.templateName}}" data-chooseids="{{value.chooseIds}}" data-reporturls="{{value.reporturls}}"  data-formIds="{{value.formIds}}">{{value.tabName}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="bd table_edit_dialog_right clearfix">
+            <!--人员信息简介--主模板 ---说明：每个模板的父层上面要加base_template_edit_wrap的class作为标示 并且要加属性data-tpl-id来指定是哪个模板-->
+            <div class="table_person_info clearfix base_template_edit_wrap" data-tpl-id="columnCart_tpl" data-templateid="{{editTemplate.mainTemplateId}}">
+
+            </div>
+            <div class="table_edit_dialog_right_line clearfix"></div> <!--分割线-->
+            <ul class="table_edit_dialog_right_ul clearfix">
+                {{each editTemplate.aData as value i}}
+                <li class="table_edit_dialog_right_li" style="display: none;">
+
+
+                </li>
+                {{/each}}
+            </ul>
+            <div class="table_edit_dialog_bottom">
+                <input type="button" data-action="prev" class="flat-button flat-medium flat-yellow dialog-edit-pop-btn" value="上一个"/>
+                <input type="button" data-action="next" class="flat-button flat-medium flat-yellow dialog-edit-pop-btn" value="下一个" style="margin-right: 27px;">
+                <!--<input type="button" data-action="close" class="flat-button flat-medium flat-white dialog-edit-pop-btn" style="margin-right: 27px;" value="关闭"/>-->
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<!--主模板--columnCart  1:卡片模式、 2:语句模式 -->
+<script type="text/html" id="columnCart_tpl" class="metadata_tpl">
+    {{if Main.showMode == '2'}}
+    {{if Main.has_head_img}}
+    <div class="base_table_rows_data_kapian_wrap base_table_rows_touxiang_wrap clearfix">
+        <h3>{{Main.title}}</h3>
+        <div class="kanpianGroup" style="width:100%;">{{#Main.content}}</div>
+
+        {{if Main.has_head_img}}
+        <div class="base_person_img" style="{{Main.head_img?'background:none':'background:'+Main.head_img_color}}">
+            {{if Main.head_img}}
+            <img src="{{Main.filePrefix}}/{{Main.head_img}}" alt="{{Main.title}}"/>
+            {{else}}
+            {{Main.person_name.substr(-2)}}
+            {{/if}}
+            <div class="base_person_img_edit iconfont_dayhr_base" title="编辑头像">&#xe606;</div>
+        </div>
+        {{/if}}
+    </div>
+    {{else}}
+    <div class="base_table_rows_data_kapian_wrap clearfix">
+        <h3>{{Main.title}}</h3>
+        <div class="kanpianGroup" style="width:100%;">{{#Main.content}}</div>
+    </div>
+    {{/if}}
+    {{else if Main.showMode == '1'}}
+
+    {{each Main.list as value i}}
+    {{if i==0}}<h3>{{value.value}}</h3> {{/if}}
+    {{/each}}
+    <div class="base_table_rows_data_kapian_wrap">
+        {{each Main.list as value i}}
+        {{if i!=0}}
+        <div class="kanpianGroup">{{value.title}}：{{value.value}}</div>
+        {{/if}}
+        {{/each}}
+        <div class="base_person_img" style="display: none;"></div>
+    </div>
+
+    {{else}}
+
+    {{/if}}
+
+
+</script>
+
+<!--主模板的下方模板-->
+
+<script type="text/html" id="columnCart_more_tpl" class="metadata_tpl">
+    {{each tplList as value i}}
+
+    {{if value.showMode}}
+    {{if value.showMode=="0" || value.showMode=="4"}}
+    <!--列表模式-->
+    <dl class="base_table_edit_rows base_template_edit_wrap {{if value.showMode == '4'}}base_template_add_wrap{{/if}} base_table_rows_data_biaoge_wrap clearfix" data-tpl-id="biaoge_tpl" data-templateid="{{value.templateId}}" data-chooseid="{{value.chooseid || 'null'}}" data-reporturls="{{value.reporturl ||'null'}}" data-iseditable="{{value.isEditAble}}">
+        <dt>
+            <strong>{{value.title}}</strong>
+            {{if value.specialTabType && value.specialTabType == '1'}} <a href="javascript:void(0)" title="新增" class="add iconfont_dayhr_base" data-specialTabParam="{{value.specialTabParam}}" data-isFileUploadList="true">&#xe615;</a> {{/if}}
+            <!-- 参保规则 -->
+            {{if value.specialTabType && value.specialTabType == '8'}} <a href="javascript:void(0)" title="新增" class="add iconfont_dayhr_base" data-specialTabParam="{{value.specialTabParam}}" data-isinsurancerules="true">&#xe615;</a> {{/if}}
+            <!--报表功能按钮-->
+            {{if value.reporturl == 'report_analyze'}}
+        <div class="base_table_report_buttons"><a href="javascript:void(0)" title="报表" class="person_table_report iconfont_dayhr_base">&#xe614;</a></div>
+        {{/if}}
+
+        <!--表格列表新增模式的新增按钮，这种模式已经废除调了，可以删掉此段代码，做备份保留-->
+        {{if value.showMode=="4"}}
+        <a href="javascript:void(0)" title="新增" class="add iconfont_dayhr_base">&#xe615;</a>
+        {{/if}}
+        </dt>
+        <dd class="mmg-small">
+            <table id="mmg-{{value.templateId}}" class="mmg">
+
+            </table>
+            <div class="mmGridTools">
+                <div id="mmpager-{{value.templateId}}"></div>
+            </div>
+        </dd>
+    </dl>
+
+    {{else if value.showMode == "1"}}
+    <!--卡片模式 base_template_edit_wrap:表示此class中将要添加按钮-->
+    <dl class="base_table_edit_rows base_template_edit_wrap base_table_rows_data_kapian_wrap clearfix" data-tpl-id="kapian_tpl" data-uuid="{{value.uuid}}" data-templateid="{{value.templateId}}" data-chooseid="{{value.chooseid || 'null'}}" data-iseditable="{{value.isEditAble}}">
+        <dt><strong>{{value.title}}</strong></dt>
+        <dd>
+            {{each value.aColumnEditData as valKapian i}}
+            {{if valKapian.type != 'hidden' && valKapian.isListShow}}
+            <div class="kanpianGroup" {{if valKapian.cellType == 'textarea'}}style="width:100%;"{{/if}}>{{valKapian.title}}：{{valKapian.value}}</div>
+            {{/if}}
+            {{/each}}
+        </dd>
+    </dl>
+
+    {{else if value.showMode == "2"}}
+    <!--语句模式-->
+    <dl class="base_table_edit_rows clearfix" data-tpl-id="yuju_tpl" data-iseditable="{{value.isEditAble}}">
+        <dt class="base_template_add_wrap" data-tpl-id="yuju_tpl" data-templateid="{{value.templateId}}">
+            <strong>{{value.title}}</strong><a href="javascript:void(0)" title="新增" class="add iconfont_dayhr_base">&#xe615;</a>
+        </dt>
+        <dd>
+            {{each value.aExpressionData as valYuju i}}
+            <div class="base_table_rows_data_yuju base_template_edit_wrap" data-templateid="{{value.templateId}}" data-tpl-id="yuju_tpl" data-uuid="{{valYuju.uuid}}">{{#valYuju.expression}}</div>
+            {{/each}}
+        </dd>
+    </dl>
+
+
+    {{else if value.showMode == "6"}}
+        <!--特殊模式-->
+        {{if value.specialTabType && value.specialTabType == "2"}}
+
+        <!--职位评估模式-->
+        <dl class="base_table_edit_rows clearfix" data-iseditable="{{value.isEditAble}}">
+            <dt>
+                <strong>{{value.title}}</strong>
+            </dt>
+            <dd id="base_pop_pos_ipe">
+
+            </dd>
+        </dl>
+
+        {{/if}}
+
+    {{else}}
+
+    <!--否则其他模式-->
+    <dl class="base_table_edit_rows clearfix" data-iseditable="{{value.isEditAble}}">
+        <dt>
+            <strong>{{value.title}}</strong>
+        </dt>
+        <dd>
+
+        </dd>
+    </dl>
+
+    {{/if}}
+    {{/if}}
+
+
+    {{/each}}
+</script>
+
+<!--报表模板-->
+
+<script type="text/html" id="base_org_person_reports_tpl" class="metadata_tpl">
+
+    <div id="base_org_person_reports">
+        <ul class="base_org_person_reports_title">
+            <li class="on">人员结构分析</li>
+            <li>人员流动分析</li>
+        </ul>
+        <ul class="base_org_person_reports_content">
+            <li class="base_content_li" style="display: block;">
+                <!--图表一-->
+                <div class="dimensionality_selection">
+                    <h3>请选择分析维度</h3>
+                    <dl class="dimensionality_selection_items">
+
+                    </dl>
+                </div>
+                <div class="dimensionality_buttons">
+                    <a href="javascript:void(0);" class="pie" title="切换为饼状图">饼状图</a>
+                    <a href="javascript:void(0);" class="showdata" title="显示标签数据">显示标签数据</a>
+                    <a href="javascript:void(0);" class="bar" title="切换为柱状图">柱状图</a>
+                </div>
+                <div id="Personnel_structure_analysis">
+
+                </div>
+            </li>
+            <li class="base_content_li" style="display: none;">
+                <!--图表二-->
+                <div class="dimensionality_selection">
+                    <h3>请选择分析维度</h3>
+                    <dl class="dimensionality_selection_items">
+
+                    </dl>
+                </div>
+                <div id="Employee_turnover_in_workplace">
+
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+</script>
+
+<!--维度-->
+<script type="text/html" id="aDimension_tpl" class="metadata_tpl">
+    {{each aDimension as value i}}
+    <dd class="dimensionality_selection_items_dd items_dd_{{i}}">
+        <strong>{{value.name}}：</strong>
+        {{each value.options as value2 j}}
+        <a href="javascript:void(0);" class="selection_item_a" data-key="{{value2.key}}">{{value2.value}}</a>
+        {{/each}}
+    </dd>
+    {{/each}}
+</script>

@@ -1,0 +1,65 @@
+<div id="recruitCenter">
+    <div class="recruit-center">
+        <div class="recruit-center-title">
+             <span class="recruit-center-tab" v-bind:class="[isShow==true?'on':'']" v-on:click="tabFun(true)">未处理</span>
+             <span class="recruit-center-tab" v-bind:class="[isShow==false?'on':'']" v-on:click="tabFun(false)">已处理</span>
+        </div>
+        <div class="recruit-center-body-1" v-show="isShow==true">
+            <div class="no-data" v-if="data1.length == 0">
+                <span></span>
+                <p>暂时没有人来面试哦</p>
+            </div>
+            <ul v-else>
+                <li v-for="item in data1">
+                    <a v-link="{path:'/recruitDetail/'+item.interview_id+'/'+item.resume_id}">
+                        <img v-bind:src=gMain.baseStaticHrPath+"recruit/images/default_headImg.png" alt="头像" v-if="!item.image||item.image ==''"/>
+                        <img v-bind:src="item.image" alt="头像" v-else/>
+                        <div class="wrap">
+                            <span class="name">{{item.name}}</span>
+                            <span v-bind:class="'sex' + item.gender"></span>
+                            <span class="info" v-if="item.age==''&&item.education!=''&&item.work_experience!=''">{{item.education}}/{{item.work_experience}}</span>
+                            <span class="info" v-if="item.age!=''&&item.education==''&&item.work_experience!=''">{{item.age}}岁/{{item.work_experience}}</span>
+                            <span class="info" v-if="item.age!=''&&item.education!=''&&item.work_experience==''">{{item.age}}岁/{{item.education}}</span>
+                            <span class="info" v-if="item.age==''&&item.education==''&&item.work_experience!=''">{{item.work_experience}}</span>
+                            <span class="info" v-if="item.age==''&&item.education!=''&&item.work_experience==''">{{item.education}}</span>
+                            <span class="info" v-if="item.age!=''&&item.education==''&&item.work_experience==''">{{item.age}}岁</span>
+                            <span class="info" v-if="item.age!=''&&item.education!=''&&item.work_experience!=''">{{item.age}}岁/{{item.education}}/{{item.work_experience}}</span>
+                            <span class="info" v-if="item.age==''&&item.education==''&&item.work_experience==''"></span>
+                        </div>
+                        <div class="wrap"><p>应聘职位：{{item.pos_name}}</p></div>
+                        <div class="wrap"><p>面试时间：{{item.interview_date}}</p></div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="recruit-center-body-2" v-show="isShow==false">
+            <div class="no-data" v-if="data2.length == 0">
+                <span></span>
+                <p>暂时没有人来面试哦</p>
+            </div>
+            <ul v-else>
+                <li v-for="item in data2">
+                    <a v-link="{path:'/recruitRecord/'+item.resume_id}">
+                        <span class="status" v-bind:class="'status-'+item.status"></span>
+                        <img v-bind:src=gMain.baseStaticHrPath+"recruit/images/default_headImg.png" alt="头像" v-if="!item.image||item.image ==''"/>
+                        <img v-bind:src="item.image" alt="头像" v-else/>
+                        <div class="wrap">
+                            <span class="name">{{item.name}}</span>
+                            <span v-bind:class="'sex' + item.gender"></span>
+                            <span class="info" v-if="item.age==''&&item.education!=''&&item.work_experience!=''">{{item.education}}/{{item.work_experience}}</span>
+                            <span class="info" v-if="item.age!=''&&item.education==''&&item.work_experience!=''">{{item.age}}岁/{{item.work_experience}}</span>
+                            <span class="info" v-if="item.age!=''&&item.education!=''&&item.work_experience==''">{{item.age}}岁/{{item.education}}</span>
+                            <span class="info" v-if="item.age==''&&item.education==''&&item.work_experience!=''">{{item.work_experience}}</span>
+                            <span class="info" v-if="item.age==''&&item.education!=''&&item.work_experience==''">{{item.education}}</span>
+                            <span class="info" v-if="item.age!=''&&item.education==''&&item.work_experience==''">{{item.age}}岁</span>
+                            <span class="info" v-if="item.age!=''&&item.education!=''&&item.work_experience!=''">{{item.age}}岁/{{item.education}}/{{item.work_experience}}</span>
+                            <span class="info" v-if="item.age==''&&item.education==''&&item.work_experience==''"></span>
+                        </div>
+                        <div class="wrap"><p>应聘职位：{{item.pos_name}}</p></div>
+                        <div class="wrap"><p>面试时间：{{item.interview_date}}</p></div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

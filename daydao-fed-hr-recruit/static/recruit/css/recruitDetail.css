@@ -1,0 +1,277 @@
+@charset "utf-8";
+#recruitDetail{
+}
+#recruitDetail .recruitDetail-more{
+    background: #2E2E2E;
+    color: #FFF;
+    position: fixed;
+    right: 0.2rem;
+    top:0.12rem;
+    width: 2rem;
+    height: 3rem;
+    font-size: 0.3rem;
+    text-align: center;
+    border-radius: 0.04rem;
+}
+#recruitDetail .recruitDetail-more::before{
+    content: "";
+    position: absolute;
+    top:-0.12rem;
+    right: 0.18rem;
+    z-index: -1;
+    border-left: 0.26rem solid transparent;
+    border-right: 0.26rem solid transparent;
+    border-bottom: 0.26rem solid #2E2E2E;
+}
+#recruitDetail .recruitDetail-more ul li{
+    line-height: 1rem;
+    box-sizing: border-box;
+    border-bottom: 0.02rem solid #7B7B7B;
+}
+#recruitDetail .recruitDetail-more ul li:last-child{
+    border: none;
+}
+#recruitDetail .recruitDetail-more ul li a{
+    color: #FFF;
+}
+#recruitDetail .recruit-detail{
+    overflow: hidden;
+    background: #fff;
+}
+#recruitDetail .recruit-detail .recruit-detail-title{
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 1.4rem;
+    background: #FFF;
+}
+#recruitDetail .recruit-detail .recruit-detail-title img {
+    width: 0.96rem;
+    height: 0.96rem;
+    border-radius:50%;
+    vertical-align: bottom;
+    float: left;
+    margin: 0.22rem;
+}
+#recruitDetail .recruit-detail .recruit-detail-title .wrap{
+    overflow: hidden;
+}
+#recruitDetail .recruit-detail .recruit-detail-title span.name{
+    font-size: 0.32rem;
+    float: left;
+    display: block;
+    line-height: 0.45rem;
+    color: #222;
+    margin-top: 0.27rem;
+    margin-right: 0.1rem;
+}
+#recruitDetail .recruit-detail .recruit-detail-title span.sex1{
+    width: 0.22rem;
+    height: 0.22rem;
+    background-size: 100% 100%;
+    display: block;
+    float: left;
+    margin-top: 0.4rem;
+}
+#recruitDetail .recruit-detail .recruit-detail-title span.sex1{
+    width: 0.22rem;
+    height: 0.22rem;
+    background: url("../images/sex1.png") no-repeat;
+    background-size: 100% 100%;
+    display: block;
+    float: left;
+    margin-top: 0.4rem;
+}
+#recruitDetail .recruit-detail .recruit-detail-title span.sex2{
+    width: 0.22rem;
+    height: 0.22rem;
+    background: url("../images/sex2.png") no-repeat;
+    background-size: 100% 100%;
+    display: block;
+    float: left;
+    margin-top: 0.4rem;
+}
+#recruitDetail .recruit-detail .recruit-detail-title p{
+    font-size: 0.24rem;
+    margin-top: 0.05rem;
+    line-height: 0.33rem;
+    color: #666;
+}
+#recruitDetail .recruit-detail .recruit-detail-body{
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0.2rem 0.29rem 0;
+    border-top: 0.01rem solid #ccc;
+    background: #FFF;
+}
+#recruitDetail .recruit-detail .on{
+    border-bottom: 0.01rem solid #ccc;
+}
+#recruitDetail .recruit-detail .recruit-detail-body ul li{
+    line-height: 0.4rem;
+    font-size: 0.28rem;
+    margin-bottom: 0.2rem;
+    box-sizing: border-box;
+}
+#recruitDetail .recruit-detail .recruit-detail-body ul li:last-child{
+    position : relative;
+    top : -0.13rem;
+}
+#recruitDetail .recruit-detail .recruit-detail-body ul li .float-left{
+    color: #aaa;
+}
+#recruitDetail .recruit-detail .recruit-detail-body ul li .float-right{
+    color: #222;
+    word-break: break-all;
+}
+#recruitDetail .recruit-detail .recruit-detail-body ul li a{
+    width: 0.44rem;
+    height: 0.44rem;
+    display: inline-block;
+    background: url("../images/tel.png") no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    top: 0.1rem;
+    left: 0.1rem;
+}
+#recruitDetail .recruit-detail .recruit-detail-body ul li span{
+    display: inline;
+}
+#recruitDetail .recruit-detail .recruit-detail-bottom{
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0.2rem 0.29rem;
+    text-align: center;
+    border-top: 0.2rem solid #F0F0F0;
+    margin-bottom: 1.22rem;
+    background: #FFF;
+}
+#recruitDetail .recruit-detail .recruit-detail-bottom textarea{
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 0.28rem;
+    resize: none;
+    border: none;
+    word-break: break-all;
+    color: #222;
+    line-height: 0.4rem;
+    background: #FFF;
+}
+#recruitDetail .recruit-detail .recruit-detail-bottom-button{
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom:0;
+    height: 1.22rem;
+    position: fixed;
+    background: #FAFAFA;
+    border-top: 0.01rem solid #ECECEC;
+}
+#recruitDetail .recruit-detail .recruit-detail-bottom-button::before{
+    content: "";
+    width: 0.02rem;
+    height: 0.92rem;
+    left: 50%;
+    top: 0.15rem;
+    position: absolute;
+    background:url("../images/line.png") center center no-repeat;
+    background-size: 100% 100%;
+}
+#recruitDetail .recruit-detail .recruit-detail-bottom-button button{
+    width: 50%;
+    height: 1.22rem;
+    padding: 0;
+    font-size: 0.36rem;
+    display: inline-block;
+    color: #FFF;
+    float: left;
+    background: transparent;
+}
+#recruitDetail .recruit-detail .recruit-detail-bottom-button button.pass{
+    color: #FF7123;
+}
+#recruitDetail .recruit-detail .recruit-detail-bottom-button button.nopass{
+    color: #296695;
+}
+#recruitDetail .recruit-detail .recruit-detail-bottom-other{
+    overflow: hidden;
+    box-sizing: border-box;
+    text-align: center;
+    border-top: 0.2rem solid #F0F0F0;
+}
+#recruitDetail .recruit-detail .recruit-detail-bottom-other span{
+    line-height: 1.4rem;
+    height: 1.4rem;
+    display: block;
+}
+#recruitDetail .recruit-detail .recruit-detail-bottom-other .person{
+    overflow: hidden;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    background: #FFF;
+    border-top: 0.01rem solid #ccc;
+    border-bottom: 0.01rem solid #ccc;
+    padding: 0 0.29rem;
+    position: relative;
+}
+#recruitDetail .recruit-detail .recruit-detail-bottom-other span.float-left{
+    font-size: 0.32rem;
+    color: #222;
+    float: left;
+}
+#recruitDetail .recruit-detail .recruit-detail-bottom-other span.float-right{
+    font-size: 0.32rem;
+    color: #aaa;
+    float: right;
+    margin-right:0.3rem;
+}
+#recruitDetail .recruit-detail .recruit-detail-bottom-other span.float-right ul li{
+    float: right;
+    width: 0.8rem;
+    position: relative;
+    overflow: hidden;
+    height: 1.4rem;
+    margin-right: 0.28rem;
+}
+#recruitDetail .recruit-detail .recruit-detail-bottom-other span.float-right ul li img{
+    width: 0.8rem;
+    height: 0.8rem;
+    vertical-align: bottom;
+    position: absolute;
+    top:0.15rem;
+    left: 0;
+    border-radius: 50%;
+}
+#recruitDetail .recruit-detail .recruit-detail-bottom-other span.float-right ul li p{
+    width: 0.8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.2rem;
+    color: #666;
+    line-height: 0.28rem;
+    position: absolute;
+    text-align: center;
+    bottom: 0.13rem;
+}
+#recruitDetail .recruit-detail .recruit-detail-bottom-other .iconfont_daydao_recruit{
+    font-size: 0.2rem;
+    color: #aaa;
+    position: absolute;
+    right: 0.29rem;
+    top: 0.01rem;
+}
+#recruitDetail .recruit-detail .recruit-detail-bottom-other button{
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom:0;
+    height: 1.22rem;
+    position: fixed;
+    background: #FAFAFA;
+    border-top: 0.01rem solid #ECECEC;
+    color: #FF7123;
+    height: 1.22rem;
+    padding: 0;
+    font-size: 0.36rem;
+}

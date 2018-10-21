@@ -1,0 +1,46 @@
+#timeIssue{
+    width: 600px;
+    /*text-align: center;*/
+}
+#timeIssue .timeIssue_timeSel{
+    height: 30px;
+    line-height: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#timeIssue .set_time_issue_choose{
+    overflow: hidden;
+}
+#timeIssue .set_time_issue_choose .date_box{
+    float: left;
+    width: 105px;
+    height: 34px;
+    float: left;
+}
+#timeIssue .set_time_issue_choose .date_box input{
+    width: 80px;
+    height: 100%;
+    box-sizing: border-box;
+    display: inline-block;
+    background-color: #fff;
+    border: 1px solid #bcbcbc;
+    border-radius: 4px;
+    padding-left: 10px;
+    background-image: url(../../../images/announcement_tri_icon.png);
+    background-position: 54px center;
+    background-repeat: no-repeat;
+    padding-right: 25px;
+    text-align: center;
+    cursor: default;
+}
+#timeIssue .timeIssue_timePub{
+    height: 30px;
+    line-height: 30px;
+    margin-top: 20px;
+}
+#timeIssue .timeIssue_time{
+    color: #ed6c2b;
+}
+#timeIssue .ivu-select-dropdown .ivu-picker-panel-body .ivu-picker-confirm button:nth-child(1){
+    display: none;
+}

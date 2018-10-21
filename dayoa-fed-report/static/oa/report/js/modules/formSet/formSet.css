@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+/*流程设置*/
+
+#workflow_form_set{
+    width: 355px;
+    padding-right: 30px;
+}
+
+#workflow_form_type .hidden{
+    display:none;
+}
+
+#workflow_form_type .select{
+    border-top: none;
+    width: 203px;
+    padding: 10px 0;
+    background: #fff;
+}
+#workflow_form_type .select_ul{
+
+    max-height: 200px;
+
+    overflow: auto;
+
+    background: #fff;
+}
+#workflow_form_type .select li{
+    padding: 1px 5px;
+    overflow: hidden;
+    height: 25px;
+}
+#workflow_form_type .select li:hover{
+    background:#e8e8e8;
+}
+#workflow_form_type .beautifulRadio{
+    display:inline-block;
+    float: left;
+    margin-top: 2px;
+}
+
+#workflow_form_type .select .operation{float: right;}
+#workflow_form_type .select .add{
+    width: 16px;
+    height: 16px;
+    background: url(../../../images/bgs.png);
+    background-position: -2px -40px;
+    display: inline-block;
+    text-indent: -99em;
+    overflow: hidden;
+    vertical-align: middle;
+    margin-right: 5px;
+    cursor: pointer;
+}
+#workflow_form_type .select .sub{
+    width: 16px;
+    height: 16px;
+    background: url(../../../images/bgs.png);
+    background-position: -2px -60px;
+    display: inline-block;
+    text-indent: -99em;
+    overflow: hidden;
+    vertical-align: middle;
+    cursor: pointer;
+}

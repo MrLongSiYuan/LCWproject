@@ -1,0 +1,28 @@
+<div id="recruitPosCenter">
+     <div class="pos-center">
+         <div class="base_mmg_tabs">
+             <a class="return_pos iconfont_daydao_recruit" title="返回" href="#!/metadata/infoSetId:recruit_resume_position_list">&#xe6eb;</a>
+             <ul>
+                <li v-for="item in tabData" v-bind:class="[item.infoSetId=='recruit_resume_position_list'?'current':'']">
+                    <a v-link="{path:'/metadata/infoSetId:'+item.infoSetId}">{{item.name}}</a>
+                </li>
+             </ul>
+         </div>
+         <div class="body">
+             <div class="body-1">
+                  <span class="span-1">{{posInfo.org_name}}招聘</span>
+                  <span class="span-2">{{posInfo.pos_name}}</span>
+                  <span class="span-3"><b>{{posInfo.salary_range}}</b> / 经验{{posInfo.experience_id}} / {{posInfo.grade_id}}</span>
+                  <span class="span-4">{{posInfo.arriving_date}} 发布于{{posInfo.channel}}</span>
+             </div>
+             <div class="body-2">
+                 <span>职位诱惑：</span>
+                 <p>{{posInfo.pos_temptation}}</p>
+                 <span>工作职责：</span>
+                 <p>{{posInfo.responsibility_scope}}</p>
+                 <span>工作地址：</span>
+                 <p>{{posInfo.work_space}}</p>
+             </div>
+         </div>
+     </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="report_content_list_wrap">
+    <div class="single_report_content" v-for="item in reportList" v-bind:data-uuid="item.uuid" v-on:click="previewSingleReport(item.uuid,item.tempName,item.status)" v-show="!(reportSource=='sendOut'&&item.status == 2)">
+        <div class="single_report_header">
+            <!--头像-->
+            <div class="person_header_img">
+                <img v-app-head-img="item"/>
+            </div>
+
+            <div class="person_name">{{item.personName}}</div>
+            <!--状态-->
+            <div class="report_mark" v-if="(reportSource=='sendOut'&&item.readCounts>0&&item.status == 1)">
+                <!--<img :src="gMain.baseStaticPath+'oa/report_mobile/images/read@3x.png'" alt="">-->
+            </div>
+            <div class="report_mark" v-if="(reportSource=='sendOut'&&item.status == 2)">
+                <img :src="gMain.baseStaticPath+'oa/report_mobile/images/draft.png'" alt="">
+            </div>
+            <div class="report_mark" v-if="(reportSource=='received'&&item.readInfo.isRead == 1)">
+                <img :src="gMain.baseStaticPath+'oa/report_mobile/images/read@3x.png'" alt="">
+            </div>
+            <div class="report_mark" v-if="(reportSource=='received'&&item.readInfo.isRead == 0)">
+                <img :src="gMain.baseStaticPath+'oa/report_mobile/images/list_tag_unread_def@3x.png'" alt="">
+            </div>
+            <!--汇报名-->
+            <div class="report_name" v-start-time-handle="item"></div>
+        </div>
+        <div class="single_report_detail">
+            <form-data-show v-bind:a-fields="item.nodeData"></form-data-show>
+            <!--<div class="single_report_detail_cover"></div>-->
+        </div>
+        <div class="single_report_footer">
+            <div class="report_create_time">{{item.createTime}}</div>
+            <div class="footer_word" v-if="item.status == 2">草稿&nbsp;编辑于</div>
+            <div class="delete_report" v-if="item.status == 2" v-on:click.stop=" deleteDraft(item.uuid)"></div>
+        </div>
+    </div>
+    <div class="no-data-page" v-if="reportList.length == 0">
+        <div class="no-data-box">
+            暂无数据
+        </div>
+    </div>
+</div>

@@ -1,0 +1,508 @@
+@charset "utf-8";
+#resumePreview .resume-preview {
+    overflow: hidden;
+    background: #fff;
+    padding-bottom: 0.3rem;
+}
+#resumePreview .resume-preview .resume-preview-title {
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 3.3rem;
+    background: url("../images/recruit-bg.png") #FFF center top no-repeat;
+    text-align: center;
+    background-size:100% 1.9rem ;
+    /*position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 99999;*/
+}
+#resumePreview .resume-preview .resume-preview-title img{
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    vertical-align: bottom;
+    border: 0.01rem solid #E3E3E3;
+    display: inline-block;
+    margin-top: 0.58rem;
+}
+#resumePreview .resume-preview .resume-preview-title p .name{
+    font-size: 0.32rem;
+    line-height: 0.45rem;
+    color: #1C222B;
+    display: inline-block;
+    margin-top: 0.12rem;
+}
+#resumePreview .resume-preview .resume-preview-title p .sex0{
+    width: 0.22rem;
+    height: 0.22rem;
+    background-size:100% 100%;
+    display: inline-block;
+    margin-right: 0.09rem;
+}
+#resumePreview .resume-preview .resume-preview-title p .sex1{
+    width: 0.22rem;
+    height: 0.22rem;
+    background: url("../images/sex1.png") no-repeat;
+    background-size:100% 100%;
+    display: inline-block;
+    margin-left: 0.09rem;
+}
+#resumePreview .resume-preview .resume-preview-title p .sex2{
+    width: 0.22rem;
+    height: 0.22rem;
+    background: url("../images/sex2.png") no-repeat;
+    background-size:100% 100%;
+    display: inline-block;
+    margin-left: 0.09rem;
+}
+#resumePreview .resume-preview .resume-preview-title p.info{
+    line-height: 0.33rem;
+    color: #666;
+    font-size: 0.24rem;
+    margin-top: 0.05rem;
+}
+#resumePreview .resume-preview .resume-preview-clear-both{
+    height:0.2rem;
+    background:#f0f0f0;
+    clear: both;
+}
+#resumePreview .resume-preview .resume-preview-body-0{
+    overflow: hidden;
+    padding: 0 0.3rem;
+    background: #FFF;
+    /*margin-top: 3.3rem;*/
+}
+#resumePreview .resume-preview .resume-preview-body-0 .resume-preview-body-0-top{
+    height: 0.68rem;
+    line-height: 0.68rem;
+    font-size: 0.28rem;
+    border-bottom: 0.02rem solid #E9E9E9;
+    color: #1C222B;
+    text-indent: 0.3rem;
+    position: relative;
+}
+#resumePreview .resume-preview .resume-preview-body-0 .resume-preview-body-0-top::before{
+    content: "";
+    position: absolute;
+    width: 0.14rem;
+    height: 0.14rem;
+    background: #FF7123;
+    top:0.27rem;
+    left: 0.08rem;
+    border-radius: 50%;
+}
+#resumePreview .resume-preview .resume-preview-body-0 .resume-preview-body-0-content{
+    padding: 0.15rem 0;
+    overflow: hidden;
+}
+#resumePreview .resume-preview .resume-preview-body-0 .resume-preview-body-0-content p{
+    font-size: 0.24rem;
+    line-height: 0.36rem;
+    color: #666;
+}
+#resumePreview .resume-preview .resume-preview-body-1{
+    overflow: hidden;
+    padding: 0 0.3rem;
+    background: #FFF;
+}
+#resumePreview .resume-preview .resume-preview-body-1 .resume-preview-body-1-top{
+    height: 0.68rem;
+    line-height: 0.68rem;
+    font-size: 0.28rem;
+    border-bottom: 0.02rem solid #E9E9E9;
+    color: #1C222B;
+    text-indent: 0.3rem;
+    position: relative;
+}
+#resumePreview .resume-preview .resume-preview-body-1 .resume-preview-body-1-top::before{
+    content: "";
+    position: absolute;
+    width: 0.14rem;
+    height: 0.14rem;
+    background: #8889FD;
+    top:0.27rem;
+    left: 0.08rem;
+    border-radius: 50%;
+}
+#resumePreview .resume-preview .resume-preview-body-1 .resume-preview-body-1-content{
+    overflow: hidden;
+    padding: 0.15rem;
+    color: #666;
+}
+#resumePreview .resume-preview .resume-preview-body-1 .resume-preview-body-1-content p{
+    height: 0.36rem;
+    line-height: 0.36rem;
+    font-size: 0.24rem;
+    margin-bottom: 0.2rem;
+}
+#resumePreview .resume-preview .resume-preview-body-1 .resume-preview-body-1-content p:last-child{
+    margin-bottom: 0.05rem;
+}
+#resumePreview .resume-preview .resume-preview-body-2{
+    overflow: hidden;
+    padding: 0 0.3rem;
+    background: #FFF;
+}
+#resumePreview .resume-preview .resume-preview-body-2 .resume-preview-body-2-top{
+    height: 0.68rem;
+    line-height: 0.68rem;
+    font-size: 0.28rem;
+    border-bottom: 0.02rem solid #E9E9E9;
+    color: #1C222B;
+    text-indent: 0.3rem;
+    position: relative;
+}
+#resumePreview .resume-preview .resume-preview-body-2 .resume-preview-body-2-top::before{
+    content: "";
+    position: absolute;
+    width: 0.14rem;
+    height: 0.14rem;
+    background: #55A4FF;
+    top:0.27rem;
+    left: 0.08rem;
+    border-radius: 50%;
+}
+#resumePreview .resume-preview .resume-preview-body-2 .resume-preview-body-2-content{
+    overflow: hidden;
+    padding: 0.15rem;
+    color: #666;
+}
+#resumePreview .resume-preview .resume-preview-body-2 .resume-preview-body-2-content p{
+    height: 0.36rem;
+    line-height: 0.36rem;
+    font-size: 0.24rem;
+    margin-bottom: 0.2rem;
+}
+#resumePreview .resume-preview .resume-preview-body-2 .resume-preview-body-2-content p:last-child{
+    margin-bottom: 0.05rem;
+}
+#resumePreview .resume-preview .resume-preview-body-3{
+    overflow: hidden;
+    padding: 0 0.3rem;
+    background: #FFF;
+}
+#resumePreview .resume-preview .resume-preview-body-3 .resume-preview-body-3-top{
+    height: 0.68rem;
+    line-height: 0.68rem;
+    font-size: 0.28rem;
+    border-bottom: 0.02rem solid #E9E9E9;
+    color: #1C222B;
+    text-indent: 0.3rem;
+    position: relative;
+}
+#resumePreview .resume-preview .resume-preview-body-3 .resume-preview-body-3-top::before{
+    content: "";
+    position: absolute;
+    width: 0.14rem;
+    height: 0.14rem;
+    background: #31BC2F;
+    top:0.27rem;
+    left: 0.08rem;
+    border-radius: 50%;
+}
+#resumePreview .resume-preview .resume-preview-body-3 .resume-preview-body-3-content{
+    overflow: hidden;
+    padding: 0 0.15rem;
+    color: #666;
+}
+#resumePreview .resume-preview .resume-preview-body-3 .resume-preview-body-3-content .wrap{
+    overflow: hidden;
+    border-bottom: 1px solid #E7EAF0;
+    padding-top: 0.15rem;
+}
+#resumePreview .resume-preview .resume-preview-body-3 .resume-preview-body-3-content .wrap:last-child{
+    border: none;
+}
+#resumePreview .resume-preview .resume-preview-body-3 .resume-preview-body-3-content p{
+    height: 0.36rem;
+    line-height: 0.36rem;
+    font-size: 0.24rem;
+    margin-bottom: 0.15rem;
+}
+#resumePreview .resume-preview .resume-preview-body-3 .resume-preview-body-3-content p.p1{
+    color: #222;
+}
+#resumePreview .resume-preview .resume-preview-body-3 .resume-preview-body-3-content p.p2{
+    color: #666;
+}
+#resumePreview .resume-preview .resume-preview-body-4{
+    overflow: hidden;
+    padding: 0 0.3rem;
+    background: #FFF;
+}
+#resumePreview .resume-preview .resume-preview-body-4 .resume-preview-body-4-top{
+    height: 0.68rem;
+    line-height: 0.68rem;
+    font-size: 0.28rem;
+    border-bottom: 0.02rem solid #E9E9E9;
+    color: #1C222B;
+    text-indent: 0.3rem;
+    position: relative;
+}
+#resumePreview .resume-preview .resume-preview-body-4 .resume-preview-body-4-top::before{
+    content: "";
+    position: absolute;
+    width: 0.14rem;
+    height: 0.14rem;
+    background: #FFBC0B;
+    top:0.27rem;
+    left: 0.08rem;
+    border-radius: 50%;
+}
+#resumePreview .resume-preview .resume-preview-body-4 .resume-preview-body-4-content{
+    overflow: hidden;
+    padding: 0 0.15rem;
+    color: #666;
+}
+#resumePreview .resume-preview .resume-preview-body-4 .resume-preview-body-4-content .wrap{
+    overflow: hidden;
+    border-bottom: 1px solid #E7EAF0;
+    padding-top: 0.15rem;
+}
+#resumePreview .resume-preview .resume-preview-body-4 .resume-preview-body-4-content .wrap:last-child{
+    border: none;
+}
+#resumePreview .resume-preview .resume-preview-body-4 .resume-preview-body-4-content p{
+    height: 0.36rem;
+    line-height: 0.36rem;
+    font-size: 0.24rem;
+    margin-bottom: 0.15rem;
+}
+#resumePreview .resume-preview .resume-preview-body-4 .resume-preview-body-4-content p.p1{
+    color: #222;
+}
+#resumePreview .resume-preview .resume-preview-body-4 .resume-preview-body-4-content p.p2{
+    color: #666;
+}
+#resumePreview .resume-preview .resume-preview-body-5{
+    overflow: hidden;
+    padding: 0 0.3rem;
+    background: #FFF;
+}
+#resumePreview .resume-preview .resume-preview-body-5 .resume-preview-body-5-top{
+    height: 0.68rem;
+    line-height: 0.68rem;
+    font-size: 0.28rem;
+    border-bottom: 0.02rem solid #E9E9E9;
+    color: #1C222B;
+    text-indent: 0.3rem;
+    position: relative;
+}
+#resumePreview .resume-preview .resume-preview-body-5 .resume-preview-body-5-top::before{
+    content: "";
+    position: absolute;
+    width: 0.14rem;
+    height: 0.14rem;
+    background: #FF7123;
+    top:0.27rem;
+    left: 0.08rem;
+    border-radius: 50%;
+}
+#resumePreview .resume-preview .resume-preview-body-5 .resume-preview-body-5-content{
+    overflow: hidden;
+    padding: 0 0.15rem;
+    color: #666;
+}
+#resumePreview .resume-preview .resume-preview-body-5 .resume-preview-body-5-content .wrap{
+    overflow: hidden;
+    border-bottom: 1px solid #E7EAF0;
+    padding-top: 0.15rem;
+}
+#resumePreview .resume-preview .resume-preview-body-5 .resume-preview-body-5-content .wrap:last-child{
+    border: none;
+}
+#resumePreview .resume-preview .resume-preview-body-5 .resume-preview-body-5-content p{
+    
+    line-height: 0.36rem;
+    font-size: 0.24rem;
+    margin-bottom: 0.15rem;
+}
+#resumePreview .resume-preview .resume-preview-body-5 .resume-preview-body-5-content p.p1{
+    color: #222;
+}
+#resumePreview .resume-preview .resume-preview-body-5 .resume-preview-body-5-content p.p2{
+    color: #666;
+}
+#resumePreview .resume-preview .resume-preview-body-6{
+    overflow: hidden;
+    padding: 0 0.3rem;
+    background: #FFF;
+}
+#resumePreview .resume-preview .resume-preview-body-6 .resume-preview-body-6-top{
+    height: 0.68rem;
+    line-height: 0.68rem;
+    font-size: 0.28rem;
+    border-bottom: 0.02rem solid #E9E9E9;
+    color: #1C222B;
+    text-indent: 0.3rem;
+    position: relative;
+}
+#resumePreview .resume-preview .resume-preview-body-6 .resume-preview-body-6-top::before{
+    content: "";
+    position: absolute;
+    width: 0.14rem;
+    height: 0.14rem;
+    background: #918EFF;
+    top:0.27rem;
+    left: 0.08rem;
+    border-radius: 50%;
+}
+#resumePreview .resume-preview .resume-preview-body-6 .resume-preview-body-6-content{
+    overflow: hidden;
+    padding: 0 0.15rem;
+    color: #666;
+}
+#resumePreview .resume-preview .resume-preview-body-6 .resume-preview-body-6-content .wrap{
+    overflow: hidden;
+    padding-top: 0.15rem;
+}
+#resumePreview .resume-preview .resume-preview-body-6 .resume-preview-body-6-content .wrap:last-child{
+    border: none;
+}
+#resumePreview .resume-preview .resume-preview-body-6 .resume-preview-body-6-content p{
+
+    line-height: 0.36rem;
+    font-size: 0.24rem;
+    margin-bottom: 0.15rem;
+}
+#resumePreview .resume-preview .resume-preview-body-6 .resume-preview-body-6-content p.p1{
+    color: #222;
+}
+#resumePreview .resume-preview .resume-preview-body-6 .resume-preview-body-6-content p.p2{
+    color: #666;
+}
+#resumePreview .resume-preview .resume-preview-body-6 .resume-preview-body-6-content span{
+    display: block;
+}
+#resumePreview .resume-preview .resume-preview-body-6 .resume-preview-body-6-content  span.percent{
+    width: 100%;
+    height: 0.12rem;
+    border: 0.02rem solid #FBDA61;
+    box-sizing: border-box;
+    border-radius: 0.05rem;
+    margin-bottom: 0.15rem;
+}
+#resumePreview .resume-preview .resume-preview-body-6 .resume-preview-body-6-content  span.percent-wrap{
+    height: 100%;
+    background: -webkit-linear-gradient(left,#F7A81C, #FBDA61); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(left,#F7A81C, #FBDA61); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(left,#F7A81C, #FBDA61); /* Firefox 3.6 - 15 */
+    background: linear-gradient(left,#F7A81C, #FBDA61); /* 标准的语法 */
+}
+#resumePreview .resume-preview .resume-preview-body-7{
+    overflow: hidden;
+    padding: 0 0.3rem;
+    background: #FFF;
+}
+#resumePreview .resume-preview .resume-preview-body-7 .resume-preview-body-7-top{
+    height: 0.68rem;
+    line-height: 0.68rem;
+    font-size: 0.28rem;
+    border-bottom: 0.02rem solid #E9E9E9;
+    color: #1C222B;
+    text-indent: 0.3rem;
+    position: relative;
+}
+#resumePreview .resume-preview .resume-preview-body-7 .resume-preview-body-7-top::before{
+    content: "";
+    position: absolute;
+    width: 0.14rem;
+    height: 0.14rem;
+    background: #55A4FF;
+    top:0.27rem;
+    left: 0.08rem;
+    border-radius: 50%;
+}
+#resumePreview .resume-preview .resume-preview-body-7 .resume-preview-body-7-content{
+    overflow: hidden;
+    padding: 0 0.15rem;
+    color: #666;
+}
+#resumePreview .resume-preview .resume-preview-body-7 .resume-preview-body-7-content .wrap{
+    overflow: hidden;
+    border-bottom: 1px solid #E7EAF0;
+    padding-top: 0.15rem;
+}
+#resumePreview .resume-preview .resume-preview-body-7 .resume-preview-body-7-content .wrap:last-child{
+    border: none;
+}
+#resumePreview .resume-preview .resume-preview-body-7 .resume-preview-body-7-content p{
+
+    line-height: 0.36rem;
+    font-size: 0.24rem;
+    margin-bottom: 0.15rem;
+}
+#resumePreview .resume-preview .resume-preview-body-7 .resume-preview-body-7-content p.p1{
+    color: #222;
+}
+#resumePreview .resume-preview .resume-preview-body-7 .resume-preview-body-7-content p.p2{
+    color: #666;
+}
+#resumePreview .resume-preview .resume-preview-body-8{
+    overflow: hidden;
+    padding: 0 0.3rem;
+    background: #FFF;
+}
+#resumePreview .resume-preview .resume-preview-body-8 .resume-preview-body-8-top{
+    height: 0.68rem;
+    line-height: 0.68rem;
+    font-size: 0.28rem;
+    border-bottom: 0.02rem solid #E9E9E9;
+    color: #1C222B;
+    text-indent: 0.3rem;
+    position: relative;
+}
+#resumePreview .resume-preview .resume-preview-body-8 .resume-preview-body-8-top::before{
+    content: "";
+    position: absolute;
+    width: 0.14rem;
+    height: 0.14rem;
+    background: #31BC2F;;
+    top:0.27rem;
+    left: 0.08rem;
+    border-radius: 50%;
+}
+#resumePreview .resume-preview .resume-preview-body-8 .resume-preview-body-8-content{
+    overflow: hidden;
+    padding: 0 0.15rem;
+    color: #666;
+}
+#resumePreview .resume-preview .resume-preview-body-8 .resume-preview-body-8-content .wrap{
+    overflow: hidden;
+    padding-top: 0.15rem;
+}
+#resumePreview .resume-preview .resume-preview-body-8 .resume-preview-body-8-content .wrap:last-child{
+    border: none;
+}
+#resumePreview .resume-preview .resume-preview-body-8 .resume-preview-body-8-content p{
+
+    line-height: 0.36rem;
+    font-size: 0.24rem;
+    margin-bottom: 0.15rem;
+}
+#resumePreview .resume-preview .resume-preview-body-8 .resume-preview-body-8-content p.p1{
+    color: #222;
+}
+#resumePreview .resume-preview .resume-preview-body-8 .resume-preview-body-8-content p.p2{
+    color: #666;
+}
+#resumePreview .resume-preview .resume-preview-body-8 .resume-preview-body-8-content span{
+    display: block;
+}
+#resumePreview .resume-preview .resume-preview-body-8 .resume-preview-body-8-content  span.percent{
+    width: 100%;
+    height: 0.12rem;
+    border: 0.02rem solid #FBDA61;
+    box-sizing: border-box;
+    border-radius: 0.05rem;
+    margin-bottom: 0.15rem;
+}
+#resumePreview .resume-preview .resume-preview-body-8 .resume-preview-body-8-content  span.percent-wrap{
+    height: 100%;
+    background: -webkit-linear-gradient(left,#F7A81C, #FBDA61); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(left,#F7A81C, #FBDA61); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(left,#F7A81C, #FBDA61); /* Firefox 3.6 - 15 */
+    background: linear-gradient(left,#F7A81C, #FBDA61); /* 标准的语法 */
+}
